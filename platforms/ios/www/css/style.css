@@ -1,0 +1,259 @@
+/*
+Additional classes added
+*/
+
+/*Custom font for entire app*/
+@font-face {
+    font-family: telecelfont;
+    src: url(fonts/GOTHIC.TTF) format('truetype');
+}
+
+/*Ensure full width is utilised*/
+.ui-full-width {
+    width: 100% !important;
+}
+
+.full-screen-width-margin {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.full-screen-width-padding {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.icon-font-size-small {
+    font-size: 14px !important;
+    vertical-align: text-top;
+}
+
+.icon-font-size-med {
+    font-size: 22px !important;
+}
+
+/*Prevent link underline*/
+.no-underline {
+    text-decoration: none !important;
+}
+
+/*for true center when showing text with logo in header*/
+.header-logo, .header-text-with-logo {
+    display: inline-block !important;
+    vertical-align: middle;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+/*for true center in header*/
+.align-text-center, .align-text-center td, align-text-center th{
+    text-align: center !important;
+}
+
+/*for true center in header*/
+.align-text-left {
+    text-align: left !important;
+}
+
+/*for true center in header*/
+.auto-align-center {
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
+}
+
+/*For true center in header*/
+.ui-bar {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.header-text-with-logo-padding {
+    margin-top: 10px;
+    margin-bottom: 4px;
+}
+
+#divMainMenu {
+    overflow: hidden; /* Use this or a "clearfix" to give the container height */
+    font-size: 14px !important;
+}
+
+.main-menu-icon {
+    height: 32px;
+}
+
+#divMainMenu .custom-ui-block-a, #divMainMenu .custom-ui-block-b, #divMainMenu .custom-ui-block-c {
+    float: none;
+    margin-right: 1.5%;
+    margin-left: 1.5%;
+}
+
+/*For responsive main menu*/
+/* 1st breakpoint - When screen is below 500px*/
+@media all and (min-width: 16em) {
+    #divMainMenu {
+        overflow: hidden; /* Use this or a "clearfix" to give the container height */
+        font-size: 14px !important;
+    }
+
+    .main-menu-icon {
+        height: 64px;
+    }
+
+    #divMainMenu .custom-ui-block-a:nth-child(odd), #divMainMenu .custom-ui-block-b:nth-child(odd), #divMainMenu .custom-ui-block-c:nth-child(odd) {
+        float: left;
+        width: 45.50%;
+        margin-right: 1.5%;
+        margin-left: 1.5%;
+    }
+
+    #divMainMenu .custom-ui-block-a:nth-child(even), #divMainMenu .custom-ui-block-b:nth-child(even), #divMainMenu .custom-ui-block-c:nth-child(even) {
+        float: right;
+        width: 45.50%;
+        margin-right: 1.5%;
+        margin-left: 1.5%;
+    }
+
+    #divMainMenu .custom-ui-block-a:nth-child(even), #divMainMenu .custom-ui-block-b:nth-child(even), #divMainMenu .custom-ui-block-c:nth-child(even) {
+        float: right;
+        width: 45.50%;
+        margin-right: 1.5%;
+        margin-left: 1.5%;
+    }
+}
+
+@media all and (min-width: 36em) {
+
+    #divMainMenu {
+        overflow: hidden; /* Use this or a "clearfix" to give the container height */
+        font-size: 18px !important;
+    }
+
+    #divMainMenu .custom-ui-block-a {
+        float: left !important;
+        width: 30% !important;
+        margin-right: 1.5% !important;
+        margin-left: 1.5% !important;
+    }
+
+    #divMainMenu .custom-ui-block-b {
+        float: left !important;
+        width: 30% !important;
+        margin-right: 1.5% !important;
+        margin-left: 1.5% !important;
+    }
+
+    #divMainMenu .custom-ui-block-c {
+        float: left !important;
+        width: 30% !important;
+        margin-right: 1.5% !important;
+        margin-left: 1.5% !important;
+    }
+
+    .main-menu-icon {
+        height: 128px;
+    }
+
+}
+
+.div-red-background {
+    background-color: #C1272D;
+    /*border: 1px solid #6A1518;*/
+    color: #FFF;
+    text-shadow: 0px 1px 0px #444;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.div-grey-background {
+    background-color: #ddd6d6;
+    border: 1px solid #5f585b;
+    color: #000;
+}
+
+.div-rounded-corners {
+    border-radius: 0.3125em;
+    -moz-border-radius: 0.3125em;
+    -webkit-border-radius: 0.3125em;
+    -khtml-border-radius: 0.3125em;
+
+}
+
+.menu-icons-margin {
+    padding-top: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.back-arrow {
+    float: left;
+    margin-left: 10px;
+    vertical-align: middle;
+    margin-top: 3px;
+}
+
+.float-left {
+    float: left;
+}
+
+.uppercase {
+    text-transform: uppercase !important;
+}
+
+.initcap {
+    text-transform: none !important;
+}
+
+footer {
+    width: 95px;
+    padding-bottom: 15px !important;
+    padding-top: 15px !important;
+}
+
+footer .ui-grid-c {
+    margin-right: 3%;
+    margin-left: 3%;
+}
+
+.add-btn-dlg-panel {
+    display: none;
+}
+
+/*Style to align buy for self or buy for other*/
+.ui-grid-a, .ui-grid-a .ui-controlgroup-controls {
+    width: 100%
+}
+
+.hidden {
+    display: none !important;
+}
+
+.shown {
+    display: block !important;
+}
+
+/*Enable display input with icon*/
+.input-with-icon {
+    position: relative;
+}
+
+.input-with-icon input {
+    padding-left: 25px;
+}
+
+.input-icon {
+    font-size: 18pt;
+    position: absolute;
+    left: 10px;
+    top: 5px;
+}
+
+.tabs-corners-first-child{
+    border-top-left-radius: 5px !important;
+    border-bottom-left-radius: 5px  !important;
+
+}
+.tabs-corners-last-child{
+    border-top-right-radius: 5px  !important;
+    border-bottom-right-radius: 5px  !important;
+
+}
