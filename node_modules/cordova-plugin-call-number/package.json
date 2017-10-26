@@ -1,0 +1,95 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "cordova-plugin-call-number",
+        "scope": null,
+        "escapedName": "cordova-plugin-call-number",
+        "name": "cordova-plugin-call-number",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "C:\\Users\\ZifudziT\\WebstormProjects\\TelecelMobileApp"
+    ]
+  ],
+  "_from": "cordova-plugin-call-number@latest",
+  "_id": "cordova-plugin-call-number@1.0.1",
+  "_inCache": true,
+  "_location": "/cordova-plugin-call-number",
+  "_nodeVersion": "6.8.0",
+  "_npmOperationalInternal": {
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/cordova-plugin-call-number-1.0.1.tgz_1476424446419_0.36768259736709297"
+  },
+  "_npmUser": {
+    "name": "ihadeed",
+    "email": "i.hadeed@zyra.ca"
+  },
+  "_npmVersion": "3.10.8",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "cordova-plugin-call-number",
+    "scope": null,
+    "escapedName": "cordova-plugin-call-number",
+    "name": "cordova-plugin-call-number",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-call-number/-/cordova-plugin-call-number-1.0.1.tgz",
+  "_shasum": "dd9643bfa2b334a6c68b1e64aa9629e6227c59f1",
+  "_shrinkwrap": null,
+  "_spec": "cordova-plugin-call-number",
+  "_where": "C:\\Users\\ZifudziT\\WebstormProjects\\TelecelMobileApp",
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/ihadeed/cordova-plugin-call-number/issues"
+  },
+  "cordova": {
+    "id": "cordova-plugin-call-number",
+    "platforms": [
+      "ios",
+      "android"
+    ]
+  },
+  "dependencies": {},
+  "description": "Call Number from Cordova Application",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "dd9643bfa2b334a6c68b1e64aa9629e6227c59f1",
+    "tarball": "https://registry.npmjs.org/cordova-plugin-call-number/-/cordova-plugin-call-number-1.0.1.tgz"
+  },
+  "gitHead": "43887341117293c65680f3177d7245489688d5ba",
+  "homepage": "https://github.com/ihadeed/cordova-plugin-call-number#readme",
+  "keywords": [
+    "cordova",
+    "call",
+    "dialer",
+    "phonegap",
+    "ecosystem:cordova",
+    "cordova-ios",
+    "cordova-android"
+  ],
+  "license": "Apache 2.0",
+  "maintainers": [
+    {
+      "name": "ihadeed",
+      "email": "i.hadeed@zyra.ca"
+    }
+  ],
+  "name": "cordova-plugin-call-number",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ihadeed/cordova-plugin-call-number.git"
+  },
+  "scripts": {},
+  "version": "1.0.1"
+}

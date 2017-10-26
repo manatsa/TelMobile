@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="mobile.telecel.co.zw" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <feature name="Whitelist">
+        <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="StatusBar">
+        <param name="android-package" value="org.apache.cordova.statusbar.StatusBar" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="Notification">
+        <param name="android-package" value="org.apache.cordova.dialogs.Notification" />
+    </feature>
+    <feature name="CallNumber">
+        <param name="android-package" value="mx.ferreyra.callnumber.CFCallNumber" />
+    </feature>
+    <feature name="NetworkStatus">
+        <param name="android-package" value="org.apache.cordova.networkinformation.NetworkManager" />
+    </feature>
+    <feature name="SocialSharing">
+        <param name="android-package" value="nl.xservices.plugins.SocialSharing" />
+    </feature>
+    <feature name="Toast">
+        <param name="android-package" value="nl.xservices.plugins.Toast" />
+    </feature>
+    <name>Telecel</name>
+    <description>
+        The zero rated Telecel Mobile App for you to manage your account from your smart device.
+    </description>
+    <author email="vasforwards@telecelzim.co.zw" href="http://telecel.co.zw">
+        Telecel VAS Team
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <allow-intent href="market:*" />
+    <icon density="ldpi" src="res/icon/android/icon-36-ldpi.png" />
+    <icon density="mdpi" src="res/icon/android/icon-48-mdpi.png" />
+    <icon density="hdpi" src="res/icon/android/icon-72-hdpi.png" />
+    <icon density="xhdpi" src="res/icon/android/icon-96-xhdpi.png" />
+    <preference name="loglevel" value="DEBUG" />
+    <preference name="StatusBarBackgroundColor" value="#c1272d" />
+</widget>

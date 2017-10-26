@@ -1,0 +1,37 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "mobile.telecel.co.zw"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "mobile.telecel.co.zw"
+    },
+    "cordova-plugin-dialogs": {
+      "PACKAGE_NAME": "mobile.telecel.co.zw"
+    },
+    "cordova-plugin-call-number": {
+      "PACKAGE_NAME": "mobile.telecel.co.zw"
+    },
+    "cordova-plugin-network-information": {
+      "PACKAGE_NAME": "mobile.telecel.co.zw"
+    },
+    "cordova-plugin-x-socialsharing": {
+      "PACKAGE_NAME": "mobile.telecel.co.zw"
+    },
+    "cordova-plugin-x-toast": {
+      "PACKAGE_NAME": "mobile.telecel.co.zw"
+    }
+  },
+  "dependent_plugins": {
+    "es6-promise-plugin": {
+      "PACKAGE_NAME": "mobile.telecel.co.zw"
+    }
+  }
+}

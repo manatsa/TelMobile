@@ -1,0 +1,37 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "HelloCordova"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "HelloCordova"
+    },
+    "cordova-plugin-dialogs": {
+      "PACKAGE_NAME": "HelloCordova"
+    },
+    "cordova-plugin-call-number": {
+      "PACKAGE_NAME": "HelloCordova"
+    },
+    "cordova-plugin-network-information": {
+      "PACKAGE_NAME": "HelloCordova"
+    },
+    "cordova-plugin-x-socialsharing": {
+      "PACKAGE_NAME": "HelloCordova"
+    },
+    "cordova-plugin-x-toast": {
+      "PACKAGE_NAME": "HelloCordova"
+    }
+  },
+  "dependent_plugins": {
+    "es6-promise-plugin": {
+      "PACKAGE_NAME": "HelloCordova"
+    }
+  }
+}
