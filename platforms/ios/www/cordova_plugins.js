@@ -34,6 +34,14 @@ module.exports = [
         ]
     },
     {
+        "id": "cordova-plugin-splashscreen.SplashScreen",
+        "file": "plugins/cordova-plugin-splashscreen/www/splashscreen.js",
+        "pluginId": "cordova-plugin-splashscreen",
+        "clobbers": [
+            "navigator.splashscreen"
+        ]
+    },
+    {
         "id": "cordova-plugin-statusbar.statusbar",
         "file": "plugins/cordova-plugin-statusbar/www/statusbar.js",
         "pluginId": "cordova-plugin-statusbar",
@@ -67,14 +75,6 @@ module.exports = [
         "id": "cordova-plugin-x-toast.tests",
         "file": "plugins/cordova-plugin-x-toast/test/tests.js",
         "pluginId": "cordova-plugin-x-toast"
-    },
-    {
-        "id": "cordova-plugin-splashscreen.SplashScreen",
-        "file": "plugins/cordova-plugin-splashscreen/www/splashscreen.js",
-        "pluginId": "cordova-plugin-splashscreen",
-        "clobbers": [
-            "navigator.splashscreen"
-        ]
     }
 ];
 module.exports.metadata = 
@@ -83,12 +83,12 @@ module.exports.metadata =
     "cordova-plugin-call-number": "1.0.1",
     "cordova-plugin-dialogs": "1.3.3",
     "cordova-plugin-network-information": "1.3.3",
+    "cordova-plugin-splashscreen": "4.0.3",
     "cordova-plugin-statusbar": "2.2.3",
     "cordova-plugin-whitelist": "1.3.2",
     "es6-promise-plugin": "4.1.0",
     "cordova-plugin-x-socialsharing": "5.2.1",
-    "cordova-plugin-x-toast": "2.6.0",
-    "cordova-plugin-splashscreen": "4.0.3"
+    "cordova-plugin-x-toast": "2.6.0"
 };
 // BOTTOM OF METADATA
 });

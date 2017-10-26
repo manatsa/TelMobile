@@ -16,6 +16,9 @@
         "cordova-plugin-network-information": {
             "PACKAGE_NAME": "mobile.telecel.co.zw"
         },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "mobile.telecel.co.zw"
+        },
         "cordova-plugin-statusbar": {
             "PACKAGE_NAME": "mobile.telecel.co.zw"
         },
@@ -26,9 +29,6 @@
             "PACKAGE_NAME": "mobile.telecel.co.zw"
         },
         "cordova-plugin-x-toast": {
-            "PACKAGE_NAME": "mobile.telecel.co.zw"
-        },
-        "cordova-plugin-splashscreen": {
             "PACKAGE_NAME": "mobile.telecel.co.zw"
         }
     },
