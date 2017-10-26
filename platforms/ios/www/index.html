@@ -491,6 +491,9 @@
 </section>
 
 <!-------------------------------------    Telecash   ------------------------------------------------>
+
+
+<!-------------------------------------    Telecash   ------------------------------------------------>
 <section data-role="page" id="pgTelecash" class="ui-page-theme-a">
     <header data-role="header" class="ui-bar" data-position="fixed">
         <div class="align-text-center header-text-with-logo-padding">
@@ -504,17 +507,23 @@
 
         <ul data-inset="true" data-role="listview">
             <li>
-                <a data-transition="flip" href="#pgBalances">Bill Payment
-                    <p class="initcap">Make a payment for a bill</p>
+                <a data-rel="popup" data-position-to="window"
+                   data-transition="pop" href="#ppBuyAirtimeFromTelecash">Buy airtime or bundles
+                    <p class="initcap">Purchase airtime or bundles</p>
                 </a>
             </li>
             <li>
-                <a data-transition="flip" href="#pgBalances">Cash Out
+                <a data-transition="flip" href="#pgMakePayment">Make Payment
+                    <p class="initcap">Make a payment to a merchant, biller or online</p>
+                </a>
+            </li>
+            <li>
+                <a data-transition="flip" href="#pgCashOut">Cash Out
                     <p class="initcap">Withdraw cash from an agent</p>
                 </a>
             </li>
             <li>
-                <a data-transition="flip" href="#pgBalances">Send money
+                <a data-transition="flip" href="#pgSendMoney">Send money
                     <p class="initcap">Send money to another user</p>
                 </a>
             </li>
@@ -524,24 +533,197 @@
                 </a>
             </li>
             <li>
-                <a data-transition="flip" href="#pgBalances">Online payment
-                    <p class="initcap">Pay on the internet using Telecash</p>
-                </a>
-            </li>
-            <li>
-                <a data-transition="flip" href="#pgBalances">Pay merchant
-                    <p class="initcap">Pay a merchant to obtain commodities</p>
-                </a>
-            </li>
-            <li>
-                <a data-transition="flip" href="#pgBalances">Card Management
+                <a data-transition="flip" href="#pgCardManagement">Card Management
                     <p class="initcap">Manage your card details and settings</p>
                 </a>
             </li>
         </ul>
 
+        <div data-role="popup" id="ppBuyAirtimeFromTelecash" data-overlay-theme="b" data-theme="b"
+             data-dismissible="false"
+             style="max-width:400px;">
+            <div data-role="header" data-theme="a"><h1>Buying airtime</h1></div>
+            <div role="main" class="ui-content">
+                <p>To buy airtime or bundles using TeleCash, please go to the Products and Services menu.</p> <a
+                    href="#products_services_main"
+                    data-transition="flip"
+                    class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b"
+            >Go to products and services</a> <a href="#"
+                                                class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b"
+                                                data-rel="back"
+            >Cancel</a>
+            </div>
+        </div>
+
+
     </div>
 </section>
+
+
+<!------------------------------------- Make Payment ------------------------------------------------>
+<section data-role="page" id="pgMakePayment" class="ui-page-theme-a">
+    <header data-role="header" class="ui-bar" data-position="fixed">
+        <div class="align-text-center header-text-with-logo-padding">
+            <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
+                    class="fa  fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
+            <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
+            <h1 class="header-text-with-logo">&nbsp;Make Payment</h1>
+        </div>
+    </header>
+
+    <div data-role="main" class="ui-content">
+
+        <div data-role="tabs">
+            <div data-role="navbar" data-grid="b">
+                <ul class="tabs-corners">
+                    <li><a href="#divBillerForm" class="ui-btn-b ui-btn-active tabs-corners-first-child">Pay Biller</a>
+                    </li>
+                    <li><a href="#divMerchantForm" class="ui-btn-b">Pay Merchant</a>
+                    </li>
+                    <li><a href="#divPayOnlineForm" class="tabs-corners-last-child ui-btn-b">Pay online</a>
+                    </li>
+                </ul>
+            </div>
+
+            <form>
+
+
+                <div id="divBillerForm">
+                    <label for="txtBillerCode">Biller Code</label>
+                    <input type="text" name="txtBillerCode" id="txtBillerCode"
+                           placeholder="Enter biller code e.g. 12345"
+                           value="">
+
+
+                    <label for="txtBillAmount">Amount</label>
+                    <div class="input-with-icon">
+                        <input placeholder="Enter amount e.g. 0.56 or 2" type="tel" id="txtBillAmount"
+                               inputmode="numeric"/>
+                        <i class="fa fa-dollar dollar-icon" aria-hidden="true"></i>
+                    </div>
+
+                    <a href="#ppPayBill" style="margin-top: 20px;" data-rel="popup" data-position-to="window"
+                       data-transition="pop"
+                       class="ui-btn ui-corner-all"><i
+                            class="fa fa-arrow-circle-down" aria-hidden="true"></i>&nbsp;&nbsp;Make payment
+                    </a>
+                    <div data-role="popup" id="ppPayBill" data-overlay-theme="b" data-theme="b" data-dismissible="false"
+                         style="max-width:400px;">
+                        <div data-role="header" data-theme="a"><h1>Confirm</h1></div>
+                        <div role="main" class="ui-content">
+                            <p>You are proceeding to pay amount <b>$3</b> to biller <b>Tatenda
+                                Zifudzi</b>.<br/><br/>Proceed?</p> <a href="#"
+                                                                      class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b"
+                                                                      data-rel="back">Proceed</a> <a href="#"
+                                                                                                     class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b"
+                                                                                                     data-rel="back"
+                                                                                                     data-transition="flow">Cancel</a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="divMerchantForm">
+                    <label for="txtMerchantCode">Merchant Code</label>
+                    <input type="text" name="txtBillerCode" id="txtMerchantCode"
+                           placeholder="Enter merchant code e.g. 12345"
+                           value="">
+
+
+                    <label for="txtMerchantAmount">Amount</label>
+                    <div class="input-with-icon">
+                        <input placeholder="Enter amount e.g. 0.56 or 2" type="tel" id="txtMerchantAmount"
+                               inputmode="numeric"/>
+                        <i class="fa fa-dollar dollar-icon" aria-hidden="true"></i>
+                    </div>
+
+                    <a href="#ppPayMerchantConfirm" style="margin-top: 20px;" data-rel="popup" data-position-to="window"
+                       data-transition="pop"
+                       class="ui-btn ui-corner-all"><i
+                            class="fa fa-arrow-circle-down" aria-hidden="true"></i>&nbsp;&nbsp;Make payment
+                    </a>
+                    <div data-role="popup" id="ppPayMerchantConfirm" data-overlay-theme="b" data-theme="b"
+                         data-dismissible="false"
+                         style="max-width:400px;">
+                        <div data-role="header" data-theme="a"><h1>Confirm</h1></div>
+                        <div role="main" class="ui-content">
+                            <p>You are proceeding to pay amount <b>$3</b> to merchant <b>Pick 'n' Pay</b>.<br/><br/>Proceed?
+                            </p> <a href="#"
+                                    class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b"
+                                    data-rel="back">Proceed</a> <a href="#"
+                                                                   class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b"
+                                                                   data-rel="back"
+                                                                   data-transition="flow">Cancel</a>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div id="divPayOnlineForm">
+
+                    <p>A one time password (OTP) <a
+                            href="#ppOTPDefinition"
+                            data-rel="popup"><i
+                            class="fa fa-info-circle icon-font-size-small" aria-hidden="true"></i></a> will be generated
+                        to initiate your online payment. The OTP will be
+                        usable in the next 30 minutes only and will be valid for 24 hours.</p>
+
+                    <div data-role="popup" id="ppOTPDefinition">
+                        <p>An OTP is a password that is valid for only one
+                            login session or transaction.</p>
+                    </div>
+
+                    <a href="#ppInitiateOnlinePayment" style="margin-top: 20px;" data-rel="popup"
+                       data-position-to="window"
+                       data-transition="pop"
+                       class="ui-btn ui-corner-all"><i
+                            class="fa fa-arrow-circle-down" aria-hidden="true"></i>&nbsp;&nbsp;Generate OTP
+                    </a>
+                    <div data-role="popup" id="ppInitiateOnlinePayment" data-overlay-theme="b" data-theme="b"
+                         data-dismissible="false"
+                         style="max-width:400px;">
+                        <div data-role="header" data-theme="a"><h1>Confirm</h1></div>
+                        <div role="main" class="ui-content">
+                            <p>You are proceeding to initiate an online payment. <br/><br/>Proceed?
+                            </p> <a href="#"
+                                    class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b"
+                                    data-rel="back">Proceed</a> <a href="#"
+                                                                   class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b"
+                                                                   data-rel="back"
+                                                                   data-transition="flow">Cancel</a>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+
+</section>
+
+<!-------------------------------------    Template ------------------------------------------------>
+<section data-role="page" class="ui-page-theme-a">
+    <header data-role="header" class="ui-bar" data-position="fixed">
+        <div class="align-text-center header-text-with-logo-padding">
+            <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
+                    class="fa  fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
+            <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
+            <h1 class="header-text-with-logo">&nbsp;Title</h1>
+        </div>
+    </header>
+    <div data-role="main" class="ui-content">
+
+
+    </div>
+</section>
+
+
+
+
 
 <!-- END -->
 
@@ -559,7 +741,7 @@
     </div>
 </section>
 
-
+<!--------------------------------------- Test Tabs  ---------------------------------------------->
 <section data-role="page" id="tbPage">
     <header data-role="header" class="ui-bar" data-position="fixed">
         <div class="align-text-center header-text-with-logo-padding">
