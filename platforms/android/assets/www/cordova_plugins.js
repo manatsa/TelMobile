@@ -75,6 +75,14 @@ module.exports = [
     "file": "plugins/es6-promise-plugin/www/promise.js",
     "pluginId": "es6-promise-plugin",
     "runs": true
+  },
+  {
+    "id": "cordova-plugin-splashscreen.SplashScreen",
+    "file": "plugins/cordova-plugin-splashscreen/www/splashscreen.js",
+    "pluginId": "cordova-plugin-splashscreen",
+    "clobbers": [
+      "navigator.splashscreen"
+    ]
   }
 ];
 module.exports.metadata = 
@@ -87,7 +95,8 @@ module.exports.metadata =
   "cordova-plugin-network-information": "1.3.3",
   "cordova-plugin-x-socialsharing": "5.2.1",
   "cordova-plugin-x-toast": "2.6.0",
-  "es6-promise-plugin": "4.1.0"
+  "es6-promise-plugin": "4.1.0",
+  "cordova-plugin-splashscreen": "4.0.3"
 };
 // BOTTOM OF METADATA
 });

@@ -1,49 +1,605 @@
 <!DOCTYPE html>
-<!--
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
 
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
 <html>
-    <head>
-        <!--
-        Customize this policy to fit your own app's needs. For more guidance, see:
-            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
-        Some notes:
-            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
-            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
-            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
-                * Enable inline JS: add 'unsafe-inline' to default-src
-        -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
-        <meta name="format-detection" content="telephone=no">
-        <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-        <link rel="stylesheet" type="text/css" href="css/index.css">
-        <title>Hello World</title>
-    </head>
-    <body>
-        <div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
+<head>
+
+    <!--Metadata-->
+    <meta name="viewport"
+          content="user-scalable=yes, initial-scale=1, maximum-scale=1, minimum-scale=1,height=device-height, width=device-width">
+    <!--Custom stylesheet-->
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <!--Jquery stylesheets-->
+    <link rel="stylesheet" type="text/css" href="css/jquery.mobile.icons-1.4.5.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery.mobile.structure-1.4.5.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery.mobile.theme-1.4.5.css">
+    <!--Themes stylesheet-->
+    <link rel="stylesheet" href="css/telecel-theme.css">
+    <!--Stylesheet for font icons-->
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.css">
+    <!--Custom stylesheet-->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!--JQuery javascript-->
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="js/nestedlists.js"></script>
+    <script src="js/tabs-fix.js"></script>
+
+</head>
+<body>
+
+<!-----------------------------------------------------   Login Page   ---------------------------------------------------------->
+<section data-role="page" class="ui-page-theme-a" id="login_page">
+    <header data-role="header" class="ui-bar" data-position="fixed">
+        <div class="align-text-center header-text-with-logo-padding">
+            <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
+            <h1 class="header-text-with-logo">&nbsp;Login</h1>
+        </div>
+    </header>
+    <div data-role="main" class="ui-panel-page-container-e">
+        <img src="img/page_images/register/register.png" class="ui-full-width"/>
+        <div align="center">
+
+            <form id="login-form" action="" method="get">
+                <div class="full-screen-width-padding">
+                    <fieldset data-role="fieldcontain">
+                        <input type="tel" id="txtMSISDN" required="required" inputmode="numeric"
+                               placeholder="Enter mobile number e.g. 0732123123" class="ui-full-width"/>
+                    </fieldset>
+                    <fieldset data-role="fieldcontain" style="text-align: center;">
+                        <input type="password" id="txtLoginPIN" required="required" pattern="[0-9][0-9][0-9][0-9]"
+                               inputmode="numeric" placeholder="Enter PIN number" class="ui-full-width"/>
+                    </fieldset>
+
+                    <a data-transition="flip" href="#" id="btnLogin" style="margin-top: 20px;"
+                       class="ui-btn ui-btn-c ui-corner-all">Login</a>
+                    <a data-transition="flip" href="#" id="btnOpenRegister"
+                       style="margin-top: 10px; display: inline-block;"><u>Not
+                        registered?</u></a>
+                </div>
+
+            </form>
+        </div>
+    </div>
+    <div class="add-btn-dlg-panel" title="Add new attribute value">
+        <div id="attrib-type-input">
+            <select id="attrib-type-sel"></select>
+        </div>
+
+        <div id="attrib-value-input"></div>
+
+        <div id="add-config-dlg-btn-panel">
+            <input id="add-config-dlg-ok-btn" type="button" value="OK"/>
+            <input id="add-config-dlg-cancel-btn" type="button" value="Cancel"/>
+        </div>
+    </div>
+</section>
+
+<!-------------------------------------------  Register Page --------------------------------------------------->
+
+<section data-role="page" class="ui-page-theme-a" id="pgRegister">
+    <header data-role="header" class="ui-bar" data-position="fixed">
+        <div class="align-text-center header-text-with-logo-padding">
+            <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
+                    class="fa  fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
+            <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
+            <h1 class="header-text-with-logo">&nbsp;Register</h1>
+        </div>
+    </header>
+    <div data-role="main">
+
+        <form id="reg-form">
+            <div class="full-screen-width-padding align-text-center">
+                <fieldset data-role="fieldcontain">
+                    <input type="tel" id="txtRegisterMSISDN" required="required" inputmode="numeric"
+                           placeholder="Enter mobile number e.g. 0732123123" class="ui-full-width"/>
+                </fieldset>
+                <fieldset data-role="fieldcontain">
+                    <input type="tel" id="txtRegisterEmail" required="required" inputmode="numeric"
+                           placeholder="Enter email e.g. you@telecel.com" class="ui-full-width"/>
+                    <span class="float-left align-text-left red-text">Y<span class="lowercase">our e-mail is required for authentication in case you forget your PIN.</span></span>
+                </fieldset>
+
+                <fieldset data-role="fieldcontain" style="text-align: center;">
+                    <input type="password" id="txtRegisterPIN" required="required" pattern="[0-9][0-9][0-9][0-9]"
+                           inputmode="numeric" placeholder="Enter a 4 digit PIN number" class="ui-full-width"/>
+                </fieldset>
+                <fieldset data-role="fieldcontain" style="text-align: center;">
+                    <input type="password" id="txtRegisterPINRepeat" required="required" pattern="[0-9][0-9][0-9][0-9]"
+                           inputmode="numeric" placeholder="Repeat your 4 digit PIN number" class="ui-full-width"/>
+                </fieldset>
+
+                <a data-transition="flip" href="#" id="btnRegister" style="margin-top: 20px;"
+                   class="ui-btn ui-btn-c ui-corner-all">Register</a>
+                <a data-transition="flip" href="#login_page" style="margin-top: 10px; display: inline-block;"><u>Already
+                    have an
+                    account?</u></a>
+            </div>
+
+        </form>
+
+    </div>
+</section>
+
+<!----------------------------------------   Main Page/Start Page ---------------------------------------------------->
+<section data-role="page" class="ui-page-theme-a" id="pgMain">
+    <header data-role="header" class="ui-bar" data-position="fixed">
+        <div class="align-text-center header-text-with-logo-padding">
+            <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
+            <h1 class="header-text-with-logo">&nbsp;Telecel</h1>
+        </div>
+    </header>
+    <div data-role="main" class="ui-content">
+        <div id="divMainMenu">
+
+            <a data-transition="flip" href="#products_services_main">
+                <div class="custom-ui-block-a div-red-background div-rounded-corners align-text-center menu-icons-margin">
+                    <img class="main-menu-icon" src="img/menu_icons/products.png"/>
+                    <p>Products</p>
+                </div>
+            </a>
+
+            <a data-transition="flip" href="#pgTelecash">
+                <div class="custom-ui-block-b div-red-background div-rounded-corners align-text-center menu-icons-margin">
+                    <img class="main-menu-icon" src="img/menu_icons/telecash.png"/>
+                    <p>TeleCash</p>
+                </div>
+            </a>
+
+            <a data-transition="flip" href="#">
+                <div class="custom-ui-block-c div-red-background div-rounded-corners align-text-center menu-icons-margin">
+                    <img class="main-menu-icon" src="img/menu_icons/promotions.png"/>
+                    <p>Promotions</p>
+                </div>
+            </a>
+
+            <a data-transition="flip" href="#">
+                <div class="custom-ui-block-a div-red-background div-rounded-corners align-text-center menu-icons-margin">
+                    <img class="main-menu-icon" src="img/menu_icons/request.png"/>
+                    <p>Send a request</p>
+                </div>
+            </a>
+
+            <a data-transition="flip" href="#pgStoreLocator">
+                <div class="custom-ui-block-b div-red-background div-rounded-corners align-text-center menu-icons-margin">
+                    <img class="main-menu-icon" src="img/menu_icons/locations.png"/>
+                    <p>Store locator</p>
+                </div>
+            </a>
+
+            <a data-transition="flip" href="#">
+                <div class="custom-ui-block-c div-red-background div-rounded-corners align-text-center menu-icons-margin">
+                    <img class="main-menu-icon" src="img/menu_icons/contacts.png"/>
+                    <p>Contact us</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-------------------------------------    Products and Services Main Page   ------------------------------------------------>
+
+<section data-role="page" id="products_services_main" class="ui-page-theme-a">
+    <header data-role="header" class="ui-bar" data-position="fixed">
+        <div class="align-text-center header-text-with-logo-padding">
+            <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
+                    class="fa  fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
+            <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
+            <h1 class="header-text-with-logo">&nbsp;Products and Services</h1>
+        </div>
+    </header>
+    <div data-role="main" class="ui-content">
+
+        <ul data-role="listview" data-inset="true">
+            <li>
+                <a data-transition="flip" href="#pgBalances">Balance check
+                    <p class="initcap">Tap to select which balance to check</p>
+                </a>
+            </li>
+            <li>
+                <a data-transition="flip" href="#pgBundlesPurchase">Buy product
+                    <p class="initcap">Tap to purchase a product or service</p>
+                </a>
+            </li>
+            <li>
+                <a data-transition="flip" href="#pgUnsubscribe">Unsubscribe from product
+                    <p class="initcap">Tap to unsubscribe from a product</p>
+                </a>
+            </li>
+        </ul>
+
+    </div>
+</section>
+
+<!-------------------------------------    Balances check   ------------------------------------------------>
+<section data-role="page" id="pgBalances" class="ui-page-theme-a">
+    <header data-role="header" class="ui-bar" data-position="fixed">
+        <div class="align-text-center header-text-with-logo-padding">
+            <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
+                    class="fa  fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
+            <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
+            <h1 class="header-text-with-logo">&nbsp;Balance</h1>
+        </div>
+    </header>
+
+    <div class="ui-body-d ui-content div-red-background align-text-center">
+        <h1 style=" font-size: 48pt !important;">$6.32&nbsp;<a style="color: #fff;" href="#ppAirtimeDefinition"
+                                                               data-rel="popup"><i
+                class="fa fa-info-circle icon-font-size-small" aria-hidden="true"></i></a></h1>
+        <span style="font-size: 9pt;" class="initcap">Available airtime</span>
+
+        <h1 style="margin-top: 20px; font-size: 15pt  !important;">3 Products&nbsp;<a style="color: #fff;"
+                                                                                      href="#pgProductsDefinition"
+                                                                                      data-rel="popup"><i
+                class="fa fa-info-circle icon-font-size-small" aria-hidden="true"></i></a></h1>
+        <span style="font-size: 9pt;" class="initcap">The products and services you are subscribed to</span>
+    </div>
+    <div data-role="popup" id="ppAirtimeDefinition">
+        <p>This is your core airtime balance.</p>
+    </div>
+    <div data-role="popup" id="pgProductsDefinition">
+        <p>This is your core airtime balance.</p>
+    </div>
+
+    <div style="padding-top: 3px; padding-bottom: 3px;" class="div-grey-background align-text-center">
+        <p style="margin: 0 !important; display: inline-block; text-align: center; text-transform: capitalize; font-weight: bold;">
+            Re-activation benefits</p>
+        <table class="initcap ui-body-d ui-full-width" style="margin-top: -1px;">
+            <thead>
+            <tr class="ui-bar-d">
+                <th style="width: 33.3%">SMS</th>
+                <th style="width: 33.3%">Voice</th>
+                <th style="width: 33.3%">Data</th>
+            </tr>
+            </thead>
+            <tr>
+                <td>5 SMSs</td>
+                <td>2 minutes</td>
+                <td>2MB</td>
+            </tr>
+        </table>
+    </div>
+
+    <div data-role="popup" id="pgBonusDefinition">
+        <p>This is your core airtime balance.</p>
+    </div>
+
+    <div data-role="main" class="ui-content">
+
+        <div data-role="collapsibleset">
+
+            <div data-role="collapsible" data-collapsed-icon="carat-d"
+                 data-expanded-icon="carat-u">
+                <h4>Whatsapp Weekly</h4>
+                <table data-role="table" class="ui-body-d ui-responsive">
+                    <thead>
+                    <tr class="ui-bar-d">
+                        <th>Balance</th>
+                        <th>Expiry Date</th>
+                    </tr>
+                    </thead>
+                    <tr>
+                        <td>5 SMSs left</td>
+                        <td>12 Septermber 2017</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                <h4>SMS Weekly</h4>
+                <table data-role="table" class="ui-body-d ui-responsive">
+                    <thead>
+                    <tr class="ui-bar-d">
+                        <th>Balance</th>
+                        <th>Expiry Date</th>
+                    </tr>
+                    </thead>
+                    <tr>
+                        <td>5 SMSs left</td>
+                        <td>12 Septermber 2017</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                <h4>MegaBoost</h4>
+                <table data-role="table" class="ui-body-d ui-responsive">
+                    <thead>
+                    <tr class="ui-bar-d">
+                        <th>Balance</th>
+                        <th>Expiry Date</th>
+                    </tr>
+                    </thead>
+                    <tr>
+                        <td>5 SMSs left</td>
+                        <td>12 Septermber 2017</td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-------------------------------------    Bundles purchases   ------------------------------------------------>
+<section data-role="page" id="pgBundlesPurchase" class="ui-page-theme-a">
+    <header data-role="header" class="ui-bar" data-position="fixed">
+        <div class="align-text-center header-text-with-logo-padding">
+            <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
+                    class="fa  fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
+            <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
+            <h1 class="header-text-with-logo">&nbsp;Products</h1>
+        </div>
+    </header>
+    <div data-role="main" class="ui-content">
+
+        <form>
+
+            <div data-role="navbar" data-grid="c">
+                <ul class="tabs-corners">
+                    <li><a href="#" class="ui-btn-b ui-btn-active tabs-corners-first-child">Voice</a></li>
+                    <li><a href="#" class="ui-btn-b">Data</a></li>
+                    <li><a href="#" class="ui-btn-b">Social</a></li>
+                    <li><a class="tabs-corners-last-child ui-btn-b" href="#">SMS</a></li>
+                </ul>
+            </div>
+
+            <fieldset>
+
+                <div id="divDataBundles">
+                    <select id="cboBuyDataProduct">
+                        <option disabled selected>Select a data bundle product</option>
+                        <option value="M">Mega Boost Bundles</option>
+                        <option value="N">Night Bundles</option>
+                        <option value="C">Data Bundles</option>
+                        <option value="T">Telecel Wifi Bundles</option>
+                    </select>
+                </div>
+
+                <div id="divSocialBundles">
+                    <select id="cboBuySocialProduct">
+                        <option disabled selected>Select a social bundle product</option>
+                        <option value="W">WhatsApp Bundles</option>
+                        <option value="F">Facebook Bundles</option>
+                    </select>
+                </div>
+
+                <div id="divVoiceBundles">
+                    <select id="cboBuyVoiceProduct">
+                        <option disabled selected>Select a voice bundle product</option>
+                        <option value="D">International Voice Bundles</option>
+                        <option value="D">Cross-Net Bundles</option>
+                    </select>
+                </div>
+
+                <div id="divSMSBundles">
+                    <select id="cboBuySMSProduct">
+                        <option value="S">SMS Bundles</option>
+\                    </select>
+                </div>
+
+                <span id="lblBundleDescription" class="initcap hidden"></span>
+            </fieldset>
+
+            <fieldset>
+                <select id="cboBundleOptions">
+                </select>
+            </fieldset>
+
+            <div class="divBuyForOptions ui-grid-a" data-role="controlgroup" data-type="vertical">
+                <label id="lblOptionForSelf" for="rdrOptionSelf">Buy for self
+                </label>
+                <input type="radio" name="shape" id="rdrOptionSelf" value="circle" checked>
+                <label id="lblOptionForOther" for="rdrOptionOther">Buy for other
+                </label>
+                <input type="radio" name="shape" id="rdrOptionOther" value="square">
+            </div>
+
+            <br>
+
+            <div id="divBundleForNumber" class="input-with-icon">
+                <input type="tel" id="txtBundleForNumber" inputmode="numeric"/>
+                <i class="fa fa-mobile input-icon" aria-hidden="true"></i>
+            </div>
+
+            <div style="clear: both;">
+                <p class="align-text-center" style="margin-bottom: 0px">Purchase from</p>
+                <button style="width: 49%; display: inline-block; float: left;"
+                        class="ui-button ui-widget ui-corner-all uppercase"><i class="fa fa-arrow-circle-down"
+                                                                               aria-hidden="true"></i>&nbsp;&nbsp;Core
+                </button>
+                <button style="width: 49%; display: inline-block; float: right;"
+                        class="ui-button ui-widget ui-corner-all uppercase"><i class="fa fa-arrow-circle-down"
+                                                                               aria-hidden="true"></i>&nbsp;&nbsp;TeleCash
+                </button>
+            </div>
+
+        </form>
+
+    </div>
+</section>
+
+<!-------------------------------------    Unsubscribe bundle   ------------------------------------------------>
+<section data-role="page" id="pgUnsubscribe" class="ui-page-theme-a">
+    <header data-role="header" class="ui-bar" data-position="fixed">
+        <div class="align-text-center header-text-with-logo-padding">
+            <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
+                    class="fa  fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
+            <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
+            <h1 class="header-text-with-logo">&nbsp;Unsubscribe</h1>
+        </div>
+    </header>
+    <div data-role="main" class="ui-content">
+
+        <form>
+
+            <fieldset>
+                <select id="cboUnsubscribeProduct">
+                    <option disabled selected>Select a product</option>
+                    <option value="W">WhatsApp Bundles</option>
+                    <option>Facebook Bundles</option>
+                    <option>Mega Boost Bundles</option>
+                    <option>Night Bundles</option>
+                    <option>Data Bundle</option>
+                </select>
+            </fieldset>
+
+            <a href="#popupDialog" data-rel="popup" data-position-to="window" data-transition="pop"
+               class="ui-btn ui-corner-all"><i
+                    class="fa fa-ban" aria-hidden="true"></i>&nbsp;&nbsp;Unsubscribe
+            </a>
+            <div data-role="popup" id="popupDialog" data-overlay-theme="b" data-theme="b" data-dismissible="false"
+                 style="max-width:400px;">
+                <div data-role="header" data-theme="a"><h1>Unsubscribe?</h1></div>
+                <div role="main" class="ui-content"><h3 class="ui-title">Are you sure you want to unsubscribe from this
+                    bundle?</h3>
+                    <p>This action cannot be undone.</p> <a href="#"
+                                                            class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b"
+                                                            data-rel="back">Unsubscribe</a> <a href="#"
+                                                                                               class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b"
+                                                                                               data-rel="back"
+                                                                                               data-transition="flow">Cancel</a>
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+</section>
+
+<!-------------------------------------    Store Locator   ------------------------------------------------>
+<section data-role="page" id="pgStoreLocator" class="ui-page-theme-a">
+    <header data-role="header" class="ui-bar" data-position="fixed">
+        <div class="align-text-center header-text-with-logo-padding">
+            <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
+                    class="fa  fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
+            <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
+            <h1 class="header-text-with-logo">&nbsp;Our stores</h1>
+        </div>
+    </header>
+    <div data-role="main" class="ui-content">
+
+        <ul data-role="listview">
+            <li><a data-transition="flip" href="#">Store 1</a></li>
+            <li><a data-transition="flip" href="#">Store 2</a></li>
+            <li><a data-transition="flip" href="#">Store 3</a></li>
+        </ul>
+
+    </div>
+</section>
+
+<!-------------------------------------    Telecash   ------------------------------------------------>
+<section data-role="page" id="pgTelecash" class="ui-page-theme-a">
+    <header data-role="header" class="ui-bar" data-position="fixed">
+        <div class="align-text-center header-text-with-logo-padding">
+            <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
+                    class="fa fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
+            <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
+            <h1 class="header-text-with-logo">&nbsp;Telecash</h1>
+        </div>
+    </header>
+    <div data-role="main" class="ui-content">
+
+        <ul data-inset="true" data-role="listview">
+            <li>
+                <a data-transition="flip" href="#pgBalances">Bill Payment
+                    <p class="initcap">Make a payment for a bill</p>
+                </a>
+            </li>
+            <li>
+                <a data-transition="flip" href="#pgBalances">Cash Out
+                    <p class="initcap">Withdraw cash from an agent</p>
+                </a>
+            </li>
+            <li>
+                <a data-transition="flip" href="#pgBalances">Send money
+                    <p class="initcap">Send money to another user</p>
+                </a>
+            </li>
+            <li>
+                <a data-transition="flip" href="#pgBalances">Banking services
+                    <p class="initcap">Access and manage your bank accounts</p>
+                </a>
+            </li>
+            <li>
+                <a data-transition="flip" href="#pgBalances">Online payment
+                    <p class="initcap">Pay on the internet using Telecash</p>
+                </a>
+            </li>
+            <li>
+                <a data-transition="flip" href="#pgBalances">Pay merchant
+                    <p class="initcap">Pay a merchant to obtain commodities</p>
+                </a>
+            </li>
+            <li>
+                <a data-transition="flip" href="#pgBalances">Card Management
+                    <p class="initcap">Manage your card details and settings</p>
+                </a>
+            </li>
+        </ul>
+
+    </div>
+</section>
+
+<!-- END -->
+
+<!-- T&Cs Dialog  -->
+<section data-role="page" data-rel="dialog" id="tcsDialog">
+    <header data-role="header" style="height: 40px;" class="ui-bar" data-position="fixed">
+        <div class="align-text-center header-text-with-logo-padding">
+            <h1>Terms & Conditions</h1>
+        </div>
+    </header>
+    <div data-role="main" class="ui-content">
+        <div id="tcsDiv">
+            TCs
+        </div>
+    </div>
+</section>
+
+
+<section data-role="page" id="tbPage">
+    <header data-role="header" class="ui-bar" data-position="fixed">
+        <div class="align-text-center header-text-with-logo-padding">
+            <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
+                    class="fa fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
+            <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
+            <h1 class="header-text-with-logo">&nbsp;Telecash</h1>
+        </div>
+    </header>
+    <div data-role="main" class="ui-content">
+        <div data-role="tabs">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#tab1">Tab 1</a> </li>
+                    <li><a href="#tab2">Tab 2</a> </li>
+                    <li><a href="#tab3">Tab 3</a> </li>
+                </ul>
+            </div>
+            <div id="tab1" class="ui-content">
+                <h1>tab 1</h1>
+            </div>
+            <div id="tab2" class="ui-content">
+                <h1>tab 2</h1>
+            </div>
+            <div id="tab3" class="ui-content">
+                <h1>tab 3</h1>
             </div>
         </div>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-    </body>
+    </div>
+</section>
+
+<script type="text/javascript" src="cordova.js"></script>
+
+<!--Custom javascript by page-->
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/login.js"></script>
+<script type="text/javascript" src="js/register.js"></script>
+<script type="text/javascript" src="js/balance.js"></script>
+<script type="text/javascript" src="js/RestTest.js"></script>
+<script type="text/javascript" src="js/bundlespurchase.js"></script>
+
+</body>
 </html>

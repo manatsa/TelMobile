@@ -22,6 +22,8 @@
     <!--JQuery javascript-->
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="js/nestedlists.js"></script>
+    <script src="js/tabs-fix.js"></script>
 
 </head>
 <body>
@@ -335,28 +337,51 @@
 
         <form>
 
-            <div data-role="navbar" data-grid="b">
+            <div data-role="navbar" data-grid="c">
                 <ul class="tabs-corners">
                     <li><a href="#" class="ui-btn-b ui-btn-active tabs-corners-first-child">Voice</a></li>
                     <li><a href="#" class="ui-btn-b">Data</a></li>
+                    <li><a href="#" class="ui-btn-b">Social</a></li>
                     <li><a class="tabs-corners-last-child ui-btn-b" href="#">SMS</a></li>
                 </ul>
             </div>
 
             <fieldset>
-                <select id="cboBuyBundleProduct">
-                    <option disabled selected>Select a product</option>
-                    <option>Airtime</option>
-                    <option value="W">WhatsApp Bundles</option>
-                    <option>Facebook Bundles</option>
-                    <option>Mega Boost Bundles</option>
-                    <option>Night Bundles</option>
-                    <option>Data Bundle</option>
-                </select>
+
+                <div id="divDataBundles">
+                    <select id="cboBuyDataProduct">
+                        <option disabled selected>Select a data bundle product</option>
+                        <option value="M">Mega Boost Bundles</option>
+                        <option value="N">Night Bundles</option>
+                        <option value="C">Data Bundles</option>
+                        <option value="T">Telecel Wifi Bundles</option>
+                    </select>
+                </div>
+
+                <div id="divSocialBundles">
+                    <select id="cboBuySocialProduct">
+                        <option disabled selected>Select a social bundle product</option>
+                        <option value="W">WhatsApp Bundles</option>
+                        <option value="F">Facebook Bundles</option>
+                    </select>
+                </div>
+
+                <div id="divVoiceBundles">
+                    <select id="cboBuyVoiceProduct">
+                        <option disabled selected>Select a voice bundle product</option>
+                        <option value="D">International Voice Bundles</option>
+                        <option value="D">Cross-Net Bundles</option>
+                    </select>
+                </div>
+
+                <div id="divSMSBundles">
+                    <select id="cboBuySMSProduct">
+                        <option value="S">SMS Bundles</option>
+\                    </select>
+                </div>
+
                 <span id="lblBundleDescription" class="initcap hidden"></span>
             </fieldset>
-
-            <br>
 
             <fieldset>
                 <select id="cboBundleOptions">
@@ -530,6 +555,38 @@
     <div data-role="main" class="ui-content">
         <div id="tcsDiv">
             TCs
+        </div>
+    </div>
+</section>
+
+
+<section data-role="page" id="tbPage">
+    <header data-role="header" class="ui-bar" data-position="fixed">
+        <div class="align-text-center header-text-with-logo-padding">
+            <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
+                    class="fa fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
+            <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
+            <h1 class="header-text-with-logo">&nbsp;Telecash</h1>
+        </div>
+    </header>
+    <div data-role="main" class="ui-content">
+        <div data-role="tabs">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#tab1">Tab 1</a> </li>
+                    <li><a href="#tab2">Tab 2</a> </li>
+                    <li><a href="#tab3">Tab 3</a> </li>
+                </ul>
+            </div>
+            <div id="tab1" class="ui-content">
+                <h1>tab 1</h1>
+            </div>
+            <div id="tab2" class="ui-content">
+                <h1>tab 2</h1>
+            </div>
+            <div id="tab3" class="ui-content">
+                <h1>tab 3</h1>
+            </div>
         </div>
     </div>
 </section>

@@ -15,6 +15,15 @@ $(document).on({
     }
 });
 
+
+$(document).on("deviceready",function () {
+    $.mobile.changePage("#tbPage")
+})
+
+
+
+
+
 function loading(showOrHide) {
     setTimeout(function () {
         $.mobile.loading(showOrHide);
