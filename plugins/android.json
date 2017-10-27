@@ -30,6 +30,9 @@
         },
         "cordova-plugin-splashscreen": {
             "PACKAGE_NAME": "mobile.telecel.co.zw"
+        },
+        "cordova-plugin-nativestorage": {
+            "PACKAGE_NAME": "mobile.telecel.co.zw"
         }
     },
     "dependent_plugins": {

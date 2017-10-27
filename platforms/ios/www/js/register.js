@@ -1,7 +1,10 @@
+
+var prefs=plugins.preferences;
 $("#btnRegister").on("click", function () {
-    var phone = $("#msisdnRegText").val();
-    var pin1 = $("#pinRegText").val();
-    var pin2 = $("#pinRegText2").val();
+    var phone = $("#txtRegisterMSISDN").val();
+    var pin1 = $("#txtRegisterPIN").val();
+    var pin2 = $("#txtRegisterPINRepeat").val();
+    var email=$("#txtRegisterEmail").val();
     var phoneint;
     try {
         phoneint = parseInt(phone);
@@ -11,17 +14,35 @@ $("#btnRegister").on("click", function () {
     if (phone.length === 10 || phone.startsWith("073") && !isNaN(phone) && phoneint > 0) {
         try {
 
-            if (pin1 && pin2 && pin1.length == 4 && (pin1 === pin2)) {
+            if (pin1 && pin2 && pin1.length == 4 && (pin1 == pin2)) {
 
                 try {
                     var pin = parseInt(pin1);
-// do more here ---------------------------------------------------------------
+// do more here --------------------------------------------------------------- now persisting login details
+                        try{
+                            if(email)
+                            {
+                                prefs.store("msisdn",phone);
+                                prefs.store("email",email);
+                                prefs.store("pin",pin);
+                                navigator.notification.alert("Your registration was successful!", function () {
+                                }, "Registration", "OK")
+                                $.mobile.changePage("#login_page")
+                            }else{
+                                navigator.notification.alert("Your email is not valid", function () {
+                                }, "Invalid Pin Characters", "OK")
+                            }
 
+
+                        }catch(e){
+                            navigator.notification.alert("Error :"+e, function () {
+                            }, "Error Saving Details", "OK")
+                        }
 
 //-----------------------------------------------------------------------------
                     alert(phone)
                 } catch (error) {
-                    navigator.notification.alert("Your need to enter a 4-digit pin", function () {
+                    navigator.notification.alert("You need to enter a 4-digit pin", function () {
                     }, "Invalid Pin Characters", "OK")
                 }
             }

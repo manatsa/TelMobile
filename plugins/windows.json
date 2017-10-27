@@ -30,6 +30,9 @@
         },
         "cordova-plugin-splashscreen": {
             "PACKAGE_NAME": "HelloCordova"
+        },
+        "cordova-plugin-nativestorage": {
+            "PACKAGE_NAME": "HelloCordova"
         }
     },
     "dependent_plugins": {

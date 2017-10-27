@@ -34,6 +34,7 @@
 		50FF2B9E26354120925A004A /* Toast+UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2481A60EA3544084AC4BAF12 /* Toast+UIView.m */; };
 		B76922B71AEF4D429D12DA27 /* Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA945FA83ED4FE1B1F73A7F /* Toast.m */; };
 		091CB5A9ACB7472F8B267306 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB4C6E72674A4442B1D2AFAC /* QuartzCore.framework */; };
+		4147D99747034D6DAF026C5C /* NativeStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = CE5B98597B9B451393B46CFC /* NativeStorage.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +104,8 @@
 		4315B5B1EA3D410D9F2C70A1 /* Toast+UIView.h */ = {isa = PBXFileReference; name = "Toast+UIView.h"; path = "cordova-plugin-x-toast/Toast+UIView.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 		256251F22B2A4E97B08DADEB /* Toast.h */ = {isa = PBXFileReference; name = "Toast.h"; path = "cordova-plugin-x-toast/Toast.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 		BB4C6E72674A4442B1D2AFAC /* QuartzCore.framework */ = {isa = PBXFileReference; name = "QuartzCore.framework"; path = "System/Library/Frameworks/QuartzCore.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		CE5B98597B9B451393B46CFC /* NativeStorage.m */ = {isa = PBXFileReference; name = "NativeStorage.m"; path = "cordova-plugin-nativestorage/NativeStorage.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		A81C27228D844927B6A729DA /* NativeStorage.h */ = {isa = PBXFileReference; name = "NativeStorage.h"; path = "cordova-plugin-nativestorage/NativeStorage.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,6 +244,8 @@
 				EAA945FA83ED4FE1B1F73A7F /* Toast.m */,
 				4315B5B1EA3D410D9F2C70A1 /* Toast+UIView.h */,
 				256251F22B2A4E97B08DADEB /* Toast.h */,
+				CE5B98597B9B451393B46CFC /* NativeStorage.m */,
+				A81C27228D844927B6A729DA /* NativeStorage.h */,
 			);
 			name = Plugins;
 			path = "Telecel/Plugins";
@@ -365,6 +370,7 @@
 				BFEA7CD946F9416DAE2B7C78 /* SocialSharing.m in Sources */,
 				50FF2B9E26354120925A004A /* Toast+UIView.m in Sources */,
 				B76922B71AEF4D429D12DA27 /* Toast.m in Sources */,
+				4147D99747034D6DAF026C5C /* NativeStorage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

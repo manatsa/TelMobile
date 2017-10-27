@@ -23,7 +23,6 @@ $(document).on("deviceready",function () {
 
 
 
-
 function loading(showOrHide) {
     setTimeout(function () {
         $.mobile.loading(showOrHide);

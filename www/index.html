@@ -77,7 +77,7 @@
 
 <!-------------------------------------------  Register Page --------------------------------------------------->
 
-<section data-role="page" class="ui-page-theme-a" id="pgRegister">
+<section data-role="page" data-rel="dialog" class="ui-page-theme-a" id="pgRegister">
     <header data-role="header" class="ui-bar" data-position="fixed">
         <div class="align-text-center header-text-with-logo-padding">
             <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
@@ -95,7 +95,7 @@
                            placeholder="Enter mobile number e.g. 0732123123" class="ui-full-width"/>
                 </fieldset>
                 <fieldset data-role="fieldcontain">
-                    <input type="tel" id="txtRegisterEmail" required="required" inputmode="numeric"
+                    <input type="email" id="txtRegisterEmail" required="required" inputmode="numeric"
                            placeholder="Enter email e.g. you@telecel.com" class="ui-full-width"/>
                     <span class="float-left align-text-left red-text">Y<span class="lowercase">our e-mail is required for authentication in case you forget your PIN.</span></span>
                 </fieldset>
