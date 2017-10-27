@@ -55,10 +55,10 @@
                        class="ui-btn ui-btn-c ui-corner-all">Login</a>
                     <div class="ui-grid-a">
                         <div class="ui-block-a">
-                            <a data-transition="flip" data-rel="dialog" href="#pgForgotPassword" class="initcap" id="btnForgotPassword" style="margin-top: 10px; display: inline-block; font-size: x-small; "><u>Forgot Password</u></a>
+                            <a data-transition="flip" href="#pgForgotPassword" class="initcap" id="btnForgotPassword" style="margin-top: 10px; display: inline-block; font-size: x-small; "><u>Forgot Password</u></a>
                         </div>
                         <div class="ui-block-b">
-                            <a data-transition="flip" href="#login_page" id="btnOpenRegister" style="margin-top: 10px; display: inline-block;"><u>Not Registered</u></a>
+                            <a data-transition="flip" href="#pgRegister" id="btnOpenRegister" style="margin-top: 10px; display: inline-block;"><u>Not Registered</u></a>
                         </div>
 
                     </div>
@@ -83,7 +83,7 @@
 </section>
 
 <!-----------------------------------------------------  Forgot Password  ----------------------------------------------------->
-<section data-role="page" data-rel="dialog"  id="pgForgotPassword" class="ui-page-theme-a">
+<section data-role="page"   id="pgForgotPassword" class="ui-page-theme-a">
     <header data-role="header" class="ui-bar" data-position="fixed">
         <div class="align-text-center header-text-with-logo-padding">
             <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
@@ -93,8 +93,9 @@
         </div>
     </header>
     <div data-role="main" class="ui-content">
+        <div></div>
         <div align="center">
-            <a data-rel="dialog" data-role="button" href="#email_confirm_dialog" data-transition="turn">Send Pin To Email</a>
+            <a  data-role="button" id="email_confirm_btn">Send Pin To Email</a>
         </div>
     </div>
 </section>
@@ -800,6 +801,7 @@
 
 <!--Custom javascript by page-->
 <script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/forgotPassword.js"></script>
 <script type="text/javascript" src="js/login.js"></script>
 <script type="text/javascript" src="js/register.js"></script>
 <script type="text/javascript" src="js/balance.js"></script>

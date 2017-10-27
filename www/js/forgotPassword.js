@@ -8,20 +8,24 @@ function sendPasswordViaEmail() {
             body:    'Good day.\n\nTelecel Mobile App Password is :'+user.pin
         });
     },function (error) {
-
+        navigator.notification.alert("Error:"+error.responseText,function () {},"ERROR GETTING DETAILS","OK")
     })
 
 }
 
 
-$("#email_confirm_dialog").on("click",function () {
+$("#email_confirm_btn").on("click",function () {
+
     navigator.notification.confirm(
         "Are you sure you want to send pin to email?",
         function (choice) {
-            alert(choice)
+            if(choice==1)
+            {
+                sendPasswordViaEmail();
+            }
 
         },
         "Confirm Sending Email",
-        ["No","Yes"]
+        ["Yes","No"]
     )
 })

@@ -21,9 +21,6 @@ $(document).on("deviceready",function () {
 })
 
 
-$(document).on('pagebeforeshow', function() {
-    alert($.mobile.activePage.attr('id'));
-});​
 
 
 function loading(showOrHide) {

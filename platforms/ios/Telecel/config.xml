@@ -39,6 +39,12 @@
     <feature name="Toast">
         <param name="ios-package" value="Toast" />
     </feature>
+    <feature name="NativeStorage">
+        <param name="ios-package" value="NativeStorage" />
+    </feature>
+    <feature name="EmailComposer">
+        <param name="ios-package" value="APPEmailComposer" />
+    </feature>
     <name>Telecel</name>
     <description>
         The zero rated Telecel Mobile App for you to manage your account from your smart device.
@@ -72,10 +78,4 @@
     <preference name="StatusBarOverlaysWebView" value="true" />
     <preference name="StatusBarStyle" value="lightcontent" />
     <preference name="StatusBarBackgroundColor" value="#c1272d" />
-    <feature name="NativeStorage">
-        <param name="ios-package" value="NativeStorage" />
-    </feature>
-    <feature name="EmailComposer">
-        <param name="ios-package" value="APPEmailComposer" />
-    </feature>
 </widget>

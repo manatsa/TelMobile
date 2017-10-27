@@ -53,11 +53,18 @@
 
                     <a data-transition="flip" href="#" id="btnLogin" style="margin-top: 20px;"
                        class="ui-btn ui-btn-c ui-corner-all">Login</a>
-                    <a data-transition="flip" href="#" id="btnOpenRegister"
-                       style="margin-top: 10px; display: inline-block;"><u>Not
-                        registered?</u></a>
-                </div>
+                    <div class="ui-grid-a">
+                        <div class="ui-block-a">
+                            <a data-transition="flip" data-rel="dialog" href="#pgForgotPassword" class="initcap" id="btnForgotPassword" style="margin-top: 10px; display: inline-block; font-size: x-small; "><u>Forgot Password</u></a>
+                        </div>
+                        <div class="ui-block-b">
+                            <a data-transition="flip" href="#login_page" id="btnOpenRegister" style="margin-top: 10px; display: inline-block;"><u>Not Registered</u></a>
+                        </div>
 
+                    </div>
+
+
+                </div>
             </form>
         </div>
     </div>
@@ -75,8 +82,26 @@
     </div>
 </section>
 
-<!-------------------------------------------  Register Page --------------------------------------------------->
+<!-----------------------------------------------------  Forgot Password  ----------------------------------------------------->
+<section data-role="page" data-rel="dialog"  id="pgForgotPassword" class="ui-page-theme-a">
+    <header data-role="header" class="ui-bar" data-position="fixed">
+        <div class="align-text-center header-text-with-logo-padding">
+            <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
+                    class="fa  fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
+            <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
+            <h1 class="header-text-with-logo">&nbsp;Title</h1>
+        </div>
+    </header>
+    <div data-role="main" class="ui-content">
+        <div align="center">
+            <a data-rel="dialog" data-role="button" href="#email_confirm_dialog" data-transition="turn">Send Pin To Email</a>
+        </div>
+    </div>
+</section>
 
+
+
+<!-------------------------------------------  Register Page --------------------------------------------------->
 <section data-role="page" data-rel="dialog" class="ui-page-theme-a" id="pgRegister">
     <header data-role="header" class="ui-bar" data-position="fixed">
         <div class="align-text-center header-text-with-logo-padding">
@@ -95,7 +120,7 @@
                            placeholder="Enter mobile number e.g. 0732123123" class="ui-full-width"/>
                 </fieldset>
                 <fieldset data-role="fieldcontain">
-                    <input type="tel" id="txtRegisterEmail" required="required" inputmode="numeric"
+                    <input type="email" id="txtRegisterEmail" required="required" inputmode="numeric"
                            placeholder="Enter email e.g. you@telecel.com" class="ui-full-width"/>
                     <span class="float-left align-text-left red-text">Y<span class="lowercase">our e-mail is required for authentication in case you forget your PIN.</span></span>
                 </fieldset>
@@ -114,6 +139,7 @@
                 <a data-transition="flip" href="#login_page" style="margin-top: 10px; display: inline-block;"><u>Already
                     have an
                     account?</u></a>
+
             </div>
 
         </form>
@@ -177,7 +203,7 @@
     </div>
 </section>
 
-<!-------------------------------------    Products and Services Main Page   ------------------------------------------------>
+<!--------------------------------------------- Products and Services Main Page   ------------------------------------------------>
 
 <section data-role="page" id="products_services_main" class="ui-page-theme-a">
     <header data-role="header" class="ui-bar" data-position="fixed">
@@ -211,7 +237,7 @@
     </div>
 </section>
 
-<!-------------------------------------    Balances check   ------------------------------------------------>
+<!---------------------------------------------    Balances check   ------------------------------------------------>
 <section data-role="page" id="pgBalances" class="ui-page-theme-a">
     <header data-role="header" class="ui-bar" data-position="fixed">
         <div class="align-text-center header-text-with-logo-padding">
@@ -491,9 +517,6 @@
 </section>
 
 <!-------------------------------------    Telecash   ------------------------------------------------>
-
-
-<!-------------------------------------    Telecash   ------------------------------------------------>
 <section data-role="page" id="pgTelecash" class="ui-page-theme-a">
     <header data-role="header" class="ui-bar" data-position="fixed">
         <div class="align-text-center header-text-with-logo-padding">
@@ -706,7 +729,7 @@
 </section>
 
 <!-------------------------------------    Template ------------------------------------------------>
-<section data-role="page" class="ui-page-theme-a">
+<!--<section data-role="page" class="ui-page-theme-a">
     <header data-role="header" class="ui-bar" data-position="fixed">
         <div class="align-text-center header-text-with-logo-padding">
             <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
@@ -719,7 +742,7 @@
 
 
     </div>
-</section>
+</section>-->
 
 
 
