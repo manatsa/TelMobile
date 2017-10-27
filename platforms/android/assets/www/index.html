@@ -55,7 +55,7 @@
                        class="ui-btn ui-btn-c ui-corner-all">Login</a>
                     <div class="ui-grid-a">
                         <div class="ui-block-a">
-                            <a data-transition="flip" data-rel="popup" href="#pgForgotPassword" class="initcap" id="btnForgotPassword" style="margin-top: 10px; display: inline-block; font-size: x-small; "><u>Forgot Password</u></a>
+                            <a data-transition="flip" data-rel="dialog" href="#pgForgotPassword" class="initcap" id="btnForgotPassword" style="margin-top: 10px; display: inline-block; font-size: x-small; "><u>Forgot Password</u></a>
                         </div>
                         <div class="ui-block-b">
                             <a data-transition="flip" href="#login_page" id="btnOpenRegister" style="margin-top: 10px; display: inline-block;"><u>Not Registered</u></a>
@@ -83,7 +83,7 @@
 </section>
 
 <!-----------------------------------------------------  Forgot Password  ----------------------------------------------------->
-<section data-role="page" data-rel="popup"  id="pgForgotPassword" class="ui-page-theme-a">
+<section data-role="page" data-rel="dialog"  id="pgForgotPassword" class="ui-page-theme-a">
     <header data-role="header" class="ui-bar" data-position="fixed">
         <div class="align-text-center header-text-with-logo-padding">
             <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
@@ -93,9 +93,13 @@
         </div>
     </header>
     <div data-role="main" class="ui-content">
-        <h1>Forgot Password</h1>
+        <div align="center">
+            <a data-rel="dialog" data-role="button" href="#email_confirm_dialog" data-transition="turn">Send Pin To Email</a>
+        </div>
     </div>
 </section>
+
+
 
 <!-------------------------------------------  Register Page --------------------------------------------------->
 <section data-role="page" data-rel="dialog" class="ui-page-theme-a" id="pgRegister">

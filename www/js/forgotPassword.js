@@ -12,3 +12,16 @@ function sendPasswordViaEmail() {
     })
 
 }
+
+
+$("#email_confirm_dialog").on("click",function () {
+    navigator.notification.confirm(
+        "Are you sure you want to send pin to email?",
+        function (choice) {
+            alert(choice)
+
+        },
+        "Confirm Sending Email",
+        ["No","Yes"]
+    )
+})
