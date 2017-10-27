@@ -1,15 +1,18 @@
 function sendPasswordViaEmail() {
-    NativeStorage.getItem("user",function (user) {
-        cordova.plugins.email.open({
-            to:      user.email,
-            cc:      '',
-            bcc:     [],
-            subject: 'Password Recovery For MSISDN :'+user.msisdn,
-            body:    'Good day.\n\nTelecel Mobile App Password is :'+user.pin
-        });
-    },function (error) {
-        navigator.notification.alert("Error:"+error.responseText,function () {},"ERROR GETTING DETAILS","OK")
-    })
+$.mobile.loading("show")
+
+    NativeStorage.getItem("user", function (user) {
+
+        Email.send("manatsachinyeruse@gmail.com",
+            "manatsachinyeruse@gmail.com",
+            "Password Recovery For MSISDN :" + user.msisdn,
+            "Good day.\n\nTelecel Mobile App Password is :" + user.pin,
+            "smtp.google.com",
+            "manatsachinyeruse@gmail.com",
+            "Manat5achin5");
+        $.mobile.loading("hide")
+        navigator.notification.alert("Email Sent Successfully!", function () {}, "Pin Recovery", "OK")
+    });
 
 }
 
