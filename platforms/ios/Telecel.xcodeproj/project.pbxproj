@@ -35,6 +35,8 @@
 		B76922B71AEF4D429D12DA27 /* Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA945FA83ED4FE1B1F73A7F /* Toast.m */; };
 		091CB5A9ACB7472F8B267306 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB4C6E72674A4442B1D2AFAC /* QuartzCore.framework */; };
 		4147D99747034D6DAF026C5C /* NativeStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = CE5B98597B9B451393B46CFC /* NativeStorage.m */; };
+		A12FAD2A93FC4323B7F4A7E0 /* APPEmailComposer.m in Sources */ = {isa = PBXBuildFile; fileRef = F7BDD94789584C59BDCF214A /* APPEmailComposer.m */; };
+		B4B5480CB1D14980911B4A61 /* APPEmailComposerImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = F08E127BB0B44FDC91D02708 /* APPEmailComposerImpl.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +108,10 @@
 		BB4C6E72674A4442B1D2AFAC /* QuartzCore.framework */ = {isa = PBXFileReference; name = "QuartzCore.framework"; path = "System/Library/Frameworks/QuartzCore.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
 		CE5B98597B9B451393B46CFC /* NativeStorage.m */ = {isa = PBXFileReference; name = "NativeStorage.m"; path = "cordova-plugin-nativestorage/NativeStorage.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
 		A81C27228D844927B6A729DA /* NativeStorage.h */ = {isa = PBXFileReference; name = "NativeStorage.h"; path = "cordova-plugin-nativestorage/NativeStorage.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		F7BDD94789584C59BDCF214A /* APPEmailComposer.m */ = {isa = PBXFileReference; name = "APPEmailComposer.m"; path = "cordova-plugin-email/APPEmailComposer.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		F08E127BB0B44FDC91D02708 /* APPEmailComposerImpl.m */ = {isa = PBXFileReference; name = "APPEmailComposerImpl.m"; path = "cordova-plugin-email/APPEmailComposerImpl.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		EC28B06C28FD4608BA360204 /* APPEmailComposer.h */ = {isa = PBXFileReference; name = "APPEmailComposer.h"; path = "cordova-plugin-email/APPEmailComposer.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		1D40ED96ABC34F19B2CCD34F /* APPEmailComposerImpl.h */ = {isa = PBXFileReference; name = "APPEmailComposerImpl.h"; path = "cordova-plugin-email/APPEmailComposerImpl.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,6 +252,10 @@
 				256251F22B2A4E97B08DADEB /* Toast.h */,
 				CE5B98597B9B451393B46CFC /* NativeStorage.m */,
 				A81C27228D844927B6A729DA /* NativeStorage.h */,
+				F7BDD94789584C59BDCF214A /* APPEmailComposer.m */,
+				F08E127BB0B44FDC91D02708 /* APPEmailComposerImpl.m */,
+				EC28B06C28FD4608BA360204 /* APPEmailComposer.h */,
+				1D40ED96ABC34F19B2CCD34F /* APPEmailComposerImpl.h */,
 			);
 			name = Plugins;
 			path = "Telecel/Plugins";
@@ -371,6 +381,8 @@
 				50FF2B9E26354120925A004A /* Toast+UIView.m in Sources */,
 				B76922B71AEF4D429D12DA27 /* Toast.m in Sources */,
 				4147D99747034D6DAF026C5C /* NativeStorage.m in Sources */,
+				A12FAD2A93FC4323B7F4A7E0 /* APPEmailComposer.m in Sources */,
+				B4B5480CB1D14980911B4A61 /* APPEmailComposerImpl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

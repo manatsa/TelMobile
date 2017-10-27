@@ -33,6 +33,9 @@
         },
         "cordova-plugin-nativestorage": {
             "PACKAGE_NAME": "HelloCordova"
+        },
+        "cordova-plugin-email": {
+            "PACKAGE_NAME": "HelloCordova"
         }
     },
     "dependent_plugins": {

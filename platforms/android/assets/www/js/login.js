@@ -6,7 +6,7 @@ $("#btnLogin").on("click", function () {
         if(pin && pin.length==4){
             try{
                 NativeStorage.getItem("user",function (data) {
-                    
+
                     if(phone==data.msisdn){
                         if(data.pin==data.pin){
                             $.mobile.changePage("#pgMain");

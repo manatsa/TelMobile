@@ -43,6 +43,10 @@
                         {
                             "xml": "<feature name=\"NativeStorage\"><param name=\"android-package\" value=\"NativeStorage\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"EmailComposer\"><param name=\"android-package\" value=\"de.martinreinhardt.cordova.plugins.email.EmailComposer\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -70,6 +74,12 @@
                     "/manifest/application": [
                         {
                             "xml": "<provider android:authorities=\"${applicationId}.sharing.provider\" android:exported=\"false\" android:grantUriPermissions=\"true\" android:name=\"nl.xservices.plugins.FileProvider\"><meta-data android:name=\"android.support.FILE_PROVIDER_PATHS\" android:resource=\"@xml/sharing_paths\" /></provider>",
+                            "count": 1
+                        }
+                    ],
+                    "/manifest": [
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.GET_ACCOUNTS\" />",
                             "count": 1
                         }
                     ]
@@ -106,6 +116,9 @@
             "PACKAGE_NAME": "mobile.telecel.co.zw"
         },
         "cordova-plugin-nativestorage": {
+            "PACKAGE_NAME": "mobile.telecel.co.zw"
+        },
+        "cordova-plugin-email": {
             "PACKAGE_NAME": "mobile.telecel.co.zw"
         }
     },
@@ -212,6 +225,15 @@
             "id": "cordova-plugin-nativestorage.NativeStorageError",
             "file": "plugins/cordova-plugin-nativestorage/www/NativeStorageError.js",
             "pluginId": "cordova-plugin-nativestorage"
+        },
+        {
+            "id": "cordova-plugin-email.EmailComposer",
+            "file": "plugins/cordova-plugin-email/www/email_composer.js",
+            "pluginId": "cordova-plugin-email",
+            "clobbers": [
+                "cordova.plugins.email",
+                "plugin.email"
+            ]
         }
     ],
     "plugin_metadata": {
@@ -224,6 +246,7 @@
         "cordova-plugin-x-toast": "2.6.0",
         "es6-promise-plugin": "4.1.0",
         "cordova-plugin-splashscreen": "4.0.3",
-        "cordova-plugin-nativestorage": "2.2.2"
+        "cordova-plugin-nativestorage": "2.2.2",
+        "cordova-plugin-email": "1.2.6"
     }
 }

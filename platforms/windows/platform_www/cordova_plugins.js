@@ -137,6 +137,27 @@ module.exports = [
         "file": "plugins/cordova-plugin-nativestorage/src/windows/NativeStorage.js",
         "pluginId": "cordova-plugin-nativestorage",
         "runs": true
+    },
+    {
+        "id": "cordova-plugin-email.EmailComposer",
+        "file": "plugins/cordova-plugin-email/www/email_composer.js",
+        "pluginId": "cordova-plugin-email",
+        "clobbers": [
+            "cordova.plugins.email",
+            "plugin.email"
+        ]
+    },
+    {
+        "id": "cordova-plugin-email.EmailComposerProxy",
+        "file": "plugins/cordova-plugin-email/src/windows/EmailComposerProxy.js",
+        "pluginId": "cordova-plugin-email",
+        "runs": true
+    },
+    {
+        "id": "cordova-plugin-email.EmailComposerProxyImpl",
+        "file": "plugins/cordova-plugin-email/src/windows/EmailComposerProxyImpl.js",
+        "pluginId": "cordova-plugin-email",
+        "runs": true
     }
 ];
 module.exports.metadata = 
@@ -151,7 +172,8 @@ module.exports.metadata =
     "cordova-plugin-x-socialsharing": "5.2.1",
     "cordova-plugin-x-toast": "2.6.0",
     "cordova-plugin-splashscreen": "4.0.3",
-    "cordova-plugin-nativestorage": "2.2.2"
+    "cordova-plugin-nativestorage": "2.2.2",
+    "cordova-plugin-email": "1.2.6"
 };
 // BOTTOM OF METADATA
 });

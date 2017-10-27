@@ -3,6 +3,6 @@
     "SystemConfiguration.framework": 1,
     "CoreTelephony.framework": 1,
     "Social.framework": 1,
-    "MessageUI.framework": 1,
+    "MessageUI.framework": 2,
     "QuartzCore.framework": 1
 }
