@@ -26,6 +26,7 @@
     <script src="js/tabs-fix.js"></script>
     <script src="js/smtp.js"></script>
 
+
 </head>
 <body>
 
@@ -60,6 +61,7 @@
                         </div>
                         <div class="ui-block-b">
                             <a data-transition="flip" href="#pgRegister" id="btnOpenRegister" style="margin-top: 10px; display: inline-block;"><u>Not Registered</u></a>
+                            <a data-transition="flip" href="#pgShopsList" id="btngetShopList" style="margin-top: 10px; display: inline-block;"><u>Get Shops</u></a>
                         </div>
 
                     </div>
@@ -101,8 +103,7 @@
     </div>
 </section>
 
-
-
+<!-------------------------------------------  Register Page --------------------------------------------------->
 <!-------------------------------------------  Register Page --------------------------------------------------->
 <section data-role="page" data-rel="dialog" class="ui-page-theme-a" id="pgRegister">
     <header data-role="header" class="ui-bar" data-position="fixed">
@@ -230,7 +231,7 @@
 
 
 <!--------------------------------------------- Products and Services Main Page   ------------------------------------------------>
-
+<!--------------------------------------------- Products and Services Main Page   ------------------------------------------------>
 <section data-role="page" id="products_services_main" class="ui-page-theme-a">
     <header data-role="header" class="ui-bar" data-position="fixed">
         <div class="align-text-center header-text-with-logo-padding">
@@ -263,6 +264,7 @@
     </div>
 </section>
 
+<!---------------------------------------------    Balances check   ------------------------------------------------>
 <!---------------------------------------------    Balances check   ------------------------------------------------>
 <section data-role="page" id="pgBalances" class="ui-page-theme-a">
     <header data-role="header" class="ui-bar" data-position="fixed">
@@ -686,6 +688,7 @@
 </section>
 
 <!-------------------------------------    Unsubscribe bundle   ------------------------------------------------>
+<!-------------------------------------    Unsubscribe bundle   ------------------------------------------------>
 <section data-role="page" id="pgUnsubscribe" class="ui-page-theme-a">
     <header data-role="header" class="ui-bar" data-position="fixed">
         <div class="align-text-center header-text-with-logo-padding">
@@ -733,6 +736,7 @@
     </div>
 </section>
 
+<!-------------------------------------    Store Locator   ------------------------------------------------>
 <!-------------------------------------    Store Locator   ------------------------------------------------>
 <section data-role="page" id="pgStoreLocator" class="ui-page-theme-a">
     <header data-role="header" class="ui-bar" data-position="fixed">
@@ -1029,7 +1033,7 @@
 
 </section>
 
-
+<!-------------------------------------  Send money ------------------------------------------------>
 <!-------------------------------------  Send money ------------------------------------------------>
 <section data-role="page" id="pgSendMoney" class="ui-page-theme-a">
     <header data-role="header" class="ui-bar" data-position="fixed">
@@ -1098,6 +1102,7 @@
 </section>
 
 <!-------------------------------------    Card Management   ------------------------------------------------>
+<!-------------------------------------    Card Management   ------------------------------------------------>
 <section data-role="page" id="pgCardManagement" class="ui-page-theme-a">
     <header data-role="header" class="ui-bar" data-position="fixed">
         <div class="align-text-center header-text-with-logo-padding">
@@ -1119,6 +1124,7 @@
     </div>
 </section>
 
+<!------------------------------------- Banking Services  ------------------------------------------------>
 <!------------------------------------- Banking Services  ------------------------------------------------>
 <section data-role="page" id="pgBankingServices" class="ui-page-theme-a">
     <header data-role="header" class="ui-bar" data-position="fixed">
@@ -1193,6 +1199,7 @@
 </section>
 
 <!-------------------------------------    Contact US  ------------------------------------------------>
+<!-------------------------------------    Contact US  ------------------------------------------------>
 <section data-role="page" id="pgContactUs" class="ui-page-theme-a">
     <header data-role="header" class="ui-bar" data-position="fixed">
         <div class="align-text-center header-text-with-logo-padding">
@@ -1205,6 +1212,24 @@
     <div data-role="main" class="ui-content">
 
 
+    </div>
+</section>
+
+<!-------------------------------------    Shops List ------------------------------------------------>
+<!-------------------------------------    Shops List ------------------------------------------------>
+<section data-role="page" class="ui-page-theme-a" id="pgShopsList">
+    <header data-role="header" class="ui-bar" data-position="fixed">
+        <div class="align-text-center header-text-with-logo-padding">
+            <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
+                    class="fa  fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
+            <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
+            <h1 class="header-text-with-logo">&nbsp;Telecel Shops List</h1>
+        </div>
+    </header>
+    <div data-role="main" class="ui-content">
+        <div data-role="listview" id="shopsList">
+
+        </div>
     </div>
 </section>
 
@@ -1286,6 +1311,7 @@
 <script type="text/javascript" src="js/balance.js"></script>
 <script type="text/javascript" src="js/RestTest.js"></script>
 <script type="text/javascript" src="js/bundlespurchase.js"></script>
+<script src="js/shops/shops.js"></script>
 
 </body>
 </html>
