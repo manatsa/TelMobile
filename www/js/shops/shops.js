@@ -1,7 +1,6 @@
 var uri="http://telecelmobileapp.telecel.co.zw/TelecelBundleRestService/rest/shops";
-var lats=null;
-var lons=null;
 var index=0;
+
 
 function getShopsList() {
 
@@ -12,6 +11,7 @@ function getShopsList() {
 
         success:function (result) {
             var data=JSON.parse(JSON.stringify(result));
+
             var tab="<table width='100%' id='tblShops' data-role='table' data-mode=\"columntoggle\" class='ui-body-d ui-shadow table-stripe ui-responsive' " +
                 "data-column-btn-text=''> "+
                 "<thead>" +
@@ -27,13 +27,16 @@ function getShopsList() {
                 "<tbody> " ;
 
             $.each(data,function (index,shop) {
+                var shopString=JSON.stringify(shop);
+                //alert(shopString.replace(/"/g,"`"))
+                //
                 tab=tab+"<tr>" +
                 "<td><span class='spName'>"+shop.name+"</span></td>" +
                 "<td><span class='spType'>"+shop.type+"</span></td>" +
                 "<td><span class='spActive'>"+shop.isActive+"</span></td>" +
                 "<td><span class='spLattitude'>"+shop.latitude+"</span></td>" +
                 "<td><span class='spLongitude'>"+shop.longitude+"</span></td>" +
-                "<td><a  href='index2.html' data-transition='flip'><i class='fa fa-map-marker' aria-hidden='false'></i>Map</a> </td>" +
+                "<td><a onclick='storeShop(&quot;"+shopString.replace(/"/g,"`")+"&quot;)' data-transition='flip'><i class='fa fa-map-marker' aria-hidden='false'></i>Map</a> </td>" +
                 "</tr>";
             })
             tab=tab+"</tbody>" +
@@ -54,7 +57,13 @@ function getShopsList() {
 }
 
 
-
+function storeShop(shop) {
+    NativeStorage.setItem("shop",shop,function () {
+        $.mobile.changePage("index2.html",{ transition: "flip"})
+    },function (error) {
+        navigator.notification.alert("Error :"+error, function () {}, "Can't Show Map right now!", "OK")
+    })
+}
 
 
 

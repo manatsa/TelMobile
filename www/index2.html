@@ -9,29 +9,36 @@
         <script>
 
             function myMap() {
-                var lat=document.getElementsByClassName("spLatitude").value;
-                var lon=document.getElementsByClassName("spLongitude").value;
-                alert(lat+"\t"+lon)
-                var latlon=new google.maps.LatLng(51.508742,-0.120850);
-                var mapProp= {
-                    center:latlon,
-                    zoom:9,
-                };
-                var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-                var marker = new google.maps.Marker({
-                    position: latlon,
-                    map: map,
-                    title: "Greetings!"
-                });
-                var contentString="I am a marker, \n But you can put anything in me!"
-                var infowindow = new google.maps.InfoWindow({
-                    content: contentString
+                NativeStorage.getItem("shop",function (data) {
+                   var shop=JSON.parse(data.replace(/`/g,'"'));
+                    //alert(shop.latitude+"\n"+shop.longitude);
+                    var latlon=new google.maps.LatLng(shop.latitude,shop.longitude);
+                    var mapProp= {
+                        center:latlon,
+                        zoom:9,
+                    };
+                    var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+                    var marker = new google.maps.Marker({
+                        position: latlon,
+                        map: map,
+                        title: "Greetings!"
+                    });
+                    var contentString="I am a marker, \n But you can put anything in me!"
+                    var infowindow = new google.maps.InfoWindow({
+                        content: contentString
+                    });
+
+                    marker.addListener('click', function() {
+                        infowindow.open(map, marker);
+                    });
+                    google.maps.event.trigger(map,'resize');
+                },function (error) {
+                    navigator.notification.alert("Error :"+error, function () {}, "Can't Show Map right now!", "OK");
                 });
 
-                marker.addListener('click', function() {
-                    infowindow.open(map, marker);
-                });
-                google.maps.event.trigger(map,'resize');
+
+
+
             }
         </script>
 
