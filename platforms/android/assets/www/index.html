@@ -24,6 +24,7 @@
     <script src="js/nestedlists.js"></script>
     <script src="js/tabs-fix.js"></script>
     <script src="js/smtp.js"></script>
+    <script src="https://smtpjs.com/smtp.js"></script>
     <!--<script  src="http://maps.google.com/maps/api/js?key=AIzaSyDH7SGQ_oRhAYAgcAedTbdZrkh1jprT1VU"></script>-->
 
 
@@ -1230,50 +1231,6 @@
 </section>
 
 
-<!-------------------------------------    Shops Map ------------------------------------------------>
-<!-------------------------------------    Shops Map ------------------------------------------------>
-<section data-role="page" class="ui-page-theme-a" id="pgShopMap">
-    <header data-role="header" class="ui-bar" data-position="fixed">
-        <div class="align-text-center header-text-with-logo-padding">
-            <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
-                    class="fa  fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
-            <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
-            <h1 class="header-text-with-logo">&nbsp;Telecel Shop Map</h1>
-        </div>
-    </header>
-    <div data-role="main" class="ui-content" id="shopMap" >
-        <script>
-
-            function myMap() {
-                //var lat=document.getElementsByClassName("spLatitude").value;
-                //var lon=document.getElementsByClassName("spLongitude").value;
-                //alert(lat+"\t"+lon)
-                var latlon=new google.maps.LatLng(51.508742,-0.120850);
-                var mapProp= {
-                    center:latlon,
-                    zoom:9,
-                };
-                var map=new google.maps.Map(document.getElementById("shopMap"),mapProp);
-                var marker = new google.maps.Marker({
-                    position: latlon,
-                    map: map,
-                    title: "Greetings!"
-                });
-                var contentString="I am a marker, \n But you can put anything in me!"
-                var infowindow = new google.maps.InfoWindow({
-                    content: contentString
-                });
-
-                marker.addListener('click', function() {
-                    infowindow.open(map, marker);
-                });
-                google.maps.event.trigger(map,'resize');
-            }
-        </script>
-
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDH7SGQ_oRhAYAgcAedTbdZrkh1jprT1VU&callback=myMap"></script>
-    </div>
-</section>
 
 
 <!-------------------------------------    Template ------------------------------------------------>
