@@ -18,8 +18,9 @@ $.mobile.loading("show")
             "manatsachinyeruse@gmail.com",
             "Password Recovery For MSISDN :" + user.msisdn,
             "Good day.\n\nTelecel Mobile App Password is :" + user.pin,
-            {token:f9d1b063-e5e5-43f6-89d8-ec02c0ab4268}
-            , function () {
+            "smtp.google.com",
+            "manatsachinyeruse@gmail.com",
+            "Manat5achin5", function () {
                 $.mobile.loading("hide")
                 navigator.notification.alert("Email Sent Successfully!", function () {}, "Pin Recovery", "OK")
             });
