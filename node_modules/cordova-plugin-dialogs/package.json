@@ -10,7 +10,7 @@
         "spec": "latest",
         "type": "tag"
       },
-      "C:\\Users\\ZifudziT\\WebstormProjects\\TelecelMobileApp"
+      "C:\\Users\\ZifudziT\\WebstormProjects\\TelMobile"
     ]
   ],
   "_from": "cordova-plugin-dialogs@latest",
@@ -45,7 +45,7 @@
   "_shasum": "532ff2eb5c86133a5878550dae59c76ab397f8c9",
   "_shrinkwrap": null,
   "_spec": "cordova-plugin-dialogs",
-  "_where": "C:\\Users\\ZifudziT\\WebstormProjects\\TelecelMobileApp",
+  "_where": "C:\\Users\\ZifudziT\\WebstormProjects\\TelMobile",
   "author": {
     "name": "Apache Software Foundation"
   },
