@@ -4,8 +4,7 @@
 <head>
 
     <!--Metadata-->
-    <meta name="viewport"
-          content="user-scalable=yes, initial-scale=1, maximum-scale=1, minimum-scale=1,height=device-height, width=device-width">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1,height=device-height, width=device-width">
     <!--Custom stylesheet-->
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <!--Jquery stylesheets-->
@@ -20,11 +19,13 @@
     <link rel="stylesheet" href="css/style.css">
 
     <!--JQuery javascript-->
-    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <script src="js/nestedlists.js"></script>
     <script src="js/tabs-fix.js"></script>
     <script src="js/smtp.js"></script>
+    <script src="https://smtpjs.com/smtp.js"></script>
+    <!--<script  src="http://maps.google.com/maps/api/js?key=AIzaSyDH7SGQ_oRhAYAgcAedTbdZrkh1jprT1VU"></script>-->
 
 
 </head>
@@ -61,7 +62,7 @@
                         </div>
                         <div class="ui-block-b">
                             <a data-transition="flip" href="#pgRegister" id="btnOpenRegister" style="margin-top: 10px; display: inline-block;"><u>Not Registered</u></a>
-                            <a data-transition="flip" href="#pgShopsList" id="btngetShopList" style="margin-top: 10px; display: inline-block;"><u>Get Shops</u></a>
+                            <a data-transition="flip" href="#pgContacts" id="btngetShopList" style="margin-top: 10px; display: inline-block;"><u>Test Contacts</u></a>
                         </div>
 
                     </div>
@@ -245,15 +246,17 @@
 
         <ul data-role="listview" data-inset="true">
             <li>
-                <a data-transition="flip" href="#pgBalances">Balance check
-                    <p class="initcap">Tap to select which balance to check</p>
-                </a>
-            </li>
-            <li>
                 <a data-transition="flip" href="#pgBundlesPurchase">Buy product
                     <p class="initcap">Tap to purchase a product or service</p>
                 </a>
             </li>
+
+            <li>
+                <a data-transition="flip" href="#pgBalances">Balance check
+                    <p class="initcap">Tap to select which balance to check</p>
+                </a>
+            </li>
+
             <li>
                 <a data-transition="flip" href="#pgUnsubscribe">Unsubscribe from product
                     <p class="initcap">Tap to unsubscribe from a product</p>
@@ -393,7 +396,7 @@
 
         <div data-role="tabs" id="divProductBundlePurchaseTabs">
 
-            <p class="align-text-center" style="margin-bottom: 0px; margin-top: 0px;">Select product type</p>
+            <p class="align-text-center" style="margin-bottom: 0px; margin-top: 0px;">Tap to select product type</p>
 
             <div style="margin-bottom: 20px;" data-role="navbar" data-grid="b">
                 <ul class="tabs-corners">
@@ -749,11 +752,9 @@
     </header>
     <div data-role="main" class="ui-content">
 
-        <ul data-role="listview">
-            <li><a data-transition="flip" href="#">Store 1</a></li>
-            <li><a data-transition="flip" href="#">Store 2</a></li>
-            <li><a data-transition="flip" href="#">Store 3</a></li>
-        </ul>
+        <!--<ul data-role="listview" id="shopsList">-->
+            <!---->
+        <!--</ul>-->
 
     </div>
 </section>
@@ -1223,15 +1224,32 @@
             <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
                     class="fa  fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
             <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
+            <h1 class="header-text-with-logo">&nbsp;Telecel Shops List</h1>
+        </div>
+    </header>
+    <div  data-role="main" class="ui-content" id="shopsList">
+
+    </div>
+</section>
+
+
+<!-------------------------------------    Contact Test  ------------------------------------------------>
+<section data-role="page" id="pgContacts" class="ui-page-theme-a">
+    <header data-role="header" class="ui-bar" data-position="fixed">
+        <div class="align-text-center header-text-with-logo-padding">
+            <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
+                    class="fa  fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
+            <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
             <h1 class="header-text-with-logo">&nbsp;Title</h1>
         </div>
     </header>
     <div data-role="main" class="ui-content">
-        <div data-role="listview" id="shopsList">
 
-        </div>
+        <button id = "findContact">FIND CONTACT</button>
+
     </div>
 </section>
+
 
 <!-------------------------------------    Template ------------------------------------------------>
 <!--<section data-role="page" class="ui-page-theme-a">
@@ -1248,7 +1266,6 @@
 
     </div>
 </section>-->
-
 
 
 
@@ -1311,7 +1328,9 @@
 <script type="text/javascript" src="js/balance.js"></script>
 <script type="text/javascript" src="js/RestTest.js"></script>
 <script type="text/javascript" src="js/bundlespurchase.js"></script>
-<script src="js/shops/shops.js"></script>
+<script type="text/javascript" src="js/shops/shops.js"></script>
+<script type="text/javascript" src="js/shops/shopMap.js"></script>
+<script type="text/javascript" src="js/contacts_test.js"></script>
 
 </body>
 </html>

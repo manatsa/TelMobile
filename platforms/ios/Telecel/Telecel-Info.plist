@@ -59,6 +59,6 @@
       <string>mailto</string>
     </array>
     <key>NSContactsUsageDescription</key>
-    <string></string>
+    <string/>
   </dict>
 </plist>
