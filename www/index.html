@@ -4,7 +4,8 @@
 <head>
 
     <!--Metadata-->
-    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1,height=device-height, width=device-width">
+    <meta name="viewport"
+          content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1,height=device-height, width=device-width">
     <!--Custom stylesheet-->
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <!--Jquery stylesheets-->
@@ -31,85 +32,85 @@
 </head>
 <body>
 
+<!-- TODO: DISABLE IF IMPORTANT UPDATE PRESENT, OTTHERWISE SHOW MESSAGE -->
+
+<!-----------------------------------------------------   Login Page   ---------------------------------------------------------->
 <!-----------------------------------------------------   Login Page   ---------------------------------------------------------->
 <section data-role="page" class="ui-page-theme-a" id="login_page">
+    <!-- Header -->
     <header data-role="header" class="ui-bar" data-position="fixed">
         <div class="align-text-center header-text-with-logo-padding">
             <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
             <h1 class="header-text-with-logo">&nbsp;Login</h1>
         </div>
     </header>
+    <!-- End of Header -->
+
     <div data-role="main" class="ui-panel-page-container-e">
         <img src="img/page_images/register/register.png" class="ui-full-width"/>
         <div align="center">
 
             <form id="login-form" action="" method="get">
-                <div class="full-screen-width-padding">
+                <div style="overflow: hidden;" class="full-screen-width-padding">
 
-                    <p>If this text is visible, the commit is working.</p>
+                    <input type="tel" id="txtMSISDN" required="required" inputmode="numeric"
+                           placeholder="Enter mobile number e.g. 0732123123" class="ui-full-width"/>
 
-                    <fieldset data-role="fieldcontain">
-                        <input type="tel" id="txtMSISDN" required="required" inputmode="numeric"
-                               placeholder="Enter mobile number e.g. 0732123123" class="ui-full-width"/>
-                    </fieldset>
-                    <fieldset data-role="fieldcontain" style="text-align: center;">
+                    <div class="wrap-input-for-margins-15px">
                         <input type="password" id="txtLoginPIN" required="required" pattern="[0-9][0-9][0-9][0-9]"
                                inputmode="numeric" placeholder="Enter PIN number" class="ui-full-width"/>
-                    </fieldset>
+                    </div>
 
-                    <a data-transition="flip" href="#" id="btnLogin" style="margin-top: 20px;"
-                       class="ui-btn ui-btn-c ui-corner-all">Login</a>
-                    <div class="ui-grid-a">
-                        <div class="ui-block-a">
-                            <a data-transition="flip" href="#pgForgotPassword" class="initcap" id="btnForgotPassword" style="margin-top: 10px; display: inline-block; font-size: x-small; "><u>Forgot Password</u></a>
-                        </div>
-                        <div class="ui-block-b">
-                            <a data-transition="flip" href="#pgRegister" id="btnOpenRegister" style="margin-top: 10px; display: inline-block;"><u>Not Registered</u></a>
-                            <a data-transition="flip" href="#pgContacts" id="btngetShopList" style="margin-top: 10px; display: inline-block;"><u>Test Contacts</u></a>
-                        </div>
+                    <div class="wrap-input-for-margins-15px">
+                        <label class="ui-btn-b initcap"> <input data-mini="true" class="initcap" type="checkbox"
+                                                                id="chkRememberMe">Remember me</label>
+                    </div>
+
+                    <div class="wrap-input-for-margins-15px">
+                        <a data-transition="flip" href="#" id="btnLogin" style="margin-top: 10px;"
+                           class="ui-btn ui-btn-c ui-corner-all">Login</a>
+                        <a data-transition="flip" href="#pgForgotPassword" id="btnForgotPassword" class="initcap"
+                           style="margin-top: 10px; float: left; display: inline-block;"><u>Forgot password?</u></a>
+                        <a data-transition="flip" href="#pgRegister" id="btnOpenRegister" class="initcap"
+                           style="margin-top: 10px; float: right; display: inline-block;"><u>New to app?
+                            <br>Register now!</u></a>
 
                     </div>
 
-
                 </div>
+
             </form>
+
         </div>
     </div>
-    <div class="add-btn-dlg-panel" title="Add new attribute value">
-        <div id="attrib-type-input">
-            <select id="attrib-type-sel"></select>
-        </div>
 
-        <div id="attrib-value-input"></div>
-
-        <div id="add-config-dlg-btn-panel">
-            <input id="add-config-dlg-ok-btn" type="button" value="OK"/>
-            <input id="add-config-dlg-cancel-btn" type="button" value="Cancel"/>
-        </div>
-    </div>
 </section>
 
 <!-----------------------------------------------------  Forgot Password  ----------------------------------------------------->
-<section data-role="page"   id="pgForgotPassword" class="ui-page-theme-a">
+<!-----------------------------------------------------  Forgot Password  ----------------------------------------------------->
+<section data-role="page" id="pgForgotPassword" class="ui-page-theme-a">
+    <!-- Header -->
     <header data-role="header" class="ui-bar" data-position="fixed">
         <div class="align-text-center header-text-with-logo-padding">
             <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
                     class="fa  fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
             <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
-            <h1 class="header-text-with-logo">&nbsp;Title</h1>
+            <h1 class="header-text-with-logo">&nbsp;Retrieve password</h1>
         </div>
     </header>
+    <!-- End of Header -->
     <div data-role="main" class="ui-content">
         <div></div>
         <div align="center">
-            <a  data-role="button" id="email_confirm_btn">Send Pin To Email</a>
+            <a data-role="button" id="email_confirm_btn">Send Pin To Email</a>
         </div>
     </div>
 </section>
 
 <!-------------------------------------------  Register Page --------------------------------------------------->
 <!-------------------------------------------  Register Page --------------------------------------------------->
-<section data-role="page" data-rel="dialog" class="ui-page-theme-a" id="pgRegister">
+<section data-role="page" class="ui-page-theme-a" id="pgRegister">
+    <!-- Header -->
     <header data-role="header" class="ui-bar" data-position="fixed">
         <div class="align-text-center header-text-with-logo-padding">
             <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
@@ -118,51 +119,72 @@
             <h1 class="header-text-with-logo">&nbsp;Register</h1>
         </div>
     </header>
+    <!-- End of Header -->
+
     <div data-role="main">
 
         <form id="reg-form">
             <div class="full-screen-width-padding align-text-center">
                 <fieldset data-role="fieldcontain">
-                    <input type="tel" id="txtRegisterMSISDN" required="required" inputmode="numeric"
-                           placeholder="Enter mobile number e.g. 0732123123" class="ui-full-width"/>
-                </fieldset>
-                <fieldset data-role="fieldcontain">
-                    <input type="email" id="txtRegisterEmail" required="required" inputmode="numeric"
-                           placeholder="Enter email e.g. you@telecel.com" class="ui-full-width"/>
-                    <span class="float-left align-text-left red-text">Y<span class="lowercase">our e-mail is required for authentication in case you forget your PIN.</span></span>
-                </fieldset>
 
-                <fieldset data-role="fieldcontain" style="text-align: center;">
-                    <input type="password" id="txtRegisterPIN" required="required" pattern="[0-9][0-9][0-9][0-9]"
-                           inputmode="numeric" placeholder="Enter a 4 digit PIN number" class="ui-full-width"/>
-                </fieldset>
-                <fieldset data-role="fieldcontain" style="text-align: center;">
-                    <input type="password" id="txtRegisterPINRepeat" required="required" pattern="[0-9][0-9][0-9][0-9]"
-                           inputmode="numeric" placeholder="Repeat your 4 digit PIN number" class="ui-full-width"/>
+                    <div class="wrap-input-for-margins-15px">
+                        <input type="tel" id="txtRegisterMSISDN" required="required" inputmode="numeric"
+                               placeholder="Enter mobile number e.g. 0732123123" class="ui-full-width"/>
+                    </div>
+
+                    <div class="wrap-input-for-margins-15px">
+                        <input type="tel" id="txtRegisterEmail" required="required" inputmode="numeric"
+                               placeholder="Enter email e.g. you@telecel.com" class="ui-full-width"/>
+                        <p class="initcap align-text-left red-text" style="margin: 0px;">Your e-mail is required for
+                            authentication if you ever forget your PIN.</p></span>
+                    </div>
+
+                    <div class="wrap-input-for-margins-15px">
+                        <input type="password" id="txtRegisterPIN" required="required" pattern="[0-9][0-9][0-9][0-9]"
+                               inputmode="numeric" placeholder="Enter a 4 digit PIN number" class="ui-full-width"/>
+                    </div>
+
+                    <div class="wrap-input-for-margins-15px">
+                        <input type="password" id="txtRegisterPINRepeat" required="required"
+                               pattern="[0-9][0-9][0-9][0-9]"
+                               inputmode="numeric" placeholder="Repeat your 4 digit PIN number" class="ui-full-width"/>
+                    </div>
+
                 </fieldset>
 
                 <a data-transition="flip" href="#" id="btnRegister" style="margin-top: 20px;"
                    class="ui-btn ui-btn-c ui-corner-all">Register</a>
                 <a data-transition="flip" href="#login_page" style="margin-top: 10px; display: inline-block;"><u>Already
-                    have an
-                    account?</u></a>
-
+                    registered to use app?<br/>Go to login</u></a>
             </div>
 
         </form>
 
     </div>
+
 </section>
 
 <!----------------------------------------   Main Page/Start Page ---------------------------------------------------->
 <!----------------------------------------   Main Page/Start Page ---------------------------------------------------->
 <section data-role="page" class="ui-page-theme-a" id="pgMain">
+
+    <!-- Header -->
     <header data-role="header" class="ui-bar" data-position="fixed">
         <div class="align-text-center header-text-with-logo-padding">
             <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
             <h1 class="header-text-with-logo">&nbsp;Telecel</h1>
+            <a class="header-options-link" href="#ppOptionsMain" data-rel="popup"><i class="fa fa-ellipsis-v"
+                                                                                     aria-hidden="true"></i></a>
         </div>
     </header>
+    <div data-role="popup" id="ppOptionsMain" data-theme="b">
+        <ul data-role="listview" data-inset="true" style="min-width:210px;">
+            <li data-icon="false"><a href="#pgChangePIN">Change PIN</a></li>
+            <li data-icon="false"><a href="#">Logout</a></li>
+        </ul>
+    </div>
+    <!-- End of Header -->
+
     <div data-role="main" class="ui-content">
         <div id="divMainMenu">
 
@@ -180,7 +202,7 @@
                 </div>
             </a>
 
-            <a data-transition="flip" href="#">
+            <a data-transition="flip" href="#pgPromotions">
                 <div class="custom-ui-block-c div-red-background div-rounded-corners align-text-center menu-icons-margin">
                     <img class="main-menu-icon" src="img/menu_icons/promotions.png"/>
                     <p>Promotions</p>
@@ -194,35 +216,49 @@
                 </div>
             </a>
 
-            <a data-transition="flip" href="#pgStoreLocator">
+            <a data-transition="flip" href="#pgShopsList">
                 <div class="custom-ui-block-b div-red-background div-rounded-corners align-text-center menu-icons-margin">
                     <img class="main-menu-icon" src="img/menu_icons/locations.png"/>
                     <p>Store locator</p>
                 </div>
             </a>
 
-            <a data-transition="flip" href="#">
+            <a data-transition="flip" href="#pgContactUs">
                 <div class="custom-ui-block-c div-red-background div-rounded-corners align-text-center menu-icons-margin">
                     <img class="main-menu-icon" src="img/menu_icons/contacts.png"/>
                     <p>Contact us</p>
                 </div>
             </a>
 
-            <a data-transition="flip" href="#">
+            <a data-transition="flip" href="#pgSelfService">
                 <div class="custom-ui-block-a div-red-background div-rounded-corners align-text-center menu-icons-margin">
                     <img class="main-menu-icon" src="img/menu_icons/SelfService.png"/>
                     <p>Self service</p>
                 </div>
             </a>
 
-            <a data-transition="flip" href="#">
+            <a data-transition="flip" href="#pgUSSDShortcodes">
                 <div class="custom-ui-block-b div-red-background div-rounded-corners align-text-center menu-icons-margin">
                     <img class="main-menu-icon" src="img/menu_icons/USSD.png"/>
                     <p>USSD Shortcodes</p>
                 </div>
             </a>
 
-            <a data-transition="flip" href="#">
+            <a data-transition="flip" href="#pgServices">
+                <div class="custom-ui-block-c div-red-background div-rounded-corners align-text-center menu-icons-margin">
+                    <img class="main-menu-icon" src="img/menu_icons/services.png"/>
+                    <p>Services</p>
+                </div>
+            </a>
+
+            <a data-transition="flip" href="#pgHelp">
+                <div class="custom-ui-block-a div-red-background div-rounded-corners align-text-center menu-icons-margin">
+                    <img class="main-menu-icon" src="img/menu_icons/help.png"/>
+                    <p>Help</p>
+                </div>
+            </a>
+
+            <a data-transition="flip" href="#pgAbout">
                 <div class="custom-ui-block-b div-red-background div-rounded-corners align-text-center menu-icons-margin">
                     <img class="main-menu-icon" src="img/menu_icons/about.png"/>
                     <p>About</p>
@@ -230,21 +266,30 @@
             </a>
 
         </div>
+
     </div>
 </section>
 
-
-<!--------------------------------------------- Products and Services Main Page   ------------------------------------------------>
-<!--------------------------------------------- Products and Services Main Page   ------------------------------------------------>
-<section data-role="page" id="products_services_main" class="ui-page-theme-a">
+<!-------------------------------------    Products Page   ------------------------------------------------>
+<!-------------------------------------    Products Page   ------------------------------------------------>
+<section data-role="page" id="products_services_main" class="ui-page-theme-a back_img">
+    <!-- Header -->
     <header data-role="header" class="ui-bar" data-position="fixed">
         <div class="align-text-center header-text-with-logo-padding">
             <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
                     class="fa  fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
             <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
-            <h1 class="header-text-with-logo">&nbsp;Products and Services</h1>
+            <h1 class="header-text-with-logo">&nbsp;Products</h1>
         </div>
     </header>
+    <div data-role="popup" id="ppProducts" data-theme="b">
+        <ul data-role="listview" data-inset="true" style="min-width:210px;">
+            <li data-icon="false"><a href="#pgMain">Back to Main Page</a></li>
+            <li data-icon="false"><a href="#pgChangePIN">Change PIN</a></li>
+            <li data-icon="false"><a href="#">Logout</a></li>
+        </ul>
+    </div>
+    <!-- End of Header -->
     <div data-role="main" class="ui-content">
 
         <ul data-role="listview" data-inset="true">
@@ -253,13 +298,16 @@
                     <p class="initcap">Tap to purchase a product or service</p>
                 </a>
             </li>
-
+            <li>
+                <a data-transition="flip" href="#pgAirtimePurchase">Buy airtime
+                    <p class="initcap">Tap to purchase airtime</p>
+                </a>
+            </li>
             <li>
                 <a data-transition="flip" href="#pgBalances">Balance check
                     <p class="initcap">Tap to select which balance to check</p>
                 </a>
             </li>
-
             <li>
                 <a data-transition="flip" href="#pgUnsubscribe">Unsubscribe from product
                     <p class="initcap">Tap to unsubscribe from a product</p>
@@ -270,17 +318,29 @@
     </div>
 </section>
 
-<!---------------------------------------------    Balances check   ------------------------------------------------>
-<!---------------------------------------------    Balances check   ------------------------------------------------>
+
+<!-------------------------------------    Balances check   ------------------------------------------------>
+<!-------------------------------------    Balances check   ------------------------------------------------>
 <section data-role="page" id="pgBalances" class="ui-page-theme-a">
+    <!-- Header -->
     <header data-role="header" class="ui-bar" data-position="fixed">
         <div class="align-text-center header-text-with-logo-padding">
             <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
                     class="fa  fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
             <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
             <h1 class="header-text-with-logo">&nbsp;Balance</h1>
+            <a class="header-options-link" href="#ppOptionsBalances" data-rel="popup"><i class="fa fa-ellipsis-v"
+                                                                                         aria-hidden="true"></i></a>
         </div>
     </header>
+    <div data-role="popup" id="ppOptionsBalances" data-theme="b">
+        <ul data-role="listview" data-inset="true" style="min-width:210px;">
+            <li data-icon="false"><a href="#pgMain">Back to Main Page</a></li>
+            <li data-icon="false"><a href="#pgChangePIN">Change PIN</a></li>
+            <li data-icon="false"><a href="#">Logout</a></li>
+        </ul>
+    </div>
+    <!-- End of Header -->
 
     <div class="ui-body-d ui-content div-red-background align-text-center">
         <h1 style=" font-size: 48pt !important;">$6.32&nbsp;<a style="color: #fff;" href="#ppAirtimeDefinition"
@@ -383,23 +443,107 @@
 
 </section>
 
+<!-------------------------------------    Help   ------------------------------------------------>
+<section data-role="page" id="pgHelp" class="ui-page-theme-a">
+    <!-- Header -->
+    <header data-role="header" class="ui-bar" data-position="fixed">
+        <div class="align-text-center header-text-with-logo-padding">
+            <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
+                    class="fa  fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
+            <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
+            <h1 class="header-text-with-logo">&nbsp;FAQ</h1>
+            <a class="header-options-link" href="#ppOptionsHelp" data-rel="popup"><i class="fa fa-ellipsis-v"
+                                                                                     aria-hidden="true"></i></a>
+        </div>
+    </header>
+    <div data-role="popup" id="ppOptionsHelp" data-theme="b">
+        <ul data-role="listview" data-inset="true" style="min-width:210px;">
+            <li data-icon="false"><a href="#pgMain">Back to Main Page</a></li>
+            <li data-icon="false"><a href="#pgChangePIN">Change PIN</a></li>
+            <li data-icon="false"><a href="#">Logout</a></li>
+        </ul>
+    </div>
+    <!-- End of Header -->
+
+    <div data-role="main" class="ui-content">
+
+        <form class="ui-filterable">
+            <input id="txtSearchFAQ" placeholder="e.g. Airtime" data-type="search"/>
+        </form>
+
+        <ul data-input="#txtSearchFAQ" data-role="listview" data-inset="true"
+            data-filter="true">
+            <li data-role="collapsible" data-iconpos="right" data-inset="false"><h2>Airtime</h2>
+                <ul data-role="listview" data-theme="b">
+                    <li data-icon="false"><a data-rel="popup" data-position-to="window" data-transition="pop"
+                                             href="#ppFAQ">How
+                        do I buy airtime?</a></li>
+                    <li data-icon="false"><a data-rel="popup" data-position-to="window" data-transition="pop"
+                                             href="#ppFAQ">My
+                        juice card is overscratched.</a></li>
+                    <li data-icon="false"><a data-rel="popup" data-position-to="window" data-transition="pop"
+                                             href="#ppFAQ">Where
+                        are your stores?</a></li>
+                </ul>
+            </li>
+            <li data-role="collapsible" data-iconpos="right" data-inset="false"><h2>Telecash</h2>
+                <ul data-role="listview" data-theme="b">
+                    <li data-icon="false"><a data-rel="popup" data-position-to="window" data-transition="pop"
+                                             href="#ppFAQ">What are Telecash tariffs?</a></li>
+                    <li data-icon="false"><a href="#">How do I send to another number?</a></li>
+                </ul>
+            </li>
+            <li data-role="collapsible" data-iconpos="right" data-inset="false"><h2>Beep calling</h2>
+                <ul data-role="listview" data-theme="b">
+                    <li data-icon="false"><a data-rel="popup" data-position-to="window" data-transition="pop"
+                                             href="#ppFAQ">What
+                        is beep calling?</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div data-role="popup" id="ppFAQ" data-overlay-theme="b" data-theme="b" data-dismissible="true"
+         style="max-width:400px;">
+        <a href="#" data-rel="back"
+           class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-left">Close</a>
+        <div role="main" class="ui-content">
+            <p><b>Question goes here?</b></p>
+            <p>Help shows as popup.</p>
+        </div>
+    </div>
+
+</section>
+
 <!-------------------------------------    Bundles purchases   ------------------------------------------------>
 <!-------------------------------------    Bundles purchases   ------------------------------------------------>
 <section data-role="page" id="pgBundlesPurchase" class="ui-page-theme-a">
+    <!-- Header -->
     <header data-role="header" class="ui-bar" data-position="fixed">
         <div class="align-text-center header-text-with-logo-padding">
             <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
                     class="fa  fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
             <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
             <h1 class="header-text-with-logo">&nbsp;Products</h1>
+            <a class="header-options-link" href="#ppOptionsBundles" data-rel="popup"><i class="fa fa-ellipsis-v"
+                                                                                        aria-hidden="true"></i></a>
         </div>
     </header>
+    <div data-role="popup" id="ppOptionsBundles" data-theme="b">
+        <ul data-role="listview" data-inset="true" style="min-width:210px;">
+            <li data-icon="false"><a href="#pgMain">Back to Main Page</a></li>
+            <li data-icon="false"><a href="#pgChangePIN">Change PIN</a></li>
+            <li data-icon="false"><a href="#">Logout</a></li>
+        </ul>
+    </div>
+    <!-- End of Header -->
+
     <div data-role="main" class="ui-content">
 
 
         <div data-role="tabs" id="divProductBundlePurchaseTabs">
 
-            <p class="align-text-center" style="margin-bottom: 0px; margin-top: 0px;">Tap to select product type</p>
+            <p class="align-text-center" style="margin-bottom: 0px; margin-top: 0px;">Select product type</p>
 
             <div style="margin-bottom: 20px;" data-role="navbar" data-grid="b">
                 <ul class="tabs-corners">
@@ -442,215 +586,10 @@
 
         <span id="lblBundleDescription" class="initcap hidden"></span>
         <div id="divListOfValidCountries" class="hidden">
-            <a href="#ppListOfCountries" data-rel="popup" data-position-to="window" data-transition="pop"
+            <a href="http://telecel.co.zw/products-services/telecelgo/go" data-rel="popup" data-position-to="window"
+               data-transition="pop"
                class="no-underline initcap">See list of valid countries
             </a>
-            <div data-role="popup" id="ppListOfCountries" data-overlay-theme="b" data-theme="b" data-dismissible="false"
-                 style="max-width:400px;">
-                <div data-role="header" data-theme="a"><h1>List of countries</h1></div>
-                <div role="main" class="ui-content">
-                    <p>AFGHANISTAN</p>
-                    <p>ALBANIA</p>
-                    <p>ALGERIA</p>
-                    <p>ANDORRA</p>
-                    <p>ANGOLA</p>
-                    <p>ANTIGUA & BARBUDA</p>
-                    <p>ARGENTINA</p>
-                    <p>ARMENIA</p>
-                    <p>AUSTRALIA</p>
-                    <p>AUSTRIA</p>
-                    <p>AZERBAIJAN</p>
-                    <p>BAHAMAS, THE</p>
-                    <p>BAHRAIN</p>
-                    <p>BANGLADESH</p>
-                    <p>BARBADOS</p>
-                    <p>BELARUS</p>
-                    <p>BELGIUM</p>
-                    <p>BELIZE</p>
-                    <p>BENIN</p>
-                    <p>BHUTAN</p>
-                    <p>BOLIVIA</p>
-                    <p>BOSNIA & HERZEGOVINA</p>
-                    <p>BOTSWANA</p>
-                    <p>BRAZIL</p>
-                    <p>BRUNEI</p>
-                    <p>BULGARIA</p>
-                    <p>BURKINA FASO</p>
-                    <p>BURUNDI</p>
-                    <p>CABO VERDE</p>
-                    <p>CAMBODIA</p>
-                    <p>CAMEROON</p>
-                    <p>CANADA</p>
-                    <p>CENTRAL AFRICAN REPUBLIC</p>
-                    <p>CHAD</p>
-                    <p>CHILE</p>
-                    <p>CHINA</p>
-                    <p>COLOMBIA</p>
-                    <p>COMOROS</p>
-                    <p>CONGO, DEMOCRATIC REPUBLIC OF THE</p>
-                    <p>COSTA RICA</p>
-                    <p>CÔTE D'IVOIRE</p>
-                    <p>CROATIA</p>
-                    <p>CUBA</p>
-                    <p>CYPRUS</p>
-                    <p>CZECH REPUBLIC</p>
-                    <p>DENMARK</p>
-                    <p>DJIBOUTI</p>
-                    <p>DOMINICA</p>
-                    <p>DOMINICAN REPUBLIC</p>
-                    <p>ECUADOR</p>
-                    <p>EGYPT</p>
-                    <p>EL SALVADOR</p>
-                    <p>EQUATORIAL GUINEA</p>
-                    <p>ERITREA</p>
-                    <p>ESTONIA</p>
-                    <p>ETHIOPIA</p>
-                    <p>FEDERATED STATES OF MICRONESIA</p>
-                    <p>FIJI</p>
-                    <p>FINLAND</p>
-                    <p>FRANCE</p>
-                    <p>GABON</p>
-                    <p>GAMBIA, THE</p>
-                    <p>GEORGIA</p>
-                    <p>GERMANY</p>
-                    <p>GHANA</p>
-                    <p>GREECE</p>
-                    <p>GRENADA</p>
-                    <p>GUATEMALA</p>
-                    <p>GUINEA</p>
-                    <p>GUINEA-BISSAU</p>
-                    <p>GUYANA</p>
-                    <p>HAITI</p>
-                    <p>HONDURAS</p>
-                    <p>HUNGARY</p>
-                    <p>ICELAND</p>
-                    <p>INDIA</p>
-                    <p>INDONESIA</p>
-                    <p>IRAN</p>
-                    <p>IRAQ</p>
-                    <p>IRELAND</p>
-                    <p>ISRAEL</p>
-                    <p>ITALY</p>
-                    <p>JAMAICA</p>
-                    <p>JAPAN</p>
-                    <p>JORDAN</p>
-                    <p>KAZAKHSTAN</p>
-                    <p>KENYA</p>
-                    <p>KIRIBATI</p>
-                    <p>KOSOVO</p>
-                    <p>KUWAIT</p>
-                    <p>KYRGYZSTAN</p>
-                    <p>LAOS</p>
-                    <p>LATVIA</p>
-                    <p>LEBANON</p>
-                    <p>LESOTHO</p>
-                    <p>LIBERIA</p>
-                    <p>LIBYA</p>
-                    <p>LIECHTENSTEIN</p>
-                    <p>LITHUANIA</p>
-                    <p>LUXEMBOURG</p>
-                    <p>MACEDONIA</p>
-                    <p>MADAGASCAR</p>
-                    <p>MALAWI</p>
-                    <p>MALAYSIA</p>
-                    <p>MALDIVES</p>
-                    <p>MALI</p>
-                    <p>MALTA</p>
-                    <p>MARSHALL ISLANDS</p>
-                    <p>MAURITANIA</p>
-                    <p>MAURITIUS</p>
-                    <p>MEXICO</p>
-                    <p>MOLDOVA</p>
-                    <p>MONACO</p>
-                    <p>MONGOLIA</p>
-                    <p>MONTENEGRO</p>
-                    <p>MOROCCO</p>
-                    <p>MOZAMBIQUE</p>
-                    <p>MYANMAR</p>
-                    <p>NAMIBIA</p>
-                    <p>NAURU</p>
-                    <p>NEPAL</p>
-                    <p>NETHERLANDS</p>
-                    <p>NEW ZEALAND</p>
-                    <p>NICARAGUA</p>
-                    <p>NIGER</p>
-                    <p>NIGERIA</p>
-                    <p>NORTH KOREA</p>
-                    <p>NORWAY</p>
-                    <p>OMAN</p>
-                    <p>PAKISTAN</p>
-                    <p>PALAU</p>
-                    <p>PALESTINE</p>
-                    <p>PANAMA</p>
-                    <p>PAPUA NEW GUINEA</p>
-                    <p>PARAGUAY</p>
-                    <p>PERU</p>
-                    <p>PHILIPPINES</p>
-                    <p>POLAND</p>
-                    <p>PORTUGAL</p>
-                    <p>QATAR</p>
-                    <p>REPUBLIC OF THE CONGO</p>
-                    <p>ROMANIA</p>
-                    <p>RUSSIA</p>
-                    <p>RWANDA</p>
-                    <p>SAINT KITTS & NEVIS</p>
-                    <p>SAINT LUCIA</p>
-                    <p>SAINT VINCENT & THE GRENADINES</p>
-                    <p>SAMOA</p>
-                    <p>SAN MARINO</p>
-                    <p>SÃO TOMÉ & PRÍNCIPE</p>
-                    <p>SAUDI ARABIA</p>
-                    <p>SENEGAL</p>
-                    <p>SERBIA</p>
-                    <p>SEYCHELLES</p>
-                    <p>SIERRA LEONE</p>
-                    <p>SINGAPORE</p>
-                    <p>SLOVAKIA</p>
-                    <p>SLOVENIA</p>
-                    <p>SOLOMON ISLANDS</p>
-                    <p>SOMALIA</p>
-                    <p>SOUTH AFRICA</p>
-                    <p>SOUTH KOREA</p>
-                    <p>SOUTH SUDAN</p>
-                    <p>SPAIN</p>
-                    <p>SRI LANKA</p>
-                    <p>SUDAN</p>
-                    <p>SURINAME</p>
-                    <p>SWAZILAND</p>
-                    <p>SWEDEN</p>
-                    <p>SWITZERLAND</p>
-                    <p>SYRIA</p>
-                    <p>TAJIKISTAN</p>
-                    <p>TANZANIA</p>
-                    <p>THAILAND</p>
-                    <p>TIMOR-LESTE</p>
-                    <p>TOGO</p>
-                    <p>TONGA</p>
-                    <p>TRINIDAD & TOBAGO</p>
-                    <p>TUNISIA</p>
-                    <p>TURKEY</p>
-                    <p>TURKMENISTAN</p>
-                    <p>TUVALU</p>
-                    <p>UGANDA</p>
-                    <p>UKRAINE</p>
-                    <p>UNITED ARAB EMIRATES</p>
-                    <p>UNITED KINGDOM</p>
-                    <p>UNITED STATES</p>
-                    <p>URUGUAY</p>
-                    <p>UZBEKISTAN</p>
-                    <p>VANUATU</p>
-                    <p>VATICAN CITY</p>
-                    <p>VENEZUELA</p>
-                    <p>VIETNAM</p>
-                    <p>YEMEN</p>
-                    <p>ZAMBIA</p>
-                    <p>ZIMBABWE</p>
-                    <a href="#"
-                       class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b"
-                       data-rel="back"
-                       data-transition="flow">Close</a>
-                </div>
-            </div>
         </div>
 
 
@@ -664,17 +603,17 @@
              data-type="vertical">
             <label id="lblOptionForSelf" for="rdrOptionSelf">Buy for self
             </label>
-            <input data-theme="b" type="radio" name="shape" id="rdrOptionSelf" value="circle" checked>
+            <input data-theme="b" type="radio" name="rgBundleFor" id="rdrOptionSelf" value="circle" checked>
             <label id="lblOptionForOther" for="rdrOptionOther">Buy for other
             </label>
-            <input data-theme="b" type="radio" name="shape" id="rdrOptionOther" value="square">
+            <input data-theme="b" type="radio" name="rgBundleFor" id="rdrOptionOther" value="square">
         </div>
 
         <div id="divBundleForNumber" style="margin-top: 20px;" class="input-with-icon half-width-custom">
             <input type="tel" id="txtBundleForNumber" placeholder="e.g. 0732855785" inputmode="numeric"/>
             <i class="fa fa-mobile input-icon" aria-hidden="true"></i>
             <button type="button" class="ui-btn-b ui-btn ui-shadow ui-corner-all"
-                    style="display: inline-block; width: 19%; margin: 0px;">Select...
+                    style="display: inline-block; width: 18%; margin: 0px;">...
             </button>
         </div>
 
@@ -693,36 +632,118 @@
     </div>
 </section>
 
+<!-------------------------------------    Airtime purchase   ------------------------------------------------>
+<!-------------------------------------    Airtime purchase   ------------------------------------------------>
+<section data-role="page" id="pgAirtimePurchase" class="ui-page-theme-a">
+    <!-- Header -->
+    <header data-role="header" class="ui-bar" data-position="fixed">
+        <div class="align-text-center header-text-with-logo-padding">
+            <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
+                    class="fa  fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
+            <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
+            <h1 class="header-text-with-logo">&nbsp;Airtime</h1>
+            <a class="header-options-link" href="#ppOptionsAirtime" data-rel="popup"><i class="fa fa-ellipsis-v"
+                                                                                        aria-hidden="true"></i></a>
+        </div>
+    </header>
+    <div data-role="popup" id="ppOptionsAirtime" data-theme="b">
+        <ul data-role="listview" data-inset="true" style="min-width:210px;">
+            <li data-icon="false"><a href="#pgMain">Back to Main Page</a></li>
+            <li data-icon="false"><a href="#pgChangePIN">Change PIN</a></li>
+            <li data-icon="false"><a href="#">Logout</a></li>
+        </ul>
+    </div>
+    <!-- End of Header -->
+
+    <div data-role="main" class="ui-content">
+
+        <div style="margin-top: 20px;" class="divBuyForOptions ui-grid-a"
+             data-role="controlgroup"
+             data-type="vertical">
+            <label id="lblAirtimeForSelf" for="rdrAirtimeForSelf">Buy for self
+            </label>
+            <input data-theme="b" type="radio" name="rgAirtimeFor" id="rdrAirtimeForSelf" value="circle" checked>
+            <label id="lblOptionAirtimeForOther" for="rdrAirtimeForOther">Buy for other
+            </label>
+            <input data-theme="b" type="radio" name="rgAirtimeFor" id="rdrAirtimeForOther" value="square">
+        </div>
+
+        <div id="divAirtimeForNumber" style="margin-top: 20px;" class="input-with-icon half-width-custom">
+            <input type="tel" id="txtAirtimeForNumber" placeholder="e.g. 0732855785" inputmode="numeric"/>
+            <i class="fa fa-mobile input-icon" aria-hidden="true"></i>
+            <button type="button" class="ui-btn-b ui-btn ui-mini ui-shadow ui-corner-all"
+                    style="display: inline-block; width: 18%; margin: 0px;">...
+            </button>
+        </div>
+
+        <label class="wrap-input-for-margins-15px" for="txtAirtimeAmount">Amount</label>
+
+        <div class="input-with-icon">
+            <input placeholder="Enter amount e.g. 0.56 or 2" type="tel" id="txtAirtimeAmount"
+                   inputmode="numeric"/>
+            <i class="fa fa-dollar dollar-icon" aria-hidden="true"></i>
+        </div>
+
+        <div id="divAirtimePurchaseFromChoice" style="clear: both;">
+            <p class="align-text-center" style="margin-bottom: 0px">Purchase from</p>
+            <button style="width: 49%; display: inline-block; float: left;"
+                    class="ui-button ui-widget ui-corner-all uppercase"><i class="fa fa-arrow-circle-down"
+                                                                           aria-hidden="true"></i>&nbsp;&nbsp;Core
+            </button>
+            <button style="width: 49%; display: inline-block; float: right;"
+                    class="ui-button ui-widget ui-corner-all uppercase"><i class="fa fa-arrow-circle-down"
+                                                                           aria-hidden="true"></i>&nbsp;&nbsp;TeleCash
+            </button>
+        </div>
+    </div>
+
+</section>
+
 <!-------------------------------------    Unsubscribe bundle   ------------------------------------------------>
 <!-------------------------------------    Unsubscribe bundle   ------------------------------------------------>
 <section data-role="page" id="pgUnsubscribe" class="ui-page-theme-a">
+    <!-- Header -->
     <header data-role="header" class="ui-bar" data-position="fixed">
         <div class="align-text-center header-text-with-logo-padding">
             <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
                     class="fa  fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
             <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
             <h1 class="header-text-with-logo">&nbsp;Unsubscribe</h1>
+            <a class="header-options-link" href="#ppOptionsUnsubscribeBundle" data-rel="popup"><i
+                    class="fa fa-ellipsis-v"
+                    aria-hidden="true"></i></a>
         </div>
     </header>
+    <div data-role="popup" id="ppOptionsUnsubscribeBundle" data-theme="b">
+        <ul data-role="listview" data-inset="true" style="min-width:210px;">
+            <li data-icon="false"><a href="#pgMain">Back to Main Page</a></li>
+            <li data-icon="false"><a href="#pgChangePIN">Change PIN</a></li>
+            <li data-icon="false"><a href="#">Logout</a></li>
+        </ul>
+    </div>
+    <!-- End of Header -->
+
     <div data-role="main" class="ui-content">
 
         <form>
 
-            <fieldset>
-                <select id="cboUnsubscribeProduct">
-                    <option disabled selected>Select a product</option>
-                    <option value="W">WhatsApp Bundles</option>
-                    <option>Facebook Bundles</option>
-                    <option>Mega Boost Bundles</option>
-                    <option>Night Bundles</option>
-                    <option>Data Bundle</option>
-                </select>
-            </fieldset>
+            <select data-theme="b" id="cboUnsubscribeProduct">
+                <option disabled selected>Select a product</option>
+                <option value="W">WhatsApp Bundles</option>
+                <option value="F">Facebook Bundles</option>
+                <option value="M">Mega Boost Bundles</option>
+                <option value="N">Night Bundles</option>
+                <option value="D">Data Bundles</option>
+                <option value="T">Wifi Bundles</option>
+            </select>
 
-            <a href="#popupDialog" data-rel="popup" data-position-to="window" data-transition="pop"
-               class="ui-btn ui-corner-all"><i
-                    class="fa fa-ban" aria-hidden="true"></i>&nbsp;&nbsp;Unsubscribe
-            </a>
+            <div class="wrap-input-for-margins-15px">
+                <a href="#popupDialog" data-rel="popup" data-position-to="window" data-transition="pop"
+                   class="ui-btn ui-corner-all"><i
+                        class="fa fa-ban" aria-hidden="true"></i>&nbsp;&nbsp;Unsubscribe
+                </a>
+            </div>
+
             <div data-role="popup" id="popupDialog" data-overlay-theme="b" data-theme="b" data-dismissible="false"
                  style="max-width:400px;">
                 <div data-role="header" data-theme="a"><h1>Unsubscribe?</h1></div>
@@ -742,111 +763,192 @@
     </div>
 </section>
 
-<!-------------------------------------    Store Locator   ------------------------------------------------>
-<!-------------------------------------    Store Locator   ------------------------------------------------>
-<section data-role="page" id="pgStoreLocator" class="ui-page-theme-a">
+<!------------------------------------- Banking Services  ------------------------------------------------>
+<section data-role="page" id="pgBankingServices" class="ui-page-theme-a">
+    <!-- Header -->
     <header data-role="header" class="ui-bar" data-position="fixed">
         <div class="align-text-center header-text-with-logo-padding">
             <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
                     class="fa  fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
             <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
-            <h1 class="header-text-with-logo">&nbsp;Our stores</h1>
+            <h1 class="header-text-with-logo">&nbsp;Banking Services</h1>
+            <a class="header-options-link" href="#ppOptionsBankingServices" data-rel="popup"><i class="fa fa-ellipsis-v"
+                                                                                                aria-hidden="true"></i></a>
         </div>
     </header>
+    <div data-role="popup" id="ppOptionsBankingServices" data-theme="b">
+        <ul data-role="listview" data-inset="true" style="min-width:210px;">
+            <li data-icon="false"><a href="#pgMain">Back to Main Page</a></li>
+            <li data-icon="false"><a href="#pgChangePIN">Change PIN</a></li>
+            <li data-icon="false"><a href="#">Logout</a></li>
+        </ul>
+    </div>
+    <!-- End of Header -->
+
+
     <div data-role="main" class="ui-content">
 
-        <!--<ul data-role="listview" id="shopsList">-->
-            <!---->
-        <!--</ul>-->
+        <form>
 
+            <select data-theme="b">
+                <option disabled selected>Select the recepient bank</option>
+                <option value="Agribank">Agribank</option>
+                <option value="BancABC">BancABC Zimbabwe</option>
+                <option value="Barclays">Barclays Zimbabwe</option>
+                <option value="CBZ">CBZ Bank Limited</option>
+                <option value="Ecobank">Ecobank Zimbabwe</option>
+                <option value="FBC">FBC Bank Limited</option>
+                <option value="MBCA">MBCA Bank Limited</option>
+                <option value="Metbank">Metbank</option>
+                <option value="Stanbic">Stanbic Bank Zimbabwe</option>
+                <option value="StanChart">Standard Chartered Zimbabwe</option>
+                <option value="NMB">NMB Bank Limited</option>
+                <option value="Steward">Steward Bank</option>
+                <option value="ZB">ZB Bank Limited</option>
+            </select>
+
+            <label style="margin-top: 20px;" for="txtReceiverBankAccNumber">Receiver account number</label>
+            <div class="input-with-icon">
+                <input type="tel" id="txtReceiverBankAccNumber"
+                       placeholder="Enter receiver acc number code e.g. 0200123012391" inputmode="numeric"
+                >
+                <i class="fa fa-mobile input-icon" aria-hidden="true"></i>
+            </div>
+
+            <label for="txtZipitMoneyAmount">Amount</label>
+            <div class="input-with-icon">
+                <input placeholder="Enter amount e.g. 0.56 or 2" type="tel" id="txtZipitMoneyAmount"
+                       inputmode="numeric"/>
+                <i class="fa fa-dollar dollar-icon" aria-hidden="true"></i>
+            </div>
+
+            <a href="#ppZipitMoney" style="margin-top: 20px;" data-rel="popup" data-position-to="window"
+               data-transition="pop"
+               class="ui-btn ui-corner-all"><i
+                    class="fa fa-arrow-circle-down" aria-hidden="true"></i>&nbsp;&nbsp;Send money
+            </a>
+            <div data-role="popup" id="ppZipitMoney" data-overlay-theme="b" data-theme="b" data-dismissible="false"
+                 style="max-width:400px;">
+                <div data-role="header" data-theme="a"><h1>Confirm</h1></div>
+                <div role="main" class="ui-content">
+                    <p>You are proceeding to send <b>$3</b> to <b>CBZ</b> Account Number <b>0123910921201</b>.<br/><br/>You
+                        will be charged <b>USD 0.40</b><br/><br/>Proceed?</p>
+                    <a href="#"
+                       class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b"
+                       data-rel="back">Proceed</a> <a href="#"
+                                                      class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b"
+                                                      data-rel="back"
+                                                      data-transition="flow">Cancel</a>
+                </div>
+            </div>
+
+
+        </form>
     </div>
+
 </section>
 
-<!-------------------------------------    Telecash   ------------------------------------------------>
-<!-------------------------------------    Telecash   ------------------------------------------------>
-<section data-role="page" id="pgTelecash" class="ui-page-theme-a">
+<!-------------------------------------    Gold Card   ------------------------------------------------>
+<section data-role="page" id="pgGoldCard" class="ui-page-theme-a">
+    <!-- Header -->
     <header data-role="header" class="ui-bar" data-position="fixed">
         <div class="align-text-center header-text-with-logo-padding">
             <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
-                    class="fa fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
+                    class="fa  fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
             <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
-            <h1 class="header-text-with-logo">&nbsp;Telecash</h1>
+            <h1 class="header-text-with-logo">&nbsp;Gold Card</h1>
+            <a class="header-options-link" href="#ppOptionsGoldCard" data-rel="popup"><i class="fa fa-ellipsis-v"
+                                                                                         aria-hidden="true"></i></a>
         </div>
     </header>
+    <div data-role="popup" id="ppOptionsGoldCard" data-theme="b">
+        <ul data-role="listview" data-inset="true" style="min-width:210px;">
+            <li data-icon="false"><a href="#pgMain">Back to Main Page</a></li>
+            <li data-icon="false"><a href="#pgChangePIN">Change PIN</a></li>
+            <li data-icon="false"><a href="#">Logout</a></li>
+        </ul>
+    </div>
+    <!-- End of Header -->
+
+    <div class="ui-body-d ui-content div-red-background align-text-center"
+         style="padding-bottom: 10px; padding-top: 20px; ">
+        <h1 style="font-size: 15pt  !important;">Active card&nbsp;<a style="color: #fff;"
+                                                                     href="#ppGoldCardStatus"
+                                                                     data-rel="popup"><i
+                class="fa fa-info-circle icon-font-size-small" aria-hidden="true"></i></a></h1>
+        <span class="initcap balance-desc-font-size">Your card is ready to swipe</span>
+    </div>
+    <div data-role="popup" id="ppGoldCardStatus">
+        <p>Your card status is active.</p>
+    </div>
 
     <div data-role="main" class="ui-content">
 
-        <ul data-inset="true" data-role="listview">
-            <li>
-                <a data-rel="popup" data-position-to="window"
-                   data-transition="pop" href="#ppBuyAirtimeFromTelecash">Buy airtime or bundles
-                    <p class="initcap">Purchase airtime or bundles</p>
-                </a>
-            </li>
-            <li>
-                <a href="#pgMyWallet" data-position-to="window"
-                   data-transition="flip">My Wallet
-                    <p class="initcap">Access your TeleCash wallet services</p>
-                </a>
-            </li>
-            <li>
-                <a data-transition="flip" href="#pgMakePayment">Make Payment
-                    <p class="initcap">Make a payment to a merchant, biller or online</p>
-                </a>
-            </li>
-            <li>
-                <a data-transition="flip" href="#pgCashOut">Cash Out
-                    <p class="initcap">Withdraw cash from an agent</p>
-                </a>
-            </li>
-            <li>
-                <a data-transition="flip" href="#pgSendMoney">Send money
-                    <p class="initcap">Send money to another user</p>
-                </a>
-            </li>
-            <li>
-                <a data-transition="flip" href="#pgBankingServices">Banking services
-                    <p class="initcap">Transfer money to another bank account</p>
-                </a>
-            </li>
-            <li>
-                <a data-transition="flip" href="#pgCardManagement">Gold Card
-                    <p class="initcap">Manage your card details and settings</p>
-                </a>
-            </li>
-        </ul>
-
-        <div data-role="popup" id="ppBuyAirtimeFromTelecash" data-overlay-theme="b" data-theme="b"
-             data-dismissible="false"
-             style="max-width:400px;">
-            <div data-role="header" data-theme="a"><h1>Buying airtime</h1></div>
-            <div role="main" class="ui-content">
-                <p>To buy airtime or bundles using TeleCash, please go to the Products and Services menu.</p> <a
-                    href="#products_services_main"
-                    data-transition="flip"
-                    class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b"
-            >Go to products and services</a> <a href="#"
-                                                class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b"
-                                                data-rel="back"
-            >Cancel</a>
+        <div data-role="tabs" style="margin-top: 20px;">
+            <div data-role="navbar" data-grid="a">
+                <ul class="tabs-corners">
+                    <li><a href="#divCardStatus" class="ui-btn-b ui-btn-active tabs-corners-first-child">Card
+                        Status</a>
+                    </li>
+                    <li><a href="#divChangeGoldCardPIN" class="ui-btn-b">Reset PIN</a>
+                    </li>
+                </ul>
             </div>
+
+            <div id="divCardStatus" class="wrap-input-for-margins-15px">
+                <button type="button"
+                        class="ui-btn ui-corner-all ui-shadow ui-btn-b">
+                    <i class="fa  fa-ban" aria-hidden="true"></i>&nbsp;Block Card
+                </button>
+            </div>
+
+            <div id="divChangeGoldCardPIN" class="wrap-input-for-margins-15px">
+                <input type="text" id="txtOldGoldCardPIN" value="" placeholder="Old Password" data-theme="a">
+                <div class="wrap-input-for-margins-15px">
+                    <input type="password" inputmode="numeric" id="txtNewGoldCardPIN"
+                           value="" placeholder="New PIN"
+                           data-theme="a">
+                </div>
+                <div class="wrap-input-for-margins-15px">
+                    <input type="password" inputmode="numeric"
+                           id="txtNewGoldCardPINConfirm" value=""
+                           placeholder="New PIN again"
+                           data-theme="a">
+                </div>
+                <button class="wrap-input-for-margins-15px" type="button"
+                        class="ui-btn ui-corner-all ui-shadow ui-btn-b">
+                    <i class="fa  fa-arrow-circle-down" aria-hidden="true"></i>&nbsp;Save
+                </button>
+            </div>
+
         </div>
 
-
     </div>
+
 </section>
 
-<!------------------------------------- Make Payment ------------------------------------------------>
 <!------------------------------------- Make payment ------------------------------------------------>
 <section data-role="page" id="pgMakePayment" class="ui-page-theme-a">
+    <!-- Header -->
     <header data-role="header" class="ui-bar" data-position="fixed">
         <div class="align-text-center header-text-with-logo-padding">
             <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
                     class="fa  fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
             <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
             <h1 class="header-text-with-logo">&nbsp;Make Payment</h1>
+            <a class="header-options-link" href="#ppOptionsMakePayment" data-rel="popup"><i class="fa fa-ellipsis-v"
+                                                                                            aria-hidden="true"></i></a>
         </div>
     </header>
+    <div data-role="popup" id="ppOptionsMakePayment" data-theme="b">
+        <ul data-role="listview" data-inset="true" style="min-width:210px;">
+            <li data-icon="false"><a href="#pgMain">Back to Main Page</a></li>
+            <li data-icon="false"><a href="#pgChangePIN">Change PIN</a></li>
+            <li data-icon="false"><a href="#">Logout</a></li>
+        </ul>
+    </div>
+    <!-- End of Header -->
+
 
     <div data-role="main" class="ui-content">
 
@@ -943,9 +1045,10 @@
                     <p>A one time password (OTP) <a
                             href="#ppOTPDefinition"
                             data-rel="popup"><i
-                            class="fa fa-info-circle icon-font-size-small" aria-hidden="true"></i></a> will be generated
+                            class="fa fa-info-circle icon-font-size-small initcap" aria-hidden="true"></i></a> will be
+                        generated
                         to initiate your online payment. The OTP will be
-                        usable in the next 30 minutes only and will be valid for 24 hours.</p>
+                        usable in the next 30 minutes only and will be valid for one transaction.</p>
 
                     <div data-role="popup" id="ppOTPDefinition">
                         <p>An OTP is a password that is valid for only one
@@ -983,16 +1086,190 @@
 
 </section>
 
+<!-------------------------------------   ZESA   ------------------------------------------------>
+<section data-role="page" id="pgZESA" class="ui-page-theme-a">
+    <!-- Header -->
+    <header data-role="header" class="ui-bar" data-position="fixed">
+        <div class="align-text-center header-text-with-logo-padding">
+            <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
+                    class="fa  fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
+            <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
+            <h1 class="header-text-with-logo">&nbsp;ZESA Prepaid</h1>
+            <a class="header-options-link" href="#ppZESA" data-rel="popup"><i class="fa fa-ellipsis-v"
+                                                                              aria-hidden="true"></i></a>
+        </div>
+    </header>
+    <div data-role="popup" id="ppZESA" data-theme="b">
+        <ul data-role="listview" data-inset="true" style="min-width:210px;">
+            <li data-icon="false"><a href="#pgMain">Back to Main Page</a></li>
+            <li data-icon="false"><a href="#pgChangePIN">Change PIN</a></li>
+            <li data-icon="false"><a href="#">Logout</a></li>
+        </ul>
+    </div>
+    <!-- End of Header -->
+
+    <div data-role="main" class="ui-content">
+
+        <div data-role="tabs">
+            <div data-role="navbar" data-grid="b">
+                <ul class="tabs-corners">
+                    <li><a href="#divFavourites" class="ui-btn-b ui-btn-active tabs-corners-first-child">Favourites</a>
+                    </li>
+                    <li><a href="#divBuyToken" class="ui-btn-b">Buy</a>
+                    </li>
+                    <li><a href="#divRetreiveToken" class="tabs-corners-last-child ui-btn-b">Retrieve</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div data-role="popup" id="btnDeleteZESAFavConfirm" data-overlay-theme="b" data-theme="b"
+                 data-dismissible="false"
+                 style="max-width:400px;">
+                <div data-role="header" data-theme="a"><h1>Delete?</h1></div>
+                <div role="main" class="ui-content"><h3 class="ui-title">Are you sure you want to delete this
+                    favourite?</h3>
+                    <p>This action cannot be undone.</p> <a href="#"
+                                                            class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b"
+                                                            data-rel="back">Delete</a> <a href="#"
+                                                                                          class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b"
+                                                                                          data-rel="back"
+                                                                                          data-transition="flow">Cancel</a>
+                </div>
+            </div>
+
+            <div id="divFavourites" class="wrap-input-for-margins-15px">
+                <a href="#ppAddFavourite" class="ui-btn ui-corner-all ui-btn-b" data-rel="popup"><i
+                        class="fa fa-plus-circle" aria-hidden="true"></i>
+                    &nbsp;&nbsp;Add Favourite
+                </a>
+                <div data-role="popup" id="ppAddFavourite" data-theme="a" class="ui-corner-all">
+                    <div style="padding:10px 20px;"><h3>Add Favourite</h3>
+                        <input type="text" id="txtZESAFavNickname" value="" placeholder="Nickname" data-theme="a">
+                        <input type="text" id="txtZESAFavAccountNumber" value="" placeholder="Account Number"
+                               data-theme="a">
+                        <button type="button"
+                                class="ui-btn ui-corner-all ui-shadow ui-btn-b">
+                            <i class="fa  fa-arrow-circle-down" aria-hidden="true"></i>&nbsp;Save
+                        </button>
+                        <a data-rel="back" type="button"
+                           class="ui-btn ui-corner-all ui-shadow ui-btn-b">
+                            <i class="fa fa-times-circle" aria-hidden="true"></i>&nbsp;Cancel
+                        </a>
+                    </div>
+                </div>
+
+                <table data-role="table" id="table-custom-2" class="ui-body-d ui-shadow table-stripe ui-responsive">
+                    <thead>
+                    <tr class="ui-bar-d">
+                        <th data-priority="2">Account Number</th>
+                        <th data-priority="2">Nickname</th>
+                        <th data-priority="2"></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>1231241</td>
+                        <td>Work</td>
+                        <td><a href="#btnDeleteZESAFavConfirm" data-rel="popup" data-position-to="window"
+                               data-transition="pop" class="ui-btn ui-corner-all">Delete</a></td>
+                    </tr>
+                    <tr>
+                        <td>12412421</td>
+                        <td>Home</td>
+                        <td><a href="#btnDeleteZESAFavConfirm" data-rel="popup" data-position-to="window"
+                               data-transition="pop" class="ui-btn ui-corner-all">Delete</a></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="divBuyToken" class="wrap-input-for-margins-15px">
+                <div class="half-width-custom">
+                    <label for="txtZESABuyAccountNumber">ZESA Account Number</label>
+                    <input type="text" id="txtZESABuyAccountNumber"
+                           placeholder="Account number e.g. 1312345145"
+                           value="">
+                    <a href="#ppZESABuySelectFav" data-rel="popup" data-transition="slideup"
+                       class="ui-btn-b ui-btn ui-mini ui-shadow ui-corner-all"
+                       style="display: inline-block; width: 17%; margin: 0px;">...
+                    </a>
+                </div>
+
+                <div data-role="popup" id="ppZESABuySelectFav" data-theme="b">
+                    <ul data-icon="false" data-role="listview" data-inset="true" style="min-width:210px;">
+                        <li data-role="list-divider">Select Favourite</li>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Work</a></li>
+                    </ul>
+                </div>
+
+                <label class="wrap-input-for-margins-15px" for="txtZESABuyAmountNumber">Amount</label>
+                <div class="input-with-icon">
+                    <input placeholder="Enter amount e.g. 0.56 or 2" type="tel" id="txtZESABuyAmountNumber"
+                           inputmode="numeric"/>
+                    <i class="fa fa-dollar dollar-icon" aria-hidden="true"></i>
+                </div>
+
+                <div class="wrap-input-for-margins-20px">
+                    <a href="#btnDeleteZESAFavConfirm" data-rel="popup" data-position-to="window"
+                       data-transition="pop" class="ui-btn ui-corner-all">Buy ZESA Token</a>
+                </div>
+
+            </div>
+
+
+            <div id="divRetreiveToken" class="wrap-input-for-margins-15px">
+                <p>These are your ZESA tokens purchased in the last 30 days</p>
+                <table data-role="table" data-mode="reflow" class="ui-body-d ui-shadow table-stripe ui-responsive">
+                    <thead>
+                    <tr class="ui-bar-d">
+                        <th data-priority="2">Account Number</th>
+                        <th data-priority="2">Nickname</th>
+                        <th data-priority="2">Amount Paid</th>
+                        <th data-priority="2">Eletricity redeemed (kW)</th>
+                        <th data-priority="2">Token</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>12412421</td>
+                        <td>Home</td>
+                        <td>$12.90</td>
+                        <td>22kW</td>
+                        <td>9182 3719 2863 4916 2341</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
 <!-------------------------------------  Cash out  ------------------------------------------------>
 <section data-role="page" id="pgCashOut" class="ui-page-theme-a">
+    <!-- Header -->
     <header data-role="header" class="ui-bar" data-position="fixed">
         <div class="align-text-center header-text-with-logo-padding">
             <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
                     class="fa  fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
             <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
             <h1 class="header-text-with-logo">&nbsp;Cash Out</h1>
+            <a class="header-options-link" href="#ppOptionsCashOut" data-rel="popup"><i class="fa fa-ellipsis-v"
+                                                                                        aria-hidden="true"></i></a>
         </div>
     </header>
+    <div data-role="popup" id="ppOptionsCashOut" data-theme="b">
+        <ul data-role="listview" data-inset="true" style="min-width:210px;">
+            <li data-icon="false"><a href="#pgMain">Back to Main Page</a></li>
+            <li data-icon="false"><a href="#pgChangePIN">Change PIN</a></li>
+            <li data-icon="false"><a href="#">Logout</a></li>
+        </ul>
+    </div>
+    <!-- End of Header -->
+
 
     <div data-role="main" class="ui-content">
 
@@ -1037,39 +1314,54 @@
 
 </section>
 
-<!-------------------------------------  Send money ------------------------------------------------>
+
 <!-------------------------------------  Send money ------------------------------------------------>
 <section data-role="page" id="pgSendMoney" class="ui-page-theme-a">
+    <!-- Header -->
     <header data-role="header" class="ui-bar" data-position="fixed">
         <div class="align-text-center header-text-with-logo-padding">
             <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
                     class="fa  fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
             <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
             <h1 class="header-text-with-logo">&nbsp;Send money</h1>
+            <a class="header-options-link" href="#ppOptionsSendMoney" data-rel="popup"><i class="fa fa-ellipsis-v"
+                                                                                          aria-hidden="true"></i></a>
         </div>
     </header>
+    <div data-role="popup" id="ppOptionsSendMoney" data-theme="b">
+        <ul data-role="listview" data-inset="true" style="min-width:210px;">
+            <li data-icon="false"><a href="#pgMain">Back to Main Page</a></li>
+            <li data-icon="false"><a href="#pgChangePIN">Change PIN</a></li>
+            <li data-icon="false"><a href="#">Logout</a></li>
+        </ul>
+    </div>
+    <!-- End of Header -->
+
 
     <div data-role="main" class="ui-content">
 
         <form>
             <fieldset data-role="controlgroup">
-                <input type="radio" name="radio-choice-v-2" id="radio-choice-v-2a" value="on" checked="checked">
+                <input type="radio" data-theme="b" name="rdrSendTelecashTo" id="rdrSendToRegistered" value="on"
+                       checked="checked">
                 <label
-                        for="radio-choice-v-2a">Send to registered</label>
-                <input type="radio" name="radio-choice-v-2"
-                       id="radio-choice-v-2b" value="off">
+                        for="rdrSendToRegistered">Send to registered</label>
+                <input type="radio" name="rdrSendTelecashTo"
+                       data-theme="b" id="rdrSendToUnregistered" value="off">
                 <label
-                        for="radio-choice-v-2b">Send to unregistered</label>
+                        for="rdrSendToUnregistered">Send to unregistered</label>
             </fieldset>
 
             <label style="margin-top: 20px;" for="txtReceiverNumber">Receiver number</label>
             <div class="input-with-icon half-width-custom">
                 <input type="tel" name="txtReceiverNumber"
                        id="txtReceiverNumber"
-                       placeholder="Enter receiver number code e.g. 732855785" inputmode="numeric"
+                       placeholder="e.g. 732855785" inputmode="numeric"
                 >
                 <i class="fa fa-mobile input-icon" aria-hidden="true"></i>
-                <button type="button" style="display: inline-block; width: 19%; margin: 0px;">Select...</button>
+                <button type="button" class="ui-btn-b ui-btn ui-mini ui-shadow ui-corner-all"
+                        style="display: inline-block; width: 18%; margin: 0px;">...
+                </button>
             </div>
 
 
@@ -1085,6 +1377,7 @@
                class="ui-btn ui-corner-all"><i
                     class="fa fa-arrow-circle-down" aria-hidden="true"></i>&nbsp;&nbsp;Send money
             </a>
+            <a href="http://www.telecel.co.zw/tariffs" class="no-underline initcap">View tariffs</a>
             <div data-role="popup" id="ppSendMoney" data-overlay-theme="b" data-theme="b" data-dismissible="false"
                  style="max-width:400px;">
                 <div data-role="header" data-theme="a"><h1>Confirm</h1></div>
@@ -1105,134 +1398,585 @@
 
 </section>
 
-<!-------------------------------------    Card Management   ------------------------------------------------>
-<!-------------------------------------    Card Management   ------------------------------------------------>
-<section data-role="page" id="pgCardManagement" class="ui-page-theme-a">
-    <header data-role="header" class="ui-bar" data-position="fixed">
-        <div class="align-text-center header-text-with-logo-padding">
-            <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
-                    class="fa  fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
-            <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
-            <h1 class="header-text-with-logo">&nbsp;Gold Card</h1>
-        </div>
-    </header>
-    <div data-role="main" class="ui-content">
-
-        <ul data-role="listview" data-inset="true">
-            <li><a data-transition="flip" href="#">Activate Card</a></li>
-            <li><a data-transition="flip" href="#">Change Card PIN</a></li>
-            <li><a data-transition="flip" href="#">Block or Unblock your Card</a></li>
-            <li><a data-transition="flip" href="#">Reset PIN</a></li>
-        </ul>
-
-    </div>
-</section>
-
-<!------------------------------------- Banking Services  ------------------------------------------------>
-<!------------------------------------- Banking Services  ------------------------------------------------>
-<section data-role="page" id="pgBankingServices" class="ui-page-theme-a">
-    <header data-role="header" class="ui-bar" data-position="fixed">
-        <div class="align-text-center header-text-with-logo-padding">
-            <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
-                    class="fa  fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
-            <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
-            <h1 class="header-text-with-logo">&nbsp;Banking Services</h1>
-        </div>
-    </header>
-
-    <div data-role="main" class="ui-content">
-
-        <form>
-
-            <select data-theme="b">
-                <option disabled selected>Select the recepient bank</option>
-                <option value="Agribank">Agribank</option>
-                <option value="BancABC">BancABC Zimbabwe</option>
-                <option value="Barclays">Barclays Zimbabwe</option>
-                <option value="CBZ">CBZ Bank Limited</option>
-                <option value="Ecobank">Ecobank Zimbabwe</option>
-                <option value="FBC">FBC Bank Limited</option>
-                <option value="MBCA">MBCA Bank Limited</option>
-                <option value="Metbank">Metbank</option>
-                <option value="Stanbic">Stanbic Bank Zimbabwe</option>
-                <option value="StanChart">Standard Chartered Zimbabwe</option>
-                <option value="NMB">NMB Bank Limited</option>
-                <option value="Steward">Steward Bank</option>
-                <option value="ZB">ZB Bank Limited</option>
-            </select>
-
-            <label style="margin-top: 20px;" for="txtReceiverBankAccNumber">Receiver account number</label>
-            <div class="input-with-icon">
-                <input type="tel" id="txtReceiverBankAccNumber"
-                       placeholder="Enter receiver acc number code e.g. 0200123012391" inputmode="numeric"
-                >
-                <i class="fa fa-mobile input-icon" aria-hidden="true"></i>
-            </div>
-
-            <label for="txtZipitMoneyAmount">Amount</label>
-            <div class="input-with-icon">
-                <input placeholder="Enter amount e.g. 0.56 or 2" type="tel" id="txtZipitMoneyAmount"
-                       inputmode="numeric"/>
-                <i class="fa fa-dollar dollar-icon" aria-hidden="true"></i>
-            </div>
-
-            <a href="#ppZipitMoney" style="margin-top: 20px;" data-rel="popup" data-position-to="window"
-               data-transition="pop"
-               class="ui-btn ui-corner-all"><i
-                    class="fa fa-arrow-circle-down" aria-hidden="true"></i>&nbsp;&nbsp;Send money
-            </a>
-            <div data-role="popup" id="ppZipitMoney" data-overlay-theme="b" data-theme="b" data-dismissible="false"
-                 style="max-width:400px;">
-                <div data-role="header" data-theme="a"><h1>Confirm</h1></div>
-                <div role="main" class="ui-content">
-                    <p>You are proceeding to send <b>$3</b> to <b>CBZ</b> Account Number <b>0123910921201</b>.<br/><br/>You
-                        will be charged <b>USD 0.40</b><br/><br/>Proceed?</p>
-                    <a href="#"
-                       class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b"
-                       data-rel="back">Proceed</a> <a href="#"
-                                                      class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b"
-                                                      data-rel="back"
-                                                      data-transition="flow">Cancel</a>
-                </div>
-            </div>
-
-
-        </form>
-    </div>
-
-</section>
-
-<!-------------------------------------    Contact US  ------------------------------------------------>
 <!-------------------------------------    Contact US  ------------------------------------------------>
 <section data-role="page" id="pgContactUs" class="ui-page-theme-a">
+    <!-- Header -->
     <header data-role="header" class="ui-bar" data-position="fixed">
         <div class="align-text-center header-text-with-logo-padding">
             <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
                     class="fa  fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
             <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
             <h1 class="header-text-with-logo">&nbsp;Contact us</h1>
+            <a class="header-options-link" href="#ppOptionsContactUs" data-rel="popup"><i class="fa fa-ellipsis-v"
+                                                                                          aria-hidden="true"></i></a>
         </div>
     </header>
+    <div data-role="popup" id="ppOptionsContactUs" data-theme="b">
+        <ul data-role="listview" data-inset="true" style="min-width:210px;">
+            <li data-icon="false"><a href="#pgMain">Back to Main Page</a></li>
+            <li data-icon="false"><a href="#pgChangePIN">Change PIN</a></li>
+            <li data-icon="false"><a href="#">Logout</a></li>
+        </ul>
+    </div>
+    <!-- End of Header -->
+
     <div data-role="main" class="ui-content">
 
+        <p class="red-text" style="margin: 0px;">Call Us</p>
+        <ul class="initcap">
+            <li style="line-height: 20px;">Customer Care (free of charge): 150</li>
+            <li style="line-height: 20px;">Telecash Customer Care (free of charge): 153</li>
+            <li style="line-height: 20px;">Calling from a different network: 0733 150 150</li>
+            <li>Telecel Head Office:+263 4 748 321-7</li>
+        </ul>
+
+        <p class="wrap-input-for-margins-20px red-text" style="margin: 0px;">Visit us</p>
+        <div class="initcap">
+            <p style="padding-left: 30px;">Telecel Head Office</p>
+            <p style="padding-left: 30px;">148 Seke Road,</p>
+            <p style="padding-left: 30px;">Graniteside, Harare</p>
+            <p class="wrap-input-for-margins-20px">Email us at <a href="mailto:info@telecelzim.co.zw">info@telecelzim.co.zw</a>
+                or fill the form below.
+            </p>
+        </div>
+
+        <hr>
+
+        <div class="wrap-input-for-margins-25px">
+            <fieldset>
+                <div class="control-group">
+                    <div class="control-label"><label id="jform_contact_name-lbl" for="jform_contact_name"
+                                                      title="Name"
+                                                      data-content="Your name.">
+                        Name<span class="red-text">&#160;*</span></label>
+                    </div>
+                    <div class="controls"><input type="text" name="jform[contact_name]" id="jform_contact_name" value=""
+                                                 class="required" size="30" required aria-required="true"/></div>
+                </div>
+                <div class="control-group">
+                    <div class="control-label"><label id="jform_contact_email-lbl" for="jform_contact_email"
+                                                      title="Email"
+                                                      data-content="Email Address for contact.">
+                        Email<span class="red-text">&#160;*</span></label>
+                    </div>
+                    <div class="controls"><input type="email" name="jform[contact_email]"
+                                                 class="validate-email required" id="jform_contact_email" value=""
+                                                 size="30" autocomplete="email" required aria-required="true"/></div>
+                </div>
+                <div class="control-group">
+                    <div class="control-label"><label id="jform_contact_emailmsg-lbl" for="jform_contact_emailmsg"
+                                                      title="Subject"
+                                                      data-content="Enter the subject of your message here.">
+                        Subject<span class="red-text">&#160;*</span></label>
+                    </div>
+                    <div class="controls"><input type="text" name="jform[contact_subject]" id="jform_contact_emailmsg"
+                                                 value="" class="required" size="60" required aria-required="true"/>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="control-label"><label id="jform_contact_message-lbl" for="jform_contact_message"
+                                                      title="Message"
+                                                      data-content="Enter your message here.">
+                        Message<span class="red-text">&#160;*</span></label>
+                    </div>
+                    <div class="controls"><textarea name="jform[contact_message]" id="jform_contact_message" cols="50"
+                                                    rows="10" class="required" required aria-required="true"></textarea>
+                    </div>
+                </div>
+                <a href="#" style="margin-top: 20px;" class="ui-btn ui-corner-all"><i class="fa fa-arrow-circle-down"
+                                                                                      aria-hidden="true"></i>&nbsp;&nbsp;Send
+                </a>
+            </fieldset>
+        </div>
 
     </div>
+
 </section>
 
-<!-------------------------------------    Shops List ------------------------------------------------>
-<!-------------------------------------    Shops List ------------------------------------------------>
-<section data-role="page" class="ui-page-theme-a" id="pgShopsList">
+
+<!-------------------------------------    About Page  ------------------------------------------------>
+<section data-role="page" id="pgAbout" class="ui-page-theme-a">
+    <!-- Header -->
+    <header data-role="header" class="ui-bar" data-position="fixed">
+        <div class="align-text-center header-text-with-logo-padding">
+            <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
+                    class="fa  fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
+            <h1 class="header-text-without-logo">&nbsp;About us</h1>
+            <a class="header-options-link" href="#ppOptionsAbout" data-rel="popup"><i class="fa fa-ellipsis-v"
+                                                                                      aria-hidden="true"></i></a>
+        </div>
+    </header>
+    <div data-role="popup" id="ppOptionsAbout" data-theme="b">
+        <ul data-role="listview" data-inset="true" style="min-width:210px;">
+            <li data-icon="false"><a href="#pgMain">Back to Main Page</a></li>
+            <li data-icon="false"><a href="#pgChangePIN">Change PIN</a></li>
+            <li data-icon="false"><a href="#">Logout</a></li>
+        </ul>
+    </div>
+    <!-- End of Header -->
+
+    <div data-role="main" class="ui-content align-text-center">
+        <img src="img/icons/telecel_logo_big.png" style="width: 50%;">
+        <h1>
+            Mobile App
+        </h1>
+        <h4 style="margin-bottom: 5px;">
+            Version 1.0.0
+        </h4>
+
+        <p style="margin: 0px;">Copyright &copy;
+            <script type="text/javascript">document.write(new Date().getYear() + 1900);</script>
+            All rights reserved.
+        </p>
+
+        <p class="initcap">Telecel Zimbabwe is a large mobile phone network in Zimbabwe, with more than 2 000 000 active
+            subscribers. Telecel Zimbabwe is committed to providing its customers with high-tech mobile phone products
+            and services
+            at an affordable cost. It has put in place infrastructure to support an array of innovative value added
+            services and invested
+            substantial time and money refining its products and services to ensure they meet the diverse communication
+            needs of the Zimbabwean market and of the highest international standard. It is also in the process of
+            expanding its network capacity by installing high capacity base stations in new
+            places where previously there was no network coverage, particularly in the rural areas or where it was
+            unsatisfactory.</p>
+
+        <p class="red-text" style="margin: 0px;">Our Vision</p>
+        <p class="initcap">Our goal is to become the most innovative and pioneering communications company of choice in
+            Zimbabwe and the
+            region that can inspire us to impact positive change and shape the way people live and connect with the
+            acknowledgement that customer experience makes the difference</p>
+
+        <p class="red-text" style="margin: 0px;">Our Mission</p>
+        <p class="initcap">We aim to establish the most profitable and customer centric communications business in the
+            region with
+            unmatched and superior quality. To achieve this we will:<br>
+            <span class="aboutPageNewLine">1. Deliver and maintain a high level of customer service efficiently and cost effectively.</span>
+            <span class="aboutPageNewLine">2. Leapfrog the company into a new realm defined by an increase in share of value, service differentiation
+                and innovation.
+            </span>
+            <span class="aboutPageNewLine">3. Create and establish an effective and efficient organization geared to deliver world class service that
+                meets and exceeds customer expectations
+            </span>
+            <span class="aboutPageNewLine">4. Unlock value to enable us to deliver to our shareholders a satisfactory return on their investment to
+                ensure their continued support of the business
+            </span>
+        </p>
+
+        <p class="red-text" style="margin: 0px;">Our Credo</p>
+        <p class="initcap">The overarching guiding philosophy for our business is Our Credo, a deeply held set of values
+            that serves and
+            shapes the strategic and moral compass for the Telecel leadership, management and staff. Our Credo, first
+            and foremost challenges us to put the needs and well-being of our customers first.<br>
+            <span class="aboutPageNewLine">1.
+We are in business because our customers value our high quality communication services.
+            </span>
+            <span class="aboutPageNewLine">2.
+We must listen, understand, anticipate, respond to and satisfy our customers’ needs.
+            </span>
+            <span class="aboutPageNewLine">3.
+Integrity is at the center of everything we do since it establishes the trust and our moral fibre that
+                it critical for our relationship with our customers.
+            </span>
+            <span class="aboutPageNewLine">4.
+We know that we are not the BIGGEST but we are the BEST at what we do.
+            </span>
+            <span class="aboutPageNewLine">5.
+We are strong advocates of diversity and personal development not only because it’s the right thing to
+                do but also because it’s a smart thing to do.
+            </span>
+            <span class="aboutPageNewLine">6.
+We know that teamwork allows us to serve our customers better and faster as we recognize and acknowledge
+                that no single one of us is better than all of us put together.
+            </span>
+            <span class="aboutPageNewLine">6.
+We know that teamwork allows us to serve our customers better and faster as we recognize and acknowledge
+                that no single one of us is better than all of us put together.
+            </span>
+            <span class="aboutPageNewLine">7.
+            Everything that we do is predicated on the strong foundation of our corporate values.
+            </span>
+        </p>
+
+        <p class="red-text" style="margin: 0px;">We are TELECEL and we value</p>
+        <p class="initcap">
+            <span class="aboutPageNewLine">1. Innovation</span>
+            <span class="aboutPageNewLine">2. Performance</span>
+            <span class="aboutPageNewLine">3. Integrity</span>
+            <span class="aboutPageNewLine">4. Respect</span>
+            <span class="aboutPageNewLine">5. Growth</span>
+            <span class="aboutPageNewLine">6. Quality Policy</span>
+        </p>
+
+        <p class="initcap">
+            We shall be trusted and respected for doing everything possible to consistently deliver quality
+            telecommunication services and products to our customers.
+            <br/>
+            <br/>
+            We shall set measurable quality objectives, which we will strive to achieve by continually improving our
+            products, services and key business processes within the framework of our Quality Management System.
+            <br/>
+            <br/>
+            We shall fully utilize our employees' talent and dedication in achieving our goals by promoting
+            empowerment, competence, and recognition of achievement.
+            <br/>
+            <br/>
+            We shall periodically review the performance of our Quality Management System, and our quality policy
+            and objectives to ensure their effectiveness and continuing suitability.
+            <br/>
+            <br/>
+            Total Quality is not only our way of life but also our basic strategy for survival and future growth.
+            <br/>
+            <br/>
+        </p>
+    </div>
+
+</section>
+
+<!------------------------------------- Change Login PIN ------------------------------------------------>
+<section data-role="page" id="pgChangePIN" class="ui-page-theme-a">
+    <!-- Header -->
     <header data-role="header" class="ui-bar" data-position="fixed">
         <div class="align-text-center header-text-with-logo-padding">
             <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
                     class="fa  fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
             <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
-            <h1 class="header-text-with-logo">&nbsp;Telecel Shops List</h1>
+            <h1 class="header-text-with-logo">&nbsp;Change PIN</h1>
+            <a class="header-options-link" href="#ppOptionsChangePIN" data-rel="popup"><i class="fa fa-ellipsis-v"
+                                                                                          aria-hidden="true"></i></a>
         </div>
     </header>
-    <div  data-role="main" class="ui-content" id="shopsList">
+    <div data-role="popup" id="ppOptionsChangePIN" data-theme="b">
+        <ul data-role="listview" data-inset="true" style="min-width:210px;">
+            <li data-icon="false"><a href="#pgMain">Back to Main Page</a></li>
+            <li data-icon="false"><a href="#">Logout</a></li>
+        </ul>
+    </div>
+    <!-- End of Header -->
+
+    <div data-role="main" class="ui-content">
+
+        <form>
+
+            <label for="txtOldPIN">Old PIN</label>
+            <input type="text" id="txtOldPIN" placeholder="Enter old PIN" value="">
+
+            <label for="txtNewPIN">New PIN</label>
+            <input placeholder="Enter new 4 Digit PIN" type="password" id="txtNewPIN"
+                   inputmode="numeric"/>
+
+            <label for="txtConfirmNewPIN">Confirm PIN</label>
+            <input placeholder="Re-enter your new 4 Digit PIN" type="password" id="txtConfirmNewPIN"
+                   inputmode="numeric"/>
+
+            <a href="#" style="margin-top: 20px;" data-rel="popup" data-position-to="window"
+               data-transition="pop"
+               class="ui-btn ui-corner-all"><i
+                    class="fa fa-arrow-circle-down" aria-hidden="true"></i>&nbsp;&nbsp;Change PIN
+            </a>
+
+        </form>
 
     </div>
+</section>
+
+<!--
+<!-------------------------------------  Promotions  ------------------------------------------------>
+<section id="pgPromotions" data-role="page" class="ui-page-theme-a">
+    <!-- Header -->
+    <header data-role="header" class="ui-bar" data-position="fixed">
+        <div class="align-text-center header-text-with-logo-padding">
+            <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
+                    class="fa  fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
+            <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
+            <h1 class="header-text-with-logo">&nbsp;Promotions</h1>
+            <a class="header-options-link" href="#ppPromotions" data-rel="popup"><i class="fa fa-ellipsis-v"
+                                                                                    aria-hidden="true"></i></a>
+        </div>
+    </header>
+    <div data-role="popup" id="ppPromotions" data-theme="b">
+        <ul data-role="listview" data-inset="true" style="min-width:210px;">
+            <li data-icon="false"><a href="#pgMain">Back to Main Page</a></li>
+            <li data-icon="false"><a href="#pgChangePIN">Change PIN</a></li>
+            <li data-icon="false"><a href="#">Logout</a></li>
+        </ul>
+    </div>
+    <!-- End of Header -->
+
+    <div data-role="main" class="ui-content">
+
+        <ul data-role="listview" class="listview-big-thumbs black-text" data-inset="true">
+            <li>
+                <fieldset>
+                    <a href="http://telecel.co.zw/products-services/promotions/293-telecel-red-refer-a-friend-promotion"
+                       class="no-underline">
+                        <img class="listview-big-thumbs-img"
+                             src="http://telecel.co.zw/images/broadband/referbanner.jpg">
+                        <h2>Telecel Red Refer a Friend Promotion</h2>
+                        <p class="initcap"> Telecel's Red Refer A Friend Promotion is rewarding customers who refer a
+                            friend
+                            to
+                            sign up for any
+                            of our Telecel Red packages with a month’s subscription for free. <br/><i>Tap to read
+                                more</i>
+                        </p>
+                    </a>
+                </fieldset>
+            </li>
+            <li>
+                <fieldset>
+                    <a href="http://telecel.co.zw/products-services/promotions/290-unlimited-night-data-bundles"
+                       class="no-underline">
+                        <img class="listview-big-thumbs-img"
+                             src="http://telecel.co.zw/images/broadband/allnightweb.jpg">
+                        <h2>All Night Long Bundles</h2>
+                        <p class="initcap">You can now enjoy unlimited browsing between 11pm and 5am at ridiculuosly low
+                            prices
+                            with telecel's
+                            All night long bundles that start from as low as $1 for 2 nights of access
+                            <br/><i>Tap to read more</i>
+                        </p></a></fieldset>
+            </li>
+            <li>
+                <fieldset>
+                    <a href="http://telecel.co.zw/products-services/promotions/285-telecel-lucky-number-promotion"
+                       class="no-underline">
+                        <h2>Telecel Lucky Number Promotion</h2>
+                        <p class="initcap">Telecel Lucky Number Promotion
+                            <br/><i>Tap to read more</i>
+                        </p></a>
+                </fieldset>
+            </li>
+            <li>
+                <fieldset>
+                    <a href="http://telecel.co.zw/products-services/promotions/280-megaboost" class="no-underline">
+                        <img class="listview-big-thumbs-img"
+                             src="http://telecel.co.zw/images/promotions/megaboostweb1.jpg">
+                        <h2>MegaBoost</h2>
+                        <p class="initcap">The MegaBoost combo package gives you an affordable and convenient way to
+                            connect
+                            <br/><i>Tap to read more</i>
+                        </p></a>
+                </fieldset>
+            </li>
+            <li>
+                <fieldset>
+                    <a href="http://telecel.co.zw/products-services/promotions/252-mega-bonus" class="no-underline">
+                        <img class="listview-big-thumbs-img"
+                             src="http://telecel.co.zw/images/fpslideshow/megaweb2017.jpg">
+                        <h2>Mega Bonus</h2>
+                        <p class="initcap">Get 100% instant bonus with Mega Bonus
+                            every time you recharge <br/><i>Tap to read more</i>
+                        </p></a>
+                </fieldset>
+            </li>
+            <li>
+                <fieldset>
+                    <a href="http://telecel.co.zw/products-services/promotions/242-switchover" class="no-underline">
+                        <img class="listview-big-thumbs-img"
+                             src="http://telecel.co.zw/images/promotions/number%20matching%20web1.jpg">
+                        <h2>Switch Over Campaign</h2>
+                        <p class="initcap">Switch over to Telecel and keep the last 6 digits of your number
+                            <br/><i>Tap to read more</i>
+                        </p></a>
+                </fieldset>
+            </li>
+        </ul>
+
+    </div>
+
+</section>
+
+<!-------------------------------------     Services    ------------------------------------------------>
+<section data-role="page" class="ui-page-theme-a" id="pgServices">
+    <!-- Header -->
+    <header data-role="header" class="ui-bar" data-position="fixed">
+        <div class="align-text-center header-text-with-logo-padding">
+            <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
+                    class="fa  fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
+            <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
+            <h1 class="header-text-with-logo">&nbsp;Services</h1>
+            <a class="header-options-link" href="#ppOptionsTemplate" data-rel="popup"><i class="fa fa-ellipsis-v"
+                                                                                         aria-hidden="true"></i></a>
+        </div>
+    </header>
+    <div data-role="popup" id="ppOptionsTemplate" data-theme="b">
+        <ul data-role="listview" data-inset="true" style="min-width:210px;">
+            <li data-icon="false"><a href="#pgMain">Back to Main Page</a></li>
+            <li data-icon="false"><a href="#pgChangePIN">Change PIN</a></li>
+            <li data-icon="false"><a href="#">Logout</a></li>
+        </ul>
+    </div>
+    <!-- End of Header -->
+
+    <div data-role="main" class="ui-content">
+
+        <div data-role="popup" id="ppTelecareDefinition">
+            <p>Definition foes here.</p>
+        </div>
+        <div data-role="popup" id="ppTeletuneDefinition">
+            <p>Definition foes here.</p>
+        </div>
+        <div data-role="popup" id="ppRoamingDefinitions">
+            <p>Definition foes here.</p>
+        </div>
+        <div data-role="popup" id="ppBeepCallingDefinitions">
+            <p>Definition foes here.</p>
+        </div>
+        <div data-role="popup" id="ppMissedCallAlertDefinition">
+            <p>Definition foes here.</p>
+        </div>
+        <div data-role="popup" id="ppVoicemailDefinition">
+            <p>Definition foes here.</p>
+        </div>
+        <div data-role="popup" id="ppCallWaitingDefinition">
+            <p>Definition foes here.</p>
+        </div>
+
+        <table class="ui-full-width ui-shadow table-stripe custom-table">
+            <thead style="display: none;">
+            <tr>
+                <th>
+                </th>
+                <th>
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td class="align-text-left">Telecare&nbsp;<a href="#ppTelecareDefinition"
+                                                             data-rel="popup"><i
+                        class="fa fa-info-circle icon-font-size-small" aria-hidden="true"></i>
+                </a>
+                </td>
+                <td class="align-text-right"><input type="checkbox" data-role="flipswitch" name="flip-checkbox-1"></td>
+            </tr>
+            <tr>
+                <td>Teletune&nbsp;<a href="#ppTeletuneDefinition" data-rel="popup"><i
+                        class="fa fa-info-circle icon-font-size-small" aria-hidden="true"></i>
+                </a>
+                </td>
+                <td class="align-text-right"><input type="checkbox" data-role="flipswitch" name="flip-checkbox-1"></td>
+            </tr>
+            <tr>
+                <td>Roaming&nbsp;<a href="#ppRoamingDefinitions" data-rel="popup"><i
+                        class="fa fa-info-circle icon-font-size-small" aria-hidden="true"></i></a>
+                </td>
+                <td class="align-text-right"><input type="checkbox" data-role="flipswitch" name="flip-checkbox-1"></td>
+            </tr>
+            <tr>
+                <td>Beep calling&nbsp;<a href="#ppBeepCallingDefinitions" data-rel="popup"><i
+                        class="fa fa-info-circle icon-font-size-small" aria-hidden="true"></i>
+                </a>
+                </td>
+                <td class="align-text-right"><input type="checkbox" data-role="flipswitch" name="flip-checkbox-1"></td>
+            </tr>
+            <tr>
+                <td>Missed call alert&nbsp;<a href="#ppMissedCallAlertDefinition" data-rel="popup"><i
+                        class="fa fa-info-circle icon-font-size-small" aria-hidden="true"></i>
+                </a>
+                </td>
+                <td class="align-text-right"><input type="checkbox" data-role="flipswitch" name="flip-checkbox-1"></td>
+            </tr>
+            <tr>
+                <td>Voicemail&nbsp;<a href="#ppVoicemailDefinition" data-rel="popup"><i
+                        class="fa fa-info-circle icon-font-size-small" aria-hidden="true"></i>
+                </a>
+                </td>
+                <td class="align-text-right"><input type="checkbox" data-role="flipswitch" name="flip-checkbox-1"></td>
+            </tr>
+            <tr>
+                <td>Call waiting&nbsp;<a href="#ppCallWaitingDefinition" data-rel="popup"><i
+                        class="fa fa-info-circle icon-font-size-small" aria-hidden="true"></i>
+                </a>
+                </td>
+                <td class="align-text-right"><input type="checkbox" data-role="flipswitch" name="flip-checkbox-1"></td>
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+</section>
+
+<!-------------------------------------    Shops List ------------------------------------------------>
+<!-------------------------------------    Shops List ------------------------------------------------>
+<section data-role="page" class="ui-page-theme-a" id="pgShopsList">
+    <!-- Header -->
+    <header data-role="header" class="ui-bar" data-position="fixed">
+        <div class="align-text-center header-text-with-logo-padding">
+            <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
+                    class="fa fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
+            <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
+            <h1 class="header-text-with-logo">&nbsp;Telecash</h1>
+            <a class="header-options-link" href="#ppOptionsShopsList" data-rel="popup"><i class="fa fa-ellipsis-v"
+                                                                                          aria-hidden="true"></i></a>
+        </div>
+    </header>
+    <div data-role="popup" id="ppOptionsShopsList" data-theme="b">
+        <ul data-role="listview" data-inset="true" style="min-width:210px;">
+            <li data-icon="false"><a href="#pgMain">Back to Main Page</a></li>
+            <li data-icon="false"><a href="#pgChangePIN">Change PIN</a></li>
+            <li data-icon="false"><a href="#">Logout</a></li>
+        </ul>
+    </div>
+    <!-- End of Header -->
+    <div data-role="main" class="ui-content" id="shopsList">
+
+    </div>
+
+    <!--
+        <form class="ui-filterable">
+            <input id="txtSearchStore" placeholder="Search area or store name" data-type="search"/>
+        </form>
+        <ul data-input="#txtSearchStore" data-divider-theme="b" data-role="listview" data-inset="true"
+            data-filter="true">
+            &lt;!&ndash; Seperator &ndash;&gt;
+            <li data-role="list-divider">Harare</li>
+            <li>
+                <a data-transition="flip" href="#"> Headquaters
+                    <p class="initcap">04 746 872</p>
+                    <p class="initcap">202 Seke Road</p>
+                </a>
+            </li>
+            <li>
+                <a data-transition="flip" href="#">
+                    Chitungwiza
+                    <p class="initcap">04 746 872</p>
+                    <p class="initcap">148 Seke Road</p>
+                </a>
+            </li>
+            <li>
+                <a data-transition="flip" href="#">
+                    Harare
+                    <p class="initcap">04 746 872</p>
+                    <p class="initcap">202 Seke Road</p>
+                </a>
+            </li>
+            &lt;!&ndash; Seperator &ndash;&gt;
+            <li data-role="list-divider">Buluwayo</li>
+            <li>
+                <a data-transition="flip" href="#"> Headquaters
+                    <p class="initcap">04 746 872</p>
+                    <p class="initcap">202 Seke Road</p>
+                </a>
+            </li>
+            <li>
+                <a data-transition="flip" href="#">
+                    Chitungwiza
+                    <p class="initcap">04 746 872</p>
+                    <p class="initcap">148 Seke Road</p>
+                </a>
+            </li>
+            <li>
+                <a data-transition="flip" href="#">
+                    Harare
+                    <p class="initcap">04 746 872</p>
+                    <p class="initcap">202 Seke Road</p>
+                </a>
+            </li>
+        </ul>
+    -->
+
 </section>
 
 
@@ -1248,9 +1992,317 @@
     </header>
     <div data-role="main" class="ui-content">
 
-        <button id = "findContact">FIND CONTACT</button>
+        <button id="findContact">FIND CONTACT</button>
 
     </div>
+</section>
+
+<!-------------------------------------    USSD Shortcodes    ------------------------------------------------>
+<section data-role="page" id="pgUSSDShortcodes" class="ui-page-theme-a">
+    <!-- Header -->
+    <header data-role="header" class="ui-bar" data-position="fixed">
+        <div class="align-text-center header-text-with-logo-padding">
+            <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
+                    class="fa  fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
+            <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
+            <h1 class="header-text-with-logo">&nbsp;USSD Shortcodes</h1>
+            <a class="header-options-link" href="#ppOptionsUSSD" data-rel="popup"><i class="fa fa-ellipsis-v"
+                                                                                     aria-hidden="true"></i></a>
+        </div>
+    </header>
+    <div data-role="popup" id="ppOptionsUSSD" data-theme="b">
+        <ul data-role="listview" data-inset="true" style="min-width:210px;">
+            <li data-icon="false"><a href="#pgMain">Back to Main Page</a></li>
+            <li data-icon="false"><a href="#pgChangePIN">Change PIN</a></li>
+            <li data-icon="false"><a href="#">Logout</a></li>
+        </ul>
+    </div>
+    <!-- End of Header -->
+
+    <div data-role="main" class="ui-content">
+
+        <form class="ui-filterable">
+            <input id="txtSearchUSSD" placeholder="Find USSD..."
+                   data-type="search">
+        </form>
+
+        <ul class="initcap" data-icon="false" data-role="listview" data-filter="true" data-count-theme="b"
+            data-inset="true"
+            data-input="#txtSearchUSSD">
+            <li><a href="#">Balance Enquiry <span class="ui-li-count">*122#</span></a></li>
+            <li><a href="#">Airtime topup <span class="ui-li-count">*123*..#</span></a></li>
+            <li><a href="#">Call me back <span class="ui-li-count">*140#</span></a></li>
+            <li><a href="#">Notify me when reachable <span class="ui-li-count">*141#</span></a></li>
+            <li><a href="#">Missed call alert <span class="ui-li-count">*142#</span></a></li>
+            <li><a href="#">Emergency credit <span class="ui-li-count">*143#</span></a></li>
+            <li><a href="#">Broadband plus data bundles <span class="ui-li-count">*1442#</span></a></li>
+            <li><a href="#">Main menu <span class="ui-li-count">*145#</span></a></li>
+            <li><a href="#">Cross-net voice bundles <span class="ui-li-count">*146#</span></a></li>
+            <li><a href="#">Teletunes <span class="ui-li-count">*147#</span></a></li>
+            <li><a href="#">News on demand, Music on demand, Religious Pack, Prayer alert Service <span
+                    class="ui-li-count">*151#</span></a></li>
+            <li><a href="#">International voice bundles <span class="ui-li-count">*155#</span></a></li>
+            <li><a href="#">Red & Business balance enquiry <span class="ui-li-count">*170#</span></a></li>
+            <li><a href="#">Khuluma baance enquiry <span class="ui-li-count">*175#</span></a></li>
+            <li><a href="#">SMS Bundles <span class="ui-li-count">*404#</span></a></li>
+            <li><a href="#">Daily Data Bundles, All night long bundles <span class="ui-li-count">*470#</span></a></li>
+            <li><a href="#">Whatsapp,Facebook, Wi-Fi Bundles and MegaBoost <span class="ui-li-count">*480#</span></a>
+            </li>
+            <li><a href="#">Telecare <span class="ui-li-count">*808#</span></a></li>
+            <li><a href="#">Telecash <span class="ui-li-count">*888#</span></a></li>
+            <li><a href="#">Prepaid International roaming <span class="ui-li-count">*33156#</span></a></li>
+        </ul>
+    </div>
+</section>
+
+<!-------------------------------------    Telecash   ------------------------------------------------>
+<section data-role="page" id="pgTelecash" class="ui-page-theme-a">
+    <!-- Header -->
+    <header data-role="header" class="ui-bar" data-position="fixed">
+        <div class="align-text-center header-text-with-logo-padding">
+            <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
+                    class="fa fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
+            <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
+            <h1 class="header-text-with-logo">&nbsp;Telecash</h1>
+            <a class="header-options-link" href="#ppOptionsTelecash" data-rel="popup"><i class="fa fa-ellipsis-v"
+                                                                                         aria-hidden="true"></i></a>
+        </div>
+    </header>
+    <div data-role="popup" id="ppOptionsTelecash" data-theme="b">
+        <ul data-role="listview" data-inset="true" style="min-width:210px;">
+            <li data-icon="false"><a href="#pgMain">Back to Main Page</a></li>
+            <li data-icon="false"><a href="#pgChangePIN">Change PIN</a></li>
+            <li data-icon="false"><a href="#">Logout</a></li>
+        </ul>
+    </div>
+    <!-- End of Header -->
+
+
+    <div data-role="main" class="ui-content">
+
+        <ul data-inset="true" data-role="listview">
+            <li>
+                <a data-rel="popup" data-position-to="window"
+                   data-transition="pop" href="#ppBuyAirtimeFromTelecash">Buy airtime or bundles
+                    <p class="initcap">Purchase airtime or bundles</p>
+                </a>
+            </li>
+            <li>
+                <a href="#pgZESA" data-transition="flip">ZESA Prepaid
+                    <p class="initcap">Buy or retreive ZESA tokens</p>
+                </a>
+            </li>
+            <li>
+                <a href="#pgMyWallet"
+                   data-transition="flip">My Wallet
+                    <p class="initcap">Access your TeleCash wallet services</p>
+                </a>
+            </li>
+            <li>
+                <a data-transition="flip" href="#pgMakePayment">Make Payment
+                    <p class="initcap">Make a payment to a merchant, biller or online</p>
+                </a>
+            </li>
+            <li>
+                <a data-transition="flip" href="#pgCashOut">Cash Out
+                    <p class="initcap">Withdraw cash from an agent</p>
+                </a>
+            </li>
+            <li>
+                <a data-transition="flip" href="#pgSendMoney">Send money
+                    <p class="initcap">Send money to another user</p>
+                </a>
+            </li>
+            <li>
+                <a data-transition="flip" href="#pgBankingServices">Banking services
+                    <p class="initcap">Transfer money to another bank account</p>
+                </a>
+            </li>
+            <li>
+                <a data-transition="flip" href="#pgGoldCard">Gold Card
+                    <p class="initcap">Manage your card details and settings</p>
+                </a>
+            </li>
+        </ul>
+
+        <div data-role="popup" id="ppBuyAirtimeFromTelecash" data-overlay-theme="b" data-theme="b"
+             data-dismissible="false"
+             style="max-width:400px;">
+            <div data-role="header" data-theme="a"><h1>Buying airtime</h1></div>
+            <div role="main" class="ui-content">
+                <p>To buy airtime or bundles using TeleCash, please go to the Products and Services menu.</p> <a
+                    href="#products_services_main"
+                    data-transition="flip"
+                    class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b"
+            >Go to products and services</a> <a href="#"
+                                                class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b"
+                                                data-rel="back"
+            >Cancel</a>
+            </div>
+        </div>
+
+
+    </div>
+</section>
+
+
+<!-------------------------------------    Self service   ------------------------------------------------>
+<section data-role="page" id="pgSelfService" class="ui-page-theme-a">
+    <!-- Header -->
+    <header data-role="header" class="ui-bar" data-position="fixed">
+        <div class="align-text-center header-text-with-logo-padding">
+            <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
+                    class="fa fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
+            <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
+            <h1 class="header-text-with-logo">&nbsp;Telecash</h1>
+            <a class="header-options-link" href="#ppOptionsSelfService" data-rel="popup"><i class="fa fa-ellipsis-v"
+                                                                                            aria-hidden="true"></i></a>
+        </div>
+    </header>
+    <div data-role="popup" id="ppOptionsSelfService" data-theme="b">
+        <ul data-role="listview" data-inset="true" style="min-width:210px;">
+            <li data-icon="false"><a href="#pgMain">Back to Main Page</a></li>
+            <li data-icon="false"><a href="#pgChangePIN">Change PIN</a></li>
+            <li data-icon="false"><a href="#">Logout</a></li>
+        </ul>
+    </div>
+    <!-- End of Header -->
+
+    <div data-role="main" class="ui-content">
+
+        <ul data-inset="true" data-role="listview">
+            <li>
+                <a data-rel="popup" data-position-to="window"
+                   data-transition="pop" href="#ppBuyAirtimeFromTelecash">Overscratched cards
+                    <p class="initcap">Redeem airtime from overscratched card</p>
+                </a>
+            </li>
+            <li>
+                <a href="#" data-transition="flip">New PIN/PUK
+                    <p class="initcap">Request a new PIN or PUK</p>
+                </a>
+            </li>
+        </ul>
+
+    </div>
+</section>
+
+<!-------------------------------------    My Wallet ------------------------------------------------>
+<section data-role="page" id="pgMyWallet" class="ui-page-theme-a">
+    <!-- Header -->
+    <header data-role="header" class="ui-bar" data-position="fixed">
+        <div class="align-text-center header-text-with-logo-padding">
+            <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
+                    class="fa  fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
+            <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
+            <h1 class="header-text-with-logo">&nbsp;My Wallet</h1>
+            <a class="header-options-link" href="#ppOptionsMyWallet" data-rel="popup"><i class="fa fa-ellipsis-v"
+                                                                                         aria-hidden="true"></i></a>
+        </div>
+    </header>
+    <div data-role="popup" id="ppOptionsMyWallet" data-theme="b">
+        <ul data-role="listview" data-inset="true" style="min-width:210px;">
+            <li data-icon="false"><a href="#pgMain">Back to Main Page</a></li>
+            <li data-icon="false"><a href="#pgChangePIN">Change PIN</a></li>
+            <li data-icon="false"><a href="#">Logout</a></li>
+        </ul>
+    </div>
+    <!-- End of Header -->
+
+
+    <div class="ui-body-d ui-content div-red-background align-text-center">
+        <h1 class="balance-font-size">$6.32&nbsp;<a style="color: #fff;" href="#ppTelecashBalanceHelp"
+                                                    data-rel="popup"><i
+                class="fa fa-info-circle icon-font-size-small" aria-hidden="true"></i></a></h1>
+        <span class="initcap balance-desc-font-size">Available balance</span>
+    </div>
+    <div data-role="popup" id="ppTelecashBalanceHelp">
+        <p>This is your Telecash balance.</p>
+    </div>
+
+    <div data-role="main" class="ui-content">
+
+        <a href="#ppChangeTelecashPIN" class="ui-btn ui-corner-all ui-btn-b" data-rel="popup"><i class="fa fa-lock"
+                                                                                                 aria-hidden="true"></i>
+            &nbsp;&nbsp;Change PIN
+        </a>
+        <div data-role="popup" id="ppChangeTelecashPIN" data-theme="a" class="ui-corner-all">
+            <div style="padding:10px 20px;"><h3>PIN Change</h3>
+                <input type="text" id="txtOldTelecashPIN" value="" placeholder="Old Password" data-theme="a">
+                <input type="password" inputmode="numeric" id="txtNewTelecashPIN" value="" placeholder="New PIN"
+                       data-theme="a">
+                <input type="password" inputmode="numeric" id="txtNewTelecashPINConfirm" value=""
+                       placeholder="New PIN again"
+                       data-theme="a">
+                <button type="button"
+                        class="ui-btn ui-corner-all ui-shadow ui-btn-b">
+                    <i class="fa  fa-arrow-circle-down" aria-hidden="true"></i>&nbsp;Save
+                </button>
+                <a data-rel="back" type="button"
+                   class="ui-btn ui-corner-all ui-shadow ui-btn-b">
+                    <i class="fa fa-times-circle" aria-hidden="true"></i>&nbsp;Cancel
+                </a>
+            </div>
+        </div>
+
+        <div data-role="tabs" style="margin-top: 20px;">
+            <div data-role="navbar" data-grid="a">
+                <ul class="tabs-corners">
+                    <li><a href="#divTelecashDetails" class="ui-btn-b ui-btn-active tabs-corners-first-child">Account
+                        Details</a>
+                    </li>
+                    <li><a href="#divTransactionHistory" class="ui-btn-b">Account History</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="divTransactionHistory">
+                <p>Account History for last 30 days</p>
+                <table data-role="table" class="ui-body-d ui-shadow table-stripe ui-responsive">
+                    <thead>
+                    <tr class="ui-bar-d">
+                        <th data-priority="2">Payment to</th>
+                        <th data-priority="2">Acc No.</th>
+                        <th data-priority="3">Amount</th>
+                        <th data-priority="5">Date</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>CBZ</td>
+                        <td>001923012931</td>
+                        <td>$45.32</td>
+                        <td>10/12/2017 16:32:16</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <p>For more history on your accounts activities, contact customer care at toll-free number 150 or tap
+                    'Call Us'
+                    below.</p>
+            </div>
+
+            <div id="divTelecashDetails">
+                <table data-role="table" class="ui-body-d ui-shadow table-stripe ui-responsive">
+                    <thead>
+                    <tr class="ui-bar-d">
+                        <th data-priority="2">Current balance</th>
+                        <th data-priority="3">Transaction Limit</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>$123</td>
+                        <td>$123</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+
+    </div>
+
 </section>
 
 
@@ -1271,23 +2323,307 @@
 </section>-->
 
 
-
-
 <!-- END -->
 
 <!-- T&Cs Dialog  -->
 <section data-role="page" data-rel="dialog" id="tcsDialog">
+    <!-- Header -->
     <header data-role="header" style="height: 40px;" class="ui-bar" data-position="fixed">
         <div class="align-text-center header-text-with-logo-padding">
             <h1>Terms & Conditions</h1>
         </div>
     </header>
+    <!-- End of Header -->
+
     <div data-role="main" class="ui-content">
         <div id="tcsDiv">
-            TCs
+            <h5>1. TERMS OF USE</h5>
+            <p>By downloading, browsing, accessing or using this Sample Store mobile application (&ldquo;<strong>Telecel
+                Mobile Application</strong>&rdquo;), you agree to be bound by these Terms and Conditions of Use. We
+                reserve the right to amend these terms and conditions at any time. If you disagree with any of these
+                Terms and Conditions of Use, you must immediately discontinue your access to the Mobile Application and
+                your use of the services offered on the Mobile Application. Continued use of the Mobile Application will
+                constitute acceptance of these Terms and Conditions of Use, as may be amended from time to time.</p>
+            <h5>2. DEFINITIONS</h5>
+            <p>In these Terms and Conditions of Use, the following capitalised terms shall have the following meanings,
+                except where the context otherwise requires:</p>
+            <p>"<strong>Account</strong>" means an account created by a User on the Mobile Application as part of
+                Registration.</p>
+            <p>"<strong>Merchant</strong>" refers to any entity whose products or Samples can be purchased and/or
+                redeemed (as the case may be) via the Mobile Application.</p>
+            <p>"<strong>Privacy Policy</strong>" means the privacy policy set out in Clause 14 of these Terms and
+                Conditions of Use.</p>
+            <p>"<strong>Redeem</strong>" means to redeem a Merchant&rsquo;s products or Samples on these Terms and
+                Conditions of Use and</p>
+            <p>"<strong>Redemption</strong>" means the act of redeeming such products or Samples.</p>
+            <p>"<strong>Register</strong>" means to create an Account on the Mobile Application and "Registration" means
+                the act of creating such an Account.</p>
+            <p>"<strong>Samples</strong>" means samples of Merchant&rsquo;s products and/or Merchant&rsquo;s services,
+                including without limitation, any vouchers for the redemption of such services, and "Sample" means any
+                one of them.</p>
+            <p>"<strong>Services</strong>" means all the services provided by Singapore Post Limited via the Mobile
+                Application to Users, and "Service" means any one of them,</p>
+            <p>"<strong>Users</strong>" means users of the Mobile Application, including you and "User" means any one of
+                them.</p>
+            <h5>3. GENERAL ISSUES ABOUT THE MOBILE APPLICATION AND THE SERVICES</h5>
+            <p>3.1 <em>Applicability of terms and conditions</em>: The use of any Services and/or the Mobile Application
+                and the making of any Redemptions are subject to these Terms and Conditions of Use.</p>
+            <p>3.2 <em>Location</em>: The Mobile Application, the Services and any Redemptions are intended solely for
+                use by Users who access the Mobile Application in Singapore. We make no representation that the Services
+                (or any goods or services) are available or otherwise suitable for use outside of Singapore.
+                Notwithstanding the above, if you access the Mobile Application, use the Services or make any
+                Redemptions from locations outside Singapore, you do so on your own initiative and are responsible for
+                the consequences and for compliance with all applicable laws.</p>
+            <p>3.3 <em>Scope</em>: The Mobile Application, the Services and any Redemptions are for your non-commercial,
+                personal use only and must not be used for business purposes.</p>
+            <p>3.4 <em>Prevention on use</em>: We reserve the right to prevent you using the Mobile Application and the
+                Service (or any part of them) and to prevent you from making any Redemptions.</p>
+            <p>3.5 <em>Equipment and Networks</em>: The provision of the Services and the Mobile Application does not
+                include the provision of a mobile telephone or handheld device or other necessary equipment to access
+                the Mobile Application or the Services or make any Redemptions. To use the Mobile Application or
+                Services or to make Redemptions, you will require Internet connectivity and appropriate
+                telecommunication links. You acknowledge that the terms of agreement with your respective mobile network
+                provider ("<strong>Mobile Provider</strong>") will continue to apply when using the Mobile Application.
+                As a result, you may be charged by the Mobile Provider for access to network connection services for the
+                duration of the connection while accessing the Mobile Application or any such third party charges as may
+                arise. You accept responsibility for any such charges that arise.</p>
+            <p>3.6 <em>Permission to use Mobile Application</em>: If you are not the bill payer for the mobile telephone
+                or handheld device being used to access the Mobile Application, you will be assumed to have received
+                permission from the bill payer for using the Mobile Application.</p>
+            <p>3.7 <em>License to Use Material</em>: By submitting any text or images (including photographs)
+                (&ldquo;<strong>Material</strong>&rdquo;) via the Application, you represent that you are the owner of
+                the Material, or have proper authorization from the owner of the Material to use, reproduce and
+                distribute it. You hereby grant us a worldwide, royalty-free, non-exclusive license to use the Material
+                to promote any products or services.</p>
+            <h5>4. REDEMPTIONS</h5>
+            <p>4.1 <em>Need for registration</em>: You must Register to make a Redemption from the Mobile Application.
+            </p>
+            <p>4.2 <em>Application of these Terms and Conditions of Use</em>: By making any Redemption, you acknowledge
+                that the Redemption is subject to these Terms and Conditions of Use.</p>
+            <p>4.3 <em>Redemption</em>: Any attempted Redemption not consistent with these Terms and Conditions of Use
+                may be disallowed or rendered void at our or the relevant Merchant&rsquo;s discretion.</p>
+            <p>4.4 <em>Responsibility for Redemptions of perishable products of Samples</em>: Each Merchant shall be
+                responsible to ensure that any of its products or Samples for Redemption that are perishable has not
+                expired.</p>
+            <p>4.5 <em>Restrictions</em>: (a) Reproduction, sale, resale or trading of any products or Samples or
+                Redeemed products is prohibited. (b) If any product or Sample is Redeemed for less than its face value,
+                there is no entitlement to a credit, cash or Sample equal to the difference between the face value and
+                the amount Redeemed. (c) Redemption of products or Samples is subject to availability of the relevant
+                Merchants&rsquo; stocks.</p>
+            <p>4.6 <em>SingPost Not Liable</em>: For the avoidance of doubt, Singapore Post Limited shall not be liable
+                for any losses or damages suffered by you resulting from a failure by the relevant Merchant to fulfil
+                any Redemptions in accordance with Clause 4.4 or for a failure by us to deliver any products or Samples
+                to you due to the unavailability of such products or Samples pursuant to Clause 4.5(c).</p>
+            <p>4.7 <em>Lost/stolen Samples</em>: Neither we nor any Merchant shall be responsible for lost or stolen
+                Samples or products that have been Redeemed.</p>
+            <h5>5. LOCATION ALERTS AND NOTIFICATIONS</h5>
+            <p>5.1 You agree to receive pre-programmed notifications (&ldquo;Location Alerts&rdquo;) on the Mobile
+                Application from Merchants if you have turned on locational services on your mobile telephone or other
+                handheld devices (as the case may be).</p>
+            <h5>6. YOUR OBLIGATIONS</h5>
+            <p>6.1 <em>Merchant terms</em>: You agree to (and shall) abide by the terms and conditions of the relevant
+                Merchant for which your Redemption relates to, as may be amended from time to time.</p>
+            <p>6.2 <em>Accurate information</em>: You warrant that all information provided on Registration and
+                contained as part of your Account is true, complete and accurate and that you will promptly inform us of
+                any changes to such information by updating the information in your Account.</p>
+            <p>6.3 <em>Content on the Mobile Application and Service</em>: It is your responsibility to ensure that any
+                products, Samples or information available through the Mobile Application or the Services meet your
+                specific requirements before making any Redemption.</p>
+            <p>6.4 <em>Prohibitions in relation to usage of Services or Mobile Application</em>: Without limitation, you
+                undertake not to use or permit anyone else to use the Services or Mobile Application:-</p>
+            <p>6.4.1 to send or receive any material which is not civil or tasteful</p>
+            <p>6.4.2 to send or receive any material which is threatening, grossly offensive, of an indecent, obscene or
+                menacing character, blasphemous or defamatory of any person, in contempt of court or in breach of
+                confidence, copyright, rights of personality, publicity or privacy or any other third party rights;</p>
+            <p>6.4.3 to send or receive any material for which you have not obtained all necessary licences and/or
+                approvals (from us or third parties); or which constitutes or encourages conduct that would be
+                considered a criminal offence, give rise to civil liability, or otherwise be contrary to the law of or
+                infringe the rights of any third party in any country in the world;</p>
+            <p>6.4.4 to send or receive any material which is technically harmful (including computer viruses, logic
+                bombs, Trojan horses, worms, harmful components, corrupted data or other malicious software or harmful
+                data);</p>
+            <p>6.4.5 to cause annoyance, inconvenience or needless anxiety;</p>
+            <p>6.4.6 to intercept or attempt to intercept any communications transmitted by way of a telecommunications
+                system;</p>
+            <p>6.4.7 for a purpose other than which we have designed them or intended them to be used;</p>
+            <p>6.4.8 for any fraudulent purpose;</p>
+            <p>6.4.9 other than in conformance with accepted Internet practices and practices of any connected
+                networks;</p>
+            <p>6.4.10 in any way which is calculated to incite hatred against any ethnic, religious or any other
+                minority or is otherwise calculated to adversely affect any individual, group or entity; or</p>
+            <p>6.4.11 in such a way as to, or commit any act that would or does, impose an unreasonable or
+                disproportionately large load on our infrastructure.</p>
+            <p>6.5 <em>Prohibitions in relation to usage of Services, Mobile Application</em>: Without limitation, you
+                further undertake not to or permit anyone else to:-</p>
+            <p>6.5.1 resell any products or Samples ;</p>
+            <p>6.5.2 furnish false data including false names, addresses and contact details and fraudulently use
+                credit/debit card numbers;</p>
+            <p>6.5.3 attempt to circumvent our security or network including to access data not intended for you, log
+                into a server or account you are not expressly authorised to access, or probe the security of other
+                networks (such as running a port scan);</p>
+            <p>6.5.4 execute any form of network monitoring which will intercept data not intended for you;</p>
+            <p>6.5.5 enter into fraudulent interactions or transactions with us or a Merchant (including interacting or
+                transacting purportedly on behalf of a third party where you have no authority to bind that third party
+                or you are pretending to be a third party);</p>
+            <p>6.5.6 extract data from or hack into the Mobile Application;</p>
+            <p>6.5.7 use the Services or Mobile Application in breach of these Terms and Conditions of Use;</p>
+            <p>6.5.8 engage in any unlawful activity in connection with the use of the Mobile Application or the
+                Services; or</p>
+            <p>6.5.9 engage in any conduct which, in our exclusive reasonable opinion, restricts or inhibits any other
+                customer from properly using or enjoying the Mobile Application or Services.</p>
+            <h5>7. RULES ABOUT USE OF THE SERVICE AND THE MOBILE APPLICATION</h5>
+            <p>7.1 We will use reasonable endeavours to correct any errors or omissions as soon as practicable after
+                being notified of them. However, we do not guarantee that the Services or the Mobile Application will be
+                free of faults, and we do not accept liability for any such faults, errors or omissions. In the event of
+                any such error, fault or omission, you should report it by contacting us at 6844 0092.</p>
+            <p>7.2 We do not warrant that your use of the Services or the Mobile Application will be uninterrupted and
+                we do not warrant that any information (or messages) transmitted via the Services or the Mobile
+                Application will be transmitted accurately, reliably, in a timely manner or at all. Notwithstanding that
+                we will try to allow uninterrupted access to the Services and the Mobile Application, access to the
+                Services and the Mobile Application may be suspended, restricted or terminated at any time.</p>
+            <p>7.3 We do not give any warranty that the Services and the Mobile Application are free from viruses or
+                anything else which may have a harmful effect on any technology.</p>
+            <p>7.4 We reserve the right to change, modify, substitute, suspend or remove without notice any information
+                or Services on the Mobile Application from time to time. Your access to the Mobile Application and/or
+                the Services may also be occasionally restricted to allow for repairs, maintenance or the introduction
+                of new facilities or services. We will attempt to restore such access as soon as we reasonably can. For
+                the avoidance of doubt, we reserve the right to withdraw any information or Services from the Mobile
+                Application at any time.</p>
+            <p>7.5 We reserve the right to block access to and/or to edit or remove any material which in our reasonable
+                opinion may give rise to a breach of these Terms and Conditions of Use.</p>
+        </div>
+        <div class="col-half-right">
+            <h5>8. SUSPENSION AND TERMINATION</h5>
+            <p>8.1 If you use (or anyone other than you, with your permission uses) the Mobile Application, any Services
+                in contravention of these Terms and Conditions of Use, we may suspend your use of the Services and/or
+                Mobile Application.</p>
+            <p>8.2 If we suspend the Services or Mobile Application, we may refuse to restore the Services or Mobile
+                Application for your use until we receive an assurance from you, in a form we deem acceptable, that
+                there will be no further breach of the provisions of these Terms and Conditions of Use.</p>
+            <p>8.3 Singapore Post Limited shall fully co-operate with any law enforcement authorities or court order
+                requesting or directing Singapore Post Limited to disclose the identity or locate anyone in breach of
+                these Terms and Conditions of Use.</p>
+            <p>8.4 Without limitation to anything else in this Clause 8, we shall be entitled immediately or at any time
+                (in whole or in part) to: (a) suspend the Services and/or Mobile Application; (b) suspend your use of
+                the Services and/or Mobile Application; and/or (c) suspend the use of the Services and/or Mobile
+                Application for persons we believe to be connected (in whatever manner) to you, if:</p>
+            <p>8.4.1 you commit any breach of these Terms and Conditions of Use;</p>
+            <p>8.4.2 we suspect, on reasonable grounds, that you have, might or will commit a breach of these Terms and
+                Conditions of Use; or</p>
+            <p>8.4.3 we suspect, on reasonable grounds, that you may have committed or be committing any fraud against
+                us or any person.</p>
+            <p>8.5 Our rights under this Clause 8 shall not prejudice any other right or remedy we may have in respect
+                of any breach or any rights, obligations or liabilities accrued prior to termination.</p>
+            <h5>9. DISCLAIMER AND EXCLUSION OF LIABILITY</h5>
+            <p>9.1 The Mobile Application, the Services, the information on the Mobile Application and use of all
+                related facilities are provided on an "as is, as available" basis without any warranties whether express
+                or implied.</p>
+            <p>9.2 To the fullest extent permitted by applicable law, we disclaim all representations and warranties
+                relating to the Mobile Application and its contents, including in relation to any inaccuracies or
+                omissions in the Mobile Application, warranties of merchantability, quality, fitness for a particular
+                purpose, accuracy, availability, non-infringement or implied warranties from course of dealing or usage
+                of trade.</p>
+            <p>9.3 We do not warrant that the Mobile Application will always be accessible, uninterrupted, timely,
+                secure, error free or free from computer virus or other invasive or damaging code or that the Mobile
+                Application will not be affected by any acts of God or other force majeure events, including inability
+                to obtain or shortage of necessary materials, equipment facilities, power or telecommunications, lack of
+                telecommunications equipment or facilities and failure of information technology or telecommunications
+                equipment or facilities.</p>
+            <p>9.4 While we may use reasonable efforts to include accurate and up-to-date information on the Mobile
+                Application, we make no warranties or representations as to its accuracy, timeliness or
+                completeness.</p>
+            <p>9.5 We shall not be liable for any acts or omissions of any third parties howsoever caused, and for any
+                direct, indirect, incidental, special, consequential or punitive damages, howsoever caused, resulting
+                from or in connection with the mobile application and the services offered in the mobile application,
+                your access to, use of or inability to use the mobile application or the services offered in the mobile
+                application, reliance on or downloading from the mobile application and/or services, or any delays,
+                inaccuracies in the information or in its transmission including but not limited to damages for loss of
+                business or profits, use, data or other intangible, even if we have been advised of the possibility of
+                such damages.</p>
+            <p>9.6 We shall not be liable in contract, tort (including negligence or breach of statutory duty) or
+                otherwise howsoever and whatever the cause thereof, for any indirect, consequential, collateral, special
+                or incidental loss or damage suffered or incurred by you in connection with the Mobile Application and
+                these Terms and Conditions of Use. For the purposes of these Terms and Conditions of Use, indirect or
+                consequential loss or damage includes, without limitation, loss of revenue, profits, anticipated savings
+                or business, loss of data or goodwill, loss of use or value of any equipment including software, claims
+                of third parties, and all associated and incidental costs and expenses.</p>
+            <p>9.7 The above exclusions and limitations apply only to the extent permitted by law. None of your
+                statutory rights as a consumer that cannot be excluded or limited are affected.</p>
+            <p>9.8 Notwithstanding our efforts to ensure that our system is secure, you acknowledge that all electronic
+                data transfers are potentially susceptible to interception by others. We cannot, and do not, warrant
+                that data transfers pursuant to the Mobile Application, or electronic mail transmitted to and from us,
+                will not be monitored or read by others.</p>
+            <h5>10. INDEMNITY</h5>
+            <p>You agree to indemnify and keep us indemnified against any claim, action, suit or proceeding brought or
+                threatened to be brought against us which is caused by or arising out of (a) your use of the Services,
+                (b) any other party&rsquo;s use of the Services using your user ID, verification PIN and/or any
+                identifier number allocated by Singapore Post Limited, and/or (c) your breach of any of these Terms and
+                Conditions of Use, and to pay us damages, costs and interest in connection with such claim, action, suit
+                or proceeding.</p>
+            <h5>11. INTELLECTUAL PROPERTY RIGHTS</h5>
+            <p>11.1 All editorial content, information, photographs, illustrations, artwork and other graphic materials,
+                and names, logos and trade marks on the Mobile Application are protected by copyright laws and/or other
+                laws and/or international treaties, and belong to us and/or our suppliers, as the case may be. These
+                works, logos, graphics, sounds or images may not be copied, reproduced, retransmitted, distributed,
+                disseminated, sold, published, broadcasted or circulated whether in whole or in part, unless expressly
+                permitted by us and/or our suppliers, as the case may be.</p>
+            <p>11.2 Nothing contained on the Mobile Application should be construed as granting by implication,
+                estoppel, or otherwise, any license or right to use any trademark displayed on the Mobile Application
+                without our written permission. Misuse of any trademarks or any other content displayed on the Mobile
+                Application is prohibited.</p>
+            <p>11.3 We will not hesitate to take legal action against any unauthorised usage of our trade marks, name or
+                symbols to preserve and protect its rights in the matter. All rights not expressly granted herein are
+                reserved. Other product and company names mentioned herein may also be the trade marks of their
+                respective owners.</p>
+            <h5>12. AMENDMENTS</h5>
+            <p>12.1 We may periodically make changes to the contents of the Mobile Application, including to the
+                descriptions and prices of goods and services advertised, at any time and without notice. We assume no
+                liability or responsibility for any errors or omissions in the content of the Mobile Application.</p>
+            <p>12.2 We reserve the right to amend these Terms and Conditions of Use from time to time without notice.
+                The revised Terms and Conditions of Use will be posted on the Mobile Application and shall take effect
+                from the date of such posting. You are advised to review these terms and conditions periodically as they
+                are binding upon you.</p>
+            <h5>13. APPLICABLE LAW AND JURISDICTION</h5>
+            <p>13.1 The Mobile Application can be accessed from all countries around the world where the local
+                technology permits. As each of these places have differing laws, by accessing the Mobile Application
+                both you and we agree that the laws of the Republic of Singapore, without regard to the conflicts of
+                laws principles thereof, will apply to all matters relating to the use of the Mobile Application.</p>
+            <p>13.2 You accept and agree that both you and we shall submit to the exclusive jurisdiction of the courts
+                of the Republic of Singapore in respect of any dispute arising out of and/or in connection with these
+                Terms and Conditions of Use.</p>
+            <h5>14. Privacy Policy</h5>
+            <p>14.1 Access to the Mobile Application and use of the Services offered on the Mobile Application by
+                Singapore Post Limited and/or its group of companies is subject to this Privacy Policy. By accessing the
+                Mobile Application and by continuing to use the Services offered, you are deemed to have accepted this
+                Privacy Policy, and in particular, you are deemed to have consented to our use and disclosure of your
+                personal information in the manner prescribed in this Privacy Policy and for the purposes set out in
+                Clauses 3.7 and/or 4.1. We reserve the right to amend this Privacy Policy from time to time. If you
+                disagree with any part of this Privacy Policy, you must immediately discontinue your access to the
+                Mobile Application and your use of the Services.</p>
+            <p>14.2 As part of the normal operation of our Services, we collect, use and, in some cases, disclose
+                information about you to third parties. Accordingly, we have developed this Privacy Policy in order for
+                you to understand how we collect, use, communicate and disclose and make use of your personal
+                information when you use the Services on the Mobile Application:-</p>
+            <p>(a) Before or at the time of collecting personal information, we will identify the purposes for which
+                information is being collected.</p>
+            <p>(b) We will collect and use of personal information solely with the objective of fulfilling those
+                purposes specified by us and for other compatible purposes, unless we obtain the consent of the
+                individual concerned or as required by law.</p>
+            <p>(c) We will only retain personal information as long as necessary for the fulfillment of those
+                purposes.</p>
+            <p>(d) We will collect personal information by lawful and fair means and, where appropriate, with the
+                knowledge or consent of the individual concerned.</p>
+            <p>(e) Personal information should be relevant to the purposes for which it is to be used, and, to the
+                extent necessary for those purposes, should be accurate, complete, and up-to-date.</p>
+            <p>(f) We will protect personal information by reasonable security safeguards against loss or theft, as well
+                as unauthorized access, disclosure, copying, use or modification.</p>
+            <p>We are committed to conducting our business in accordance with these principles in order to ensure that
+                the confidentiality of personal information is protected and maintained.</p>
         </div>
     </div>
+    </div>
 </section>
+
 
 <!--------------------------------------- Test Tabs  ---------------------------------------------->
 <section data-role="page" id="tbPage">
@@ -1303,9 +2639,9 @@
         <div data-role="tabs">
             <div data-role="navbar">
                 <ul>
-                    <li><a href="#tab1">Tab 1</a> </li>
-                    <li><a href="#tab2">Tab 2</a> </li>
-                    <li><a href="#tab3">Tab 3</a> </li>
+                    <li><a href="#tab1">Tab 1</a></li>
+                    <li><a href="#tab2">Tab 2</a></li>
+                    <li><a href="#tab3">Tab 3</a></li>
                 </ul>
             </div>
             <div id="tab1" class="ui-content">
@@ -1334,6 +2670,7 @@
 <script type="text/javascript" src="js/shops/shops.js"></script>
 <script type="text/javascript" src="js/shops/shopMap.js"></script>
 <script type="text/javascript" src="js/contacts_test.js"></script>
+<script type="text/javascript" src="js/airtimepurchase.js"></script>
 
 </body>
 </html>
