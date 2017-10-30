@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="mobile.telecel.co.zw" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="mobile.telecel.co.zw" version="1.0.0" xmlns="http://www.w3.org/ns/widgets">
     <name>Telecel</name>
     <description>
         The zero rated Telecel Mobile App for you to manage your account from your smart device.
@@ -7,40 +7,35 @@
     <author email="vasforwards@telecelzim.co.zw" href="http://telecel.co.zw">
         Telecel VAS Team
     </author>
-    <content src="index.html" />
-    <access origin="*" />
-    <allow-intent href="http://*/*" />
-    <allow-intent href="https://*/*" />
-    <allow-intent href="tel:*" />
-    <allow-intent href="sms:*" />
-    <allow-intent href="mailto:*" />
-    <allow-intent href="geo:*" />
+    <content src="index.html"/>
+    <access origin="*"/>
+    <allow-intent href="http://*/*"/>
+    <allow-intent href="https://*/*"/>
+    <allow-intent href="tel:*"/>
+    <allow-intent href="sms:*"/>
+    <allow-intent href="mailto:*"/>
+    <allow-intent href="geo:*"/>
+    <icon src="res/icon.png"/>
     <platform name="android">
-        <allow-intent href="market:*" />
-        <icon density="ldpi" src="res/icon/android/icon-36-ldpi.png" />
-        <icon density="mdpi" src="res/icon/android/icon-48-mdpi.png" />
-        <icon density="hdpi" src="res/icon/android/icon-72-hdpi.png" />
-        <icon density="xhdpi" src="res/icon/android/icon-96-xhdpi.png" />
+        <allow-intent href="market:*"/>
+        <icon density="ldpi" src="res/icon/android/icon-36-ldpi.png"/>
+        <icon density="mdpi" src="res/icon/android/icon-48-mdpi.png"/>
+        <icon density="hdpi" src="res/icon/android/icon-72-hdpi.png"/>
+        <icon density="xhdpi" src="res/icon/android/icon-96-xhdpi.png"/>
     </platform>
     <platform name="ios">
-        <allow-intent href="itms:*" />
-        <allow-intent href="itms-apps:*" />
+        <allow-intent href="itms:*"/>
+        <allow-intent href="itms-apps:*"/>
     </platform>
-    <preference name="StatusBarBackgroundColor" value="#c1272d" />
-    <engine name="android" spec="^6.3.0" />
-    <engine name="ios" spec="^4.5.2" />
-    <engine name="windows" spec="^5.0.0" />
-    <plugin name="cordova-plugin-call-number" spec="^1.0.1" />
-    <plugin name="cordova-plugin-contacts" spec="^2.3.1">
-        <variable name="CONTACTS_USAGE_DESCRIPTION" value=" " />
-    </plugin>
-    <plugin name="cordova-plugin-dialogs" spec="^1.3.3" />
-    <plugin name="cordova-plugin-email" spec="^1.2.6" />
-    <plugin name="cordova-plugin-nativestorage" spec="^2.2.2" />
-    <plugin name="cordova-plugin-network-information" spec="^1.3.3" />
-    <plugin name="cordova-plugin-splashscreen" spec="^4.0.3" />
-    <plugin name="cordova-plugin-statusbar" spec="^2.2.3" />
-    <plugin name="cordova-plugin-whitelist" spec="^1.3.2" />
-    <plugin name="cordova-plugin-x-socialsharing" spec="^5.2.1" />
-    <plugin name="cordova-plugin-x-toast" spec="^2.6.0" />
+    <preference name="StatusBarBackgroundColor" value="#9e191d"/>
+    <engine name="android" spec="^6.3.0"/>
+    <engine name="ios" spec="^4.5.2"/>
+    <engine name="windows" spec="^5.0.0"/>
+    <plugin name="cordova-plugin-whitelist" spec="^1.3.2"/>
+    <plugin name="cordova-plugin-statusbar" spec="^2.2.3"/>
+    <plugin name="cordova-plugin-dialogs" spec="^1.3.3"/>
+    <plugin name="cordova-plugin-call-number" spec="^1.0.1"/>
+    <plugin name="cordova-plugin-network-information" spec="^1.3.3"/>
+    <plugin name="cordova-plugin-x-socialsharing" spec="^5.2.1"/>
+    <plugin name="cordova-plugin-x-toast" spec="^2.6.0"/>
 </widget>

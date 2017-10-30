@@ -392,6 +392,12 @@ html body .ui-group-theme-b .ui-bar-inherit {
 	text-shadow: 0 /*{b-bar-shadow-x}*/ 1px /*{b-bar-shadow-y}*/ 0 /*{b-bar-shadow-radius}*/ #eeeeee /*{b-bar-shadow-color}*/;
 	font-weight: bold;
 }
+
+.ui-bar-b {
+	background-color: #e6e6e6 !important;;
+	border-color: #7e7e7e !important;
+}
+
 .ui-bar-b {
 	border-width: 1px;
 	border-style: solid;
@@ -550,8 +556,8 @@ html head + body .ui-body-b.ui-focus {
 html .ui-bar-c .ui-bar-inherit,
 html .ui-body-c .ui-bar-inherit,
 html body .ui-group-theme-c .ui-bar-inherit {
-	background-color: #c1272d /*{c-bar-background-color}*/;
-	border-color: #c1272d /*{c-bar-border}*/;
+	background-color: #9e191d /*{c-bar-background-color}*/;
+	border-color: #9e191d /*{c-bar-border}*/;
 	color: #ffffff /*{c-bar-color}*/;
 	text-shadow: 0 /*{c-bar-shadow-x}*/ 1px /*{c-bar-shadow-y}*/ 0 /*{c-bar-shadow-radius}*/ #444444 /*{c-bar-shadow-color}*/;
 	font-weight: bold;
@@ -564,8 +570,8 @@ html body .ui-group-theme-c .ui-bar-inherit {
 .ui-overlay-c,
 .ui-page-theme-c,
 .ui-page-theme-c .ui-panel-wrapper {
-	background-color: #c1272d /*{c-page-background-color}*/;
-	border-color: #c1272d /*{c-page-border}*/;
+	background-color: #9e191d /*{c-page-background-color}*/;
+	border-color: #9e191d /*{c-page-border}*/;
 	color: #ffffff /*{c-page-color}*/;
 	text-shadow: 0 /*{c-page-shadow-x}*/ 1px /*{c-page-shadow-y}*/ 0 /*{c-page-shadow-radius}*/ #444444 /*{c-page-shadow-color}*/;
 }

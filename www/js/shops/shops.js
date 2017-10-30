@@ -59,7 +59,7 @@ function getShopsList() {
 
 function storeShop(shop) {
     NativeStorage.setItem("shop",shop,function () {
-        $.mobile.changePage("index2.html",{ transition: "flip"})
+        $.mobile.changePage("shopmap.html",{ transition: "flip"})
     },function (error) {
         navigator.notification.alert("Error :"+error, function () {}, "Can't Show Map right now!", "OK")
     })
