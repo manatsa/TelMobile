@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="mobile.telecel.co.zw" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="mobile.telecel.co.zw" version="1.0.0" xmlns="http://www.w3.org/ns/widgets">
     <feature name="Whitelist">
         <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
         <param name="onload" value="true" />
@@ -7,9 +7,6 @@
     <feature name="StatusBar">
         <param name="android-package" value="org.apache.cordova.statusbar.StatusBar" />
         <param name="onload" value="true" />
-    </feature>
-    <feature name="Notification">
-        <param name="android-package" value="org.apache.cordova.dialogs.Notification" />
     </feature>
     <feature name="CallNumber">
         <param name="android-package" value="mx.ferreyra.callnumber.CFCallNumber" />
@@ -36,6 +33,9 @@
     <feature name="Contacts">
         <param name="android-package" value="org.apache.cordova.contacts.ContactManager" />
     </feature>
+    <feature name="Notification">
+        <param name="android-package" value="org.apache.cordova.dialogs.Notification" />
+    </feature>
     <name>Telecel</name>
     <description>
         The zero rated Telecel Mobile App for you to manage your account from your smart device.
@@ -51,11 +51,12 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
+    <icon src="res/icon.png" />
     <allow-intent href="market:*" />
     <icon density="ldpi" src="res/icon/android/icon-36-ldpi.png" />
     <icon density="mdpi" src="res/icon/android/icon-48-mdpi.png" />
     <icon density="hdpi" src="res/icon/android/icon-72-hdpi.png" />
     <icon density="xhdpi" src="res/icon/android/icon-96-xhdpi.png" />
     <preference name="loglevel" value="DEBUG" />
-    <preference name="StatusBarBackgroundColor" value="#c1272d" />
+    <preference name="StatusBarBackgroundColor" value="#9e191d" />
 </widget>

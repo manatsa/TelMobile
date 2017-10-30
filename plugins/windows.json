@@ -1,52 +1,52 @@
 {
-    "prepare_queue": {
-        "installed": [],
-        "uninstalled": []
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "HelloCordova"
     },
-    "config_munge": {
-        "files": {}
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "HelloCordova"
     },
-    "installed_plugins": {
-        "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "HelloCordova"
-        },
-        "cordova-plugin-statusbar": {
-            "PACKAGE_NAME": "HelloCordova"
-        },
-        "cordova-plugin-dialogs": {
-            "PACKAGE_NAME": "HelloCordova"
-        },
-        "cordova-plugin-call-number": {
-            "PACKAGE_NAME": "HelloCordova"
-        },
-        "cordova-plugin-network-information": {
-            "PACKAGE_NAME": "HelloCordova"
-        },
-        "cordova-plugin-x-socialsharing": {
-            "PACKAGE_NAME": "HelloCordova"
-        },
-        "cordova-plugin-x-toast": {
-            "PACKAGE_NAME": "HelloCordova"
-        },
-        "cordova-plugin-splashscreen": {
-            "PACKAGE_NAME": "HelloCordova"
-        },
-        "cordova-plugin-nativestorage": {
-            "PACKAGE_NAME": "HelloCordova"
-        },
-        "cordova-plugin-email": {
-            "PACKAGE_NAME": "HelloCordova"
-        },
-        "cordova-plugin-contacts": {
-            "PACKAGE_NAME": "HelloCordova"
-        }
+    "cordova-plugin-call-number": {
+      "PACKAGE_NAME": "HelloCordova"
     },
-    "dependent_plugins": {
-        "es6-promise-plugin": {
-            "PACKAGE_NAME": "HelloCordova"
-        },
-        "cordova-plugin-compat": {
-            "PACKAGE_NAME": "HelloCordova"
-        }
+    "cordova-plugin-network-information": {
+      "PACKAGE_NAME": "HelloCordova"
+    },
+    "cordova-plugin-x-socialsharing": {
+      "PACKAGE_NAME": "HelloCordova"
+    },
+    "cordova-plugin-x-toast": {
+      "PACKAGE_NAME": "HelloCordova"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "HelloCordova"
+    },
+    "cordova-plugin-nativestorage": {
+      "PACKAGE_NAME": "HelloCordova"
+    },
+    "cordova-plugin-email": {
+      "PACKAGE_NAME": "HelloCordova"
+    },
+    "cordova-plugin-contacts": {
+      "PACKAGE_NAME": "HelloCordova"
+    },
+    "cordova-plugin-dialogs": {
+      "PACKAGE_NAME": "HelloCordova"
     }
+  },
+  "dependent_plugins": {
+    "es6-promise-plugin": {
+      "PACKAGE_NAME": "HelloCordova"
+    },
+    "cordova-plugin-compat": {
+      "PACKAGE_NAME": "HelloCordova"
+    }
+  }
 }

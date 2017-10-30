@@ -9,14 +9,6 @@ module.exports = [
         ]
     },
     {
-        "id": "cordova-plugin-dialogs.notification",
-        "file": "plugins/cordova-plugin-dialogs/www/notification.js",
-        "pluginId": "cordova-plugin-dialogs",
-        "merges": [
-            "navigator.notification"
-        ]
-    },
-    {
         "id": "cordova-plugin-network-information.network",
         "file": "plugins/cordova-plugin-network-information/www/network.js",
         "pluginId": "cordova-plugin-network-information",
@@ -195,13 +187,20 @@ module.exports = [
         "merges": [
             "Contact"
         ]
+    },
+    {
+        "id": "cordova-plugin-dialogs.notification",
+        "file": "plugins/cordova-plugin-dialogs/www/notification.js",
+        "pluginId": "cordova-plugin-dialogs",
+        "merges": [
+            "navigator.notification"
+        ]
     }
 ];
 module.exports.metadata = 
 // TOP OF METADATA
 {
     "cordova-plugin-call-number": "1.0.1",
-    "cordova-plugin-dialogs": "1.3.3",
     "cordova-plugin-network-information": "1.3.3",
     "cordova-plugin-splashscreen": "4.0.3",
     "cordova-plugin-statusbar": "2.2.3",
@@ -212,7 +211,8 @@ module.exports.metadata =
     "cordova-plugin-nativestorage": "2.2.2",
     "cordova-plugin-email": "1.2.6",
     "cordova-plugin-compat": "1.2.0",
-    "cordova-plugin-contacts": "2.3.1"
+    "cordova-plugin-contacts": "2.3.1",
+    "cordova-plugin-dialogs": "1.3.3"
 };
 // BOTTOM OF METADATA
 });

@@ -44,9 +44,6 @@
         "cordova-plugin-statusbar": {
             "PACKAGE_NAME": "HelloCordova"
         },
-        "cordova-plugin-dialogs": {
-            "PACKAGE_NAME": "HelloCordova"
-        },
         "cordova-plugin-call-number": {
             "PACKAGE_NAME": "HelloCordova"
         },
@@ -76,6 +73,9 @@
         },
         "cordova-plugin-contacts": {
             "PACKAGE_NAME": "HelloCordova"
+        },
+        "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "HelloCordova"
         }
     },
     "dependent_plugins": {},
@@ -92,20 +92,6 @@
             "id": "cordova-plugin-statusbar.StatusBarProxy",
             "file": "plugins/cordova-plugin-statusbar/src/windows/StatusBarProxy.js",
             "pluginId": "cordova-plugin-statusbar",
-            "runs": true
-        },
-        {
-            "id": "cordova-plugin-dialogs.notification",
-            "file": "plugins/cordova-plugin-dialogs/www/notification.js",
-            "pluginId": "cordova-plugin-dialogs",
-            "merges": [
-                "navigator.notification"
-            ]
-        },
-        {
-            "id": "cordova-plugin-dialogs.NotificationProxy",
-            "file": "plugins/cordova-plugin-dialogs/src/windows/NotificationProxy.js",
-            "pluginId": "cordova-plugin-dialogs",
             "runs": true
         },
         {
@@ -321,12 +307,25 @@
             "file": "plugins/cordova-plugin-contacts/src/windows/ContactProxy.js",
             "pluginId": "cordova-plugin-contacts",
             "runs": true
+        },
+        {
+            "id": "cordova-plugin-dialogs.notification",
+            "file": "plugins/cordova-plugin-dialogs/www/notification.js",
+            "pluginId": "cordova-plugin-dialogs",
+            "merges": [
+                "navigator.notification"
+            ]
+        },
+        {
+            "id": "cordova-plugin-dialogs.NotificationProxy",
+            "file": "plugins/cordova-plugin-dialogs/src/windows/NotificationProxy.js",
+            "pluginId": "cordova-plugin-dialogs",
+            "runs": true
         }
     ],
     "plugin_metadata": {
         "cordova-plugin-whitelist": "1.3.2",
         "cordova-plugin-statusbar": "2.2.3",
-        "cordova-plugin-dialogs": "1.3.3",
         "cordova-plugin-call-number": "1.0.1",
         "cordova-plugin-network-information": "1.3.3",
         "es6-promise-plugin": "4.1.0",
@@ -336,6 +335,7 @@
         "cordova-plugin-nativestorage": "2.2.2",
         "cordova-plugin-email": "1.2.6",
         "cordova-plugin-compat": "1.2.0",
-        "cordova-plugin-contacts": "2.3.1"
+        "cordova-plugin-contacts": "2.3.1",
+        "cordova-plugin-dialogs": "1.3.3"
     }
 }
