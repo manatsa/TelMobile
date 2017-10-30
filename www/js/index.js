@@ -60,3 +60,16 @@ $('.btnTerms').click(function () {
 $(".btnShare").click(function () {
     window.plugins.socialsharing.share(shareMessage);
 });
+
+
+
+function selectContact(id) {
+    navigator.contacts.pickContact(function(contact){
+        var contact=JSON.parse(JSON.stringify(contact));
+        console.log(JSON.stringify(contact.phoneNumbers[0].value));
+        $("#"+id).val(contact.phoneNumbers[0].value)
+    },function(err){
+        console.log('Error: ' + err);
+        navigator.notification.alert("Error picking contact",function () {},"Contact Picking Failure","OK")
+    });
+}
