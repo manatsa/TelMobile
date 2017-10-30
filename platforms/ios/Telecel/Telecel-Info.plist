@@ -58,5 +58,7 @@
     <array>
       <string>mailto</string>
     </array>
+    <key>NSContactsUsageDescription</key>
+    <string></string>
   </dict>
 </plist>

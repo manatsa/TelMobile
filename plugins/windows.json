@@ -36,10 +36,16 @@
         },
         "cordova-plugin-email": {
             "PACKAGE_NAME": "HelloCordova"
+        },
+        "cordova-plugin-contacts": {
+            "PACKAGE_NAME": "HelloCordova"
         }
     },
     "dependent_plugins": {
         "es6-promise-plugin": {
+            "PACKAGE_NAME": "HelloCordova"
+        },
+        "cordova-plugin-compat": {
             "PACKAGE_NAME": "HelloCordova"
         }
     }

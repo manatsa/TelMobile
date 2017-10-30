@@ -20,10 +20,10 @@ $.mobile.loading("show")
             "Good day.\n\nTelecel Mobile App Password is :" + user.pin,
             "smtp.google.com",
             "manatsachinyeruse@gmail.com",
-            "Manat5achin5", function () {
+            "Manat5achin5")
                 $.mobile.loading("hide")
                 navigator.notification.alert("Email Sent Successfully!", function () {}, "Pin Recovery", "OK")
-            });
+
 
     });
 

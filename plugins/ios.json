@@ -36,10 +36,17 @@
         },
         "cordova-plugin-email": {
             "PACKAGE_NAME": "mobile.telecel.co.zw"
+        },
+        "cordova-plugin-contacts": {
+            "CONTACTS_USAGE_DESCRIPTION": " ",
+            "PACKAGE_NAME": "mobile.telecel.co.zw"
         }
     },
     "dependent_plugins": {
         "es6-promise-plugin": {
+            "PACKAGE_NAME": "mobile.telecel.co.zw"
+        },
+        "cordova-plugin-compat": {
             "PACKAGE_NAME": "mobile.telecel.co.zw"
         }
     }

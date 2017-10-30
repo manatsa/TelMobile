@@ -78,4 +78,7 @@
     <preference name="StatusBarOverlaysWebView" value="true" />
     <preference name="StatusBarStyle" value="lightcontent" />
     <preference name="StatusBarBackgroundColor" value="#c1272d" />
+    <feature name="Contacts">
+        <param name="ios-package" value="CDVContacts" />
+    </feature>
 </widget>

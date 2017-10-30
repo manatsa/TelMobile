@@ -37,6 +37,10 @@
 		4147D99747034D6DAF026C5C /* NativeStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = CE5B98597B9B451393B46CFC /* NativeStorage.m */; };
 		A12FAD2A93FC4323B7F4A7E0 /* APPEmailComposer.m in Sources */ = {isa = PBXBuildFile; fileRef = F7BDD94789584C59BDCF214A /* APPEmailComposer.m */; };
 		B4B5480CB1D14980911B4A61 /* APPEmailComposerImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = F08E127BB0B44FDC91D02708 /* APPEmailComposerImpl.m */; };
+		E56C33127DDE4BE2AF9C64C4 /* CDVContacts.m in Sources */ = {isa = PBXBuildFile; fileRef = E55E657EC0DB489C8AB2EC7F /* CDVContacts.m */; };
+		CBD249AE7FDB4A838B96E27F /* CDVContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E9E929A3B5042F19709162F /* CDVContact.m */; };
+		D1326D6E44304398BA0A60F4 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97C803344B9641F7A8581159 /* AddressBook.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		74BA9D066C914732BE97052E /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 863DA5DEA78246938076DED9 /* AddressBookUI.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +116,12 @@
 		F08E127BB0B44FDC91D02708 /* APPEmailComposerImpl.m */ = {isa = PBXFileReference; name = "APPEmailComposerImpl.m"; path = "cordova-plugin-email/APPEmailComposerImpl.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
 		EC28B06C28FD4608BA360204 /* APPEmailComposer.h */ = {isa = PBXFileReference; name = "APPEmailComposer.h"; path = "cordova-plugin-email/APPEmailComposer.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 		1D40ED96ABC34F19B2CCD34F /* APPEmailComposerImpl.h */ = {isa = PBXFileReference; name = "APPEmailComposerImpl.h"; path = "cordova-plugin-email/APPEmailComposerImpl.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		E55E657EC0DB489C8AB2EC7F /* CDVContacts.m */ = {isa = PBXFileReference; name = "CDVContacts.m"; path = "cordova-plugin-contacts/CDVContacts.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		3E9E929A3B5042F19709162F /* CDVContact.m */ = {isa = PBXFileReference; name = "CDVContact.m"; path = "cordova-plugin-contacts/CDVContact.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		B6DBFD365E72415BA430E32B /* CDVContacts.h */ = {isa = PBXFileReference; name = "CDVContacts.h"; path = "cordova-plugin-contacts/CDVContacts.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		93EEC4583D2F48D79B8CF11A /* CDVContact.h */ = {isa = PBXFileReference; name = "CDVContact.h"; path = "cordova-plugin-contacts/CDVContact.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		97C803344B9641F7A8581159 /* AddressBook.framework */ = {isa = PBXFileReference; name = "AddressBook.framework"; path = "System/Library/Frameworks/AddressBook.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		863DA5DEA78246938076DED9 /* AddressBookUI.framework */ = {isa = PBXFileReference; name = "AddressBookUI.framework"; path = "System/Library/Frameworks/AddressBookUI.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +136,8 @@
 				6817C560914744FB8F5973BF /* Social.framework in Frameworks */,
 				3BDA1FC41D864CD69A9159CC /* MessageUI.framework in Frameworks */,
 				091CB5A9ACB7472F8B267306 /* QuartzCore.framework in Frameworks */,
+				D1326D6E44304398BA0A60F4 /* AddressBook.framework in Frameworks */,
+				74BA9D066C914732BE97052E /* AddressBookUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,6 +215,8 @@
 				7F6D1E48100B421DB7A46825 /* Social.framework */,
 				CF10907086144893AE3A66C8 /* MessageUI.framework */,
 				BB4C6E72674A4442B1D2AFAC /* QuartzCore.framework */,
+				97C803344B9641F7A8581159 /* AddressBook.framework */,
+				863DA5DEA78246938076DED9 /* AddressBookUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -256,6 +270,10 @@
 				F08E127BB0B44FDC91D02708 /* APPEmailComposerImpl.m */,
 				EC28B06C28FD4608BA360204 /* APPEmailComposer.h */,
 				1D40ED96ABC34F19B2CCD34F /* APPEmailComposerImpl.h */,
+				E55E657EC0DB489C8AB2EC7F /* CDVContacts.m */,
+				3E9E929A3B5042F19709162F /* CDVContact.m */,
+				B6DBFD365E72415BA430E32B /* CDVContacts.h */,
+				93EEC4583D2F48D79B8CF11A /* CDVContact.h */,
 			);
 			name = Plugins;
 			path = "Telecel/Plugins";
@@ -383,6 +401,8 @@
 				4147D99747034D6DAF026C5C /* NativeStorage.m in Sources */,
 				A12FAD2A93FC4323B7F4A7E0 /* APPEmailComposer.m in Sources */,
 				B4B5480CB1D14980911B4A61 /* APPEmailComposerImpl.m in Sources */,
+				E56C33127DDE4BE2AF9C64C4 /* CDVContacts.m in Sources */,
+				CBD249AE7FDB4A838B96E27F /* CDVContact.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
