@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<body>
+<div data-role="page" id="googlePage">
+    <header data-role="header">
+        <h1>Shop on Google Map</h1>
+    </header>
+    <div data-role="main" class="ui-content" id="googleMap" style="width:100%;height:100vh;">
+        <script>
+
+            function myMap() {
+                NativeStorage.getItem("shop",function (data) {
+                   var shop=JSON.parse(data.replace(/`/g,'"'));
+                    //alert(shop.latitude+"\n"+shop.longitude);
+                    var latlon=new google.maps.LatLng(shop.latitude,shop.longitude);
+                    var mapProp= {
+                        center:latlon,
+                        zoom:9,
+                    };
+                    var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+                    var marker = new google.maps.Marker({
+                        position: latlon,
+                        map: map,
+                        title: "Greetings!"
+                    });
+                    var contentString="I am a marker, \n But you can put anything in me!"
+                    var infowindow = new google.maps.InfoWindow({
+                        content: contentString
+                    });
+
+                    marker.addListener('click', function() {
+                        infowindow.open(map, marker);
+                    });
+                    google.maps.event.trigger(map,'resize');
+                },function (error) {
+                    navigator.notification.alert("Error :"+error, function () {}, "Can't Show Map right now!", "OK");
+                });
+
+
+
+
+            }
+        </script>
+
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDH7SGQ_oRhAYAgcAedTbdZrkh1jprT1VU&callback=myMap"></script>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+</body>
+</html>

@@ -16,6 +16,9 @@
         "cordova-plugin-network-information": {
             "PACKAGE_NAME": "mobile.telecel.co.zw"
         },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "mobile.telecel.co.zw"
+        },
         "cordova-plugin-statusbar": {
             "PACKAGE_NAME": "mobile.telecel.co.zw"
         },
@@ -28,12 +31,22 @@
         "cordova-plugin-x-toast": {
             "PACKAGE_NAME": "mobile.telecel.co.zw"
         },
-        "cordova-plugin-splashscreen": {
+        "cordova-plugin-nativestorage": {
+            "PACKAGE_NAME": "mobile.telecel.co.zw"
+        },
+        "cordova-plugin-email": {
+            "PACKAGE_NAME": "mobile.telecel.co.zw"
+        },
+        "cordova-plugin-contacts": {
+            "CONTACTS_USAGE_DESCRIPTION": " ",
             "PACKAGE_NAME": "mobile.telecel.co.zw"
         }
     },
     "dependent_plugins": {
         "es6-promise-plugin": {
+            "PACKAGE_NAME": "mobile.telecel.co.zw"
+        },
+        "cordova-plugin-compat": {
             "PACKAGE_NAME": "mobile.telecel.co.zw"
         }
     }

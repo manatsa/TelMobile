@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/TelecelMobileApp.iml" filepath="$PROJECT_DIR$/.idea/TelecelMobileApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/TelMobile.iml" filepath="$PROJECT_DIR$/.idea/TelMobile.iml" />
     </modules>
   </component>
 </project>

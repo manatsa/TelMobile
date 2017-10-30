@@ -4,8 +4,7 @@
 <head>
 
     <!--Metadata-->
-    <meta name="viewport"
-          content="user-scalable=yes, initial-scale=1, maximum-scale=1, minimum-scale=1,height=device-height, width=device-width">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1,height=device-height, width=device-width">
     <!--Custom stylesheet-->
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <!--Jquery stylesheets-->
@@ -20,10 +19,14 @@
     <link rel="stylesheet" href="css/style.css">
 
     <!--JQuery javascript-->
-    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <script src="js/nestedlists.js"></script>
     <script src="js/tabs-fix.js"></script>
+    <script src="js/smtp.js"></script>
+    <script src="https://smtpjs.com/smtp.js"></script>
+    <!--<script  src="http://maps.google.com/maps/api/js?key=AIzaSyDH7SGQ_oRhAYAgcAedTbdZrkh1jprT1VU"></script>-->
+
 
 </head>
 <body>
@@ -56,11 +59,19 @@
 
                     <a data-transition="flip" href="#" id="btnLogin" style="margin-top: 20px;"
                        class="ui-btn ui-btn-c ui-corner-all">Login</a>
-                    <a data-transition="flip" href="#" id="btnOpenRegister"
-                       style="margin-top: 10px; display: inline-block;"><u>Not
-                        registered?</u></a>
-                </div>
+                    <div class="ui-grid-a">
+                        <div class="ui-block-a">
+                            <a data-transition="flip" href="#pgForgotPassword" class="initcap" id="btnForgotPassword" style="margin-top: 10px; display: inline-block; font-size: x-small; "><u>Forgot Password</u></a>
+                        </div>
+                        <div class="ui-block-b">
+                            <a data-transition="flip" href="#pgRegister" id="btnOpenRegister" style="margin-top: 10px; display: inline-block;"><u>Not Registered</u></a>
+                            <a data-transition="flip" href="#pgContacts" id="btngetShopList" style="margin-top: 10px; display: inline-block;"><u>Test Contacts</u></a>
+                        </div>
 
+                    </div>
+
+
+                </div>
             </form>
         </div>
     </div>
@@ -78,9 +89,27 @@
     </div>
 </section>
 
-<!-------------------------------------------  Register Page --------------------------------------------------->
+<!-----------------------------------------------------  Forgot Password  ----------------------------------------------------->
+<section data-role="page"   id="pgForgotPassword" class="ui-page-theme-a">
+    <header data-role="header" class="ui-bar" data-position="fixed">
+        <div class="align-text-center header-text-with-logo-padding">
+            <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
+                    class="fa  fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
+            <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
+            <h1 class="header-text-with-logo">&nbsp;Title</h1>
+        </div>
+    </header>
+    <div data-role="main" class="ui-content">
+        <div></div>
+        <div align="center">
+            <a  data-role="button" id="email_confirm_btn">Send Pin To Email</a>
+        </div>
+    </div>
+</section>
 
-<section data-role="page" class="ui-page-theme-a" id="pgRegister">
+<!-------------------------------------------  Register Page --------------------------------------------------->
+<!-------------------------------------------  Register Page --------------------------------------------------->
+<section data-role="page" data-rel="dialog" class="ui-page-theme-a" id="pgRegister">
     <header data-role="header" class="ui-bar" data-position="fixed">
         <div class="align-text-center header-text-with-logo-padding">
             <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
@@ -98,7 +127,7 @@
                            placeholder="Enter mobile number e.g. 0732123123" class="ui-full-width"/>
                 </fieldset>
                 <fieldset data-role="fieldcontain">
-                    <input type="tel" id="txtRegisterEmail" required="required" inputmode="numeric"
+                    <input type="email" id="txtRegisterEmail" required="required" inputmode="numeric"
                            placeholder="Enter email e.g. you@telecel.com" class="ui-full-width"/>
                     <span class="float-left align-text-left red-text">Y<span class="lowercase">our e-mail is required for authentication in case you forget your PIN.</span></span>
                 </fieldset>
@@ -117,6 +146,7 @@
                 <a data-transition="flip" href="#login_page" style="margin-top: 10px; display: inline-block;"><u>Already
                     have an
                     account?</u></a>
+
             </div>
 
         </form>
@@ -124,6 +154,7 @@
     </div>
 </section>
 
+<!----------------------------------------   Main Page/Start Page ---------------------------------------------------->
 <!----------------------------------------   Main Page/Start Page ---------------------------------------------------->
 <section data-role="page" class="ui-page-theme-a" id="pgMain">
     <header data-role="header" class="ui-bar" data-position="fixed">
@@ -176,12 +207,35 @@
                     <p>Contact us</p>
                 </div>
             </a>
+
+            <a data-transition="flip" href="#">
+                <div class="custom-ui-block-a div-red-background div-rounded-corners align-text-center menu-icons-margin">
+                    <img class="main-menu-icon" src="img/menu_icons/SelfService.png"/>
+                    <p>Self service</p>
+                </div>
+            </a>
+
+            <a data-transition="flip" href="#">
+                <div class="custom-ui-block-b div-red-background div-rounded-corners align-text-center menu-icons-margin">
+                    <img class="main-menu-icon" src="img/menu_icons/USSD.png"/>
+                    <p>USSD Shortcodes</p>
+                </div>
+            </a>
+
+            <a data-transition="flip" href="#">
+                <div class="custom-ui-block-b div-red-background div-rounded-corners align-text-center menu-icons-margin">
+                    <img class="main-menu-icon" src="img/menu_icons/about.png"/>
+                    <p>About</p>
+                </div>
+            </a>
+
         </div>
     </div>
 </section>
 
-<!-------------------------------------    Products and Services Main Page   ------------------------------------------------>
 
+<!--------------------------------------------- Products and Services Main Page   ------------------------------------------------>
+<!--------------------------------------------- Products and Services Main Page   ------------------------------------------------>
 <section data-role="page" id="products_services_main" class="ui-page-theme-a">
     <header data-role="header" class="ui-bar" data-position="fixed">
         <div class="align-text-center header-text-with-logo-padding">
@@ -195,15 +249,17 @@
 
         <ul data-role="listview" data-inset="true">
             <li>
-                <a data-transition="flip" href="#pgBalances">Balance check
-                    <p class="initcap">Tap to select which balance to check</p>
-                </a>
-            </li>
-            <li>
                 <a data-transition="flip" href="#pgBundlesPurchase">Buy product
                     <p class="initcap">Tap to purchase a product or service</p>
                 </a>
             </li>
+
+            <li>
+                <a data-transition="flip" href="#pgBalances">Balance check
+                    <p class="initcap">Tap to select which balance to check</p>
+                </a>
+            </li>
+
             <li>
                 <a data-transition="flip" href="#pgUnsubscribe">Unsubscribe from product
                     <p class="initcap">Tap to unsubscribe from a product</p>
@@ -214,7 +270,8 @@
     </div>
 </section>
 
-<!-------------------------------------    Balances check   ------------------------------------------------>
+<!---------------------------------------------    Balances check   ------------------------------------------------>
+<!---------------------------------------------    Balances check   ------------------------------------------------>
 <section data-role="page" id="pgBalances" class="ui-page-theme-a">
     <header data-role="header" class="ui-bar" data-position="fixed">
         <div class="align-text-center header-text-with-logo-padding">
@@ -327,6 +384,7 @@
 </section>
 
 <!-------------------------------------    Bundles purchases   ------------------------------------------------>
+<!-------------------------------------    Bundles purchases   ------------------------------------------------>
 <section data-role="page" id="pgBundlesPurchase" class="ui-page-theme-a">
     <header data-role="header" class="ui-bar" data-position="fixed">
         <div class="align-text-center header-text-with-logo-padding">
@@ -338,92 +396,304 @@
     </header>
     <div data-role="main" class="ui-content">
 
-        <form>
 
-            <div data-role="navbar" data-grid="c">
+        <div data-role="tabs" id="divProductBundlePurchaseTabs">
+
+            <p class="align-text-center" style="margin-bottom: 0px; margin-top: 0px;">Tap to select product type</p>
+
+            <div style="margin-bottom: 20px;" data-role="navbar" data-grid="b">
                 <ul class="tabs-corners">
-                    <li><a href="#" class="ui-btn-b ui-btn-active tabs-corners-first-child">Voice</a></li>
-                    <li><a href="#" class="ui-btn-b">Data</a></li>
-                    <li><a href="#" class="ui-btn-b">Social</a></li>
-                    <li><a class="tabs-corners-last-child ui-btn-b" href="#">SMS</a></li>
+                    <li><a href="#divVoiceBundles" class="ui-btn-b tabs-corners-first-child">Voice</a>
+                    </li>
+                    <li><a href="#divDataBundles" class="ui-btn-b">Data</a></li>
+                    <li><a class="tabs-corners-last-child ui-btn-b" href="#divSMSBundles">SMS</a></li>
                 </ul>
             </div>
 
-            <fieldset>
 
-                <div id="divDataBundles">
-                    <select id="cboBuyDataProduct">
-                        <option disabled selected>Select a data bundle product</option>
-                        <option value="M">Mega Boost Bundles</option>
-                        <option value="N">Night Bundles</option>
-                        <option value="C">Data Bundles</option>
-                        <option value="T">Telecel Wifi Bundles</option>
-                    </select>
-                </div>
-
-                <div id="divSocialBundles">
-                    <select id="cboBuySocialProduct">
-                        <option disabled selected>Select a social bundle product</option>
-                        <option value="W">WhatsApp Bundles</option>
-                        <option value="F">Facebook Bundles</option>
-                    </select>
-                </div>
-
-                <div id="divVoiceBundles">
-                    <select id="cboBuyVoiceProduct">
-                        <option disabled selected>Select a voice bundle product</option>
-                        <option value="D">International Voice Bundles</option>
-                        <option value="D">Cross-Net Bundles</option>
-                    </select>
-                </div>
-
-                <div id="divSMSBundles">
-                    <select id="cboBuySMSProduct">
-                        <option value="S">SMS Bundles</option>
-\                    </select>
-                </div>
-
-                <span id="lblBundleDescription" class="initcap hidden"></span>
-            </fieldset>
-
-            <fieldset>
-                <select id="cboBundleOptions">
+            <div id="divDataBundles">
+                <select data-theme="b" onchange="populateBundles('cboBuyDataProduct')" id="cboBuyDataProduct">
+                    <option disabled selected>Select a data bundle product</option>
+                    <option value="W">WhatsApp Bundles</option>
+                    <option value="F">Facebook Bundles</option>
+                    <option value="M">Mega Boost Bundles</option>
+                    <option value="N">Night Bundles</option>
+                    <option value="D">Data Bundles</option>
+                    <option value="T">Wifi Bundles</option>
                 </select>
-            </fieldset>
-
-            <div class="divBuyForOptions ui-grid-a" data-role="controlgroup" data-type="vertical">
-                <label id="lblOptionForSelf" for="rdrOptionSelf">Buy for self
-                </label>
-                <input type="radio" name="shape" id="rdrOptionSelf" value="circle" checked>
-                <label id="lblOptionForOther" for="rdrOptionOther">Buy for other
-                </label>
-                <input type="radio" name="shape" id="rdrOptionOther" value="square">
             </div>
 
-            <br>
-
-            <div id="divBundleForNumber" class="input-with-icon">
-                <input type="tel" id="txtBundleForNumber" inputmode="numeric"/>
-                <i class="fa fa-mobile input-icon" aria-hidden="true"></i>
+            <div id="divVoiceBundles">
+                <select data-theme="b" onchange="populateBundles('cboBuyVoiceProduct')" id="cboBuyVoiceProduct">
+                    <option disabled selected>Select a voice bundle product</option>
+                    <option value="I">International Voice Bundles</option>
+                    <option value="O">On-Net Voice Bundles</option>
+                    <option value="CN">Cross-Net Bundles</option>
+                </select>
             </div>
 
-            <div style="clear: both;">
-                <p class="align-text-center" style="margin-bottom: 0px">Purchase from</p>
-                <button style="width: 49%; display: inline-block; float: left;"
-                        class="ui-button ui-widget ui-corner-all uppercase"><i class="fa fa-arrow-circle-down"
-                                                                               aria-hidden="true"></i>&nbsp;&nbsp;Core
-                </button>
-                <button style="width: 49%; display: inline-block; float: right;"
-                        class="ui-button ui-widget ui-corner-all uppercase"><i class="fa fa-arrow-circle-down"
-                                                                               aria-hidden="true"></i>&nbsp;&nbsp;TeleCash
-                </button>
+            <div id="divSMSBundles">
+                <select data-theme="b" onchange="populateBundles('cboBuyVoiceProduct')" id="cboBuySMSProduct">
+                    <option disabled selected>Select a voice bundle product</option>
+                    <option value="S">SMS Bundles</option>
+                </select>
             </div>
+        </div>
 
-        </form>
+        <span id="lblBundleDescription" class="initcap hidden"></span>
+        <div id="divListOfValidCountries" class="hidden">
+            <a href="#ppListOfCountries" data-rel="popup" data-position-to="window" data-transition="pop"
+               class="no-underline initcap">See list of valid countries
+            </a>
+            <div data-role="popup" id="ppListOfCountries" data-overlay-theme="b" data-theme="b" data-dismissible="false"
+                 style="max-width:400px;">
+                <div data-role="header" data-theme="a"><h1>List of countries</h1></div>
+                <div role="main" class="ui-content">
+                    <p>AFGHANISTAN</p>
+                    <p>ALBANIA</p>
+                    <p>ALGERIA</p>
+                    <p>ANDORRA</p>
+                    <p>ANGOLA</p>
+                    <p>ANTIGUA & BARBUDA</p>
+                    <p>ARGENTINA</p>
+                    <p>ARMENIA</p>
+                    <p>AUSTRALIA</p>
+                    <p>AUSTRIA</p>
+                    <p>AZERBAIJAN</p>
+                    <p>BAHAMAS, THE</p>
+                    <p>BAHRAIN</p>
+                    <p>BANGLADESH</p>
+                    <p>BARBADOS</p>
+                    <p>BELARUS</p>
+                    <p>BELGIUM</p>
+                    <p>BELIZE</p>
+                    <p>BENIN</p>
+                    <p>BHUTAN</p>
+                    <p>BOLIVIA</p>
+                    <p>BOSNIA & HERZEGOVINA</p>
+                    <p>BOTSWANA</p>
+                    <p>BRAZIL</p>
+                    <p>BRUNEI</p>
+                    <p>BULGARIA</p>
+                    <p>BURKINA FASO</p>
+                    <p>BURUNDI</p>
+                    <p>CABO VERDE</p>
+                    <p>CAMBODIA</p>
+                    <p>CAMEROON</p>
+                    <p>CANADA</p>
+                    <p>CENTRAL AFRICAN REPUBLIC</p>
+                    <p>CHAD</p>
+                    <p>CHILE</p>
+                    <p>CHINA</p>
+                    <p>COLOMBIA</p>
+                    <p>COMOROS</p>
+                    <p>CONGO, DEMOCRATIC REPUBLIC OF THE</p>
+                    <p>COSTA RICA</p>
+                    <p>CÔTE D'IVOIRE</p>
+                    <p>CROATIA</p>
+                    <p>CUBA</p>
+                    <p>CYPRUS</p>
+                    <p>CZECH REPUBLIC</p>
+                    <p>DENMARK</p>
+                    <p>DJIBOUTI</p>
+                    <p>DOMINICA</p>
+                    <p>DOMINICAN REPUBLIC</p>
+                    <p>ECUADOR</p>
+                    <p>EGYPT</p>
+                    <p>EL SALVADOR</p>
+                    <p>EQUATORIAL GUINEA</p>
+                    <p>ERITREA</p>
+                    <p>ESTONIA</p>
+                    <p>ETHIOPIA</p>
+                    <p>FEDERATED STATES OF MICRONESIA</p>
+                    <p>FIJI</p>
+                    <p>FINLAND</p>
+                    <p>FRANCE</p>
+                    <p>GABON</p>
+                    <p>GAMBIA, THE</p>
+                    <p>GEORGIA</p>
+                    <p>GERMANY</p>
+                    <p>GHANA</p>
+                    <p>GREECE</p>
+                    <p>GRENADA</p>
+                    <p>GUATEMALA</p>
+                    <p>GUINEA</p>
+                    <p>GUINEA-BISSAU</p>
+                    <p>GUYANA</p>
+                    <p>HAITI</p>
+                    <p>HONDURAS</p>
+                    <p>HUNGARY</p>
+                    <p>ICELAND</p>
+                    <p>INDIA</p>
+                    <p>INDONESIA</p>
+                    <p>IRAN</p>
+                    <p>IRAQ</p>
+                    <p>IRELAND</p>
+                    <p>ISRAEL</p>
+                    <p>ITALY</p>
+                    <p>JAMAICA</p>
+                    <p>JAPAN</p>
+                    <p>JORDAN</p>
+                    <p>KAZAKHSTAN</p>
+                    <p>KENYA</p>
+                    <p>KIRIBATI</p>
+                    <p>KOSOVO</p>
+                    <p>KUWAIT</p>
+                    <p>KYRGYZSTAN</p>
+                    <p>LAOS</p>
+                    <p>LATVIA</p>
+                    <p>LEBANON</p>
+                    <p>LESOTHO</p>
+                    <p>LIBERIA</p>
+                    <p>LIBYA</p>
+                    <p>LIECHTENSTEIN</p>
+                    <p>LITHUANIA</p>
+                    <p>LUXEMBOURG</p>
+                    <p>MACEDONIA</p>
+                    <p>MADAGASCAR</p>
+                    <p>MALAWI</p>
+                    <p>MALAYSIA</p>
+                    <p>MALDIVES</p>
+                    <p>MALI</p>
+                    <p>MALTA</p>
+                    <p>MARSHALL ISLANDS</p>
+                    <p>MAURITANIA</p>
+                    <p>MAURITIUS</p>
+                    <p>MEXICO</p>
+                    <p>MOLDOVA</p>
+                    <p>MONACO</p>
+                    <p>MONGOLIA</p>
+                    <p>MONTENEGRO</p>
+                    <p>MOROCCO</p>
+                    <p>MOZAMBIQUE</p>
+                    <p>MYANMAR</p>
+                    <p>NAMIBIA</p>
+                    <p>NAURU</p>
+                    <p>NEPAL</p>
+                    <p>NETHERLANDS</p>
+                    <p>NEW ZEALAND</p>
+                    <p>NICARAGUA</p>
+                    <p>NIGER</p>
+                    <p>NIGERIA</p>
+                    <p>NORTH KOREA</p>
+                    <p>NORWAY</p>
+                    <p>OMAN</p>
+                    <p>PAKISTAN</p>
+                    <p>PALAU</p>
+                    <p>PALESTINE</p>
+                    <p>PANAMA</p>
+                    <p>PAPUA NEW GUINEA</p>
+                    <p>PARAGUAY</p>
+                    <p>PERU</p>
+                    <p>PHILIPPINES</p>
+                    <p>POLAND</p>
+                    <p>PORTUGAL</p>
+                    <p>QATAR</p>
+                    <p>REPUBLIC OF THE CONGO</p>
+                    <p>ROMANIA</p>
+                    <p>RUSSIA</p>
+                    <p>RWANDA</p>
+                    <p>SAINT KITTS & NEVIS</p>
+                    <p>SAINT LUCIA</p>
+                    <p>SAINT VINCENT & THE GRENADINES</p>
+                    <p>SAMOA</p>
+                    <p>SAN MARINO</p>
+                    <p>SÃO TOMÉ & PRÍNCIPE</p>
+                    <p>SAUDI ARABIA</p>
+                    <p>SENEGAL</p>
+                    <p>SERBIA</p>
+                    <p>SEYCHELLES</p>
+                    <p>SIERRA LEONE</p>
+                    <p>SINGAPORE</p>
+                    <p>SLOVAKIA</p>
+                    <p>SLOVENIA</p>
+                    <p>SOLOMON ISLANDS</p>
+                    <p>SOMALIA</p>
+                    <p>SOUTH AFRICA</p>
+                    <p>SOUTH KOREA</p>
+                    <p>SOUTH SUDAN</p>
+                    <p>SPAIN</p>
+                    <p>SRI LANKA</p>
+                    <p>SUDAN</p>
+                    <p>SURINAME</p>
+                    <p>SWAZILAND</p>
+                    <p>SWEDEN</p>
+                    <p>SWITZERLAND</p>
+                    <p>SYRIA</p>
+                    <p>TAJIKISTAN</p>
+                    <p>TANZANIA</p>
+                    <p>THAILAND</p>
+                    <p>TIMOR-LESTE</p>
+                    <p>TOGO</p>
+                    <p>TONGA</p>
+                    <p>TRINIDAD & TOBAGO</p>
+                    <p>TUNISIA</p>
+                    <p>TURKEY</p>
+                    <p>TURKMENISTAN</p>
+                    <p>TUVALU</p>
+                    <p>UGANDA</p>
+                    <p>UKRAINE</p>
+                    <p>UNITED ARAB EMIRATES</p>
+                    <p>UNITED KINGDOM</p>
+                    <p>UNITED STATES</p>
+                    <p>URUGUAY</p>
+                    <p>UZBEKISTAN</p>
+                    <p>VANUATU</p>
+                    <p>VATICAN CITY</p>
+                    <p>VENEZUELA</p>
+                    <p>VIETNAM</p>
+                    <p>YEMEN</p>
+                    <p>ZAMBIA</p>
+                    <p>ZIMBABWE</p>
+                    <a href="#"
+                       class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b"
+                       data-rel="back"
+                       data-transition="flow">Close</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="divBundleOptions">
+            <select onchange="showBuyForOther()" data-theme="b" id="cboBundleOptions">
+            </select>
+        </div>
+
+        <div id="divBuyForOtherControlGroup" style="margin-top: 20px;" class="divBuyForOptions ui-grid-a"
+             data-role="controlgroup"
+             data-type="vertical">
+            <label id="lblOptionForSelf" for="rdrOptionSelf">Buy for self
+            </label>
+            <input data-theme="b" type="radio" name="shape" id="rdrOptionSelf" value="circle" checked>
+            <label id="lblOptionForOther" for="rdrOptionOther">Buy for other
+            </label>
+            <input data-theme="b" type="radio" name="shape" id="rdrOptionOther" value="square">
+        </div>
+
+        <div id="divBundleForNumber" style="margin-top: 20px;" class="input-with-icon half-width-custom">
+            <input type="tel" id="txtBundleForNumber" placeholder="e.g. 0732855785" inputmode="numeric"/>
+            <i class="fa fa-mobile input-icon" aria-hidden="true"></i>
+            <button type="button" class="ui-btn-b ui-btn ui-shadow ui-corner-all"
+                    style="display: inline-block; width: 19%; margin: 0px;">Select...
+            </button>
+        </div>
+
+        <div id="divPurchaseFromChoice" style="clear: both;">
+            <p class="align-text-center" style="margin-bottom: 0px">Purchase from</p>
+            <button style="width: 49%; display: inline-block; float: left;"
+                    class="ui-button ui-widget ui-corner-all uppercase"><i class="fa fa-arrow-circle-down"
+                                                                           aria-hidden="true"></i>&nbsp;&nbsp;Core
+            </button>
+            <button style="width: 49%; display: inline-block; float: right;"
+                    class="ui-button ui-widget ui-corner-all uppercase"><i class="fa fa-arrow-circle-down"
+                                                                           aria-hidden="true"></i>&nbsp;&nbsp;TeleCash
+            </button>
+        </div>
 
     </div>
 </section>
 
+<!-------------------------------------    Unsubscribe bundle   ------------------------------------------------>
 <!-------------------------------------    Unsubscribe bundle   ------------------------------------------------>
 <section data-role="page" id="pgUnsubscribe" class="ui-page-theme-a">
     <header data-role="header" class="ui-bar" data-position="fixed">
@@ -473,6 +743,7 @@
 </section>
 
 <!-------------------------------------    Store Locator   ------------------------------------------------>
+<!-------------------------------------    Store Locator   ------------------------------------------------>
 <section data-role="page" id="pgStoreLocator" class="ui-page-theme-a">
     <header data-role="header" class="ui-bar" data-position="fixed">
         <div class="align-text-center header-text-with-logo-padding">
@@ -484,15 +755,14 @@
     </header>
     <div data-role="main" class="ui-content">
 
-        <ul data-role="listview">
-            <li><a data-transition="flip" href="#">Store 1</a></li>
-            <li><a data-transition="flip" href="#">Store 2</a></li>
-            <li><a data-transition="flip" href="#">Store 3</a></li>
-        </ul>
+        <!--<ul data-role="listview" id="shopsList">-->
+            <!---->
+        <!--</ul>-->
 
     </div>
 </section>
 
+<!-------------------------------------    Telecash   ------------------------------------------------>
 <!-------------------------------------    Telecash   ------------------------------------------------>
 <section data-role="page" id="pgTelecash" class="ui-page-theme-a">
     <header data-role="header" class="ui-bar" data-position="fixed">
@@ -503,48 +773,505 @@
             <h1 class="header-text-with-logo">&nbsp;Telecash</h1>
         </div>
     </header>
+
     <div data-role="main" class="ui-content">
 
         <ul data-inset="true" data-role="listview">
             <li>
-                <a data-transition="flip" href="#pgBalances">Bill Payment
-                    <p class="initcap">Make a payment for a bill</p>
+                <a data-rel="popup" data-position-to="window"
+                   data-transition="pop" href="#ppBuyAirtimeFromTelecash">Buy airtime or bundles
+                    <p class="initcap">Purchase airtime or bundles</p>
                 </a>
             </li>
             <li>
-                <a data-transition="flip" href="#pgBalances">Cash Out
+                <a href="#pgMyWallet" data-position-to="window"
+                   data-transition="flip">My Wallet
+                    <p class="initcap">Access your TeleCash wallet services</p>
+                </a>
+            </li>
+            <li>
+                <a data-transition="flip" href="#pgMakePayment">Make Payment
+                    <p class="initcap">Make a payment to a merchant, biller or online</p>
+                </a>
+            </li>
+            <li>
+                <a data-transition="flip" href="#pgCashOut">Cash Out
                     <p class="initcap">Withdraw cash from an agent</p>
                 </a>
             </li>
             <li>
-                <a data-transition="flip" href="#pgBalances">Send money
+                <a data-transition="flip" href="#pgSendMoney">Send money
                     <p class="initcap">Send money to another user</p>
                 </a>
             </li>
             <li>
-                <a data-transition="flip" href="#pgBalances">Banking services
-                    <p class="initcap">Access and manage your bank accounts</p>
+                <a data-transition="flip" href="#pgBankingServices">Banking services
+                    <p class="initcap">Transfer money to another bank account</p>
                 </a>
             </li>
             <li>
-                <a data-transition="flip" href="#pgBalances">Online payment
-                    <p class="initcap">Pay on the internet using Telecash</p>
-                </a>
-            </li>
-            <li>
-                <a data-transition="flip" href="#pgBalances">Pay merchant
-                    <p class="initcap">Pay a merchant to obtain commodities</p>
-                </a>
-            </li>
-            <li>
-                <a data-transition="flip" href="#pgBalances">Card Management
+                <a data-transition="flip" href="#pgCardManagement">Gold Card
                     <p class="initcap">Manage your card details and settings</p>
                 </a>
             </li>
         </ul>
 
+        <div data-role="popup" id="ppBuyAirtimeFromTelecash" data-overlay-theme="b" data-theme="b"
+             data-dismissible="false"
+             style="max-width:400px;">
+            <div data-role="header" data-theme="a"><h1>Buying airtime</h1></div>
+            <div role="main" class="ui-content">
+                <p>To buy airtime or bundles using TeleCash, please go to the Products and Services menu.</p> <a
+                    href="#products_services_main"
+                    data-transition="flip"
+                    class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b"
+            >Go to products and services</a> <a href="#"
+                                                class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b"
+                                                data-rel="back"
+            >Cancel</a>
+            </div>
+        </div>
+
+
     </div>
 </section>
+
+<!------------------------------------- Make Payment ------------------------------------------------>
+<!------------------------------------- Make payment ------------------------------------------------>
+<section data-role="page" id="pgMakePayment" class="ui-page-theme-a">
+    <header data-role="header" class="ui-bar" data-position="fixed">
+        <div class="align-text-center header-text-with-logo-padding">
+            <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
+                    class="fa  fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
+            <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
+            <h1 class="header-text-with-logo">&nbsp;Make Payment</h1>
+        </div>
+    </header>
+
+    <div data-role="main" class="ui-content">
+
+        <p class="align-text-center" style="margin-bottom: 0px">Pay</p>
+        <div data-role="tabs">
+            <div data-role="navbar" data-grid="b">
+                <ul class="tabs-corners">
+                    <li><a href="#divBillerForm" class="ui-btn-b ui-btn-active tabs-corners-first-child">Biller</a>
+                    </li>
+                    <li><a href="#divMerchantForm" class="ui-btn-b">Merchant</a>
+                    </li>
+                    <li><a href="#divPayOnlineForm" class="tabs-corners-last-child ui-btn-b">Online</a>
+                    </li>
+                </ul>
+            </div>
+
+            <form>
+
+
+                <div id="divBillerForm">
+                    <label for="txtBillerCode">Biller Code</label>
+                    <input type="text" name="txtBillerCode" id="txtBillerCode"
+                           placeholder="Enter biller code e.g. 12345"
+                           value="">
+
+
+                    <label for="txtBillAmount">Amount</label>
+                    <div class="input-with-icon">
+                        <input placeholder="Enter amount e.g. 0.56 or 2" type="tel" id="txtBillAmount"
+                               inputmode="numeric"/>
+                        <i class="fa fa-dollar dollar-icon" aria-hidden="true"></i>
+                    </div>
+
+                    <a href="#ppPayBill" style="margin-top: 20px;" data-rel="popup" data-position-to="window"
+                       data-transition="pop"
+                       class="ui-btn ui-corner-all"><i
+                            class="fa fa-arrow-circle-down" aria-hidden="true"></i>&nbsp;&nbsp;Make payment
+                    </a>
+                    <div data-role="popup" id="ppPayBill" data-overlay-theme="b" data-theme="b" data-dismissible="false"
+                         style="max-width:400px;">
+                        <div data-role="header" data-theme="a"><h1>Confirm</h1></div>
+                        <div role="main" class="ui-content">
+                            <p>You are proceeding to pay amount <b>$3</b> to biller <b>Tatenda
+                                Zifudzi</b>.<br/><br/>Proceed?</p> <a href="#"
+                                                                      class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b"
+                                                                      data-rel="back">Proceed</a> <a href="#"
+                                                                                                     class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b"
+                                                                                                     data-rel="back"
+                                                                                                     data-transition="flow">Cancel</a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="divMerchantForm">
+                    <label for="txtMerchantCode">Merchant Code</label>
+                    <input type="text" name="txtBillerCode" id="txtMerchantCode"
+                           placeholder="Enter merchant code e.g. 12345"
+                           value="">
+
+
+                    <label for="txtMerchantAmount">Amount</label>
+                    <div class="input-with-icon">
+                        <input placeholder="Enter amount e.g. 0.56 or 2" type="tel" id="txtMerchantAmount"
+                               inputmode="numeric"/>
+                        <i class="fa fa-dollar dollar-icon" aria-hidden="true"></i>
+                    </div>
+
+                    <a href="#ppPayMerchantConfirm" style="margin-top: 20px;" data-rel="popup" data-position-to="window"
+                       data-transition="pop"
+                       class="ui-btn ui-corner-all"><i
+                            class="fa fa-arrow-circle-down" aria-hidden="true"></i>&nbsp;&nbsp;Make payment
+                    </a>
+                    <div data-role="popup" id="ppPayMerchantConfirm" data-overlay-theme="b" data-theme="b"
+                         data-dismissible="false"
+                         style="max-width:400px;">
+                        <div data-role="header" data-theme="a"><h1>Confirm</h1></div>
+                        <div role="main" class="ui-content">
+                            <p>You are proceeding to pay amount <b>$3</b> to merchant <b>Pick 'n' Pay</b>.<br/><br/>Proceed?
+                            </p> <a href="#"
+                                    class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b"
+                                    data-rel="back">Proceed</a> <a href="#"
+                                                                   class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b"
+                                                                   data-rel="back"
+                                                                   data-transition="flow">Cancel</a>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div id="divPayOnlineForm">
+
+                    <p>A one time password (OTP) <a
+                            href="#ppOTPDefinition"
+                            data-rel="popup"><i
+                            class="fa fa-info-circle icon-font-size-small" aria-hidden="true"></i></a> will be generated
+                        to initiate your online payment. The OTP will be
+                        usable in the next 30 minutes only and will be valid for 24 hours.</p>
+
+                    <div data-role="popup" id="ppOTPDefinition">
+                        <p>An OTP is a password that is valid for only one
+                            login session or transaction.</p>
+                    </div>
+
+                    <a href="#ppInitiateOnlinePayment" style="margin-top: 20px;" data-rel="popup"
+                       data-position-to="window"
+                       data-transition="pop"
+                       class="ui-btn ui-corner-all"><i
+                            class="fa fa-arrow-circle-down" aria-hidden="true"></i>&nbsp;&nbsp;Generate OTP
+                    </a>
+                    <div data-role="popup" id="ppInitiateOnlinePayment" data-overlay-theme="b" data-theme="b"
+                         data-dismissible="false"
+                         style="max-width:400px;">
+                        <div data-role="header" data-theme="a"><h1>Confirm</h1></div>
+                        <div role="main" class="ui-content">
+                            <p>You are proceeding to initiate an online payment. <br/><br/>Proceed?
+                            </p> <a href="#"
+                                    class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b"
+                                    data-rel="back">Proceed</a> <a href="#"
+                                                                   class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b"
+                                                                   data-rel="back"
+                                                                   data-transition="flow">Cancel</a>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+
+</section>
+
+<!-------------------------------------  Cash out  ------------------------------------------------>
+<section data-role="page" id="pgCashOut" class="ui-page-theme-a">
+    <header data-role="header" class="ui-bar" data-position="fixed">
+        <div class="align-text-center header-text-with-logo-padding">
+            <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
+                    class="fa  fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
+            <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
+            <h1 class="header-text-with-logo">&nbsp;Cash Out</h1>
+        </div>
+    </header>
+
+    <div data-role="main" class="ui-content">
+
+        <form>
+
+
+            <label for="txtAgentCode">Agent Code</label>
+            <input type="text" name="txtBillerCode" id="txtAgentCode"
+                   placeholder="Enter agent code e.g. 12345"
+                   value="">
+
+
+            <label for="txtCashoutAmount">Amount</label>
+            <div class="input-with-icon">
+                <input placeholder="Enter amount e.g. 0.56 or 2" type="tel" id="txtCashoutAmount"
+                       inputmode="numeric"/>
+                <i class="fa fa-dollar dollar-icon" aria-hidden="true"></i>
+            </div>
+
+            <a href="#ppCashout" style="margin-top: 20px;" data-rel="popup" data-position-to="window"
+               data-transition="pop"
+               class="ui-btn ui-corner-all"><i
+                    class="fa fa-arrow-circle-down" aria-hidden="true"></i>&nbsp;&nbsp;Cash out
+            </a>
+            <div data-role="popup" id="ppCashout" data-overlay-theme="b" data-theme="b" data-dismissible="false"
+                 style="max-width:400px;">
+                <div data-role="header" data-theme="a"><h1>Confirm</h1></div>
+                <div role="main" class="ui-content">
+                    <p>You are proceeding to cash out <b>$3</b> from agent <b>APOLLOS PLAZA</b>.<br/><br/>Proceed?</p>
+                    <a href="#"
+                       class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b"
+                       data-rel="back">Proceed</a> <a href="#"
+                                                      class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b"
+                                                      data-rel="back"
+                                                      data-transition="flow">Cancel</a>
+                </div>
+            </div>
+
+
+        </form>
+    </div>
+
+</section>
+
+<!-------------------------------------  Send money ------------------------------------------------>
+<!-------------------------------------  Send money ------------------------------------------------>
+<section data-role="page" id="pgSendMoney" class="ui-page-theme-a">
+    <header data-role="header" class="ui-bar" data-position="fixed">
+        <div class="align-text-center header-text-with-logo-padding">
+            <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
+                    class="fa  fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
+            <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
+            <h1 class="header-text-with-logo">&nbsp;Send money</h1>
+        </div>
+    </header>
+
+    <div data-role="main" class="ui-content">
+
+        <form>
+            <fieldset data-role="controlgroup">
+                <input type="radio" name="radio-choice-v-2" id="radio-choice-v-2a" value="on" checked="checked">
+                <label
+                        for="radio-choice-v-2a">Send to registered</label>
+                <input type="radio" name="radio-choice-v-2"
+                       id="radio-choice-v-2b" value="off">
+                <label
+                        for="radio-choice-v-2b">Send to unregistered</label>
+            </fieldset>
+
+            <label style="margin-top: 20px;" for="txtReceiverNumber">Receiver number</label>
+            <div class="input-with-icon half-width-custom">
+                <input type="tel" name="txtReceiverNumber"
+                       id="txtReceiverNumber"
+                       placeholder="Enter receiver number code e.g. 732855785" inputmode="numeric"
+                >
+                <i class="fa fa-mobile input-icon" aria-hidden="true"></i>
+                <button type="button" style="display: inline-block; width: 19%; margin: 0px;">Select...</button>
+            </div>
+
+
+            <label style="margin-top: 20px;" for="txtSendMoneyAmount">Amount</label>
+            <div class="input-with-icon">
+                <input placeholder="Enter amount e.g. 0.56 or 2" type="tel" id="txtSendMoneyAmount"
+                       inputmode="numeric"/>
+                <i class="fa fa-dollar dollar-icon" aria-hidden="true"></i>
+            </div>
+
+            <a href="#ppSendMoney" style="margin-top: 20px;" data-rel="popup" data-position-to="window"
+               data-transition="pop"
+               class="ui-btn ui-corner-all"><i
+                    class="fa fa-arrow-circle-down" aria-hidden="true"></i>&nbsp;&nbsp;Send money
+            </a>
+            <div data-role="popup" id="ppSendMoney" data-overlay-theme="b" data-theme="b" data-dismissible="false"
+                 style="max-width:400px;">
+                <div data-role="header" data-theme="a"><h1>Confirm</h1></div>
+                <div role="main" class="ui-content">
+                    <p>You are proceeding to send <b>$3</b> to <b>Manatsa Chinyeruse</b>.<br/><br/>Proceed?</p>
+                    <a href="#"
+                       class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b"
+                       data-rel="back">Proceed</a> <a href="#"
+                                                      class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b"
+                                                      data-rel="back"
+                                                      data-transition="flow">Cancel</a>
+                </div>
+            </div>
+
+
+        </form>
+    </div>
+
+</section>
+
+<!-------------------------------------    Card Management   ------------------------------------------------>
+<!-------------------------------------    Card Management   ------------------------------------------------>
+<section data-role="page" id="pgCardManagement" class="ui-page-theme-a">
+    <header data-role="header" class="ui-bar" data-position="fixed">
+        <div class="align-text-center header-text-with-logo-padding">
+            <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
+                    class="fa  fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
+            <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
+            <h1 class="header-text-with-logo">&nbsp;Gold Card</h1>
+        </div>
+    </header>
+    <div data-role="main" class="ui-content">
+
+        <ul data-role="listview" data-inset="true">
+            <li><a data-transition="flip" href="#">Activate Card</a></li>
+            <li><a data-transition="flip" href="#">Change Card PIN</a></li>
+            <li><a data-transition="flip" href="#">Block or Unblock your Card</a></li>
+            <li><a data-transition="flip" href="#">Reset PIN</a></li>
+        </ul>
+
+    </div>
+</section>
+
+<!------------------------------------- Banking Services  ------------------------------------------------>
+<!------------------------------------- Banking Services  ------------------------------------------------>
+<section data-role="page" id="pgBankingServices" class="ui-page-theme-a">
+    <header data-role="header" class="ui-bar" data-position="fixed">
+        <div class="align-text-center header-text-with-logo-padding">
+            <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
+                    class="fa  fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
+            <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
+            <h1 class="header-text-with-logo">&nbsp;Banking Services</h1>
+        </div>
+    </header>
+
+    <div data-role="main" class="ui-content">
+
+        <form>
+
+            <select data-theme="b">
+                <option disabled selected>Select the recepient bank</option>
+                <option value="Agribank">Agribank</option>
+                <option value="BancABC">BancABC Zimbabwe</option>
+                <option value="Barclays">Barclays Zimbabwe</option>
+                <option value="CBZ">CBZ Bank Limited</option>
+                <option value="Ecobank">Ecobank Zimbabwe</option>
+                <option value="FBC">FBC Bank Limited</option>
+                <option value="MBCA">MBCA Bank Limited</option>
+                <option value="Metbank">Metbank</option>
+                <option value="Stanbic">Stanbic Bank Zimbabwe</option>
+                <option value="StanChart">Standard Chartered Zimbabwe</option>
+                <option value="NMB">NMB Bank Limited</option>
+                <option value="Steward">Steward Bank</option>
+                <option value="ZB">ZB Bank Limited</option>
+            </select>
+
+            <label style="margin-top: 20px;" for="txtReceiverBankAccNumber">Receiver account number</label>
+            <div class="input-with-icon">
+                <input type="tel" id="txtReceiverBankAccNumber"
+                       placeholder="Enter receiver acc number code e.g. 0200123012391" inputmode="numeric"
+                >
+                <i class="fa fa-mobile input-icon" aria-hidden="true"></i>
+            </div>
+
+            <label for="txtZipitMoneyAmount">Amount</label>
+            <div class="input-with-icon">
+                <input placeholder="Enter amount e.g. 0.56 or 2" type="tel" id="txtZipitMoneyAmount"
+                       inputmode="numeric"/>
+                <i class="fa fa-dollar dollar-icon" aria-hidden="true"></i>
+            </div>
+
+            <a href="#ppZipitMoney" style="margin-top: 20px;" data-rel="popup" data-position-to="window"
+               data-transition="pop"
+               class="ui-btn ui-corner-all"><i
+                    class="fa fa-arrow-circle-down" aria-hidden="true"></i>&nbsp;&nbsp;Send money
+            </a>
+            <div data-role="popup" id="ppZipitMoney" data-overlay-theme="b" data-theme="b" data-dismissible="false"
+                 style="max-width:400px;">
+                <div data-role="header" data-theme="a"><h1>Confirm</h1></div>
+                <div role="main" class="ui-content">
+                    <p>You are proceeding to send <b>$3</b> to <b>CBZ</b> Account Number <b>0123910921201</b>.<br/><br/>You
+                        will be charged <b>USD 0.40</b><br/><br/>Proceed?</p>
+                    <a href="#"
+                       class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b"
+                       data-rel="back">Proceed</a> <a href="#"
+                                                      class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b"
+                                                      data-rel="back"
+                                                      data-transition="flow">Cancel</a>
+                </div>
+            </div>
+
+
+        </form>
+    </div>
+
+</section>
+
+<!-------------------------------------    Contact US  ------------------------------------------------>
+<!-------------------------------------    Contact US  ------------------------------------------------>
+<section data-role="page" id="pgContactUs" class="ui-page-theme-a">
+    <header data-role="header" class="ui-bar" data-position="fixed">
+        <div class="align-text-center header-text-with-logo-padding">
+            <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
+                    class="fa  fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
+            <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
+            <h1 class="header-text-with-logo">&nbsp;Contact us</h1>
+        </div>
+    </header>
+    <div data-role="main" class="ui-content">
+
+
+    </div>
+</section>
+
+<!-------------------------------------    Shops List ------------------------------------------------>
+<!-------------------------------------    Shops List ------------------------------------------------>
+<section data-role="page" class="ui-page-theme-a" id="pgShopsList">
+    <header data-role="header" class="ui-bar" data-position="fixed">
+        <div class="align-text-center header-text-with-logo-padding">
+            <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
+                    class="fa  fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
+            <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
+            <h1 class="header-text-with-logo">&nbsp;Telecel Shops List</h1>
+        </div>
+    </header>
+    <div  data-role="main" class="ui-content" id="shopsList">
+
+    </div>
+</section>
+
+
+<!-------------------------------------    Contact Test  ------------------------------------------------>
+<section data-role="page" id="pgContacts" class="ui-page-theme-a">
+    <header data-role="header" class="ui-bar" data-position="fixed">
+        <div class="align-text-center header-text-with-logo-padding">
+            <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
+                    class="fa  fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
+            <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
+            <h1 class="header-text-with-logo">&nbsp;Title</h1>
+        </div>
+    </header>
+    <div data-role="main" class="ui-content">
+
+        <button id = "findContact">FIND CONTACT</button>
+
+    </div>
+</section>
+
+
+<!-------------------------------------    Template ------------------------------------------------>
+<!--<section data-role="page" class="ui-page-theme-a">
+    <header data-role="header" class="ui-bar" data-position="fixed">
+        <div class="align-text-center header-text-with-logo-padding">
+            <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
+                    class="fa  fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
+            <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
+            <h1 class="header-text-with-logo">&nbsp;Title</h1>
+        </div>
+    </header>
+    <div data-role="main" class="ui-content">
+
+
+    </div>
+</section>-->
+
+
+
 
 <!-- END -->
 
@@ -562,7 +1289,7 @@
     </div>
 </section>
 
-
+<!--------------------------------------- Test Tabs  ---------------------------------------------->
 <section data-role="page" id="tbPage">
     <header data-role="header" class="ui-bar" data-position="fixed">
         <div class="align-text-center header-text-with-logo-padding">
@@ -598,11 +1325,15 @@
 
 <!--Custom javascript by page-->
 <script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/forgotPassword.js"></script>
 <script type="text/javascript" src="js/login.js"></script>
 <script type="text/javascript" src="js/register.js"></script>
 <script type="text/javascript" src="js/balance.js"></script>
 <script type="text/javascript" src="js/RestTest.js"></script>
 <script type="text/javascript" src="js/bundlespurchase.js"></script>
+<script type="text/javascript" src="js/shops/shops.js"></script>
+<script type="text/javascript" src="js/shops/shopMap.js"></script>
+<script type="text/javascript" src="js/contacts_test.js"></script>
 
 </body>
 </html>

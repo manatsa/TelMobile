@@ -54,5 +54,11 @@
     </dict>
     <key>NSPhotoLibraryAddUsageDescription</key>
     <string>This app requires photo library access to function properly.</string>
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+      <string>mailto</string>
+    </array>
+    <key>NSContactsUsageDescription</key>
+    <string></string>
   </dict>
 </plist>

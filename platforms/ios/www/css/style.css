@@ -247,6 +247,13 @@ footer .ui-grid-c {
     top: 5px;
 }
 
+.dollar-icon {
+    font-size: 14pt;
+    position: absolute;
+    left: 10px;
+    top: 8px;
+}
+
 .tabs-corners-first-child{
     border-top-left-radius: 5px !important;
     border-bottom-left-radius: 5px  !important;
@@ -256,4 +263,10 @@ footer .ui-grid-c {
     border-top-right-radius: 5px  !important;
     border-bottom-right-radius: 5px  !important;
 
+}
+
+.half-width-custom .ui-input-text{
+    width: 80%;
+    display: inline-block;
+    margin: 0px;
 }

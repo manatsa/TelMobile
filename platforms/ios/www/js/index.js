@@ -17,9 +17,8 @@ $(document).on({
 
 
 $(document).on("deviceready",function () {
-    $.mobile.changePage("#tbPage")
+    //$.mobile.changePage("#tbPage")
 })
-
 
 
 
