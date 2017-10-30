@@ -10,7 +10,17 @@
         "cordova-plugin-call-number": {
             "PACKAGE_NAME": "mobile.telecel.co.zw"
         },
+        "cordova-plugin-contacts": {
+            "CONTACTS_USAGE_DESCRIPTION": " ",
+            "PACKAGE_NAME": "mobile.telecel.co.zw"
+        },
         "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "mobile.telecel.co.zw"
+        },
+        "cordova-plugin-email": {
+            "PACKAGE_NAME": "mobile.telecel.co.zw"
+        },
+        "cordova-plugin-nativestorage": {
             "PACKAGE_NAME": "mobile.telecel.co.zw"
         },
         "cordova-plugin-network-information": {
@@ -30,23 +40,13 @@
         },
         "cordova-plugin-x-toast": {
             "PACKAGE_NAME": "mobile.telecel.co.zw"
-        },
-        "cordova-plugin-nativestorage": {
-            "PACKAGE_NAME": "mobile.telecel.co.zw"
-        },
-        "cordova-plugin-email": {
-            "PACKAGE_NAME": "mobile.telecel.co.zw"
-        },
-        "cordova-plugin-contacts": {
-            "CONTACTS_USAGE_DESCRIPTION": " ",
-            "PACKAGE_NAME": "mobile.telecel.co.zw"
         }
     },
     "dependent_plugins": {
-        "es6-promise-plugin": {
+        "cordova-plugin-compat": {
             "PACKAGE_NAME": "mobile.telecel.co.zw"
         },
-        "cordova-plugin-compat": {
+        "es6-promise-plugin": {
             "PACKAGE_NAME": "mobile.telecel.co.zw"
         }
     }
