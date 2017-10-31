@@ -3,10 +3,10 @@
 
 
 $("#btnRegister").on("click", function () {
-    var phone = $("#txtRegisterMSISDN").val();
-    var pin1 = $("#txtRegisterPIN").val();
-    var pin2 = $("#txtRegisterPINRepeat").val();
-    var email=$("#txtRegisterEmail").val();
+    var phone = $("#txtInitialLoginMSISDN").val();
+    var pin1 = $("#txtInitialLoginPIN").val();
+    var pin2 = $("#txtInitialLoginPINReEnter").val();
+    var email=$("#txtInitialLoginEmail").val();
     var phoneint;
     try {
         phoneint = parseInt(phone);
@@ -17,8 +17,7 @@ $("#btnRegister").on("click", function () {
         try {
 
             if (pin1 && pin2 && pin1.length == 4 && (pin1 == pin2)) {
-                if(email)
-                {
+
                     try {
                         var pin = parseInt(pin1);
     // do more here --------------------------------------------------------------- now persisting login details
@@ -26,7 +25,7 @@ $("#btnRegister").on("click", function () {
                                 var user = {msisdn: phone, pin: pin, email:email};
                                 NativeStorage.setItem("user",user,function () {
                                    navigator.notification.alert("Details saved successfully!",function () {},"Registration","OK");
-                                    $.mobile.changePage("#login_page")
+                                    $.mobile.changePage("#pgMain")
                                 },function (error) {
                                     navigator.notification.alert("Error :"+error, function () {
                                     }, "Error Saving Details", "OK")
@@ -40,15 +39,11 @@ $("#btnRegister").on("click", function () {
                             }
 
     //-----------------------------------------------------------------------------
-                        alert(phone)
+                        //alert(phone)
                     } catch (error) {
                         navigator.notification.alert("You need to enter a 4-digit pin", function () {
                         }, "Invalid Pin Characters", "OK")
                     }
-                }else{
-                    navigator.notification.alert("Your email is not valid", function () {
-                    }, "Invalid Pin Characters", "OK")
-                }
             }
             else {
                 navigator.notification.alert("Your pin does not match the required standard!\n Please retry again.", function () {

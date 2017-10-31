@@ -1,5 +1,36 @@
 var shareMessage = "Share Message";
 
+
+$(document).on( "deviceready", function() {
+    try{
+        NativeStorage.getItem("user",function (data) {},
+            function (error) {
+            $.mobile.changePage("#pgInitialLogin");
+            console.log("ERROR:"+error)
+        });
+    }catch(e)
+    {
+        console.log(e)
+        $.mobile.changePage("#pgInitialLogin");
+    }
+
+
+});
+
+$(document).on("backbutton",function (e,ui) {
+    e.preventDefault();
+    if($.mobile.activePage.attr('id')==='pgMain'){
+        navigator.notification.confirm("Are sure you want to exit the app?",confirmCallback,"Exit The App",["Yes","No"]);
+    }
+})
+
+function confirmCallback(choice) {
+    if(choice==1){
+        navigator.app.exitApp();
+    }
+}
+
+
 $(document).on({
     ajaxSend: function () {
         loading('show');

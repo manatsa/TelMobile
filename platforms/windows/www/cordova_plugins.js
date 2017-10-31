@@ -241,6 +241,20 @@ module.exports = [
         "file": "plugins/cordova-plugin-dialogs/src/windows/NotificationProxy.js",
         "pluginId": "cordova-plugin-dialogs",
         "runs": true
+    },
+    {
+        "id": "cordova-plugin-device.device",
+        "file": "plugins/cordova-plugin-device/www/device.js",
+        "pluginId": "cordova-plugin-device",
+        "clobbers": [
+            "device"
+        ]
+    },
+    {
+        "id": "cordova-plugin-device.DeviceProxy",
+        "file": "plugins/cordova-plugin-device/src/windows/DeviceProxy.js",
+        "pluginId": "cordova-plugin-device",
+        "runs": true
     }
 ];
 module.exports.metadata = 
@@ -258,7 +272,8 @@ module.exports.metadata =
     "cordova-plugin-email": "1.2.6",
     "cordova-plugin-compat": "1.2.0",
     "cordova-plugin-contacts": "2.3.1",
-    "cordova-plugin-dialogs": "1.3.3"
+    "cordova-plugin-dialogs": "1.3.3",
+    "cordova-plugin-device": "1.1.6"
 };
 // BOTTOM OF METADATA
 });

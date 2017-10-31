@@ -195,6 +195,14 @@ module.exports = [
         "id": "cordova-plugin-x-toast.tests",
         "file": "plugins/cordova-plugin-x-toast/test/tests.js",
         "pluginId": "cordova-plugin-x-toast"
+    },
+    {
+        "id": "cordova-plugin-device.device",
+        "file": "plugins/cordova-plugin-device/www/device.js",
+        "pluginId": "cordova-plugin-device",
+        "clobbers": [
+            "device"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -212,7 +220,8 @@ module.exports.metadata =
     "cordova-plugin-whitelist": "1.3.2",
     "es6-promise-plugin": "4.1.0",
     "cordova-plugin-x-socialsharing": "5.2.1",
-    "cordova-plugin-x-toast": "2.6.0"
+    "cordova-plugin-x-toast": "2.6.0",
+    "cordova-plugin-device": "1.1.6"
 };
 // BOTTOM OF METADATA
 });

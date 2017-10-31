@@ -21,11 +21,29 @@
 
     <!--JQuery javascript-->
     <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script>
+        $( document ).on( "mobileinit", function(e) {
+            /* disable auto-initialize */
+            //$.mobile.autoInitializePage = false;
+            /*if ( condition ) {
+                $(function() {
+                    // make login page div first one in DOM
+                    $("#login").prependTo("body");
+                    // initialize jQuery Mobile
+                    $.mobile.initializePage();
+                });
+            }*/
+        });
+    </script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <script src="js/nestedlists.js"></script>
     <script src="js/tabs-fix.js"></script>
     <script src="js/smtp.js"></script>
     <script src="https://smtpjs.com/smtp.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+
+    <!--Custom javascript by page-->
+
     <!--<script  src="http://maps.google.com/maps/api/js?key=AIzaSyDH7SGQ_oRhAYAgcAedTbdZrkh1jprT1VU"></script>-->
 
 
@@ -33,136 +51,6 @@
 <body>
 
 <!-- TODO: DISABLE IF IMPORTANT UPDATE PRESENT, OTTHERWISE SHOW MESSAGE -->
-
-<!-----------------------------------------------------   Login Page   ---------------------------------------------------------->
-<!-----------------------------------------------------   Login Page   ---------------------------------------------------------->
-<!--<section data-role="page" class="ui-page-theme-a" id="login_page">-->
-    <!--&lt;!&ndash; Header &ndash;&gt;-->
-    <!--<header data-role="header" class="ui-bar" data-position="fixed">-->
-        <!--<div class="align-text-center header-text-with-logo-padding">-->
-            <!--<img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>-->
-            <!--<h1 class="header-text-with-logo">&nbsp;Login</h1>-->
-        <!--</div>-->
-    <!--</header>-->
-    <!--&lt;!&ndash; End of Header &ndash;&gt;-->
-
-    <!--<div data-role="main" class="ui-panel-page-container-e">-->
-        <!--<img src="img/page_images/register/register.png" class="ui-full-width"/>-->
-        <!--<div align="center">-->
-
-            <!--<form id="login-form" action="" method="get">-->
-                <!--<div style="overflow: hidden;" class="full-screen-width-padding">-->
-
-                    <!--<input type="tel" id="txtMSISDN" required="required" inputmode="numeric"-->
-                           <!--placeholder="Enter mobile number e.g. 0732123123" class="ui-full-width"/>-->
-
-                    <!--<div class="wrap-input-for-margins-15px">-->
-                        <!--<input type="password" id="txtLoginPIN" required="required" pattern="[0-9][0-9][0-9][0-9]"-->
-                               <!--inputmode="numeric" placeholder="Enter PIN number" class="ui-full-width"/>-->
-                    <!--</div>-->
-
-                    <!--<div class="wrap-input-for-margins-15px">-->
-                        <!--<label class="ui-btn-b initcap"> <input data-mini="true" class="initcap" type="checkbox"-->
-                                                                <!--id="chkRememberMe">Remember me</label>-->
-                    <!--</div>-->
-
-                    <!--<div class="wrap-input-for-margins-15px">-->
-                        <!--<a data-transition="flip" href="#" id="btnLogin" style="margin-top: 10px;"-->
-                           <!--class="ui-btn ui-btn-c ui-corner-all">Login</a>-->
-                        <!--<a data-transition="flip" href="#pgForgotPassword" id="btnForgotPassword" class="initcap"-->
-                           <!--style="margin-top: 10px; float: left; display: inline-block;"><u>Recover password</u></a>-->
-                        <!--<a data-transition="flip" href="#pgRegister" id="btnOpenRegister" class="initcap"-->
-                           <!--style="margin-top: 10px; float: right; display: inline-block;"><u>-->
-                            <!--<br>Register now!</u></a>-->
-
-                    <!--</div>-->
-
-                <!--</div>-->
-
-            <!--</form>-->
-
-        <!--</div>-->
-    <!--</div>-->
-
-<!--</section>-->
-
-<!-----------------------------------------------------  Forgot Password  ----------------------------------------------------->
-<!-----------------------------------------------------  Forgot Password  ----------------------------------------------------->
-<!--<section data-role="page" id="pgForgotPassword" class="ui-page-theme-a">-->
-    <!--&lt;!&ndash; Header &ndash;&gt;-->
-    <!--<header data-role="header" class="ui-bar" data-position="fixed">-->
-        <!--<div class="align-text-center header-text-with-logo-padding">-->
-            <!--<a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i-->
-                    <!--class="fa  fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>-->
-            <!--<img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>-->
-            <!--<h1 class="header-text-with-logo">&nbsp;Retrieve password</h1>-->
-        <!--</div>-->
-    <!--</header>-->
-    <!--&lt;!&ndash; End of Header &ndash;&gt;-->
-    <!--<div data-role="main" class="ui-content">-->
-        <!--<div></div>-->
-        <!--<div align="center">-->
-            <!--<a data-role="button" id="email_confirm_btn">Send Pin To Email</a>-->
-        <!--</div>-->
-    <!--</div>-->
-<!--</section>-->
-<!---->
-<!-------------------------------------------  Register Page --------------------------------------------------->
-<!-------------------------------------------  Register Page --------------------------------------------------->
-<!--<section data-role="page" class="ui-page-theme-a" id="pgRegister">-->
-    <!--&lt;!&ndash; Header &ndash;&gt;-->
-    <!--<header data-role="header" class="ui-bar" data-position="fixed">-->
-        <!--<div class="align-text-center header-text-with-logo-padding">-->
-            <!--<a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i-->
-                    <!--class="fa  fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>-->
-            <!--<img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>-->
-            <!--<h1 class="header-text-with-logo">&nbsp;Register</h1>-->
-        <!--</div>-->
-    <!--</header>-->
-    <!--&lt;!&ndash; End of Header &ndash;&gt;-->
-
-    <!--<div data-role="main">-->
-
-        <!--<form id="reg-form">-->
-            <!--<div class="full-screen-width-padding align-text-center">-->
-                <!--<fieldset data-role="fieldcontain">-->
-
-                    <!--<div class="wrap-input-for-margins-15px">-->
-                        <!--<input type="tel" id="txtRegisterMSISDN" required="required" inputmode="numeric"-->
-                               <!--placeholder="Enter mobile number e.g. 0732123123" class="ui-full-width"/>-->
-                    <!--</div>-->
-
-                    <!--<div class="wrap-input-for-margins-15px">-->
-                        <!--<input type="tel" id="txtRegisterEmail" required="required" inputmode="numeric"-->
-                               <!--placeholder="Enter email e.g. you@telecel.com" class="ui-full-width"/>-->
-                        <!--<p class="initcap align-text-left red-text" style="margin: 0px;">Your e-mail is required for-->
-                            <!--authentication if you ever forget your PIN.</p></span>-->
-                    <!--</div>-->
-
-                    <!--<div class="wrap-input-for-margins-15px">-->
-                        <!--<input type="password" id="txtRegisterPIN" required="required" pattern="[0-9][0-9][0-9][0-9]"-->
-                               <!--inputmode="numeric" placeholder="Enter a 4 digit PIN number" class="ui-full-width"/>-->
-                    <!--</div>-->
-
-                    <!--<div class="wrap-input-for-margins-15px">-->
-                        <!--<input type="password" id="txtRegisterPINRepeat" required="required"-->
-                               <!--pattern="[0-9][0-9][0-9][0-9]"-->
-                               <!--inputmode="numeric" placeholder="Repeat your 4 digit PIN number" class="ui-full-width"/>-->
-                    <!--</div>-->
-
-                <!--</fieldset>-->
-
-                <!--<a data-transition="flip" href="#" id="btnRegister" style="margin-top: 20px;"-->
-                   <!--class="ui-btn ui-btn-c ui-corner-all">Register</a>-->
-                <!--<a data-transition="flip" href="#login_page" style="margin-top: 10px; display: inline-block;"><u>Already-->
-                    <!--registered to use app&quest;<br/>Go to login</u></a>-->
-            <!--</div>-->
-
-        <!--</form>-->
-
-    <!--</div>-->
-
-<!--</section>-->
 
 <!----------------------------------------   Main Page/Start Page ---------------------------------------------------->
 <!----------------------------------------   Main Page/Start Page ---------------------------------------------------->
@@ -317,6 +205,126 @@
 
     </div>
 </section>
+
+
+
+
+
+<!---------------------------------------------- Initial Login ---------------------------------------------------->
+<!---------------------------------------------- Initial Login ---------------------------------------------------->
+<section data-role="page" class="ui-page-theme-c" id="pgInitialLogin">
+
+    <div data-role="main" class="ui-panel-page-container-e ui-content align-text-center">
+
+        <img style="width: 40%; margin-top: 80px;" src="img/icons/telecel_logo_big_white_border.png"/>
+
+        <h1>
+            Mobile App
+        </h1>
+
+        <p style="margin-top: 30px;" class="initcap">To begin using the app, enter your mobile number.</p>
+
+        <input type="tel" id="txtInitialLoginMSISDN" required="required" inputmode="numeric"
+               placeholder="Enter mobile number e.g. 0732123123" class="ui-full-width"/>
+
+        <p class="initcap wrap-input-for-margins-15px">Enter your email which shall be used to recover PIN.</p>
+        <input type="email" id="txtInitialLoginEmail"
+               placeholder="Enter your email" class="ui-full-width"/>
+
+        <p class="initcap wrap-input-for-margins-15px">Enter a PIN to use for this app to secure</p>
+        <input type="tel" id="txtInitialLoginPIN" required="required" inputmode="numeric"
+               placeholder="Enter 4 digit PIN e.g. 1234" class="ui-full-width"/>
+
+        <p class="initcap wrap-input-for-margins-15px">Enter a PIN to use for this app</p>
+        <input type="tel" id="txtInitialLoginPINReEnter" required="required" inputmode="numeric"
+               placeholder="Repeat 4 digit PIN" class="ui-full-width"/>
+
+        <div class="wrap-input-for-margins-15px">
+            <a data-transition="flip" href="#" id="btnRegister" style="margin-top: 10px;"
+               class="ui-btn ui-btn-c ui-corner-all">Register</a>
+        </div>
+
+    </div>
+
+</section>
+
+<!-----------------------------------------------------  Forgot Password  ----------------------------------------------------->
+<!-----------------------------------------------------  Forgot Password  ----------------------------------------------------->
+<section data-role="page" id="pgForgotPassword" class="ui-page-theme-a">
+    <!-- Header -->
+    <header data-role="header" class="ui-bar" data-position="fixed">
+        <div class="align-text-center header-text-with-logo-padding">
+            <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
+                    class="fa  fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
+            <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
+            <h1 class="header-text-with-logo">&nbsp;Retrieve password</h1>
+        </div>
+    </header>
+    <!-- End of Header -->
+    <div data-role="main" class="ui-content">
+        <div></div>
+        <div align="center">
+            <a data-role="button" id="email_confirm_btn">Send Pin To Email</a>
+        </div>
+    </div>
+</section>
+
+<!-------------------------------------------  Register Page --------------------------------------------------->
+<!-------------------------------------------  Register Page --------------------------------------------------->
+<!--<section data-role="page" class="ui-page-theme-a" id="pgRegister">-->
+    <!--&lt;!&ndash; Header &ndash;&gt;-->
+    <!--<header data-role="header" class="ui-bar" data-position="fixed">-->
+        <!--<div class="align-text-center header-text-with-logo-padding">-->
+            <!--<a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i-->
+                    <!--class="fa  fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>-->
+            <!--<img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>-->
+            <!--<h1 class="header-text-with-logo">&nbsp;Register</h1>-->
+        <!--</div>-->
+    <!--</header>-->
+    <!--&lt;!&ndash; End of Header &ndash;&gt;-->
+
+    <!--<div data-role="main">-->
+
+        <!--<form id="reg-form">-->
+            <!--<div class="full-screen-width-padding align-text-center">-->
+                <!--<fieldset data-role="fieldcontain">-->
+
+                    <!--<div class="wrap-input-for-margins-15px">-->
+                        <!--<input type="tel" id="txtRegisterMSISDN" required="required" inputmode="numeric"-->
+                               <!--placeholder="Enter mobile number e.g. 0732123123" class="ui-full-width"/>-->
+                    <!--</div>-->
+
+                    <!--<div class="wrap-input-for-margins-15px">-->
+                        <!--<input type="tel" id="txtRegisterEmail" required="required" inputmode="numeric"-->
+                               <!--placeholder="Enter email e.g. you@telecel.com" class="ui-full-width"/>-->
+                        <!--<p class="initcap align-text-left red-text" style="margin: 0px;">Your e-mail is required for-->
+                            <!--authentication if you ever forget your PIN.</p></span>-->
+                    <!--</div>-->
+
+                    <!--<div class="wrap-input-for-margins-15px">-->
+                        <!--<input type="password" id="txtRegisterPIN" required="required" pattern="[0-9][0-9][0-9][0-9]"-->
+                               <!--inputmode="numeric" placeholder="Enter a 4 digit PIN number" class="ui-full-width"/>-->
+                    <!--</div>-->
+
+                    <!--<div class="wrap-input-for-margins-15px">-->
+                        <!--<input type="password" id="txtRegisterPINRepeat" required="required"-->
+                               <!--pattern="[0-9][0-9][0-9][0-9]"-->
+                               <!--inputmode="numeric" placeholder="Repeat your 4 digit PIN number" class="ui-full-width"/>-->
+                    <!--</div>-->
+
+                <!--</fieldset>-->
+
+                <!--<a data-transition="flip" href="#" id="btnRegister" style="margin-top: 20px;"-->
+                   <!--class="ui-btn ui-btn-c ui-corner-all">Register</a>-->
+                <!--<a data-transition="flip" href="#login_page" style="margin-top: 10px; display: inline-block;"><u>Already-->
+                    <!--registered to use app&quest;<br/>Go to login</u></a>-->
+            <!--</div>-->
+
+        <!--</form>-->
+
+    <!--</div>-->
+
+<!--</section>-->
 
 
 <!-------------------------------------    Balances check   ------------------------------------------------>
@@ -2654,7 +2662,7 @@ We know that teamwork allows us to serve our customers better and faster as we r
     </div>
 </section>
 
-<script type="text/javascript" src="cordova.js"></script>
+<!--<script type="text/javascript" src="cordova.js"></script>-->
 
 <!--Custom javascript by page-->
 <script type="text/javascript" src="js/index.js"></script>

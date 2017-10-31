@@ -36,6 +36,9 @@
     <feature name="Contacts">
         <param name="android-package" value="org.apache.cordova.contacts.ContactManager" />
     </feature>
+    <feature name="Device">
+        <param name="android-package" value="org.apache.cordova.device.Device" />
+    </feature>
     <name>Telecel</name>
     <description>
         The zero rated Telecel Mobile App for you to manage your account from your smart device.

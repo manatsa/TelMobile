@@ -41,6 +41,8 @@
 		680CFDA525644B3392FFF250 /* Toast+UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBCE414B3EF44F4BA27A98B /* Toast+UIView.m */; };
 		1ED69F2F2D4C4C75ACE125AB /* Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = C483B4216AB74251BD1EC991 /* Toast.m */; };
 		9332DF8AC3AE42C2964E65A3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BCAAE863DAE45A5AD606DF3 /* QuartzCore.framework */; };
+		E93472FA2AB64670934343A3 /* CDVDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 028F7F26CEB54F009E72E24E /* CDVDevice.m */; };
+		92966318136B49BDA40C26FF /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 10222ED451014A44A513E52C /* libz.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +124,9 @@
 		5C7FB95DBD96414EA81ACA6F /* Toast+UIView.h */ = {isa = PBXFileReference; name = "Toast+UIView.h"; path = "cordova-plugin-x-toast/Toast+UIView.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 		7D2D39927AB5485F8CE2DA19 /* Toast.h */ = {isa = PBXFileReference; name = "Toast.h"; path = "cordova-plugin-x-toast/Toast.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 		3BCAAE863DAE45A5AD606DF3 /* QuartzCore.framework */ = {isa = PBXFileReference; name = "QuartzCore.framework"; path = "System/Library/Frameworks/QuartzCore.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		028F7F26CEB54F009E72E24E /* CDVDevice.m */ = {isa = PBXFileReference; name = "CDVDevice.m"; path = "cordova-plugin-device/CDVDevice.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		8405AFCB97084F72B5ACB962 /* CDVDevice.h */ = {isa = PBXFileReference; name = "CDVDevice.h"; path = "cordova-plugin-device/CDVDevice.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		10222ED451014A44A513E52C /* libz.tbd */ = {isa = PBXFileReference; name = "libz.tbd"; path = "usr/lib/libz.tbd"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = sourcecode.text-based-dylib-definition; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +143,7 @@
 				3EF5E6C78ACA40F4BB38DE83 /* CoreTelephony.framework in Frameworks */,
 				E12EEA5F526A41F393001C13 /* Social.framework in Frameworks */,
 				9332DF8AC3AE42C2964E65A3 /* QuartzCore.framework in Frameworks */,
+				92966318136B49BDA40C26FF /* libz.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,6 +223,7 @@
 				1CA2E1DF1B2F44A19527D151 /* CoreTelephony.framework */,
 				33B5AF9868E94C52B16D2B7B /* Social.framework */,
 				3BCAAE863DAE45A5AD606DF3 /* QuartzCore.framework */,
+				10222ED451014A44A513E52C /* libz.tbd */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -274,6 +281,8 @@
 				C483B4216AB74251BD1EC991 /* Toast.m */,
 				5C7FB95DBD96414EA81ACA6F /* Toast+UIView.h */,
 				7D2D39927AB5485F8CE2DA19 /* Toast.h */,
+				028F7F26CEB54F009E72E24E /* CDVDevice.m */,
+				8405AFCB97084F72B5ACB962 /* CDVDevice.h */,
 			);
 			name = Plugins;
 			path = "Telecel/Plugins";
@@ -403,6 +412,7 @@
 				9B0BA141BE414438962BBC5A /* SocialSharing.m in Sources */,
 				680CFDA525644B3392FFF250 /* Toast+UIView.m in Sources */,
 				1ED69F2F2D4C4C75ACE125AB /* Toast.m in Sources */,
+				E93472FA2AB64670934343A3 /* CDVDevice.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
