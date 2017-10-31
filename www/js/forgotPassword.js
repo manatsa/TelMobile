@@ -10,21 +10,9 @@ function sendMail(user)
 }
 
 function sendPasswordViaEmail() {
-$.mobile.loading("show")
 
     NativeStorage.getItem("user", function (user) {
-        //sendMail(user)
-        Email.send("manatsachinyeruse@gmail.com",
-            "manatsachinyeruse@gmail.com",
-            "Password Recovery For MSISDN :" + user.msisdn,
-            "Good day.\n\nTelecel Mobile App Password is :" + user.pin,
-            "smtp.google.com",
-            "manatsachinyeruse@gmail.com",
-            "Manat5achin5")
-                $.mobile.loading("hide")
-                navigator.notification.alert("Email Sent Successfully!", function () {}, "Pin Recovery", "OK")
-
-
+        alert("now sending email")
     });
 
 }

@@ -18,8 +18,9 @@ $(document).on( "deviceready", function() {
 });
 
 $(document).on("backbutton",function (e,ui) {
-    e.preventDefault();
+
     if($.mobile.activePage.attr('id')==='pgMain'){
+        e.preventDefault();
         navigator.notification.confirm("Are sure you want to exit the app?",confirmCallback,"Exit The App",["Yes","No"]);
     }
 })
@@ -103,4 +104,34 @@ function selectContact(id) {
         console.log('Error: ' + err);
         navigator.notification.alert("Error picking contact",function () {},"Contact Picking Failure","OK")
     });
+}
+
+function validateMSISDN(msisdn) {
+    var validMsisdn="";
+
+    if(msisdn)
+    {
+        switch(msisdn)
+        {
+            case msisdn.startWith("26373"):
+
+                break;
+            case msisdn.startWith("+26373"):
+                validMsisdn=msisdn.substring(4);
+                break
+            case msisdn.startWith("0026373"):
+                validMsisdn=msisdn.substring(5);
+                break
+            case msisdn.startWith("073"):
+                validMsisdn=msisdn.substring(1);
+                break
+            case msisdn.startWith("73"):
+                validMsisdn=msisdn
+                break
+            default:
+                navigator.notification.alert("You need to check the mobile number!",function () {},"Invalid Mobile Number","OK")
+        }
+    }else{
+        navigator.notification.alert("You need to check the mobile number!",function () {},"Invalid Mobile Number","OK")
+    }
 }
