@@ -1,56 +1,117 @@
 <!DOCTYPE html>
 <html>
+<head>
+</head>
 <body>
+
 <div data-role="page" id="googlePage">
-    <header data-role="header">
-        <h1>Shop on Google Map</h1>
+    <!-- Header -->
+    <header data-role="header" class="ui-bar" data-position="fixed"
+            style="width: 100% !important; height: 8vh !important;">
+        <div class="align-text-center header-text-with-logo-padding">
+            <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
+                    class="fa  fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
+            <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
+            <h1 id="h1Shop" class="header-text-with-logo">&nbsp;&nbsp;Telecel Shop</h1>
+            <a class="header-options-link" href="#ppOptionsShopOpen" data-rel="popup"><i class="fa fa-ellipsis-v"
+                                                                                         aria-hidden="true"></i></a>
+        </div>
     </header>
-    <div data-role="main" class="ui-content" id="googleMap" style="width:100%;height:100vh;">
-        <script>
+    <div data-role="popup" id="ppOptionsShopOpen" data-theme="b">
+        <ul data-role="listview" data-inset="true" style="min-width:210px;">
+            <li data-icon="false"><a href="#pgChangePIN">Change PIN</a></li>
+            <li data-icon="false"><a href="#">Logout</a></li>
+        </ul>
+    </div>
+    <!-- End of Header -->
 
-            function myMap() {
-                NativeStorage.getItem("shop",function (data) {
-                   var shop=JSON.parse(data.replace(/`/g,'"'));
-                    //alert(shop.latitude+"\n"+shop.longitude);
-                    var latlon=new google.maps.LatLng(shop.latitude,shop.longitude);
-                    var mapProp= {
-                        center:latlon,
-                        zoom:9,
-                    };
-                    var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-                    var marker = new google.maps.Marker({
-                        position: latlon,
-                        map: map,
-                        title: "Greetings!"
+    <div>
+        <div data-role="main" id="googleMap" class="mapLoading"
+             style="width: 100% !important; height: 91vh !important;">
+            <script>
+
+                function myMap() {
+                    NativeStorage.getItem("shop", function (data) {
+                        var shop = JSON.parse(data.replace(/`/g, '"'));
+                        $("#h1Shop").html("&nbsp;&nbsp;" + shop.name);
+                        //alert(shop.latitude+"\n"+shop.longitude);
+                        var latlon = new google.maps.LatLng(shop.latitude, shop.longitude);
+                        var mapProp = {
+                            center: latlon,
+                            zoom: 14
+                        };
+                        var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+                        var customIcon = {
+                            url: "../www/img/icons/marker.png", // url
+                            scaledSize: new google.maps.Size(24, 32), // scaled size
+                            origin: new google.maps.Point(0, 0), // origin
+                            anchor: new google.maps.Point(12, 32) // anchor
+                        };
+                        $.ajax({
+                            url: "../www/json/shops.json",
+                            type: "GET",
+                            dataType: "json",
+
+                            success: function (result) {
+                                $.each(result, function (index, shopAreas) {
+                                    $.each(shopAreas, function (i, shopItem) {
+
+                                        var marker = new google.maps.Marker({
+                                            position: new google.maps.LatLng(shopItem.latitude, shopItem.longitude),
+                                            icon: customIcon,
+                                            map: map,
+                                            title: shopItem.name,
+                                            animation: google.maps.Animation.DROP
+                                        });
+                                        if (shopItem.name.trim() === shop.name.trim()) {
+                                            marker.setAnimation(google.maps.Animation.BOUNCE);
+                                        }
+                                        marker.addListener('click', function () {
+                                            infowindow.open(map, marker);
+                                        });
+
+                                        var contentHTML = "<div class='red-text' > <h4  class='align-text-center'>" + shop.name + "</h4> <hr> <table data-role='table' class='ui-body-d ui-shadow ui-responsive'> <thead> <tr class='ui-bar-d'> <th class='align-text-left'>Address</th> <th class='align-text-left'>Tel</th> </tr> </thead> <tbody> <tr> <td class='initcap align-text-left'>" + shop.address + "</td> <td class='initcap align-text-left' style='text-decoration: underline;'  onclick='callNumber(&quot;" + shop.tel + "&quot;)'>" + shop.tel + "</td> </tr> </tbody> </table> </div>";
+                                        var infowindow = new google.maps.InfoWindow({
+                                            content: contentHTML
+                                        });
+                                        marker.addListener('click', function () {
+                                            infowindow.open(map, marker);
+                                        });
+
+                                    });
+                                });
+                                $("#googleMap").removeClass("mapLoading");
+                            },
+                            failure: function (fail) {
+                                console.log(fail.responseText);
+                                navigator.notification.alert("FAILURE :" + fail, function () {
+                                }, "Error loading map. Please make sure you are connected to the internet and try again.")
+                                $("#googleMap").removeClass("mapLoading");
+                            },
+                            error: function (error) {
+                                console.log(error.responseText)
+                                navigator.notification.alert("FAILURE :" + fail, function () {
+                                }, "Error loading map. Please make sure you are connected to the internet and try again.")
+                                $("#googleMap").removeClass("mapLoading");
+                            }
+                        });
+                        google.maps.event.trigger(map, 'resize');
+                    }, function (error) {
+                        navigator.notification.alert("Error :" + error, function () {
+                        }, "Can't Show Map right now!", "OK");
+                        $("#googleMap").removeClass("mapLoading");
                     });
-                    var contentString="I am a marker, \n But you can put anything in me!"
-                    var infowindow = new google.maps.InfoWindow({
-                        content: contentString
-                    });
-
-                    marker.addListener('click', function() {
-                        infowindow.open(map, marker);
-                    });
-                    google.maps.event.trigger(map,'resize');
-                },function (error) {
-                    navigator.notification.alert("Error :"+error, function () {}, "Can't Show Map right now!", "OK");
-                });
 
 
+                }
+            </script>
 
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDH7SGQ_oRhAYAgcAedTbdZrkh1jprT1VU&callback=myMap"></script>
+        </div>
 
-            }
-        </script>
-
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDH7SGQ_oRhAYAgcAedTbdZrkh1jprT1VU&callback=myMap"></script>
     </div>
 
 </div>
-
-
-
-
-
 
 
 </body>

@@ -48,6 +48,9 @@
     <feature name="Toast">
         <param name="ios-package" value="Toast" />
     </feature>
+    <feature name="Device">
+        <param name="ios-package" value="CDVDevice" />
+    </feature>
     <name>Telecel</name>
     <description>
         The zero rated Telecel Mobile App for you to manage your account from your smart device.
@@ -81,7 +84,7 @@
     <preference name="StatusBarOverlaysWebView" value="true" />
     <preference name="StatusBarStyle" value="lightcontent" />
     <preference name="StatusBarBackgroundColor" value="#9e191d" />
-    <feature name="Device">
-        <param name="ios-package" value="CDVDevice" />
+    <feature name="Geolocation">
+        <param name="ios-package" value="CDVLocation" />
     </feature>
 </widget>

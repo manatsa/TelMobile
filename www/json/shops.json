@@ -1,0 +1,253 @@
+{
+  "Beitbridge": [
+    {
+      "isActive": true,
+      "latitude": "-22.198675",
+      "longitude": "30.002625",
+      "name": "Beitbridge Shop",
+      "tel": "",
+      "address": "Shop Number 4 ZESA Pension Fund Complex, Beitbridge",
+      "type": "SHOP"
+    }
+  ],
+  "Bindura": [
+    {
+      "isActive": true,
+      "latitude": "-17.308294",
+      "longitude": "31.333557",
+      "name": "Bindura Shop",
+      "tel": "0731235011",
+      "address": "Shop Number 1 Main Street, Bindura",
+      "type": "SHOP"
+    }
+  ],
+  "Bulawayo": [
+    {
+      "isActive": true,
+      "latitude": "-20.0183278",
+      "longitude": "28.6225333",
+      "name": "Bulawayo Airport Shop",
+      "tel": "",
+      "address": "Joshua Mqabuko Nkomo International Airport, Bulawayo",
+      "type": "SHOP"
+    },
+    {
+      "isActive": true,
+      "latitude": "-20.155842",
+      "longitude": "28.5773527",
+      "name": "Bulawayo CBD Shop",
+      "tel": "",
+      "address": "Shop No 91, 40Street Between 8th & 9th Ave, Bulawayo",
+      "type": "SHOP"
+    },
+    {
+      "isActive": true,
+      "latitude": "-20.1620687",
+      "longitude": "28.585657",
+      "name": "Robert Mugabe Way Shop",
+      "tel": "0731235067",
+      "address": "121A Robert Mugabe Road Between 12th and 13 th Street, Bulawayo",
+      "type": "SHOP"
+    }
+  ],
+  "Chinhoyi": [
+    {
+      "isActive": true,
+      "latitude": "-17.3600337",
+      "longitude": "30.1908816",
+      "name": "Chinhoyi Shop",
+      "tel": "067 28101 4",
+      "address": "Ethlyn House 279 Masonic Lane P.O Box 341, Chinhoyi",
+      "type": "SHOP"
+    }
+  ],
+  "Chitungwiza": [
+    {
+      "isActive": true,
+      "latitude": "-18.018925",
+      "longitude": "31.067821",
+      "name": "Chitungwiza Makoni Shop",
+      "tel": "",
+      "address": "Makumbe Building Makoni Shopping Center, Chitungwiza",
+      "type": "SHOP"
+    },
+    {
+      "isActive": true,
+      "latitude": "-18.0096922",
+      "longitude": "31.0776454",
+      "name": "Chitungwiza Town Center Shop",
+      "tel": "",
+      "address": "Shop No 7 Stand No 19652 Unit D Seke, Chitungwiza",
+      "type": "SHOP"
+    }
+  ],
+  "Gweru": [
+    {
+      "isActive": true,
+      "latitude": "-19.454787",
+      "longitude": "29.816559",
+      "name": "Gweru Shop",
+      "tel": "(263 54) 225111, (263 54) 225083",
+      "address": "Waldorf Building No. 58 Fifth Street, Gweru",
+      "type": "SHOP"
+    }
+  ],
+  "Harare": [
+    {
+      "isActive": true,
+      "latitude": "-17.8500886",
+      "longitude": "31.050311",
+      "name": "Harare Head Office Shop",
+      "tel": "(263 4) 748321 – 7, (263 4) 780999 or 781624",
+      "address": "148 Seke Road Graniteside, Harare",
+      "type": "SHOP"
+    },
+    {
+      "isActive": true,
+      "latitude": "-17.826789",
+      "longitude": "31.050500",
+      "name": "Harare Town Office Shop",
+      "tel": "(263 4) 791600, (263 4) 791614",
+      "address": "ICL Building 42 Sam Nujoma Street, Harare",
+      "type": "SHOP"
+    },
+    {
+      "isActive": true,
+      "latitude": "-17.9187789",
+      "longitude": "31.0950904",
+      "name": "Harare Airport Shop",
+      "tel": "0731235023",
+      "address": "Harare International Airport, Harare",
+      "type": "SHOP"
+    },
+    {
+      "isActive": true,
+      "latitude": "-17.836508",
+      "longitude": "31.044503",
+      "name": "Bank Street Shop",
+      "tel": "0731235025",
+      "address": "Shop 9 57 Bank Street Corner Kaguvi Street, Harare",
+      "type": "SHOP"
+    },
+    {
+      "isActive": true,
+      "latitude": "-17.7600508",
+      "longitude": "31.0874103",
+      "name": "Harare Borrowdale Shop",
+      "tel": "",
+      "address": "Shop 27 Stand Number 585 Borrowdale, Harare",
+      "type": "SHOP"
+    },
+    {
+      "isActive": true,
+      "latitude": "-17.855527",
+      "longitude": "31.054592",
+      "name": "Ganiteside Shop",
+      "tel": "",
+      "address": "202 Seke Road Graniteside, Harare",
+      "type": "SHOP"
+    },
+    {
+      "isActive": true,
+      "latitude": "-17.8318177",
+      "longitude": "31.0474223",
+      "name": "Joina City Shop",
+      "tel": "",
+      "address": "Shop 10L Joina City Harare City Center, Harare",
+      "type": "SHOP"
+    },
+    {
+      "isActive": true,
+      "latitude": "-17.8260424",
+      "longitude": "31.0035896",
+      "name": "Harare Long Chen Shop",
+      "tel": "",
+      "address": "Shop No 12 / 13 Long Chen Plaza Belvedere, Harare",
+      "type": "SHOP"
+    },
+    {
+      "isActive": true,
+      "latitude": "-17.825166",
+      "longitude": "31.03351",
+      "name": "Harare Machipisa Shop",
+      "tel": "",
+      "address": "Shop No. 1 990 Jababvu Street Machipisa, Machipisa",
+      "type": "SHOP"
+    },
+    {
+      "isActive": true,
+      "latitude": "-17.7644165",
+      "longitude": "30.9754496",
+      "name": "Westgate Shop",
+      "tel": "",
+      "address": "E3 Eastmall Westgate Complex, Harare",
+      "type": "SHOP"
+    }
+  ],
+  "Kadoma": [
+    {
+      "isActive": true,
+      "latitude": "-18.326937",
+      "longitude": "29.916228",
+      "name": "Kadoma Shop",
+      "tel": "067 28101 4",
+      "address": "Stand No. 30 Shop 2 Robert Mugabe Street, Kadoma",
+      "type": "SHOP"
+    }
+  ],
+  "Kwekwe": [
+    {
+      "isActive": true,
+      "latitude": "-18.920133",
+      "longitude": "29.823655",
+      "name": "Kwekwe Shop",
+      "tel": "067 28101 4",
+      "address": "45A Robert Mugabe Way, Kwekwe",
+      "type": "SHOP"
+    }
+  ],
+  "Marondera": [
+    {
+      "isActive": true,
+      "latitude": "-18.1989913",
+      "longitude": "31.5148822",
+      "name": "Marondera Shop",
+      "tel": "067 28101 4",
+      "address": "48A The Green, Marondera",
+      "type": "SHOP"
+    }
+  ],
+  "Masvingo": [
+    {
+      "isActive": true,
+      "latitude": "-20.075715",
+      "longitude": "30.832759",
+      "name": "Masvingo Shop",
+      "tel": "067 28101 4",
+      "address": "Shop Number 2 Old Mutual Building, Masvingo",
+      "type": "SHOP"
+    }
+  ],
+  "Mutare": [
+    {
+      "isActive": true,
+      "latitude": "-18.974144",
+      "longitude": "32.670101",
+      "name": "Mutare Shop",
+      "tel": "(263 20) 68608, (263 20) 68612, (263 20) 68614",
+      "address": "Fidelity Building Herbert Chitepo/Aerodome Road P.O Box 2950, Mutare",
+      "type": "SHOP"
+    }
+  ],
+  "Victoria Falls": [
+    {
+      "isActive": true,
+      "latitude": "-17.931805",
+      "longitude": "25.825558",
+      "name": "Victoria Falls Shop",
+      "tel": "(+263) 013 45014/5",
+      "address": "Shop 13 Galleria Complex, Victoria Falls",
+      "type": "SHOP"
+    }
+  ]
+}

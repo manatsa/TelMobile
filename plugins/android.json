@@ -42,6 +42,9 @@
         },
         "cordova-plugin-device": {
             "PACKAGE_NAME": "mobile.telecel.co.zw"
+        },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "mobile.telecel.co.zw"
         }
     },
     "dependent_plugins": {

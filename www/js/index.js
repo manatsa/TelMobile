@@ -20,8 +20,10 @@ $(document).on( "deviceready", function() {
 $(document).on("backbutton",function (e,ui) {
 
     if($.mobile.activePage.attr('id')==='pgMain'){
-        e.preventDefault();
+         //e.preventDefault();
         navigator.notification.confirm("Are sure you want to exit the app?",confirmCallback,"Exit The App",["Yes","No"]);
+    }else{
+        $.mobile.back();
     }
 })
 
@@ -71,10 +73,16 @@ function onError(error) {
     )
 }
 
+function callNumber(number) {
+    window.plugins.CallNumber.callNumber(function () {
+    }, onError, number, true);
+}
+
 function callTelecel() {
     window.plugins.CallNumber.callNumber(function () {
     }, onError, "150", true);
 }
+
 
 //Add footer to each page
 $("section").append(
@@ -83,6 +91,8 @@ $("section").append(
 $("section[data-rel='dialog'] footer").remove();
 
 $(".btnCallTelecel").on("click", callTelecel);
+
+$("#pgInitialLogin footer").remove();
 
 $('.btnTerms').click(function () {
     $("#dlgTermsAndConditions").dialog("open");

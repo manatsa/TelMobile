@@ -60,5 +60,7 @@
     </array>
     <key>NSPhotoLibraryAddUsageDescription</key>
     <string>This app requires photo library access to function properly.</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string></string>
   </dict>
 </plist>

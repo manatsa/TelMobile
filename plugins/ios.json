@@ -43,6 +43,10 @@
         },
         "cordova-plugin-device": {
             "PACKAGE_NAME": "mobile.telecel.co.zw"
+        },
+        "cordova-plugin-geolocation": {
+            "GEOLOCATION_USAGE_DESCRIPTION": " ",
+            "PACKAGE_NAME": "mobile.telecel.co.zw"
         }
     },
     "dependent_plugins": {

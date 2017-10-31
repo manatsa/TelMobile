@@ -1,5 +1,39 @@
 var shareMessage = "Share Message";
 
+
+$(document).on( "deviceready", function() {
+    try{
+        NativeStorage.getItem("user",function (data) {},
+            function (error) {
+            $.mobile.changePage("#pgInitialLogin");
+            console.log("ERROR:"+error)
+        });
+    }catch(e)
+    {
+        console.log(e)
+        $.mobile.changePage("#pgInitialLogin");
+    }
+
+
+});
+
+$(document).on("backbutton",function (e,ui) {
+
+    if($.mobile.activePage.attr('id')==='pgMain'){
+         //e.preventDefault();
+        navigator.notification.confirm("Are sure you want to exit the app?",confirmCallback,"Exit The App",["Yes","No"]);
+    }else{
+        $.mobile.back();
+    }
+})
+
+function confirmCallback(choice) {
+    if(choice==1){
+        navigator.app.exitApp();
+    }
+}
+
+
 $(document).on({
     ajaxSend: function () {
         loading('show');
@@ -60,3 +94,46 @@ $('.btnTerms').click(function () {
 $(".btnShare").click(function () {
     window.plugins.socialsharing.share(shareMessage);
 });
+
+
+
+function selectContact(id) {
+    navigator.contacts.pickContact(function(contact){
+        var contact=JSON.parse(JSON.stringify(contact));
+        console.log(JSON.stringify(contact.phoneNumbers[0].value));
+        $("#"+id).val(contact.phoneNumbers[0].value)
+    },function(err){
+        console.log('Error: ' + err);
+        navigator.notification.alert("Error picking contact",function () {},"Contact Picking Failure","OK")
+    });
+}
+
+function validateMSISDN(msisdn) {
+    var validMsisdn="";
+
+    if(msisdn)
+    {
+        switch(msisdn)
+        {
+            case msisdn.startWith("26373"):
+
+                break;
+            case msisdn.startWith("+26373"):
+                validMsisdn=msisdn.substring(4);
+                break
+            case msisdn.startWith("0026373"):
+                validMsisdn=msisdn.substring(5);
+                break
+            case msisdn.startWith("073"):
+                validMsisdn=msisdn.substring(1);
+                break
+            case msisdn.startWith("73"):
+                validMsisdn=msisdn
+                break
+            default:
+                navigator.notification.alert("You need to check the mobile number!",function () {},"Invalid Mobile Number","OK")
+        }
+    }else{
+        navigator.notification.alert("You need to check the mobile number!",function () {},"Invalid Mobile Number","OK")
+    }
+}

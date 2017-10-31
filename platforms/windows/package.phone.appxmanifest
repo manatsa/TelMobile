@@ -36,5 +36,6 @@
     <Capabilities>
         <Capability Name="internetClientServer" />
         <m3:Capability Name="contacts" />
+        <DeviceCapability Name="location" />
     </Capabilities>
 </Package>

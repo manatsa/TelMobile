@@ -43,6 +43,8 @@
 		9332DF8AC3AE42C2964E65A3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BCAAE863DAE45A5AD606DF3 /* QuartzCore.framework */; };
 		E93472FA2AB64670934343A3 /* CDVDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 028F7F26CEB54F009E72E24E /* CDVDevice.m */; };
 		92966318136B49BDA40C26FF /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 10222ED451014A44A513E52C /* libz.tbd */; };
+		BECAED9BAA504940AE3E9DE9 /* CDVLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8088BE5ADB4344C5B49FDD32 /* CDVLocation.m */; };
+		3A6579B8CD774E25AA768179 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B65C903C4F2E44E78B3359E9 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +129,9 @@
 		028F7F26CEB54F009E72E24E /* CDVDevice.m */ = {isa = PBXFileReference; name = "CDVDevice.m"; path = "cordova-plugin-device/CDVDevice.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
 		8405AFCB97084F72B5ACB962 /* CDVDevice.h */ = {isa = PBXFileReference; name = "CDVDevice.h"; path = "cordova-plugin-device/CDVDevice.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 		10222ED451014A44A513E52C /* libz.tbd */ = {isa = PBXFileReference; name = "libz.tbd"; path = "usr/lib/libz.tbd"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = sourcecode.text-based-dylib-definition; explicitFileType = undefined; includeInIndex = 0; };
+		8088BE5ADB4344C5B49FDD32 /* CDVLocation.m */ = {isa = PBXFileReference; name = "CDVLocation.m"; path = "cordova-plugin-geolocation/CDVLocation.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		5C3B53CC0FEC4FCEB57A4E63 /* CDVLocation.h */ = {isa = PBXFileReference; name = "CDVLocation.h"; path = "cordova-plugin-geolocation/CDVLocation.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		B65C903C4F2E44E78B3359E9 /* CoreLocation.framework */ = {isa = PBXFileReference; name = "CoreLocation.framework"; path = "System/Library/Frameworks/CoreLocation.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +149,7 @@
 				E12EEA5F526A41F393001C13 /* Social.framework in Frameworks */,
 				9332DF8AC3AE42C2964E65A3 /* QuartzCore.framework in Frameworks */,
 				92966318136B49BDA40C26FF /* libz.tbd in Frameworks */,
+				3A6579B8CD774E25AA768179 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,6 +230,7 @@
 				33B5AF9868E94C52B16D2B7B /* Social.framework */,
 				3BCAAE863DAE45A5AD606DF3 /* QuartzCore.framework */,
 				10222ED451014A44A513E52C /* libz.tbd */,
+				B65C903C4F2E44E78B3359E9 /* CoreLocation.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -283,6 +290,8 @@
 				7D2D39927AB5485F8CE2DA19 /* Toast.h */,
 				028F7F26CEB54F009E72E24E /* CDVDevice.m */,
 				8405AFCB97084F72B5ACB962 /* CDVDevice.h */,
+				8088BE5ADB4344C5B49FDD32 /* CDVLocation.m */,
+				5C3B53CC0FEC4FCEB57A4E63 /* CDVLocation.h */,
 			);
 			name = Plugins;
 			path = "Telecel/Plugins";
@@ -413,6 +422,7 @@
 				680CFDA525644B3392FFF250 /* Toast+UIView.m in Sources */,
 				1ED69F2F2D4C4C75ACE125AB /* Toast.m in Sources */,
 				E93472FA2AB64670934343A3 /* CDVDevice.m in Sources */,
+				BECAED9BAA504940AE3E9DE9 /* CDVLocation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

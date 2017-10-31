@@ -1,71 +1,43 @@
-var uri="http://telecelmobileapp.telecel.co.zw/TelecelBundleRestService/rest/shops";
-var index=0;
+var uri = "../www/json/shops.json";
 
-
+//get shops from JSON
 function getShopsList() {
 
     $.ajax({
-        url:uri,
-        type:"GET",
-        dataType:"json",
+        url: uri,
+        type: "GET",
+        dataType: "json",
 
-        success:function (result) {
-            var data=JSON.parse(JSON.stringify(result));
-
-            var tab="<table width='100%' id='tblShops' data-role='table' data-mode=\"columntoggle\" class='ui-body-d ui-shadow table-stripe ui-responsive' " +
-                "data-column-btn-text=''> "+
-                "<thead>" +
-                "<tr>" +
-                "<th>NAME</th>" +
-                "<th>TYPE</th>" +
-                "<th>IS ACTIVE</th>" +
-                "<th>LATITUDE</th>" +
-                "<th>LONGITUDE</th>" +
-                "<th>ON MAP</th>" +
-                "</tr>" +
-                "</thead>"+
-                "<tbody> " ;
-
-            $.each(data,function (index,shop) {
-                var shopString=JSON.stringify(shop);
-                //alert(shopString.replace(/"/g,"`"))
-                //
-                tab=tab+"<tr>" +
-                "<td><span class='spName'>"+shop.name+"</span></td>" +
-                "<td><span class='spType'>"+shop.type+"</span></td>" +
-                "<td><span class='spActive'>"+shop.isActive+"</span></td>" +
-                "<td><span class='spLattitude'>"+shop.latitude+"</span></td>" +
-                "<td><span class='spLongitude'>"+shop.longitude+"</span></td>" +
-                "<td><a onclick='storeShop(&quot;"+shopString.replace(/"/g,"`")+"&quot;)' data-transition='flip'><i class='fa fa-map-marker' aria-hidden='false'></i>Map</a> </td>" +
-                "</tr>";
-            })
-            tab=tab+"</tbody>" +
-                "</table>"
-            $("#shopsList").html(tab)
+        success: function (result) {
+            $.each(result, function (index, shopArea) {
+                var shopAreas = JSON.parse(JSON.stringify(shopArea));
+                $("#ulSearchStore").append('<li data-role=\"list-divider\">' + index + '</li>');
+                $.each(shopAreas, function (i, shop) {
+                    $("#ulSearchStore").append("<li> <a onclick='storeShop(&quot;" + JSON.stringify(shop).replace(/"/g, '`') + "&quot;)' data-transition=\"flip\">" + shop.name + "<p class=\"initcap\">" + shop.tel + "</p> <p class=\"initcap\">" + shop.address + "</p> </a> </li>");
+                    //alert(JSON.stringify(Object.keys(result));
+                });
+            });
         },
         failure: function (fail) {
-            console.log(fail.responseText)
-            alert("FAILURE :"+fail)
-
+            console.log(fail.responseText);
+            alert("FAILURE :" + fail)
         },
-        error:function (error) {
+        error: function (error) {
             console.log(error.responseText)
-            alert("ERROR :\n"+error.responseText)
-
+            alert("ERROR :\n" + error.responseText)
         }
     });
 }
 
-
+//store selected shop in preferences in order to open in maps.html
 function storeShop(shop) {
-    NativeStorage.setItem("shop",shop,function () {
-        $.mobile.changePage("shopmap.html",{ transition: "flip"})
-    },function (error) {
-        navigator.notification.alert("Error :"+error, function () {}, "Can't Show Map right now!", "OK")
+    NativeStorage.setItem("shop", shop, function () {
+        //alert(JSON.stringify(shop))
+        $.mobile.changePage("shopmap.html", {transition: "flip"});
+    }, function (error) {
+        navigator.notification.alert("Error :" + error, function () {
+        }, "Can't Show Map right now!", "OK")
     })
 }
 
-
-
-$("#pgShopsList").on("pageshow",getShopsList)
-
+$("#pgShopsList").on("pageshow", getShopsList());

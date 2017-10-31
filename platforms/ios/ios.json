@@ -59,6 +59,10 @@
                         {
                             "xml": "<feature name=\"Device\"><param name=\"ios-package\" value=\"CDVDevice\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Geolocation\"><param name=\"ios-package\" value=\"CDVLocation\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -80,6 +84,12 @@
                     "NSPhotoLibraryAddUsageDescription": [
                         {
                             "xml": "<string>This app requires photo library access to function properly.</string>",
+                            "count": 1
+                        }
+                    ],
+                    "NSLocationWhenInUseUsageDescription": [
+                        {
+                            "xml": "<string> </string>",
                             "count": 1
                         }
                     ]
@@ -129,6 +139,10 @@
             "PACKAGE_NAME": "mobile.telecel.co.zw"
         },
         "cordova-plugin-device": {
+            "PACKAGE_NAME": "mobile.telecel.co.zw"
+        },
+        "cordova-plugin-geolocation": {
+            "GEOLOCATION_USAGE_DESCRIPTION": " ",
             "PACKAGE_NAME": "mobile.telecel.co.zw"
         }
     },
@@ -337,6 +351,38 @@
             "clobbers": [
                 "device"
             ]
+        },
+        {
+            "id": "cordova-plugin-geolocation.Coordinates",
+            "file": "plugins/cordova-plugin-geolocation/www/Coordinates.js",
+            "pluginId": "cordova-plugin-geolocation",
+            "clobbers": [
+                "Coordinates"
+            ]
+        },
+        {
+            "id": "cordova-plugin-geolocation.PositionError",
+            "file": "plugins/cordova-plugin-geolocation/www/PositionError.js",
+            "pluginId": "cordova-plugin-geolocation",
+            "clobbers": [
+                "PositionError"
+            ]
+        },
+        {
+            "id": "cordova-plugin-geolocation.Position",
+            "file": "plugins/cordova-plugin-geolocation/www/Position.js",
+            "pluginId": "cordova-plugin-geolocation",
+            "clobbers": [
+                "Position"
+            ]
+        },
+        {
+            "id": "cordova-plugin-geolocation.geolocation",
+            "file": "plugins/cordova-plugin-geolocation/www/geolocation.js",
+            "pluginId": "cordova-plugin-geolocation",
+            "clobbers": [
+                "navigator.geolocation"
+            ]
         }
     ],
     "plugin_metadata": {
@@ -353,6 +399,7 @@
         "es6-promise-plugin": "4.1.0",
         "cordova-plugin-x-socialsharing": "5.2.1",
         "cordova-plugin-x-toast": "2.6.0",
-        "cordova-plugin-device": "1.1.6"
+        "cordova-plugin-device": "1.1.6",
+        "cordova-plugin-geolocation": "2.4.3"
     }
 }

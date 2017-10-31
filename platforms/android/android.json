@@ -55,6 +55,10 @@
                         {
                             "xml": "<feature name=\"Device\"><param name=\"android-package\" value=\"org.apache.cordova.device.Device\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Geolocation\"><param name=\"android-package\" value=\"org.apache.cordova.geolocation.Geolocation\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -88,6 +92,18 @@
                         },
                         {
                             "xml": "<uses-permission android:name=\"android.permission.GET_ACCOUNTS\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-feature android:name=\"android.hardware.location.gps\" />",
                             "count": 1
                         }
                     ],
@@ -145,6 +161,9 @@
             "PACKAGE_NAME": "mobile.telecel.co.zw"
         },
         "cordova-plugin-device": {
+            "PACKAGE_NAME": "mobile.telecel.co.zw"
+        },
+        "cordova-plugin-geolocation": {
             "PACKAGE_NAME": "mobile.telecel.co.zw"
         }
     },
@@ -345,6 +364,20 @@
             "clobbers": [
                 "device"
             ]
+        },
+        {
+            "id": "cordova-plugin-geolocation.geolocation",
+            "file": "plugins/cordova-plugin-geolocation/www/android/geolocation.js",
+            "pluginId": "cordova-plugin-geolocation",
+            "clobbers": [
+                "navigator.geolocation"
+            ]
+        },
+        {
+            "id": "cordova-plugin-geolocation.PositionError",
+            "file": "plugins/cordova-plugin-geolocation/www/PositionError.js",
+            "pluginId": "cordova-plugin-geolocation",
+            "runs": true
         }
     ],
     "plugin_metadata": {
@@ -360,6 +393,7 @@
         "cordova-plugin-nativestorage": "2.2.2",
         "cordova-plugin-email": "1.2.6",
         "cordova-plugin-contacts": "2.3.1",
-        "cordova-plugin-device": "1.1.6"
+        "cordova-plugin-device": "1.1.6",
+        "cordova-plugin-geolocation": "2.4.3"
     }
 }
