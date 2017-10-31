@@ -73,6 +73,31 @@ function onError(error) {
     )
 }
 
+
+function echoShopNumbers(number) {
+    var result = "<td class='initcap align-text-left'>";
+    if(number)
+    {
+        var numbers = number.split(",");
+        if (numbers.length >= 1) {
+            $.each(numbers, function (index, num) {
+                result += "<span style='text-decoration: underline;' onclick='callNumber(&quot;" + num + "&quot;)'> " + num + "</span>";
+                result += "<br/>";//new line
+                result += "<br/>";//new line
+            });
+        } else {
+            result += "<span style='text-decoration: underline;' onclick='callTelecel()'>150</span>";
+        }
+
+    }else{
+        result += "<span style='text-decoration: underline;' onclick='callTelecel()'>150</span>";
+    }
+    result += "</td>";
+
+    return result;
+}
+
+
 function callNumber(number) {
     window.plugins.CallNumber.callNumber(function () {
     }, onError, number, true);

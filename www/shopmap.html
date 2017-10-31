@@ -70,12 +70,27 @@
                                             infowindow.open(map, marker);
                                         });
 
-                                        var contentHTML = "<div class='red-text' > <h4  class='align-text-center'>" + shop.name + "</h4> <hr> <table data-role='table' class='ui-body-d ui-shadow ui-responsive'> <thead> <tr class='ui-bar-d'> <th class='align-text-left'>Address</th> <th class='align-text-left'>Tel</th> </tr> </thead> <tbody> <tr> <td class='initcap align-text-left'>" + shop.address + "</td> <td class='initcap align-text-left' style='text-decoration: underline;'  onclick='callNumber(&quot;" + shop.tel + "&quot;)'>" + shop.tel + "</td> </tr> </tbody> </table> </div>";
+                                        var contentHTML = "" +
+                                            "<div class='red-text' > " +
+                                                "<h4  class='align-text-center'>" + shopItem.name + "</h4> <hr> " +
+                                                "<table data-role='table' class='ui-body-d ui-shadow ui-responsive'> " +
+                                                    "<thead> " +
+                                                        "<tr class='ui-bar-d'> " +
+                                                            "<th class='align-text-left'>Address</th> " +
+                                                            "<th class='align-text-left'>Tel</th> " +
+                                                        "</tr> " +
+                                                    "</thead> " +
+                                                    "<tbody> " +
+                                                        "<tr> " +
+                                                            "<td class='initcap align-text-left'>" + shopItem.address + "</td>";
+                                        contentHTML += echoShopNumbers(shopItem.tel);
+                                        contentHTML += "</tr> </tbody> </table> </div>";
                                         var infowindow = new google.maps.InfoWindow({
                                             content: contentHTML
                                         });
                                         marker.addListener('click', function () {
                                             infowindow.open(map, marker);
+                                            showShopNumbers(shop.tel)
                                         });
 
                                     });

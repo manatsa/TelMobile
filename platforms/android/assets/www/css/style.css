@@ -380,6 +380,9 @@ a.ui-mini.ui-btn {
 
 /*Background image*/
 .back_img {
-    background: url(../img/page_images/background_img_2.png) repeat-y scroll center center !important;
-    background-size: cover !important;
+
+}
+
+.mapLoading {
+    background: url('images/ajax-loader.gif') center center no-repeat;
 }
