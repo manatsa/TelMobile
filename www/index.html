@@ -22,17 +22,23 @@
     <!--JQuery javascript-->
     <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script>
-        $( document ).on( "mobileinit", function(e) {
-            /* disable auto-initialize */
-            //$.mobile.autoInitializePage = false;
-            /*if ( condition ) {
-                $(function() {
-                    // make login page div first one in DOM
-                    $("#login").prependTo("body");
-                    // initialize jQuery Mobile
-                    $.mobile.initializePage();
-                });
-            }*/
+        $( document ).bind( 'mobileinit', function(){
+            $.mobile.loader.prototype.options.text = "loading";
+            $.mobile.loader.prototype.options.textVisible = false;
+            $.mobile.loader.prototype.options.theme = "a";
+            $.mobile.loader.prototype.options.width="50px";
+            $.mobile.loader.prototype.options.height="50px";
+            $.mobile.loader.prototype.options.html = "<i class='custom-spinner'></i>";
+            $.mobile.loading( "show", {
+                text: "Loading",
+                textVisible: true,
+                theme: "a",
+                html: "",
+                classes:{
+                    "ui-loader": "ui-corner-all",
+                    "ui-loader-icon": "ui-icon-loading"
+                }
+            });
         });
     </script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>

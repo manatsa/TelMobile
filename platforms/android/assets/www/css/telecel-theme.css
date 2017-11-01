@@ -213,7 +213,7 @@ html .ui-alt-icon .ui-radio-off:after {
 /* Loader */
 .ui-icon-loading {
 	background: url("images/ajax-loader.gif");
-	background-size: 5.875em 5.875em;
+	background-size: 10em 10em;
 }
 /* Swatches */
 /* A

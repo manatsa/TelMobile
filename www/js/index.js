@@ -181,13 +181,14 @@ function validateMSISDN(msisdn) {
 
 
 function showDirections() {
-    infoBubble.close();
-    directionsDisplay.setMap(null);
     $.mobile.loading("show")
+    infoBubble.close();
+
     directionsDisplay = new google.maps.DirectionsRenderer;
     directionsService = new google.maps.DirectionsService;
+    directionsDisplay.setMap(null);
     directionsDisplay.setDirections({routes: []});
-    directionsDisplay.setMap(map);
+
     // alert(typeof directionsDisplay)
     navigator.geolocation.getCurrentPosition(function (position) {
         var currpos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
@@ -212,8 +213,11 @@ function calculateAndDisplayRoute(start,end,directionsService, directionsDisplay
     }, function(response, status) {
         if (status === 'OK') {
             directionsDisplay.setDirections(response);
+            directionsDisplay.setMap(map);
         } else {
-            window.alert('Directions request failed due to ' + status);
+            navigator.notification.alert('Directions request failed due to ' + status,function () {},"ERROR","OK");
         }
     });
+
+
 }

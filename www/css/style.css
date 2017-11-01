@@ -388,17 +388,24 @@ a.ui-mini.ui-btn {
     background-size: 5em 5em;
 }
 
-#floating-panel{
-    /*position: absolute;*/
-    top: 20vh;
-    left:70%;
+#floating-panel {
+    position: absolute;
+    top: 10vh;
+    left: 70%;
     z-index: 5;
-    width:25%;
+    color: red;
+    width:30%;
     background-color: transparent;
-    padding: 1px;
-    border: 1px solid #f00;
+    padding: 0px;
     text-align: center;
     font-family: 'Roboto','sans-serif';
-
     text-transform: none;
+}
+
+.custom-spinner {
+    width: 37px !important;
+    height: 37px !important;
+    background-image:url('images/ajax-loader.gif');
+    opacity: 1 !important;
+    display: block;
 }
