@@ -1,4 +1,12 @@
 var shareMessage = "Share Message";
+var map;
+var infoBubble;
+var markers = [];
+var source;
+var shop;
+var latlon;
+var directionsDisplay;
+var directionsService;
 
 
 $(document).on( "deviceready", function() {
@@ -73,10 +81,41 @@ function onError(error) {
     )
 }
 
+
+function echoShopNumbers(number) {
+    var result = "<td class='initcap align-text-left'>";
+    if(number)
+    {
+        var numbers = number.split(",");
+        if (numbers.length >= 1) {
+            $.each(numbers, function (index, num) {
+                result += "<span style='text-decoration: underline;' onclick='callNumber(&quot;" + num + "&quot;)'> " + num + "</span>";
+                result += "<br/>";//new line
+                result += "<br/>";//new line
+            });
+        } else {
+            result += "<span style='text-decoration: underline;' onclick='callTelecel()'>150</span>";
+        }
+
+    }else{
+        result += "<span style='text-decoration: underline;' onclick='callTelecel()'>150</span>";
+    }
+    result += "</td>";
+
+    return result;
+}
+
+
+function callNumber(number) {
+    window.plugins.CallNumber.callNumber(function () {
+    }, onError, number, true);
+}
+
 function callTelecel() {
     window.plugins.CallNumber.callNumber(function () {
     }, onError, "150", true);
 }
+
 
 //Add footer to each page
 $("section").append(
@@ -85,6 +124,8 @@ $("section").append(
 $("section[data-rel='dialog'] footer").remove();
 
 $(".btnCallTelecel").on("click", callTelecel);
+
+$("#pgInitialLogin footer").remove();
 
 $('.btnTerms').click(function () {
     $("#dlgTermsAndConditions").dialog("open");
@@ -136,4 +177,60 @@ function validateMSISDN(msisdn) {
     }else{
         navigator.notification.alert("You need to check the mobile number!",function () {},"Invalid Mobile Number","OK")
     }
+}
+
+
+function showDirections() {
+
+    $(".spinner").css("display","block");
+    directionsDisplay.addListener('directions_changed', function() {
+        //computeTotalDistance(directionsDisplay.getDirections());
+    });
+    infoBubble.close();
+    directionsDisplay.setMap(null);
+    directionsDisplay.setDirections({routes: []});
+
+    navigator.geolocation.getCurrentPosition(function (position) {
+        var currpos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+        calculateAndDisplayRoute(currpos,latlon,directionsService,directionsDisplay);
+
+
+    },function (error) {
+        $("#custom-spinner").css("display","none");
+        navigator.notification.alert("ERROR :"+error,function () {},"Error Finding Your Location","OK")
+    })
+
+}
+
+
+function calculateAndDisplayRoute(start,end,directionsService, directionsDisplay) {
+    var selectedMode = $('#mode').val();
+    directionsService.route({
+        origin: start,
+        destination: end,
+        travelMode: selectedMode
+    }, function(response, status) {
+        if (status === 'OK') {
+            directionsDisplay.setDirections(response);
+            directionsDisplay.setMap(map);
+            $(".spinner").css("display","none");
+        } else {
+            $(".spinner").css("display","none");
+            navigator.notification.alert('Directions request failed due to ' + status,function () {},"ERROR","OK");
+        }
+    });
+
+
+}
+
+
+
+function computeTotalDistance(result) {
+    var total = 0;
+    var myroute = result.routes[0];
+    for (var i = 0; i < myroute.legs.length; i++) {
+        total += myroute.legs[i].distance.value;
+    }
+    total = total / 1000;
+   $('#timetotravel').val(total + ' km');
 }

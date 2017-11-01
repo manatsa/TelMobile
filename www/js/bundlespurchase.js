@@ -5,6 +5,11 @@ $("#pgBundlesPurchase").on("pageinit", function () {
     hideBundlePurchaseDivs();
 })
 
+$("#pgBundlesPurchase").on("pageshow", function (event) {
+
+    $('#divVoiceBundles').trigger('click');
+});
+
 
 function showBuyForOther() {
     $("#divBuyForOtherControlGroup").show();

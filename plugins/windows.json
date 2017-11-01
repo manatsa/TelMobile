@@ -45,6 +45,9 @@
         },
         "cordova-plugin-geolocation": {
             "PACKAGE_NAME": "HelloCordova"
+        },
+        "cordova-plugin-sms": {
+            "PACKAGE_NAME": "HelloCordova"
         }
     },
     "dependent_plugins": {

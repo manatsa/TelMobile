@@ -380,6 +380,58 @@ a.ui-mini.ui-btn {
 
 /*Background image*/
 .back_img {
-    background: url(../img/page_images/background_img_2.png) repeat-y scroll center center !important;
-    background-size: cover !important;
+
 }
+
+.mapLoading {
+    background: url('images/ajax-loader.gif') center center no-repeat;
+    background-size: 5em 5em;
+}
+
+#floating-panel {
+    position: absolute;
+    top: 10vh;
+    left: 70%;
+    z-index: 5;
+    color: red;
+    width:30%;
+    background-color: transparent;
+    padding: 0px;
+    text-align: center;
+    font-family: 'Roboto','sans-serif';
+    text-transform: none;
+}
+
+
+.spinner {
+    position: absolute;
+    top: 40vh;
+    left: 45%;
+    z-index: 6;
+    background-color: transparent;
+    background: url("images/ajax-loader.gif");
+    width: 100px;
+    height: 100px;
+    
+}
+
+.hideBorderFirstListview li:last-of-type {
+    border-bottom: none;
+}
+
+@keyframes anim {
+    0% {
+        font-size: 9px;
+    }
+    100% {
+        font-size: 30px;
+    }
+}
+
+#divPromotionsCount {
+    animation: anim;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+

@@ -20,7 +20,6 @@ function getPromotionsList() {
                 promotionsCount++;
             });
             $("#divPromotionsCount").append("<p style='margin: 0;'>We have <span style='font-size: 36px;'>" + promotionsCount.toString() + "</span> running promotions!</p>");
-            beginFlashPromotionsBanner();
         },
         failure: function (fail) {
             console.log(fail.responseText);
@@ -33,14 +32,6 @@ function getPromotionsList() {
     });
 }
 
-function beginFlashPromotionsBanner() {
-    var ofs = 0;
-    var el = document.getElementById('divPromotionsCount');
 
-    window.setInterval(function () {
-        el.style.background = 'rgba(226,33,60,' + Math.abs(Math.sin(ofs)) + ')';
-        ofs += 0.01;
-    }, 5);
-}
 
 $("#pgPromotions").on("pageshow", getPromotionsList());
