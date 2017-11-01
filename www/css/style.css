@@ -385,4 +385,20 @@ a.ui-mini.ui-btn {
 
 .mapLoading {
     background: url('images/ajax-loader.gif') center center no-repeat;
+    background-size: 5em 5em;
+}
+
+#floating-panel{
+    /*position: absolute;*/
+    top: 20vh;
+    left:70%;
+    z-index: 5;
+    width:25%;
+    background-color: transparent;
+    padding: 1px;
+    border: 1px solid #f00;
+    text-align: center;
+    font-family: 'Roboto','sans-serif';
+
+    text-transform: none;
 }

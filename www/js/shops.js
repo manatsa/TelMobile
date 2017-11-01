@@ -34,6 +34,7 @@ function storeShop(shop) {
     NativeStorage.setItem("shop", shop, function () {
         //alert(JSON.stringify(shop))
         $.mobile.changePage("shopmap.html", {transition: "flip"});
+
     }, function (error) {
         navigator.notification.alert("Error :" + error, function () {
         }, "Can't Show Map right now!", "OK")
@@ -41,3 +42,7 @@ function storeShop(shop) {
 }
 
 $("#pgShopsList").on("pageshow", getShopsList());
+
+
+
+

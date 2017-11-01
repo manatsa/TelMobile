@@ -26,21 +26,31 @@
     <!-- End of Header -->
 
     <div>
-        <div data-role="main" id="googleMap" class="mapLoading"
-             style="width: 100% !important; height: 91vh !important;">
+        <div data-role="main" >
+            <div id="floating-panel">
+                <b>Mode of Travel: </b>
+                <select id="mode" data-inset="true" onchange="showDirections()" >
+                    <option value="DRIVING">Driving</option>
+                    <option value="WALKING">Walking</option>
+                    <option value="BICYCLING">Bicycling</option>
+                    <option value="TRANSIT">Transit</option>
+                </select>
+            </div>
+            <div id="googleMap" class="mapLoading" style="width: 100% !important; height: 91vh !important;">
             <script>
 
 
                 function myMap() {
 
                     NativeStorage.getItem("shop", function (data) {
-                        var shop = JSON.parse(data.replace(/`/g, '"'));
+                        shop = JSON.parse(data.replace(/`/g, '"'));
                         $("#h1Shop").html("&nbsp;&nbsp;" + shop.name);
-                        var latlon = new google.maps.LatLng(shop.latitude, shop.longitude);
+                        latlon = new google.maps.LatLng(shop.latitude, shop.longitude);
 
                         var mapProp = {
                             center: latlon,
-                            zoom: 14
+                            zoom: 8,
+                            fullscreenControl: false
                         };
                          map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
                         var customIcon = {
@@ -57,7 +67,7 @@
                             success: function (result) {
                                 $.each(result, function (index, shopAreas) {
                                     $.each(shopAreas, function (i, shopItem) {
-                                        latlon=new google.maps.LatLng(shopItem.latitude, shopItem.longitude);
+                                        //latlon=new google.maps.LatLng(shopItem.latitude, shopItem.longitude);
                                         var marker = new google.maps.Marker({
                                             position: new google.maps.LatLng(shopItem.latitude, shopItem.longitude),
                                             icon: customIcon,
@@ -74,12 +84,12 @@
                                         marker.addListener('click', function () {
                                             //alert(markers.length)
                                             infowindow.open(map, marker);
-
+                                            latlon=marker.getPosition();
                                         });
 
                                         var contentHTML = "" +
                                             "<div class='red-text' > " +
-                                                "<u><a onclick='showDirections(&quot;"+shopItem.latitude+"&quot,&quot;"+ shopItem.longitude+"&quot;)' >Show Directions</a></u>"+
+                                                "<u><a onclick='showDirections()' >Show Directions</a></u>"+
                                                 "<h4  class='align-text-center'>" + shopItem.name + "</h4> <hr> " +
                                                 "<table data-role='table' class='ui-body-d ui-shadow ui-responsive'> " +
                                                     "<thead> " +
@@ -99,6 +109,7 @@
                                         marker.addListener('click', function () {
                                             infowindow.open(map, marker);
                                             infoBubble=infowindow;
+                                            latlon=marker.getPosition();
                                         });
 
                                     });
@@ -136,6 +147,7 @@
             <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDH7SGQ_oRhAYAgcAedTbdZrkh1jprT1VU&callback=myMap"></script>
         </div>
 
+        </div>
     </div>
 
 </div>

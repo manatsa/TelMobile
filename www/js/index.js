@@ -2,6 +2,11 @@ var shareMessage = "Share Message";
 var map;
 var infoBubble;
 var markers = [];
+var source;
+var shop;
+var latlon;
+var directionsDisplay;
+var directionsService;
 
 
 $(document).on( "deviceready", function() {
@@ -175,24 +180,40 @@ function validateMSISDN(msisdn) {
 }
 
 
-function showDirections(lat,lon) {
+function showDirections() {
     infoBubble.close();
+    directionsDisplay.setMap(null);
     $.mobile.loading("show")
-    var directionsDisplay = new google.maps.DirectionsRenderer;
-    var directionsService = new google.maps.DirectionsService;
+    directionsDisplay = new google.maps.DirectionsRenderer;
+    directionsService = new google.maps.DirectionsService;
+    directionsDisplay.setDirections({routes: []});
     directionsDisplay.setMap(map);
-
-    navigator.geolocation.getCurrentPosition(function (result) {
-        var source=google.maps.LatLng(result.coords.latitude,result.coords.longitude);
-
-        alert(destination.latitude)
+    // alert(typeof directionsDisplay)
+    navigator.geolocation.getCurrentPosition(function (position) {
+        var currpos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+        calculateAndDisplayRoute(currpos,latlon,directionsService,directionsDisplay);
         $.mobile.loading("hide")
-
-
 
     },function (error) {
-        $.mobile.loading("hide")
+
         navigator.notification.alert("ERROR :"+error,function () {},"Error Finding Your Location","OK")
     })
 
+
+}
+
+
+function calculateAndDisplayRoute(start,end,directionsService, directionsDisplay) {
+    var selectedMode = $('#mode').val();
+    directionsService.route({
+        origin: start,
+        destination: end,
+        travelMode: selectedMode
+    }, function(response, status) {
+        if (status === 'OK') {
+            directionsDisplay.setDirections(response);
+        } else {
+            window.alert('Directions request failed due to ' + status);
+        }
+    });
 }
