@@ -30,17 +30,19 @@
              style="width: 100% !important; height: 91vh !important;">
             <script>
 
+
                 function myMap() {
+
                     NativeStorage.getItem("shop", function (data) {
                         var shop = JSON.parse(data.replace(/`/g, '"'));
                         $("#h1Shop").html("&nbsp;&nbsp;" + shop.name);
-                        //alert(shop.latitude+"\n"+shop.longitude);
                         var latlon = new google.maps.LatLng(shop.latitude, shop.longitude);
+
                         var mapProp = {
                             center: latlon,
                             zoom: 14
                         };
-                        var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+                         map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
                         var customIcon = {
                             url: "../www/img/icons/marker.png", // url
                             scaledSize: new google.maps.Size(24, 32), // scaled size
@@ -55,23 +57,29 @@
                             success: function (result) {
                                 $.each(result, function (index, shopAreas) {
                                     $.each(shopAreas, function (i, shopItem) {
-
+                                        latlon=new google.maps.LatLng(shopItem.latitude, shopItem.longitude);
                                         var marker = new google.maps.Marker({
                                             position: new google.maps.LatLng(shopItem.latitude, shopItem.longitude),
                                             icon: customIcon,
                                             map: map,
                                             title: shopItem.name,
+                                            timeout:200,
                                             animation: google.maps.Animation.DROP
                                         });
+                                        markers.push(marker)
+
                                         if (shopItem.name.trim() === shop.name.trim()) {
                                             marker.setAnimation(google.maps.Animation.BOUNCE);
                                         }
                                         marker.addListener('click', function () {
+                                            //alert(markers.length)
                                             infowindow.open(map, marker);
+
                                         });
 
                                         var contentHTML = "" +
                                             "<div class='red-text' > " +
+                                                "<u><a onclick='showDirections(&quot;"+shopItem.latitude+"&quot,&quot;"+ shopItem.longitude+"&quot;)' >Show Directions</a></u>"+
                                                 "<h4  class='align-text-center'>" + shopItem.name + "</h4> <hr> " +
                                                 "<table data-role='table' class='ui-body-d ui-shadow ui-responsive'> " +
                                                     "<thead> " +
@@ -90,7 +98,7 @@
                                         });
                                         marker.addListener('click', function () {
                                             infowindow.open(map, marker);
-                                            showShopNumbers(shop.tel)
+                                            infoBubble=infowindow;
                                         });
 
                                     });
@@ -118,7 +126,11 @@
                     });
 
 
+
                 }
+
+
+
             </script>
 
             <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDH7SGQ_oRhAYAgcAedTbdZrkh1jprT1VU&callback=myMap"></script>

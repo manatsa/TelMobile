@@ -1,4 +1,7 @@
 var shareMessage = "Share Message";
+var map;
+var infoBubble;
+var markers = [];
 
 
 $(document).on( "deviceready", function() {
@@ -169,4 +172,27 @@ function validateMSISDN(msisdn) {
     }else{
         navigator.notification.alert("You need to check the mobile number!",function () {},"Invalid Mobile Number","OK")
     }
+}
+
+
+function showDirections(lat,lon) {
+    infoBubble.close();
+    $.mobile.loading("show")
+    var directionsDisplay = new google.maps.DirectionsRenderer;
+    var directionsService = new google.maps.DirectionsService;
+    directionsDisplay.setMap(map);
+
+    navigator.geolocation.getCurrentPosition(function (result) {
+        var source=google.maps.LatLng(result.coords.latitude,result.coords.longitude);
+
+        alert(destination.latitude)
+        $.mobile.loading("hide")
+
+
+
+    },function (error) {
+        $.mobile.loading("hide")
+        navigator.notification.alert("ERROR :"+error,function () {},"Error Finding Your Location","OK")
+    })
+
 }
