@@ -402,10 +402,18 @@ a.ui-mini.ui-btn {
     text-transform: none;
 }
 
-.custom-spinner {
-    width: 37px !important;
-    height: 37px !important;
-    background-image:url('images/ajax-loader.gif');
-    opacity: 1 !important;
-    display: block;
+
+.spinner {
+    position: absolute;
+    top: 40vh;
+    left: 45%;
+    z-index: 6;
+    background-color: transparent;
+    background: url("images/ajax-loader.gif");
+    width: 100px;
+    height: 100px;
+    
 }
+
+
+

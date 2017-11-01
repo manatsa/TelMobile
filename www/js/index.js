@@ -181,25 +181,24 @@ function validateMSISDN(msisdn) {
 
 
 function showDirections() {
-    $.mobile.loading("show")
-    infoBubble.close();
 
-    directionsDisplay = new google.maps.DirectionsRenderer;
-    directionsService = new google.maps.DirectionsService;
+    $(".spinner").css("display","block");
+    directionsDisplay.addListener('directions_changed', function() {
+        //computeTotalDistance(directionsDisplay.getDirections());
+    });
+    infoBubble.close();
     directionsDisplay.setMap(null);
     directionsDisplay.setDirections({routes: []});
 
-    // alert(typeof directionsDisplay)
     navigator.geolocation.getCurrentPosition(function (position) {
         var currpos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
         calculateAndDisplayRoute(currpos,latlon,directionsService,directionsDisplay);
-        $.mobile.loading("hide")
+
 
     },function (error) {
-
+        $("#custom-spinner").css("display","none");
         navigator.notification.alert("ERROR :"+error,function () {},"Error Finding Your Location","OK")
     })
-
 
 }
 
@@ -214,10 +213,24 @@ function calculateAndDisplayRoute(start,end,directionsService, directionsDisplay
         if (status === 'OK') {
             directionsDisplay.setDirections(response);
             directionsDisplay.setMap(map);
+            $(".spinner").css("display","none");
         } else {
+            $(".spinner").css("display","none");
             navigator.notification.alert('Directions request failed due to ' + status,function () {},"ERROR","OK");
         }
     });
 
 
+}
+
+
+
+function computeTotalDistance(result) {
+    var total = 0;
+    var myroute = result.routes[0];
+    for (var i = 0; i < myroute.legs.length; i++) {
+        total += myroute.legs[i].distance.value;
+    }
+    total = total / 1000;
+   $('#timetotravel').val(total + ' km');
 }

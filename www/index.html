@@ -21,28 +21,8 @@
 
     <!--JQuery javascript-->
     <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script>
-        $( document ).bind( 'mobileinit', function(){
-            $.mobile.loader.prototype.options.text = "loading";
-            $.mobile.loader.prototype.options.textVisible = false;
-            $.mobile.loader.prototype.options.theme = "a";
-            $.mobile.loader.prototype.options.width="50px";
-            $.mobile.loader.prototype.options.height="50px";
-            $.mobile.loader.prototype.options.html = "<i class='custom-spinner'></i>";
-            $.mobile.loading( "show", {
-                text: "Loading",
-                textVisible: true,
-                theme: "a",
-                html: "",
-                classes:{
-                    "ui-loader": "ui-corner-all",
-                    "ui-loader-icon": "ui-icon-loading"
-                }
-            });
-        });
-    </script>
+
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-    <script src="js/nestedlists.js"></script>
     <script src="js/tabs-fix.js"></script>
     <script src="js/smtp.js"></script>
     <script src="https://smtpjs.com/smtp.js"></script>
@@ -104,12 +84,7 @@
                 </div>
             </a>
 
-            <a data-transition="flip" href="#">
-                <div class="custom-ui-block-a div-red-background div-rounded-corners align-text-center menu-icons-margin">
-                    <img class="main-menu-icon" src="img/menu_icons/request.png"/>
-                    <p>Send a request</p>
-                </div>
-            </a>
+
 
             <a data-transition="flip" href="#pgShopsList">
                 <div class="custom-ui-block-b div-red-background div-rounded-corners align-text-center menu-icons-margin">
@@ -125,24 +100,11 @@
                 </div>
             </a>
 
-            <a data-transition="flip" href="#pgSelfService">
-                <div class="custom-ui-block-a div-red-background div-rounded-corners align-text-center menu-icons-margin">
-                    <img class="main-menu-icon" src="img/menu_icons/SelfService.png"/>
-                    <p>Self service</p>
-                </div>
-            </a>
 
             <a data-transition="flip" href="#pgUSSDShortcodes">
                 <div class="custom-ui-block-b div-red-background div-rounded-corners align-text-center menu-icons-margin">
                     <img class="main-menu-icon" src="img/menu_icons/USSD.png"/>
                     <p>USSD Shortcodes</p>
-                </div>
-            </a>
-
-            <a data-transition="flip" href="#pgServices">
-                <div class="custom-ui-block-c div-red-background div-rounded-corners align-text-center menu-icons-margin">
-                    <img class="main-menu-icon" src="img/menu_icons/services.png"/>
-                    <p>Services</p>
                 </div>
             </a>
 
@@ -402,6 +364,7 @@
 </section>
 
 <!-------------------------------------    Help   ------------------------------------------------>
+<!-------------------------------------    Help   ------------------------------------------------>
 <section data-role="page" id="pgHelp" class="ui-page-theme-a">
     <!-- Header -->
     <header data-role="header" class="ui-bar" data-position="fixed">
@@ -417,7 +380,6 @@
     <div data-role="popup" id="ppOptionsHelp" data-theme="b">
         <ul data-role="listview" data-inset="true" style="min-width:210px;">
             <li data-icon="false"><a href="#pgMain">Back to Main Page</a></li>
-            <li data-icon="false"><a href="#pgForgotPassword">Recover Pin</a></li>
             <li data-icon="false"><a href="#pgChangePIN">Change PIN</a></li>
             <li data-icon="false"><a href="#">Logout</a></li>
         </ul>
@@ -426,50 +388,30 @@
 
     <div data-role="main" class="ui-content">
 
+
         <form class="ui-filterable">
             <input id="txtSearchFAQ" placeholder="e.g. Airtime" data-type="search"/>
         </form>
 
-        <ul data-input="#txtSearchFAQ" data-role="listview" data-inset="true"
+        <ul id="ulFAQ" data-input="#txtSearchFAQ" data-role="listview" data-inset="true"
             data-filter="true">
-            <li data-role="collapsible" data-iconpos="right" data-inset="false"><h2>Airtime</h2>
-                <ul data-role="listview" data-theme="b">
-                    <li data-icon="false"><a data-rel="popup" data-position-to="window" data-transition="pop"
-                                             href="#ppFAQ">How
-                        do I buy airtime?</a></li>
-                    <li data-icon="false"><a data-rel="popup" data-position-to="window" data-transition="pop"
-                                             href="#ppFAQ">My
-                        juice card is overscratched.</a></li>
-                    <li data-icon="false"><a data-rel="popup" data-position-to="window" data-transition="pop"
-                                             href="#ppFAQ">Where
-                        are your stores?</a></li>
-                </ul>
-            </li>
-            <li data-role="collapsible" data-iconpos="right" data-inset="false"><h2>Telecash</h2>
-                <ul data-role="listview" data-theme="b">
-                    <li data-icon="false"><a data-rel="popup" data-position-to="window" data-transition="pop"
-                                             href="#ppFAQ">What are Telecash tariffs?</a></li>
-                    <li data-icon="false"><a href="#">How do I send to another number?</a></li>
-                </ul>
-            </li>
-            <li data-role="collapsible" data-iconpos="right" data-inset="false"><h2>Beep calling</h2>
-                <ul data-role="listview" data-theme="b">
-                    <li data-icon="false"><a data-rel="popup" data-position-to="window" data-transition="pop"
-                                             href="#ppFAQ">What
-                        is beep calling?</a></li>
-                </ul>
-            </li>
+
+
         </ul>
+
     </div>
 
-    <div data-role="popup" id="ppFAQ" data-overlay-theme="b" data-theme="b" data-dismissible="true"
-         style="max-width:400px;">
-        <a href="#" data-rel="back"
-           class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-left">Close</a>
-        <div role="main" class="ui-content">
-            <p><b>Question goes here?</b></p>
-            <p>Help shows as popup.</p>
+    <div id="faqPopupDivs">
+        <div data-role="popup" id="ppFAQ" data-overlay-theme="b" data-theme="b" data-dismissible="true"
+             style="max-width:400px;">
+            <a href="#" data-rel="back"
+               class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-left">Close</a>
+            <div role="main" class="ui-content">
+                <p><b>Question goes here?</b></p>
+                <p>Help shows as popup.</p>
+            </div>
         </div>
+
     </div>
 
 </section>
@@ -1664,209 +1606,27 @@ We know that teamwork allows us to serve our customers better and faster as we r
     <div data-role="popup" id="ppPromotions" data-theme="b">
         <ul data-role="listview" data-inset="true" style="min-width:210px;">
             <li data-icon="false"><a href="#pgMain">Back to Main Page</a></li>
-            <li data-icon="false"><a href="#pgForgotPassword">Recover Pin</a></li>
             <li data-icon="false"><a href="#pgChangePIN">Change PIN</a></li>
             <li data-icon="false"><a href="#">Logout</a></li>
         </ul>
     </div>
     <!-- End of Header -->
 
+    <div id="divPromotionsCount"
+         style="margin-bottom: 2em !important; margin-top: 2em !important; margin-left: 1em; margin-right: 1em; "
+         class="ui-btn ui-corner-all align-text-center"></div>
+
     <div data-role="main" class="ui-content">
 
-        <ul data-role="listview" class="listview-big-thumbs black-text" data-inset="true">
-            <li>
-                <fieldset>
-                    <a href="http://telecel.co.zw/products-services/promotions/293-telecel-red-refer-a-friend-promotion"
-                       class="no-underline">
-                        <img class="listview-big-thumbs-img"
-                             src="http://telecel.co.zw/images/broadband/referbanner.jpg">
-                        <h2>Telecel Red Refer a Friend Promotion</h2>
-                        <p class="initcap"> Telecel's Red Refer A Friend Promotion is rewarding customers who refer a
-                            friend
-                            to
-                            sign up for any
-                            of our Telecel Red packages with a month’s subscription for free. <br/><i>Tap to read
-                                more</i>
-                        </p>
-                    </a>
-                </fieldset>
-            </li>
-            <li>
-                <fieldset>
-                    <a href="http://telecel.co.zw/products-services/promotions/290-unlimited-night-data-bundles"
-                       class="no-underline">
-                        <img class="listview-big-thumbs-img"
-                             src="http://telecel.co.zw/images/broadband/allnightweb.jpg">
-                        <h2>All Night Long Bundles</h2>
-                        <p class="initcap">You can now enjoy unlimited browsing between 11pm and 5am at ridiculuosly low
-                            prices
-                            with telecel's
-                            All night long bundles that start from as low as $1 for 2 nights of access
-                            <br/><i>Tap to read more</i>
-                        </p></a></fieldset>
-            </li>
-            <li>
-                <fieldset>
-                    <a href="http://telecel.co.zw/products-services/promotions/285-telecel-lucky-number-promotion"
-                       class="no-underline">
-                        <h2>Telecel Lucky Number Promotion</h2>
-                        <p class="initcap">Telecel Lucky Number Promotion
-                            <br/><i>Tap to read more</i>
-                        </p></a>
-                </fieldset>
-            </li>
-            <li>
-                <fieldset>
-                    <a href="http://telecel.co.zw/products-services/promotions/280-megaboost" class="no-underline">
-                        <img class="listview-big-thumbs-img"
-                             src="http://telecel.co.zw/images/promotions/megaboostweb1.jpg">
-                        <h2>MegaBoost</h2>
-                        <p class="initcap">The MegaBoost combo package gives you an affordable and convenient way to
-                            connect
-                            <br/><i>Tap to read more</i>
-                        </p></a>
-                </fieldset>
-            </li>
-            <li>
-                <fieldset>
-                    <a href="http://telecel.co.zw/products-services/promotions/252-mega-bonus" class="no-underline">
-                        <img class="listview-big-thumbs-img"
-                             src="http://telecel.co.zw/images/fpslideshow/megaweb2017.jpg">
-                        <h2>Mega Bonus</h2>
-                        <p class="initcap">Get 100% instant bonus with Mega Bonus
-                            every time you recharge <br/><i>Tap to read more</i>
-                        </p></a>
-                </fieldset>
-            </li>
-            <li>
-                <fieldset>
-                    <a href="http://telecel.co.zw/products-services/promotions/242-switchover" class="no-underline">
-                        <img class="listview-big-thumbs-img"
-                             src="http://telecel.co.zw/images/promotions/number%20matching%20web1.jpg">
-                        <h2>Switch Over Campaign</h2>
-                        <p class="initcap">Switch over to Telecel and keep the last 6 digits of your number
-                            <br/><i>Tap to read more</i>
-                        </p></a>
-                </fieldset>
-            </li>
+        <ul id="ulPromotions" data-role="listview" class="listview-big-thumbs black-text hideBorderFirstListview">
+
         </ul>
 
     </div>
 
 </section>
 
-<!-------------------------------------     Services    ------------------------------------------------>
-<section data-role="page" class="ui-page-theme-a" id="pgServices">
-    <!-- Header -->
-    <header data-role="header" class="ui-bar" data-position="fixed">
-        <div class="align-text-center header-text-with-logo-padding">
-            <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
-                    class="fa  fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
-            <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
-            <h1 class="header-text-with-logo">&nbsp;Services</h1>
-            <a class="header-options-link" href="#ppOptionsTemplate" data-rel="popup"><i class="fa fa-ellipsis-v"
-                                                                                         aria-hidden="true"></i></a>
-        </div>
-    </header>
-    <div data-role="popup" id="ppOptionsTemplate" data-theme="b">
-        <ul data-role="listview" data-inset="true" style="min-width:210px;">
-            <li data-icon="false"><a href="#pgMain">Back to Main Page</a></li>
-            <li data-icon="false"><a href="#pgForgotPassword">Recover Pin</a></li>
-            <li data-icon="false"><a href="#pgChangePIN">Change PIN</a></li>
-            <li data-icon="false"><a href="#">Logout</a></li>
-        </ul>
-    </div>
-    <!-- End of Header -->
 
-    <div data-role="main" class="ui-content">
-
-        <div data-role="popup" id="ppTelecareDefinition">
-            <p>Definition foes here.</p>
-        </div>
-        <div data-role="popup" id="ppTeletuneDefinition">
-            <p>Definition foes here.</p>
-        </div>
-        <div data-role="popup" id="ppRoamingDefinitions">
-            <p>Definition foes here.</p>
-        </div>
-        <div data-role="popup" id="ppBeepCallingDefinitions">
-            <p>Definition foes here.</p>
-        </div>
-        <div data-role="popup" id="ppMissedCallAlertDefinition">
-            <p>Definition foes here.</p>
-        </div>
-        <div data-role="popup" id="ppVoicemailDefinition">
-            <p>Definition foes here.</p>
-        </div>
-        <div data-role="popup" id="ppCallWaitingDefinition">
-            <p>Definition foes here.</p>
-        </div>
-
-        <table class="ui-full-width ui-shadow table-stripe custom-table">
-            <thead style="display: none;">
-            <tr>
-                <th>
-                </th>
-                <th>
-                </th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td class="align-text-left">Telecare&nbsp;<a href="#ppTelecareDefinition"
-                                                             data-rel="popup"><i
-                        class="fa fa-info-circle icon-font-size-small" aria-hidden="true"></i>
-                </a>
-                </td>
-                <td class="align-text-right"><input type="checkbox" data-role="flipswitch" name="flip-checkbox-1"></td>
-            </tr>
-            <tr>
-                <td>Teletune&nbsp;<a href="#ppTeletuneDefinition" data-rel="popup"><i
-                        class="fa fa-info-circle icon-font-size-small" aria-hidden="true"></i>
-                </a>
-                </td>
-                <td class="align-text-right"><input type="checkbox" data-role="flipswitch" name="flip-checkbox-1"></td>
-            </tr>
-            <tr>
-                <td>Roaming&nbsp;<a href="#ppRoamingDefinitions" data-rel="popup"><i
-                        class="fa fa-info-circle icon-font-size-small" aria-hidden="true"></i></a>
-                </td>
-                <td class="align-text-right"><input type="checkbox" data-role="flipswitch" name="flip-checkbox-1"></td>
-            </tr>
-            <tr>
-                <td>Beep calling&nbsp;<a href="#ppBeepCallingDefinitions" data-rel="popup"><i
-                        class="fa fa-info-circle icon-font-size-small" aria-hidden="true"></i>
-                </a>
-                </td>
-                <td class="align-text-right"><input type="checkbox" data-role="flipswitch" name="flip-checkbox-1"></td>
-            </tr>
-            <tr>
-                <td>Missed call alert&nbsp;<a href="#ppMissedCallAlertDefinition" data-rel="popup"><i
-                        class="fa fa-info-circle icon-font-size-small" aria-hidden="true"></i>
-                </a>
-                </td>
-                <td class="align-text-right"><input type="checkbox" data-role="flipswitch" name="flip-checkbox-1"></td>
-            </tr>
-            <tr>
-                <td>Voicemail&nbsp;<a href="#ppVoicemailDefinition" data-rel="popup"><i
-                        class="fa fa-info-circle icon-font-size-small" aria-hidden="true"></i>
-                </a>
-                </td>
-                <td class="align-text-right"><input type="checkbox" data-role="flipswitch" name="flip-checkbox-1"></td>
-            </tr>
-            <tr>
-                <td>Call waiting&nbsp;<a href="#ppCallWaitingDefinition" data-rel="popup"><i
-                        class="fa fa-info-circle icon-font-size-small" aria-hidden="true"></i>
-                </a>
-                </td>
-                <td class="align-text-right"><input type="checkbox" data-role="flipswitch" name="flip-checkbox-1"></td>
-            </tr>
-            </tbody>
-        </table>
-
-    </div>
-
-</section>
 
 
 <!-------------------------------------    Shops List ------------------------------------------------>
@@ -2075,47 +1835,7 @@ We know that teamwork allows us to serve our customers better and faster as we r
 </section>
 
 
-<!-------------------------------------    Self service   ------------------------------------------------>
-<section data-role="page" id="pgSelfService" class="ui-page-theme-a">
-    <!-- Header -->
-    <header data-role="header" class="ui-bar" data-position="fixed">
-        <div class="align-text-center header-text-with-logo-padding">
-            <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
-                    class="fa fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
-            <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
-            <h1 class="header-text-with-logo">&nbsp;Telecash</h1>
-            <a class="header-options-link" href="#ppOptionsSelfService" data-rel="popup"><i class="fa fa-ellipsis-v"
-                                                                                            aria-hidden="true"></i></a>
-        </div>
-    </header>
-    <div data-role="popup" id="ppOptionsSelfService" data-theme="b">
-        <ul data-role="listview" data-inset="true" style="min-width:210px;">
-            <li data-icon="false"><a href="#pgMain">Back to Main Page</a></li>
-            <li data-icon="false"><a href="#pgForgotPassword">Recover Pin</a></li>
-            <li data-icon="false"><a href="#pgChangePIN">Change PIN</a></li>
-            <li data-icon="false"><a href="#">Logout</a></li>
-        </ul>
-    </div>
-    <!-- End of Header -->
 
-    <div data-role="main" class="ui-content">
-
-        <ul data-inset="true" data-role="listview">
-            <li>
-                <a data-rel="popup" data-position-to="window"
-                   data-transition="pop" href="#ppBuyAirtimeFromTelecash">Overscratched cards
-                    <p class="initcap">Redeem airtime from overscratched card</p>
-                </a>
-            </li>
-            <li>
-                <a href="#" data-transition="flip">New PIN/PUK
-                    <p class="initcap">Request a new PIN or PUK</p>
-                </a>
-            </li>
-        </ul>
-
-    </div>
-</section>
 
 <!-------------------------------------    My Wallet ------------------------------------------------>
 <section data-role="page" id="pgMyWallet" class="ui-page-theme-a">
@@ -2603,6 +2323,8 @@ We know that teamwork allows us to serve our customers better and faster as we r
 <script type="text/javascript" src="js/contacts_test.js"></script>
 <script type="text/javascript" src="js/airtimepurchase.js"></script>
 <script type="text/javascript" src="js/changepin.js"></script>
+<script type="text/javascript" src="js/faq.js"></script>
+<script type="text/javascript" src="js/promotions.js"></script>
 
 </body>
 </html>

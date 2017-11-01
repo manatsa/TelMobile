@@ -1,0 +1,298 @@
+{
+  "Network": [
+    {
+      "question": "My phone is saying “network busy”",
+      "htmlAnswer": "<br> It means that there is congestion on the network and you should keep trying the number. Switch off and on your phone and retry",
+      "searchKeywords": ""
+    },
+    {
+      "question": "My phone says “error in connection”",
+      "htmlAnswer": "<br> It means that the person you are phoning is in an area where there is no coverage or their phone is switched off or there is too much congestion on the network.",
+      "searchKeywords": ""
+    },
+    {
+      "question": "My phone is suspended",
+      "htmlAnswer": "<br> It means that your talk<br>• time has expired and you are now required to juice up your phone.",
+      "searchKeywords": ""
+    },
+    {
+      "question": "How do I inquire my balance?",
+      "htmlAnswer": "<br>• Press *, enter 122 <br>• press the # key <br>• press call/send You can also find these instructions on your recharge card.",
+      "searchKeywords": ""
+    },
+    {
+      "question": "How do I recharge my phone?",
+      "htmlAnswer": "<br>• Press *, enter 123, and press * again <br>• enter the recharge code on your scratch panel. <br>• press the # key. <br>• press call/send You can also find these instructions on your recharge card.",
+      "searchKeywords": ""
+    },
+    {
+      "question": "My phone keeps cutting",
+      "htmlAnswer": "<br>• check your signal strength <br>• assess the terrain of the area; buildings and enclosed areas can affect signal strengths. <br>• ensure your battery is fully charged",
+      "searchKeywords": ""
+    },
+    {
+      "question": "People are calling me and they are told that my number is saying ‘sorry the number you dialled is out of service’",
+      "htmlAnswer": "Either the line  has not been registered or it has been disconnected for some reason. This is mainly experienced with stolen phones /lines or contract accounts switched off for unpaid bills",
+      "searchKeywords": ""
+    },
+    {
+      "question": "I cannot receive or make calls",
+      "htmlAnswer": "<br> Either the line  has not been registered or it has been disconnected for some reason. This is mainly experienced with stolen phones /lines or contract accounts switched off for unpaid bills",
+      "searchKeywords": ""
+    },
+    {
+      "question": "My phone is saying enter PUK",
+      "htmlAnswer": "<br> This means you have entered a wrong pin number more than 3 times and it has locked. The PUK is supplied together with your sim card. However if you have lost the detail, please go to the nearest Telecel with your ID, damaged line and your certificate.",
+      "searchKeywords": ""
+    },
+    {
+      "question": "How do I get started?",
+      "htmlAnswer": "<br> Insert your sim card into the phone. Switch it on and enter a pin number (if prompted). Your phone will display Telecel or ZW 648 03, or CC648 NC03 on your screen and you are ready to make a call.",
+      "searchKeywords": ""
+    }
+  ],
+  "Juice cards": [
+    {
+      "question": "My juice card will not juice up. I am getting the message card invalid or has not been found",
+      "htmlAnswer": "<br>• this means the card has been used or has been be deactivated in the case of stolen cards <br>• usually you will have recharged your account with that juice card but you will not have confirmed your balance. <br>• otherwise you will have bought a card that has been used on another phone <br>• call Customer Care to confirm whether the card has been used to juice up a different number and then take the card back to where you bought it.",
+      "searchKeywords": ""
+    },
+    {
+      "question": "My account is locked",
+      "htmlAnswer": "<br> It means you have tried to juice your phone with a wrong pin number more than three times. Call Customer Care to get your account unlocked and to get advice on your juice card.",
+      "searchKeywords": ""
+    }
+  ],
+  "Handset": [
+    {
+      "question": "I try to make a call but my phone says check operator services",
+      "htmlAnswer": "<br>• this means you have hidden your caller I.D. From your phone select call settings and make sure the option to hide your ID is ON or is as set by network. <br>• OR your contract line has been suspended for outgoing calls and is therefore only able to receive incoming calls. Please check your account status with credit control.",
+      "searchKeywords": ""
+    },
+    {
+      "question": "My phone says “enter network code”",
+      "htmlAnswer": "<br>• your phone is network locked and it needs to be unlocked by the relevant network.",
+      "searchKeywords": ""
+    },
+    {
+      "question": "What does an envelope on the screen mean?",
+      "htmlAnswer": "<br>• this means you have unread messages in your Inbox NOTE: Since your GSM mobile phone only stores a limited number of text notification messages, it is advisable to clear your text notification messages after you have read them. When the text message signal (the envelope) starts flashing continuously, it means your text notification message box is full and new notification messages will only be sent to you once you have cleared the previous ones. Please refer to your handset user manual should you require assistance in clearing the messages.",
+      "searchKeywords": ""
+    },
+    {
+      "question": "How do I make an international call?",
+      "htmlAnswer": "<br>• if you are calling someone on a fixed landline, dial 00 (to get international access), the country code, the town code and then your number e.g. 00 263 4 748321 <br>• if you are calling someone on a mobile /cellular line , dial 00 (to get international access),the country code, then the mobile number omitting the first zero on the mobile number. e.g. 00 263 733404404",
+      "searchKeywords": ""
+    },
+    {
+      "question": "How do I make a call?",
+      "htmlAnswer": "<br>• for local or national calls, dial the area code or network code followed by the rest of the subscriber’s number and then press call.",
+      "searchKeywords": ""
+    },
+    {
+      "question": "My phone is saying disabled, sim error or blocked",
+      "htmlAnswer": "<br>• this means you have exhausted all the chances for a correct PUK code. <br>• the SIM card is now permanently destroyed and a replacement sim card is now required. <br>• contact Customer Care for more details.",
+      "searchKeywords": ""
+    },
+    {
+      "question": "How can I change my pin number?",
+      "htmlAnswer": "<br> Refer to your handset user manual. Please note that you can also change your pin number through the following simple procedure; <br>• enter **04* <br>• enter old pin* <br>• enter new pin* <br>• enter new pin again and then press# The maximum number of digits you can enter as your pin is 8, but most people prefer 4 digits.",
+      "searchKeywords": ""
+    },
+    {
+      "question": "What is a pin number?",
+      "htmlAnswer": "<br> This is your Personal Identity Number. It allows only you to have access to the network and it protects unauthorised use",
+      "searchKeywords": ""
+    }
+  ],
+  "SMS": [
+    {
+      "question": "I am failing to send a message",
+      "htmlAnswer": "<br>• ensure that your phone has enough credit to send SMS and has not been suspended for non<br>• recharging. <br>• also ensure that your message centre number is properly set up. The Telecel message centre number is 00263730100007.",
+      "searchKeywords": ""
+    },
+    {
+      "question": "How long should my message be?",
+      "htmlAnswer": "<br>• your message can be as long as you want it to be. <br>• however the system can only carry a maximum of 160 characters at a given time, so your message will be broken down into pages of 160 characters each and will be sent one at a time, each page carrying a separate charge.",
+      "searchKeywords": ""
+    },
+    {
+      "question": "How do I set up my message centre number?",
+      "htmlAnswer": "<br>• from your phone’s menu select messages <br>• go to MESSAGE SETTINGS <br>• select MESSAGE CENTRE NUMBER <br>• punch in the number 00263730100007 and save it.",
+      "searchKeywords": ""
+    }
+  ],
+  "Mobile Internet": [
+    {
+      "question": "How do I configure the data card?",
+      "htmlAnswer": "<br> After running the installation <br>• open the mobile partner icon <br>• go to tools and click options <br>• under options, go to profile management <br>• click new and rename your profile to any name you wish to use <br>• on APN click static and type internet in small cap ie in the APN window <br>• click save <br>• click connect and you will be done.",
+      "searchKeywords": ""
+    },
+    {
+      "question": "What do I need to be on 3G?",
+      "htmlAnswer": "<br>• data enabled line <br>• 3g compatible phone <br>• dongle <br>• correct 3G settings which will be provided at Telecel offices.",
+      "searchKeywords": ""
+    }
+  ],
+  "Other services": [
+    {
+      "question": "Which numbers do I dial if I require customer service?",
+      "htmlAnswer": "<br> 150 is a toll free line for both prepaid and contract subscribers 0733150150 from any other number Dial these numbers if you require any of the following; <br>• assistance on the Telecel services <br>• reporting on any problems you are experiencing on any aspect of the Telecel services <br>• inquiries on Telecel coverage <br>• inquiries relating to airtime sale points",
+      "searchKeywords": ""
+    },
+    {
+      "question": "In case of emergency which number do I dial?",
+      "htmlAnswer": "<br> In the event of an emergency please call the emergency number 112 and the call will be routed direct to emergency services nearest to you in accordance with our national regulations.",
+      "searchKeywords": ""
+    }
+  ],
+  "Remote recharging": [
+    {
+      "question": "How do I juice someone’s phone using my own handset?",
+      "htmlAnswer": "<br>• buy a juice card <br>• from your prepaid or contract line, dial 152 and listen to the instructions <br>• the system will ask you to enter the account number (which is the mobile) you want to juice up. <br>• enter the number starting with 733 and the last six digits (i.e. omitting the first zero) followed by the # key. E.g. if the number you want to juice up is 0733 123456 you will enter it as 733 123456#. If it is a valid prepaid line, the system will immediately tell you “ACCOUNT NUMBER ACCEPTED”. <br>• the system then prompts you to put in the recharge code (i.e. the recharge pin) and #. <br>• if the code is valid, you will be informed ‘code accepted’ and the amount credited to the account. <br>• you will also be told the resulting account balance.",
+      "searchKeywords": ""
+    },
+    {
+      "question": "How can I transfer air time from my phone to another phone?",
+      "htmlAnswer": "<br>• select messages <br>• enter the amount you want to transfer without decimal places and the dollar signs, eg if you want to transfer two dollars just enter 2 <br>• press the hash key <br>• enter the cell phone number to which you want to transfer air time. <br>• send these instructions to 23350. Please note that this service is only available to pre<br>• paid subscribers and you can not transfer airtime to other networks.",
+      "searchKeywords": ""
+    }
+  ],
+  "Call me back": [
+    {
+      "question": "Telecel requires the following documents for the replacement of your sim card",
+      "htmlAnswer": "<br>• SIM certificate (easy instructions booklet) <br>• national ID, driver’s licence or passport. <br>• a replacement fee",
+      "searchKeywords": ""
+    },
+    {
+      "question": "Which areas does Telecel cover?",
+      "htmlAnswer": "<br>• please refer to the coverage map <br>• the map is constantly changing as new areas are added <br>• please call our Customer Care for the most current information",
+      "searchKeywords": ""
+    },
+    {
+      "question": "How can I send a “call me back”?",
+      "htmlAnswer": "<br>• press star <br>• enter 140 <br>• press star again <br>• enter the mobile number, then harsh (#) and then dial. E.g. *140*0733150150#dial",
+      "searchKeywords": ""
+    },
+    {
+      "question": "What is Call Me Back?",
+      "htmlAnswer": "<br>• this is a facility that a Telecel subscriber can send to another Telecel number to call them back if they do not have enough airtime to call <br>• the facility is free of charge",
+      "searchKeywords": ""
+    }
+  ],
+  "Subscriber Registration": [
+    {
+      "question": "What is subscriber registration?",
+      "htmlAnswer": "<br>• all subscribers are required at law to register their lines, both prepaid and post<br>• paid. <br>• lines without any details against them will be disconnected from the network. <br>• essential details required include the following outlined below, presented together with ID particulars and proof of residence like a utility bill.",
+      "searchKeywords": ""
+    }
+  ],
+  "Telecash": [
+    {
+      "question": "What is Telecash?",
+      "htmlAnswer": "<br> Telecash is a service offered by telecel Zimbabwe whereby mobile phone users deposit money (physical cash) through an agent, bank, or telecel shop into a TeleCash account. This money then becomes electronic money (e-money), which customers can then transfer electronically to other mobile phone users without visiting any bank. Services enjoyed by TeleCash customers include person to person money transfer, buying prepaid airtime for yourself and other telecel subscribers, paying for groceries, payment of your DStv subscriptions, paying your ZESA and City Council bills among other services.",
+      "searchKeywords": ""
+    },
+    {
+      "question": "Can I transact on TeleCash without a bank account?",
+      "htmlAnswer": "<br> Telecash allows you to conduct financial transactions without the need to have a bank account.",
+      "searchKeywords": ""
+    },
+    {
+      "question": "Do I need to maintain a minimum amount in my TeleCash account?",
+      "htmlAnswer": "<br> No. Your TeleCash account does not require you to maintain any minimum balance. You can fund your account according to the transactions you want to perform.",
+      "searchKeywords": ""
+    },
+    {
+      "question": "Are there any monthly charges on my TeleCash account?",
+      "htmlAnswer": "<br> No, you are only charged for the transactions you have initiated.",
+      "searchKeywords": ""
+    },
+    {
+      "question": "If I already have a bank account, can I access it using TeleCash?",
+      "htmlAnswer": "<br> Yes, if your bank is linked to ZimSwitch, you can only access your bank account through TeleCash when you want to transfer money from your TeleCash account to your bank account. Transferring money from your bank account to your TeleCash account is done through your bank’s mobile banking.",
+      "searchKeywords": ""
+    },
+    {
+      "question": "What is a PIN?",
+      "htmlAnswer": "<br> The PIN (Personal Identification Number) is the key to your TeleCash account and it will be necessary every time you want to perform a transaction on TeleCash. We recommend that you memorize it so that you keep it secret. Never share it with anyone.   You should never give up your PIN to an agent, telecel personnel or anyone else. Your PIN is yours and yours alone.",
+      "searchKeywords": ""
+    },
+    {
+      "question": "Can I convert my telecel airtime and use it to top up my TeleCash account",
+      "htmlAnswer": "<br> No. Your TeleCash account is completely separate from your telecel airtime. You cannot buy TeleCash value using airtime. However, you can use your TeleCash value to buy telecel prepaid airtime for your own or another telecel subscriber’s phone. telecel subscribers do not need to be registered for TeleCash to receive airtime from you.",
+      "searchKeywords": ""
+    },
+    {
+      "question": "Can I use TeleCash to top up a NetOne/Econet number?",
+      "htmlAnswer": "<br> No. At present, you can only buy prepaid airtime for telecel numbers. However, you can send money to an Econet/NetOne subscriber.",
+      "searchKeywords": ""
+    },
+    {
+      "htmlAnswer": "<br>• Deposit money/Cash<br>• In <br>• Withdraw money/ Cash Out <br>• Transfer (send) money to another TeleCash customer <br>• Send money to any mobile number e.g. NetOne, Econet and telecel <br>• Buy telecel prepaid airtime for yourself and other telecel subscribers <br>• Check your account balance <br>• Check your account history <br>• Change your PIN number <br>• Pay Merchants for goods and services <br>• Pay bill (DStv, ZESA, City Council, etc.) <br>• Transfer money from your TeleCash account to your bank account. <br>• Send money to any bank account for banks that are on ZimSwitch ZIPIT facility.",
+      "question": "What services are available on TeleCash?",
+      "searchKeywords": ""
+    },
+    {
+      "htmlAnswer": "<br>• If you are already a telecel customer, visit any TeleCash authorized agent or telecel shop/branch to complete and sign an application form (a copy of ID and the originals are also required). <br>• If you are not a telecel subscriber, you will have to purchase a telecel line and register at any authorized TeleCash agent/telecel shop or branch. <br>• In the case of children below 18 years, the guardian must sign the form and attach his/her copy of ID.",
+      "question": "How do I register for TeleCash?",
+      "searchKeywords": ""
+    }
+  ],
+  "Telecash Agent": [
+    {
+      "htmlAnswer": "<br>• You should take your cellphone and your national ID plus a photocopy of the ID. <br>• You need to register in person. No one can register on your behalf and you cannot register on behalf of someone else. <br>• When you have registered for TeleCash, you will need to activate your account through a simple activation process.",
+      "question": "What documents do I need to have in order to register?",
+      "searchKeywords": ""
+    },
+    {
+      "htmlAnswer": "<br>• TeleCash is competitively priced. <br>• It is easy and simple to use. Anyone can transact on TeleCash. <br>• TeleCash is secure, fast and gives you the convenience to transact any time of the day.",
+      "question": "What are the benefits of using TeleCash?",
+      "searchKeywords": ""
+    },
+    {
+      "question": "How does TeleCash work?",
+      "htmlAnswer": "<br>• To load money into your telecash account you need to go to a telecash agent and make a cash deposit/Cash In. The telecash agent will transfer electronic money into your telecash account (Both you and the agent will receive an SMS confirmation of the transaction on your mobile phones).You can now perform any of the telecash transactions mentioned above. <br>• To withdraw cash/ Cash out from your telecash account, you need to go to a telecash agent and make an electronic transfer to the agent who will in turn give you cash.",
+      "searchKeywords": ""
+    },
+    {
+      "question": "Does TeleCash work across networks?",
+      "htmlAnswer": "<br> YES, a registered telecash customer can send money to any mobile number across all networks. The person you are sending money to does not need to have a telecash account or be a telecel subscriber. However, only telecel customers can register for telecash. The telecash service is cheaper if you send money to a registered telecash customer.",
+      "searchKeywords": ""
+    },
+    {
+      "question": "Is the process of sending money different when the receiver is not registered for TeleCash?",
+      "htmlAnswer": "<br> No. The process of sending money is the same when sending to both registered and unregistered subscribers. However, when you send money to an unregistered subscriber you are supposed to also send them the secret code for the transaction that you will receive through SMS. They will need it when they cash out the money at an agent.",
+      "searchKeywords": ""
+    },
+    {
+      "question": "What are the advantages of being a TeleCash customer?",
+      "htmlAnswer": "<br> A customer who has registered for telecash at an authorized telecash agent is able to carry out all the services described above. An unregistered customer can only get the cash sent to him/her but cannot carry out other telecash transactions.",
+      "searchKeywords": ""
+    }
+  ],
+  "Subscriber registration": [
+    {
+      "htmlAnswer": "<br>• all subscribers are required at law to register their lines, both prepaid and post<br>• paid. <br>• lines without any details against them will be disconnected from the network. <br>• essential details required include the following outlined below, presented together with ID particulars and proof of residence like a utility bill.",
+      "question": "How do i reduce data usage on Windows",
+      "searchKeywords": ""
+    }
+  ],
+  "Data usage": [
+    {
+      "question": "How do i reduce data usage on Windows?",
+      "htmlAnswer": "<ol> <li><b><span style='text-decoration: underline;'><span style='font-size: 12pt; line-height: 150%;'>Monitoring Cellular Data Usage</span></span></b></li> </ol> <p style='text-align: justify; line-height: 150%;'>Data sense is an inbuilt app in the Windows Operating System. Data Sense helps you track your data usage, find out which apps are using the most data and reduce your mobile data consumption.</p><p style='text-align: justify; line-height: 150%;'>To set it up, swipe over to the App list, then tap <b>Data Sense</b></p> <ol> <li><b><span style='text-decoration: underline;'>Conserve data while web browsing</span></b></li> </ol> <p style='text-align: justify; line-height: 150%;'>Data Sense can help you save data when you're browsing the web by doing things like reducing the size of web page images or blocking some ads. To take advantage of this option, do the following:</p> <ul> <li>In the App list, tap <span class='Emphasis1'><b>Data Sense</b></span></li> <li>Tap <span class='Emphasis1'><b>Settings</b></span></li> <li>Under<span class='Emphasis1'> <b>Browser data savings</b></span>, choose <span class='Emphasis1'><b>standard</b></span>, <span class='Emphasis1'><b>high</b></span> or <span class='Emphasis1'><b>automatic</b></span>. (Automatic is however recommended by windows, which lets your phone decide the best setting.)</li> </ul> <ol> <li><b><span style='text-decoration: underline;'>Conserving data with Data Sense</span></b></li> </ol> <p style='text-align: justify; line-height: 150%;'>Data Sense offers two ways to help you conserve mobile data:</p> <ul> <li>Limit the amount of background data your phone uses. Many apps and phone features are designed to automatically fetch info behind the scenes as a convenience (think of an email app regularly checking for new messages, for example). With Data Sense, you can choose when to limit this kind of activity.</li> <li>Reduce data use when you browse the web. Data Sense can also help by doing things like compressing web pages and blocking some ads to reduce overall data usage when you're browsing.</li> </ul> <ol> <li><b><span style='text-decoration: underline;'>To restrict background data automatically</span></b></li> </ol> <ul> <li>In the App list, tap <span class='Emphasis1'><b>Data Sense</b></span></li> <li>Tap <span class='Emphasis1'><b>Settings</b></span>, turn on <span class='Emphasis1'><b>Restrict background data</b></span><span style='font-size: 12pt; line-height: 150%; font-family: 'Times New Roman','serif';'>,</span> then do one of the following: <ul> <li>To restrict background data when you're getting near your limit, tap <b>When I'm near my limit</b></li> <li>To always restrict background data, tap <b>Always</b></li> </ul> </li> </ul> <p style='text-align: justify; line-height: 150%;'><b>N.B.</b></p> <p style='text-align: justify; line-height: 150%;'>Restricting background data may prevent some things from happening automatically, including voice over Internet protocol (VoIP) incoming call notifications, email synchronising, background uploads and downloads, and Live Tile updates.</p> <p style='text-align: justify; line-height: 150%;'>Selecting Always means that your Live Tiles won't update, and you'll need to manually sync your emails to get new messages (unless you connect to WiFi). So in most cases, you'll want to use When I'm near my limit.</p> <ol> <li><b><span style='text-decoration: underline;'><span>Turn off background tasks</span></span></b></li> </ol> <p style='margin-left: 18pt; text-align: justify; line-height: 150%;'>Some apps may continue to use mobile data even when they aren't open. You can reduce your data usage by turning off any background tasks you don't need.</p> <ul> <li>In the App list, tap <span class='Emphasis1'><b>Settings</b> &gt; <b>Battery saver</b></span>, then swipe over to <span class='Emphasis1'><b>Usage</b></span></li> <li>Tap any apps running background tasks, then turn off <span class='Emphasis1'>Allow app to run in the background</span></li> </ul> <ol> <li><b><span style='text-decoration: underline;'><span>Turn on Battery Saver</span></span></b></li> </ol> <p style='margin-left: 18pt; text-align: justify; line-height: 150%;'>Battery Saver turns off some, but not all, of the features that require a data connection. You can turn it on whenever you want, or set it to turn on automatically when your battery is low.</p> <ul> <li>In the App list, tap <span class='Emphasis1'><b>Settings</b></span> &gt; <span class='Emphasis1'><b>Battery saver</b></span></li> <li>Turn on <span class='Emphasis1'>Battery Saver</span></li> <li>Under <span class='Emphasis1'><b>Conserve battery life</b></span>, tap the option you want to use to conserve battery</li> </ul> <ol> <li><b><span style='text-decoration: underline;'><span>Change email sync settings</span></span></b></li> </ol> <p style='margin-left: 18pt; text-align: justify; line-height: 150%;'><span>You can choose how often your phone automatically synchronises emails, or you can sync them manually when you want to.</span></p> <ul> <li>In the App list, tap the email account whose settings you want to change.</li> <li>Tap <span class='Emphasis1'><b>More</b></span> &gt; <span class='Emphasis1'><b>Settings</b></span>, then tap <span class='Emphasis1'><b>Sync settings</b></span></li> <li>Under<span class='Emphasis1'> <b>Download new content</b></span> (or <span class='Emphasis1'><b>Download new email</b></span> in some accounts), choose an option. If you don't want your phone to sync emails from this account automatically, tap <span class='Emphasis1'><b>Manually</b></span> (if this option is available)</li> </ul> <ol> <li><b><span style='text-decoration: underline;'><span>Prevent mobile data usage when WiFi connectivity is limited</span></span></b></li> </ol> <p style='text-align: justify; line-height: 150%;'><span>If your phone is connected to WiFi and can't complete a data-intensive task like downloading an app because of limited connectivity, you can prevent your phone from finishing the operation using mobile data. (This setting may not appear on your phone, depending on how your phone is set up by the manufacturer.)</span></p> <ul> <li><span>In the App list, select <b>Settings</b></span> &gt; <span class='Emphasis1'><b>Mobile network+SIM</b></span></li> <li>Tap <span class='Emphasis1'><b>For limited WiFi connectivity</b></span>, then select <span class='Emphasis1'><b>Don't use mobile data</b></span></li> </ul> <ol> <li><b><span style='text-decoration: underline;'>Third party data Monitors </span></b></li> </ol><ol style='list-style-type: lower-alpha;'> <li><b>Data Monitor</b> - is a very decent app. It’s good especially when you want to know, how much data has been used on cellular and Wi-fi separately</li> <li><b>My Data Manager -</b> This one was actually one of the finest apps in the store garnering 5-star reviews. With the latest update they removed per-app usage stats. Nevertheless, if you’re not much after per-app tracking and need just a good overview of how much you’ve used, how much is left and how much you use off your daily budget.</li> </ol><ol> <li><b><span style='text-decoration: underline;'>Extra content </span></b></li> </ol> <p style='text-align: justify; line-height: 150%;'>Unlike iOS, BlackBerry and Android, there is actually no way to close apps directly from the multitasking panel window (that you access by long-holding the back arrow). However, you can use the multitasking panel to easily choose the apps you’d like to close. Here’s how.</p> <ol> <li>Press and hold down the <b>Back</b> button on your device. This will launch <b>multitasking panel</b>, which will show you all running apps.</li> <li>To close an app, tap the one you wish to close. This will bring the app back up to full screen, then all you have to do<b>Back Arrow</b> until the app closes.</li> </ol> <p style='text-align: justify; line-height: 150%;'><b>Extra Tip:</b> You can prevent specific apps of your choosing to not be allowed to run in the background.</p> <ol style='margin-top: 0cm;' start='1'> <li style='text-align: justify; line-height: 150%;'>Access the <b>Settings</b> menu and then swipe right to <b>Applications</b>.</li> <li style='text-align: justify; line-height: 150%;'>Tap <b>Background Tasks</b>, where you’ll find a list of your apps that are allowed to run in the background (indicated by the word “allowed” displayed in red below the app name).</li> </ol> <p><span style='font-size: 11pt; line-height: 115%; font-family: 'Calibri','sans-serif';'>Just select the app you want to block and select <b>Block</b>.</span></p>",
+      "searchKeywords": ""
+    },
+    {
+      "question": "How do i reduce data usage on iOS?",
+      "htmlAnswer": "<ol> <li><b><span style='text-decoration: underline;'><span style='font-size: 12pt; line-height: 150%;'>Monitoring Cellular Data Usage</span></span></b></li> </ol> <p style='text-align: justify; line-height: 150%;'>With this new feature, embedded right in the settings, you can watch how much data your applications are using. Not only that, but you can disable data usage for an individual app in case it's using up too much data. To monitor your iPhone's data usage, head over to:</p> <p style='text-align: justify; line-height: 150%;'><strong>Settings</strong> -&gt; <strong>Cellular</strong> and scroll down to <strong>Use Cellular Data For:</strong></p> <p style='text-align: justify; line-height: 150%;'>From there, you should see all your downloaded applications (as well as stock apps) and how much cellular data each app has used.</p> <p style='text-align: justify; line-height: 150%;'><img style='width: 100%;' alt='ios data1' src='http://www.telecel.co.zw/images/misc/ios%20data1.jpg' /></p> <p style='text-align: justify; line-height: 150%;'>You can also check the data for things like Siri, your home screen, and other features that use up data by tapping on <strong>System Services</strong> at the bottom of the application list.</p> <p style='text-align: justify; line-height: 150%;'>The statistics that show up under each app is the amount of data the app has used since the iOS 7 update. If you want to monitor it monthly (as you probably should), reset the statistics at every monthly cycle.</p> <p style='text-align: justify; line-height: 150%;'><img style='width: 100%;' alt='ios data2' src='http://www.telecel.co.zw/images/misc/ios%20data2.jpg' /></p> <ol> <li><b><span style='text-decoration: underline;'>Disable Background App Refresh</span></b></li> </ol> <p style='text-align: justify; line-height: 150%;'>Apple now allows apps to automatically update and download content in the background. This feature can harm battery life and cause apps to&nbsp;use cellular data, even while you’re not using them. Disable background app refresh and an app will only use data when you open it, not in the background.</p> <p style='text-align: justify; line-height: 150%;'>To access these options, open the Settings app, tap General, and tap Background App Refresh. Toggle apps to off if you don’t want them to refresh in the background, or disable the background app refresh feature for every app on your phone.</p> <p style='text-align: justify; line-height: 150%;'><img style='width: 100%;' alt='ios data3' src='http://www.telecel.co.zw/images/misc/ios%20data3.png' /></p> <ol> <li><b><span style='text-decoration: underline;'>Disable; Mail, Documents, Contacts, and Calendar Sync</span></b></li> </ol> <p style='text-align: justify; line-height: 150%;'><span style='font-size: 11pt; line-height: 150%; font-family: 'Calibri','sans-serif';'>Documents &amp; Sync uses data however although the culprit is 'Documents &amp; Sync' it's more <span>Sync</span> and not Documents. To disable this you go to Settings&gt;iCloud&gt;Documents &amp; Data Scroll down and switch use cellular data off.</span></p> <p style='text-align: justify; line-height: 150%;'><span style='font-size: 11pt; line-height: 150%; font-family: 'Calibri','sans-serif';'>To switch off everything in Documents you go to:<b> Settings</b>&gt;<b>iCloud</b>&gt;<b>Documents</b> &amp; <b>Data</b>... Scroll down and have the customer turn off.</span></p> <p style='text-align: justify; line-height: 150%;'><span style='font-size: 11pt; line-height: 150%; font-family: 'Calibri','sans-serif';'>By default, your iPhone is set up to automatically receive new emails, contacts, and calendar events. If you use a Google account, it’s regularly checking the servers for new information. Either way, it’s downloading those emails as soon as they’re available.</span></p> <p style='text-align: justify; line-height: 150%;'><span style='font-size: 11pt; line-height: 150%; font-family: 'Calibri','sans-serif';'>If you’d rather check your email on your own schedule, you can. Open the Settings app, tap Mail, Contacts, Calendars, and tap Fetch New Data. You can adjust options here to get new emails and other data “manually.” Your phone won’t download new emails until you open the Mail app.</span></p> <p style='text-align: justify; line-height: 150%;'><span style='font-size: 11pt; line-height: 150%; font-family: 'Calibri','sans-serif';'><img style='width: 100%;' alt='ios data4' src='http://www.telecel.co.zw/images/misc/ios%20data4.png' /></span></p> <ol> <li><b><span style='text-decoration: underline;'>iTunes Automatic Downloads</span></b></li> </ol> <p style='text-align: justify; line-height: 150%;'>Again another option that allows your apps (up to 100MB now with iOS7) to be downloaded automatically, obviously when available, via your Mobile Data. You can set this to not download at all or only when you are connected to a WiFi access point.</p> <p style='text-align: justify; line-height: 150%;'>To toggle the options go to <b>Settings</b> &gt; <b>iTunes</b> &amp; <b>App Store</b> &gt; <b>Use Mobile Data</b> toggle this to off and it will force the phone to only update apps when the phone is connected to a WiFi Access point.</p> <ol> <li><b><span style='text-decoration: underline;'>Privacy Settings</span></b></li> </ol> <p style='text-align: justify; line-height: 150%;'>This option has been available on iOS since 5 (I think), this setting as well can use Mobile Data to update your location even though you have not requested it. Although GPS technically doesn’t use mobile data but once it has updated it also allows an application to use a map to show your location which uses mobile data.</p> <p style='text-align: justify; line-height: 150%;'>To turn off go to <b>Settings</b> &gt; <b>Privacy</b> &gt; <b>Location Services</b>, from here you can choose what app you want to access your location data, so be careful what you choose. If there is an app that you use all the time like Maps then you want to leave on otherwise you will need to come back here to keep turning it on and off, but go ahead and turn off what you don’t use. For some iPhones one can select while you are using only option instead of completely switching it off.</p> <ol> <li><b><span style='text-decoration: underline;'>Notification Centre</span></b></li> </ol> <p style='text-align: justify; line-height: 150%;'>This was introduced in iOS7 and has been revamped in later versions but most people rarely use and prefer to switch it off. This may not use a lot of data but there are some options in there you can turn off that you don’t use.</p> <p style='text-align: justify; line-height: 150%;'>To see what you can do go to <b>Settings</b> &gt; <b>Notification Centre</b>, from there switch off all the app you don’t use such as if you don’t use Stocks turn it off, as that will always download the latest stock information.</p> <ol> <li><b><span style='text-decoration: underline;'>Multitasking Apps</span></b></li> </ol> <p style='text-align: justify; line-height: 150%;'>Last thing to check is what applications you have opened and kill off what you aren’t using. When pressing the Home button the app is still running but in the background, think of it like minimising a window in Windows 7 the window is still there and open until you click on the ‘X’ button. Please note that this may save a lot of data but it will save battery life as well as whatever data it is chewing up</p> <p style='text-align: justify; line-height: 150%;'>To close the application double press the Home button and then swipe up to close the application properly.</p> <ol> <li><b><span style='text-decoration: underline;'>Switch to a Lightweight Browser</span></b></li> </ol> <p style='text-align: justify; line-height: 150%;'><span>Switching form the mobile browser to browsers like <b>Chrome beta</b> or <b>Opera Mini</b> are </span>alternatives that feature data compression and optimization to help reduce usage.</p> <ol> <li><b><span style='text-decoration: underline;'>Third party data Monitors </span></b></li> </ol> <p style='text-align: justify; line-height: 150%;'>Apple IOS does not have an inbuilt data monitor like android, therefore you are advised to downloada third party data monitor from the App Store. The following are recommended:</p> <ol style='list-style-type: lower-alpha;'> <li><b>Data Monitor</b> - is a very decent app. It’s good especially when you want to know, how much data has been used on cellular and Wi-fi separately</li> <li><b>My Data Manager -</b> This one was actually one of the finest apps in the store garnering 5-star reviews. With the latest update they removed per-app usage stats. Nevertheless, if you’re not much after per-app tracking and need just a good overview of how much you’ve used, how much is left and how much you use of your daily budget.</li> <li><b>DataMan Next</b> - Probably the best app ever for data monitoring that’s fantastic. There are no bells and whistles here. All you get is an interface that shows your data usage (as a percentile of total allowed). Works with all carriers, tracks both cellular and Wi-fi usage and comes with four alerts that change hue according to the value.</li> <li><b>DataWiz - </b>One of the best of the lot but only if you’re into a clean, minimal and interesting interface.<br /> DataWiz is great if you have your cellular enabled all the time. It “predicts” your usage based on patterns you’ve showed over the week and that’s kind of useful if you’re looking to change data plans. It may however slack in accuracy if you turn-off cellular data to conserve battery.</li> </ol>",
+      "searchKeywords": ""
+    },
+    {
+      "question": "How do i reduce data usage on Android?",
+      "htmlAnswer": "<ol> <li><b><span style='text-decoration: underline;'>Estimate data usage </span></b></li> </ol> <p style='text-align: justify; line-height: 150%;'>Navigate to <span>Settings –&gt; Wireless &amp; Networks –&gt; Data Usage</span>. You’ll see a screen like the first screen below:</p><p style='text-align: justify; line-height: 150%;'><img style='width: 100%;' alt='' src='http://www.telecel.co.zw/images/misc/android2.jpg' /></p> <p style='text-align: justify; line-height: 150%;'><span>If you scroll down, you will see the cellular data usage, as seen in the middle panel. It’s important to note that these charts only show data sent through your cellular data connection and not your Wi-Fi connection.</span></p> <ol> <li><b><span style='text-decoration: underline;'><span>Set Data Limit </span></span></b></li> </ol> <p style='text-align: justify; line-height: 150%;'><span>In addition to monitoring you can also set data warnings and limits by checking Set mobile data limit and adjusting the orange warning bar and red cut off bar to your liking when you reach the amount specified by the cut off limit, the mobile data for your phone will be disabled until you intervene.</span></p> <p style='text-align: justify; line-height: 150%;'><span>Less obvious to most people is the fairly large amount of behind-the-scenes data churning through your connection the background data. Polling for Facebook updates, high-frequency email inbox checks, automatic application updates, and other background activities can use up a lot of data.</span></p> <ol> <li><b><span style='text-decoration: underline;'>Restrict Background data </span></b></li> </ol> <p style='text-align: justify; line-height: 150%;'>In the <strong><span style='font-family: 'Calibri','sans-serif';'>Settings –&gt; Wireless &amp; Networks –&gt; Data Usage</span></strong> section we highlighted a moment ago, you can click on individual applications to see a more detailed view.&nbsp; Here we can see the foreground and background usage:</p> <p style='text-align: justify; line-height: 150%;'><img style='width: 100%;' alt='' src='http://www.telecel.co.zw/images/misc/android1.jpg' /></p> <p style='text-align: justify; line-height: 150%;'>You can turn off all background data this reduces your data usage immensely. From the Data Usage menu you can press the menu key and check <strong><span style='font-family: 'Calibri','sans-serif';'>Restrict background data</span></strong>. This will turn off background data for all applications.</p> <p style='text-align: justify; line-height: 150%;'>Alternatively you can click on each individual application and scroll down to the bottom check '<b>Restrict background data</b>.' Just note that this setting overrides any conflicting app behaviour.</p> <p style='text-align: justify; line-height: 150%;'>A third option is to <strong><span style='font-family: 'Calibri','sans-serif';'>Restricting data via individual apps</span></strong>: If possible, you can often tweak settings in the individual applications. Rather than use Android to restrict Facebook’s data use, for example, you can jump into the Facebook app and turn down the frequency of push notifications or turn them off altogether. Not only does turning off notifications and constant polling cut down on your data use but it’s <em><span style='font-family: 'Calibri','sans-serif';'>great</span></em> for extending your battery life.</p> <ol> <li><strong><span style='text-decoration: underline;'><span style='font-family: 'Calibri','sans-serif';'>Restrict app updates to Wi-Fi</span></span></strong></li> </ol> <p style='text-align: justify; line-height: 150%;'>By default, any apps set to automatically update will do so over both mobile data and Wi-Fi. You can change this by launching the Play Store app, pressing the menu button, and then selecting <strong><span style='font-family: 'Calibri','sans-serif';'>Settings&nbsp;–&gt; Update over Wi-Fi only</span></strong></p> <p style='text-align: justify; line-height: 150%;'><strong><span style='font-family: 'Calibri','sans-serif';'>N.B </span></strong>even if you heavily restrict an application it will still function normally when you are on Wi-Fi.</p> <ol> <li><b><span style='text-decoration: underline;'>Restrict app that use mobile data using app</span></b></li> </ol> <p style='text-align: justify; line-height: 150%;'><b>Opera Max</b><span> is a data-management and data-savings app that is available for android that makes it easier for you to decide which apps use data by the use of a GUI. It controls your apps internet usage by blocking apps from running in the background that are using mobile data or WiFi without permission. Blocking apps running in the background conserves battery and minimises your battery usage. It also shrinks videos and photos on almost any app on mobile data connections, as well as Wi-Fi.</span></p> <ol> <li><b><span style='text-decoration: underline;'>Switch to a Lightweight Browser</span></b></li> </ol> <p style='text-align: justify; line-height: 150%;'><span>Switching from the mobile browser to browsers like <b>Chrome beta</b> or <b>Opera Mini</b> are </span>alternatives that feature data compression and optimization to help reduce usage.</p> <ol> <li><b><span style='text-decoration: underline;'>Remove Ads to Decrease Data Consumption</span></b></li> </ol> <p style='text-align: justify; line-height: 150%;'>Mobile advertisements are a surprisingly big data sink. You can approach the problem of mobile ads one of two ways:</p> <ol style='list-style-type: lower-alpha;'> <li><b>Buying an ad-free premium version</b></li> </ol><ol style='list-style-type: lower-alpha;'> <li><strong><span style='font-family: 'Calibri','sans-serif';'>Install an ad blocker</span></strong>: Buying an ad-free premium version isn’t always an option. In such cases tools like Ad block Plus and AdBlock Plus works on non-rooted phones but only for Wi-Fi based blocking; both apps need root access for 3G-based ad blocking.</li> </ol>",
+      "searchKeywords": ""
+    }
+  ]
+}
