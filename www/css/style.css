@@ -421,10 +421,10 @@ a.ui-mini.ui-btn {
 
 @keyframes anim {
     0% {
-        font-size: 9px;
+        font-size: 8px;
     }
     100% {
-        font-size: 30px;
+        font-size: 16px;
     }
 }
 
