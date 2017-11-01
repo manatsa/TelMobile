@@ -415,5 +415,23 @@ a.ui-mini.ui-btn {
     
 }
 
+.hideBorderFirstListview li:last-of-type {
+    border-bottom: none;
+}
 
+@keyframes anim {
+    0% {
+        font-size: 9px;
+    }
+    100% {
+        font-size: 30px;
+    }
+}
+
+#divPromotionsCount {
+    animation: anim;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
 
