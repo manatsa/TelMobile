@@ -449,14 +449,14 @@
 
             <div style="margin-bottom: 20px;" data-role="navbar" data-grid="b">
                 <ul class="tabs-corners">
-                    <li><a href="#divVoiceBundles" class="ui-btn-b tabs-corners-first-child">Voice</a></li>
+                    <li><a id="first-tab" href="#divVoiceBundles" class="ui-btn-b tabs-corners-first-child">Voice</a></li>
                     <li><a href="#divDataBundles" class="ui-btn-b">Data</a></li>
                     <li><a class="tabs-corners-last-child ui-btn-b" href="#divSMSBundles">SMS</a></li>
                 </ul>
             </div>
 
 
-            <div id="divDataBundles">
+            <div id="divDataBundles" style="height: 100%;">
                 <select data-theme="b" onchange="populateBundles('cboBuyDataProduct')" id="cboBuyDataProduct">
                     <option disabled selected>Select a data bundle product</option>
                     <option value="W">WhatsApp Bundles</option>
@@ -468,7 +468,7 @@
                 </select>
             </div>
 
-            <div id="divVoiceBundles">
+            <div id="divVoiceBundles" style="height: 100%;">
                 <select data-theme="b" onchange="populateBundles('cboBuyVoiceProduct')" id="cboBuyVoiceProduct">
                     <option disabled selected>Select a voice bundle product</option>
                     <option value="I">International Voice Bundles</option>
@@ -477,7 +477,7 @@
                 </select>
             </div>
 
-            <div id="divSMSBundles">
+            <div id="divSMSBundles" style="height: 100%;">
                 <select data-theme="b" onchange="populateBundles('cboBuyVoiceProduct')" id="cboBuySMSProduct">
                     <option disabled selected>Select a SMS bundle product</option>
                     <option value="S">SMS Bundles</option>

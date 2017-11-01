@@ -6,8 +6,9 @@ $("#pgBundlesPurchase").on("pageinit", function () {
 })
 
 $("#pgBundlesPurchase").on("pageshow", function (event) {
-
-    $('#divVoiceBundles').trigger('click');
+    //alert("bundle")
+    //$( ".selector" ).tabs({ active: 1 });
+    $('#first-tab').click();
 });
 
 
