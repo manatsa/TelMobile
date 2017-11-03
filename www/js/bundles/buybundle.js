@@ -2,22 +2,29 @@ var buybundleuri="http://telecelmobileapp.telecel.co.zw/TelecelBundleRestService
 
 $("#btnPurchaseBundleFromCore").on("click",function () {
     try{
-        NativeStorage.getItem("user",function (user) {
+        //get user registration info if exists
+        NativeStorage.getItem("user",
+            //success function
+            function (user) {
             var regmobile=user.msisdn;
             var regpin=user.pin;
             var product=$("#divBundleOptions :selected").val();
             var selfother=$("#divBuyForOtherControlGroup :checked").val();
             var othermobile=$("#txtBundleForNumber").val()
 
+            //verify user info successfully retrieved
             if(regmobile && regpin)
             {
+                //ensure product is selected
                 if(product){
 
+                    // prompt user for pin
                     navigator.notification.prompt("Please Enter Your Pin",function (result) {
-                        if(result.buttonIndex==1){
-                            if(result.input1==regpin)
+                        if(result.buttonIndex==1){//0  is cancelled, 1 is 1st button, 2 is second button e.t.c.
+                            if(result.input1==regpin) //check first input prompted to the user is the valid registered PIN
                             {
                                 try{
+                                    //execute ajax method
                                     doAjax(regmobile,product,selfother,othermobile)
                                 }catch(e){
                                     console.log(JSON.stringify(e))
@@ -27,7 +34,7 @@ $("#btnPurchaseBundleFromCore").on("click",function () {
                                 navigator.notification.alert("You entered an invalid pin",null,"Authentication Error","OK")
                             }
                         }
-                    },"Authenticate Transaction",["Proceed","Cancel"])
+                    },"Authenticate Transaction",["Proceed","Cancel"]) //title, [array of buttons]
 
 
                 }else{
@@ -48,10 +55,6 @@ $("#btnPurchaseBundleFromCore").on("click",function () {
     }
 
 });
-
-
-
-
 
 function validMobile(msisdn) {
     var validMsisdn="";
@@ -79,50 +82,50 @@ function validMobile(msisdn) {
 
 function doAjax(regmobile,product,selfother,othernumber) {
 
-
+    //check if buying for self or other
     if(selfother=='other')
     {
-        var validMSISDN=validMobile(othermobile).toString().trim();
-        if(validMSISDN.length>8){
+        var validMSISDN=validMobile(othernumber).toString().trim(); //return validated other number
+        if(validMSISDN.length>8){ //check if valid lenght
 
+            //format uri with base url and arguments
+          var bun=  buybundleuri+"/"+regmobile+"/"+othernumber+"/"+product
 
-            buybundleuri+="/"+regmobile+"/"+product
-
+            //access service
             $.ajax({
-                url:buybundleuri,
+                url:bun,
                 type:"GET",
                 dataType:"json",
 
                 success:function (result) {
                     var data=JSON.parse(JSON.stringify(result));
                     var msg=data.commercialDescription
-                    alert(msg)
+                    navigator.notification.alert(msg,null,"Bundle Purchase","OK")
                     console.log(data)
                 },
                 failure: function (fail) {
-                    alert("FAILURE :"+fail)
-                    //console.log(fail.responseText)
+                    navigator.notification.alert(JSON.parse(JSON.stringify(fail)).commercialDiscription,null,"Bundle Purchase","OK")
+                    console.log(JSON.stringify(fail))
                 },
                 error:function (error) {
-                    var err=Json.parse(JSON.stringify(error))
-                    alert(err.statusText)
-                    console.log(err.statusText)
+                    var err=JSON.parse(JSON.stringify(error))
+                    navigator.notification.alert(JSON.stringify(error),null,"Bundle Purchase","OK")
+                    console.log(JSON.stringify(error))
                 }
             });
         }
-    }else{
-        buybundleuri+="/"+regmobile+"/"+othernumber+"/"+product
+    }else{         //buy for self
+        var bun=buybundleuri+"/"+regmobile+"/"+product
 
         $.ajax({
-            url:buybundleuri,
+            url:bun,
             type:"GET",
             dataType:"json",
 
             success:function (result) {
                 var data=JSON.parse(JSON.stringify(result));
-                var msg=data.commercialDescription
-                alert(msg)
-                console.log(data)
+                alert(result)
+                console.log(result)
             },
             failure: function (fail) {
                 alert("FAILURE :"+fail)
