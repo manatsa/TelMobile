@@ -28,9 +28,6 @@
         "cordova-plugin-splashscreen": {
             "PACKAGE_NAME": "HelloCordova"
         },
-        "cordova-plugin-nativestorage": {
-            "PACKAGE_NAME": "HelloCordova"
-        },
         "cordova-plugin-email": {
             "PACKAGE_NAME": "HelloCordova"
         },
@@ -47,6 +44,12 @@
             "PACKAGE_NAME": "HelloCordova"
         },
         "cordova-plugin-sms": {
+            "PACKAGE_NAME": "HelloCordova"
+        },
+        "cordova-plugin-nativestorage": {
+            "PACKAGE_NAME": "HelloCordova"
+        },
+        "cordova-plugin-android-permissions": {
             "PACKAGE_NAME": "HelloCordova"
         }
     },

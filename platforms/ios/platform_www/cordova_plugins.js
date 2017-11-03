@@ -119,24 +119,6 @@ module.exports = [
         ]
     },
     {
-        "id": "cordova-plugin-nativestorage.mainHandle",
-        "file": "plugins/cordova-plugin-nativestorage/www/mainHandle.js",
-        "pluginId": "cordova-plugin-nativestorage",
-        "clobbers": [
-            "NativeStorage"
-        ]
-    },
-    {
-        "id": "cordova-plugin-nativestorage.LocalStorageHandle",
-        "file": "plugins/cordova-plugin-nativestorage/www/LocalStorageHandle.js",
-        "pluginId": "cordova-plugin-nativestorage"
-    },
-    {
-        "id": "cordova-plugin-nativestorage.NativeStorageError",
-        "file": "plugins/cordova-plugin-nativestorage/www/NativeStorageError.js",
-        "pluginId": "cordova-plugin-nativestorage"
-    },
-    {
         "id": "cordova-plugin-network-information.network",
         "file": "plugins/cordova-plugin-network-information/www/network.js",
         "pluginId": "cordova-plugin-network-information",
@@ -243,6 +225,32 @@ module.exports = [
         "clobbers": [
             "window.SMS"
         ]
+    },
+    {
+        "id": "cordova-plugin-nativestorage.mainHandle",
+        "file": "plugins/cordova-plugin-nativestorage/www/mainHandle.js",
+        "pluginId": "cordova-plugin-nativestorage",
+        "clobbers": [
+            "NativeStorage"
+        ]
+    },
+    {
+        "id": "cordova-plugin-nativestorage.LocalStorageHandle",
+        "file": "plugins/cordova-plugin-nativestorage/www/LocalStorageHandle.js",
+        "pluginId": "cordova-plugin-nativestorage"
+    },
+    {
+        "id": "cordova-plugin-nativestorage.NativeStorageError",
+        "file": "plugins/cordova-plugin-nativestorage/www/NativeStorageError.js",
+        "pluginId": "cordova-plugin-nativestorage"
+    },
+    {
+        "id": "cordova-plugin-android-permissions.Permissions",
+        "file": "plugins/cordova-plugin-android-permissions/www/permissions-dummy.js",
+        "pluginId": "cordova-plugin-android-permissions",
+        "clobbers": [
+            "cordova.plugins.permissions"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -253,7 +261,6 @@ module.exports.metadata =
     "cordova-plugin-contacts": "2.3.1",
     "cordova-plugin-dialogs": "1.3.3",
     "cordova-plugin-email": "1.2.6",
-    "cordova-plugin-nativestorage": "2.2.2",
     "cordova-plugin-network-information": "1.3.3",
     "cordova-plugin-splashscreen": "4.0.3",
     "cordova-plugin-statusbar": "2.2.3",
@@ -263,7 +270,9 @@ module.exports.metadata =
     "cordova-plugin-x-toast": "2.6.0",
     "cordova-plugin-device": "1.1.6",
     "cordova-plugin-geolocation": "2.4.3",
-    "cordova-plugin-sms": "1.0.5"
+    "cordova-plugin-sms": "1.0.5",
+    "cordova-plugin-nativestorage": "2.2.2",
+    "cordova-plugin-android-permissions": "1.0.0"
 };
 // BOTTOM OF METADATA
 });

@@ -12,13 +12,17 @@ sendSMS()
 
 function sendSMS() {
     var sendto ="0733680483";
-    var textmsg = "SMS from cordova";
+    var textmsg = "SMS from cordova from me";
     if(sendto.indexOf(";") >=0) {
         sendto = sendto.split(";");
         for(i in sendto) {
             sendto[i] = sendto[i].trim();
         }
     }
-    if(SMS) SMS.sendSMS(sendto, textmsg, function(){}, function(str){alert(str);});
+    if(SMS) SMS.sendSMS(sendto, textmsg, function () {
+        alert("SMS Sent")
+    },function (error) {
+        alert("ERROR sending SMS"+error.responseText)
+    });
 }
 

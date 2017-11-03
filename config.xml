@@ -26,6 +26,7 @@
     <engine name="android" spec="^6.3.0" />
     <engine name="ios" spec="^4.5.3" />
     <engine name="windows" spec="^5.0.0" />
+    <plugin name="cordova-plugin-android-permissions" spec="^1.0.0" />
     <plugin name="cordova-plugin-call-number" spec="^1.0.1" />
     <plugin name="cordova-plugin-contacts" spec="^2.3.1">
         <variable name="CONTACTS_USAGE_DESCRIPTION" value=" " />

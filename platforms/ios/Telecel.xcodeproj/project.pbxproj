@@ -27,7 +27,6 @@
 		35B12166B5A34DC784F58A84 /* APPEmailComposer.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D3D416F9F94704B5033106 /* APPEmailComposer.m */; };
 		BEDADB0186554FCCBDE6F816 /* APPEmailComposerImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = E2F6DFB03B5B461BB21CFC22 /* APPEmailComposerImpl.m */; };
 		2ACA3664F8B3425AB21F2575 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F50545DA5DF4F23AC0B4B3A /* MessageUI.framework */; };
-		BCE9DE16E1D842769BF498A4 /* NativeStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE528021D36450E8E9683EE /* NativeStorage.m */; };
 		65741A0A52BC4D80A67121A4 /* CDVConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1D4CADD0DD431381D3143C /* CDVConnection.m */; };
 		89B9234DF2D6404EAC83C7F2 /* CDVReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = F6F78D3741F849DA8A9D9A56 /* CDVReachability.m */; };
 		40E7F7F760E4456E8564B9D7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEA707D261494EE7A4B8DCB5 /* SystemConfiguration.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -45,6 +44,7 @@
 		92966318136B49BDA40C26FF /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 10222ED451014A44A513E52C /* libz.tbd */; };
 		BECAED9BAA504940AE3E9DE9 /* CDVLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8088BE5ADB4344C5B49FDD32 /* CDVLocation.m */; };
 		3A6579B8CD774E25AA768179 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B65C903C4F2E44E78B3359E9 /* CoreLocation.framework */; };
+		79CD6A84FF5C407ABB693440 /* NativeStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = F39D4FA35D28462D87C4A3C8 /* NativeStorage.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,8 +102,6 @@
 		AC6FE2B14153409493DE6FEF /* APPEmailComposer.h */ = {isa = PBXFileReference; name = "APPEmailComposer.h"; path = "cordova-plugin-email/APPEmailComposer.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 		9A18360797484652934548E1 /* APPEmailComposerImpl.h */ = {isa = PBXFileReference; name = "APPEmailComposerImpl.h"; path = "cordova-plugin-email/APPEmailComposerImpl.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 		3F50545DA5DF4F23AC0B4B3A /* MessageUI.framework */ = {isa = PBXFileReference; name = "MessageUI.framework"; path = "System/Library/Frameworks/MessageUI.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
-		FCE528021D36450E8E9683EE /* NativeStorage.m */ = {isa = PBXFileReference; name = "NativeStorage.m"; path = "cordova-plugin-nativestorage/NativeStorage.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
-		1BDCE0CF967844C98EA51B5C /* NativeStorage.h */ = {isa = PBXFileReference; name = "NativeStorage.h"; path = "cordova-plugin-nativestorage/NativeStorage.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 		4C1D4CADD0DD431381D3143C /* CDVConnection.m */ = {isa = PBXFileReference; name = "CDVConnection.m"; path = "cordova-plugin-network-information/CDVConnection.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
 		F6F78D3741F849DA8A9D9A56 /* CDVReachability.m */ = {isa = PBXFileReference; name = "CDVReachability.m"; path = "cordova-plugin-network-information/CDVReachability.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
 		72F5253364C646C795C43E93 /* CDVConnection.h */ = {isa = PBXFileReference; name = "CDVConnection.h"; path = "cordova-plugin-network-information/CDVConnection.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
@@ -132,6 +130,8 @@
 		8088BE5ADB4344C5B49FDD32 /* CDVLocation.m */ = {isa = PBXFileReference; name = "CDVLocation.m"; path = "cordova-plugin-geolocation/CDVLocation.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
 		5C3B53CC0FEC4FCEB57A4E63 /* CDVLocation.h */ = {isa = PBXFileReference; name = "CDVLocation.h"; path = "cordova-plugin-geolocation/CDVLocation.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 		B65C903C4F2E44E78B3359E9 /* CoreLocation.framework */ = {isa = PBXFileReference; name = "CoreLocation.framework"; path = "System/Library/Frameworks/CoreLocation.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		F39D4FA35D28462D87C4A3C8 /* NativeStorage.m */ = {isa = PBXFileReference; name = "NativeStorage.m"; path = "cordova-plugin-nativestorage/NativeStorage.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		009B22AA36144DF9BBCC447D /* NativeStorage.h */ = {isa = PBXFileReference; name = "NativeStorage.h"; path = "cordova-plugin-nativestorage/NativeStorage.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -268,8 +268,6 @@
 				E2F6DFB03B5B461BB21CFC22 /* APPEmailComposerImpl.m */,
 				AC6FE2B14153409493DE6FEF /* APPEmailComposer.h */,
 				9A18360797484652934548E1 /* APPEmailComposerImpl.h */,
-				FCE528021D36450E8E9683EE /* NativeStorage.m */,
-				1BDCE0CF967844C98EA51B5C /* NativeStorage.h */,
 				4C1D4CADD0DD431381D3143C /* CDVConnection.m */,
 				F6F78D3741F849DA8A9D9A56 /* CDVReachability.m */,
 				72F5253364C646C795C43E93 /* CDVConnection.h */,
@@ -292,6 +290,8 @@
 				8405AFCB97084F72B5ACB962 /* CDVDevice.h */,
 				8088BE5ADB4344C5B49FDD32 /* CDVLocation.m */,
 				5C3B53CC0FEC4FCEB57A4E63 /* CDVLocation.h */,
+				F39D4FA35D28462D87C4A3C8 /* NativeStorage.m */,
+				009B22AA36144DF9BBCC447D /* NativeStorage.h */,
 			);
 			name = Plugins;
 			path = "Telecel/Plugins";
@@ -411,7 +411,6 @@
 				48F2EF9727F941EFA54F420F /* CDVNotification.m in Sources */,
 				35B12166B5A34DC784F58A84 /* APPEmailComposer.m in Sources */,
 				BEDADB0186554FCCBDE6F816 /* APPEmailComposerImpl.m in Sources */,
-				BCE9DE16E1D842769BF498A4 /* NativeStorage.m in Sources */,
 				65741A0A52BC4D80A67121A4 /* CDVConnection.m in Sources */,
 				89B9234DF2D6404EAC83C7F2 /* CDVReachability.m in Sources */,
 				CC59B5E95C0B4EE18F6556C9 /* CDVSplashScreen.m in Sources */,
@@ -423,6 +422,7 @@
 				1ED69F2F2D4C4C75ACE125AB /* Toast.m in Sources */,
 				E93472FA2AB64670934343A3 /* CDVDevice.m in Sources */,
 				BECAED9BAA504940AE3E9DE9 /* CDVLocation.m in Sources */,
+				79CD6A84FF5C407ABB693440 /* NativeStorage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

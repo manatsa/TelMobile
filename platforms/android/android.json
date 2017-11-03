@@ -41,10 +41,6 @@
                             "count": 1
                         },
                         {
-                            "xml": "<feature name=\"NativeStorage\"><param name=\"android-package\" value=\"NativeStorage\" /></feature>",
-                            "count": 1
-                        },
-                        {
                             "xml": "<feature name=\"EmailComposer\"><param name=\"android-package\" value=\"de.martinreinhardt.cordova.plugins.email.EmailComposer\" /></feature>",
                             "count": 1
                         },
@@ -62,6 +58,14 @@
                         },
                         {
                             "xml": "<feature name=\"SMS\"><param name=\"android-package\" value=\"com.rjfun.cordova.sms.SMSPlugin\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"NativeStorage\"><param name=\"android-package\" value=\"NativeStorage\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Permissions\"><param name=\"android-package\" value=\"com.android.plugins.Permissions\" /></feature>",
                             "count": 1
                         }
                     ]
@@ -183,9 +187,6 @@
         "cordova-plugin-splashscreen": {
             "PACKAGE_NAME": "mobile.telecel.co.zw"
         },
-        "cordova-plugin-nativestorage": {
-            "PACKAGE_NAME": "mobile.telecel.co.zw"
-        },
         "cordova-plugin-email": {
             "PACKAGE_NAME": "mobile.telecel.co.zw"
         },
@@ -199,6 +200,12 @@
             "PACKAGE_NAME": "mobile.telecel.co.zw"
         },
         "cordova-plugin-sms": {
+            "PACKAGE_NAME": "mobile.telecel.co.zw"
+        },
+        "cordova-plugin-nativestorage": {
+            "PACKAGE_NAME": "mobile.telecel.co.zw"
+        },
+        "cordova-plugin-android-permissions": {
             "PACKAGE_NAME": "mobile.telecel.co.zw"
         }
     },
@@ -287,24 +294,6 @@
             "clobbers": [
                 "navigator.splashscreen"
             ]
-        },
-        {
-            "id": "cordova-plugin-nativestorage.mainHandle",
-            "file": "plugins/cordova-plugin-nativestorage/www/mainHandle.js",
-            "pluginId": "cordova-plugin-nativestorage",
-            "clobbers": [
-                "NativeStorage"
-            ]
-        },
-        {
-            "id": "cordova-plugin-nativestorage.LocalStorageHandle",
-            "file": "plugins/cordova-plugin-nativestorage/www/LocalStorageHandle.js",
-            "pluginId": "cordova-plugin-nativestorage"
-        },
-        {
-            "id": "cordova-plugin-nativestorage.NativeStorageError",
-            "file": "plugins/cordova-plugin-nativestorage/www/NativeStorageError.js",
-            "pluginId": "cordova-plugin-nativestorage"
         },
         {
             "id": "cordova-plugin-email.EmailComposer",
@@ -421,6 +410,32 @@
             "clobbers": [
                 "window.SMS"
             ]
+        },
+        {
+            "id": "cordova-plugin-nativestorage.mainHandle",
+            "file": "plugins/cordova-plugin-nativestorage/www/mainHandle.js",
+            "pluginId": "cordova-plugin-nativestorage",
+            "clobbers": [
+                "NativeStorage"
+            ]
+        },
+        {
+            "id": "cordova-plugin-nativestorage.LocalStorageHandle",
+            "file": "plugins/cordova-plugin-nativestorage/www/LocalStorageHandle.js",
+            "pluginId": "cordova-plugin-nativestorage"
+        },
+        {
+            "id": "cordova-plugin-nativestorage.NativeStorageError",
+            "file": "plugins/cordova-plugin-nativestorage/www/NativeStorageError.js",
+            "pluginId": "cordova-plugin-nativestorage"
+        },
+        {
+            "id": "cordova-plugin-android-permissions.Permissions",
+            "file": "plugins/cordova-plugin-android-permissions/www/permissions.js",
+            "pluginId": "cordova-plugin-android-permissions",
+            "clobbers": [
+                "cordova.plugins.permissions"
+            ]
         }
     ],
     "plugin_metadata": {
@@ -433,11 +448,12 @@
         "cordova-plugin-x-toast": "2.6.0",
         "es6-promise-plugin": "4.1.0",
         "cordova-plugin-splashscreen": "4.0.3",
-        "cordova-plugin-nativestorage": "2.2.2",
         "cordova-plugin-email": "1.2.6",
         "cordova-plugin-contacts": "2.3.1",
         "cordova-plugin-device": "1.1.6",
         "cordova-plugin-geolocation": "2.4.3",
-        "cordova-plugin-sms": "1.0.5"
+        "cordova-plugin-sms": "1.0.5",
+        "cordova-plugin-nativestorage": "2.2.2",
+        "cordova-plugin-android-permissions": "1.0.0"
     }
 }

@@ -20,9 +20,6 @@
         "cordova-plugin-email": {
             "PACKAGE_NAME": "mobile.telecel.co.zw"
         },
-        "cordova-plugin-nativestorage": {
-            "PACKAGE_NAME": "mobile.telecel.co.zw"
-        },
         "cordova-plugin-network-information": {
             "PACKAGE_NAME": "mobile.telecel.co.zw"
         },
@@ -49,6 +46,12 @@
             "PACKAGE_NAME": "mobile.telecel.co.zw"
         },
         "cordova-plugin-sms": {
+            "PACKAGE_NAME": "mobile.telecel.co.zw"
+        },
+        "cordova-plugin-nativestorage": {
+            "PACKAGE_NAME": "mobile.telecel.co.zw"
+        },
+        "cordova-plugin-android-permissions": {
             "PACKAGE_NAME": "mobile.telecel.co.zw"
         }
     },

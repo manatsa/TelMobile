@@ -63,14 +63,6 @@
         "is_top_level": true,
         "variables": {}
     },
-    "cordova-plugin-nativestorage": {
-        "source": {
-            "type": "registry",
-            "id": "cordova-plugin-nativestorage@^2.2.2"
-        },
-        "is_top_level": true,
-        "variables": {}
-    },
     "cordova-plugin-email": {
         "source": {
             "type": "registry",
@@ -125,6 +117,22 @@
         "source": {
             "type": "registry",
             "id": "cordova-plugin-sms"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-nativestorage": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-nativestorage"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-android-permissions": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-android-permissions"
         },
         "is_top_level": true,
         "variables": {}

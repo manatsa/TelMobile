@@ -12,6 +12,7 @@
     "dependencies": {
         "cordova-android": "^6.3.0",
         "cordova-ios": "^4.5.3",
+        "cordova-plugin-android-permissions": "^1.0.0",
         "cordova-plugin-call-number": "^1.0.1",
         "cordova-plugin-compat": "^1.2.0",
         "cordova-plugin-contacts": "^2.3.1",
@@ -39,7 +40,6 @@
             "cordova-plugin-x-socialsharing": {},
             "cordova-plugin-x-toast": {},
             "cordova-plugin-splashscreen": {},
-            "cordova-plugin-nativestorage": {},
             "cordova-plugin-email": {},
             "cordova-plugin-contacts": {
                 "CONTACTS_USAGE_DESCRIPTION": " "
@@ -49,7 +49,9 @@
             "cordova-plugin-geolocation": {
                 "GEOLOCATION_USAGE_DESCRIPTION": " "
             },
-            "cordova-plugin-sms": {}
+            "cordova-plugin-sms": {},
+            "cordova-plugin-nativestorage": {},
+            "cordova-plugin-android-permissions": {}
         },
         "platforms": [
             "android",

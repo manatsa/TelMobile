@@ -16,6 +16,18 @@ $(document).on( "deviceready", function() {
             $.mobile.changePage("#pgInitialLogin");
             console.log("ERROR:"+error)
         });
+
+        var permissions = cordova.plugins.permissions;
+        permissions.hasPermission(permissions.SEND_SMS, function (status) {
+            if (!(status.hasPermission)) {
+                permissions.requestPermission(permissions.SEND_SMS, function (result) {
+                    console.log(result)
+                }, function (error) {
+                    console.log(error)
+                });
+            }
+        });
+
     }catch(e)
     {
         console.log(e)
@@ -44,16 +56,16 @@ function confirmCallback(choice) {
 
 $(document).on({
     ajaxSend: function () {
-        loading('show');
+        $(".spinner").css("display","block");
     },
     ajaxStart: function () {
-        loading('show');
+        $(".spinner").css("display","block");
     },
     ajaxStop: function () {
-        loading('hide');
+        $(".spinner").css("display","none");
     },
     ajaxError: function () {
-        loading('hide');
+        $(".spinner").css("display","none");
     }
 });
 
@@ -157,7 +169,7 @@ function validateMSISDN(msisdn) {
         switch(msisdn)
         {
             case msisdn.startWith("26373"):
-
+                validMsisdn=msisdn.substring(3);
                 break;
             case msisdn.startWith("+26373"):
                 validMsisdn=msisdn.substring(4);
@@ -177,6 +189,8 @@ function validateMSISDN(msisdn) {
     }else{
         navigator.notification.alert("You need to check the mobile number!",function () {},"Invalid Mobile Number","OK")
     }
+
+    return validMsisdn
 }
 
 

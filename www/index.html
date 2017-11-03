@@ -21,16 +21,9 @@
 
     <!--JQuery javascript-->
     <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
-
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <script src="js/tabs-fix.js"></script>
-    <script src="js/smtp.js"></script>
-    <script src="https://smtpjs.com/smtp.js"></script>
-    <script type="text/javascript" src="cordova.js"></script>
 
-    <!--Custom javascript by page-->
-
-    <!--<script  src="http://maps.google.com/maps/api/js?key=AIzaSyDH7SGQ_oRhAYAgcAedTbdZrkh1jprT1VU"></script>-->
 
 
 </head>
@@ -54,69 +47,87 @@
     <div data-role="popup" id="ppOptionsMain" data-theme="b">
         <ul data-role="listview" data-inset="true" style="min-width:210px;">
             <li data-icon="false"><a href="#pgChangePIN">Change PIN</a></li>
-            <li data-icon="false"><a href="#pgForgotPassword">Recover PIN</a></li>
             <li data-icon="false"><a href="#">Logout</a></li>
         </ul>
     </div>
     <!-- End of Header -->
 
-    <div data-role="main" class="ui-content">
+    <div data-role="main">
         <div id="divMainMenu">
 
-            <a data-transition="flip" href="#products_services_main">
-                <div class="custom-ui-block-a div-red-background div-rounded-corners align-text-center menu-icons-margin">
-                    <img class="main-menu-icon" src="img/menu_icons/products.png"/>
-                    <p>Products</p>
+            <a data-transition="flip" href="#pgBundlesPurchase">
+                <div class="custom-ui-block-a div-red-background align-text-center menu-icons-margin">
+                    <img class="main-menu-icon" src="img/menu_icons/buyproduct.png"/>
+                    <p>Buy Product</p>
                 </div>
             </a>
 
-            <a data-transition="flip" href="#pgTelecash">
-                <div class="custom-ui-block-b div-red-background div-rounded-corners align-text-center menu-icons-margin">
+            <a data-transition="flip" href="#pgBundlesPurchase">
+                <div class="custom-ui-block-a div-red-background align-text-center menu-icons-margin">
                     <img class="main-menu-icon" src="img/menu_icons/telecash.png"/>
-                    <p>TeleCash</p>
+                    <p>Mobile Money</p>
+                </div>
+            </a>
+
+            <a data-transition="flip" href="#pgAirtimePurchase">
+                <div class="custom-ui-block-c div-red-background align-text-center menu-icons-margin">
+                    <img class="main-menu-icon" src="img/menu_icons/buyairtime.png"/>
+                    <p>Buy airtime</p>
+                </div>
+            </a>
+
+            <a data-transition="flip" href="#products_services_main">
+                <div class="custom-ui-block-a div-red-background align-text-center menu-icons-margin">
+                    <img class="main-menu-icon" src="img/menu_icons/balance.png"/>
+                    <p>Balance check</p>
+                </div>
+            </a>
+
+            <a data-transition="flip" href="#pgSelfService">
+                <div class="custom-ui-block-b div-red-background align-text-center menu-icons-margin">
+                    <img class="main-menu-icon" src="img/menu_icons/SelfService.png"/>
+                    <p>Self service</p>
                 </div>
             </a>
 
             <a data-transition="flip" href="#pgPromotions">
-                <div class="custom-ui-block-c div-red-background div-rounded-corners align-text-center menu-icons-margin">
+                <div class="custom-ui-block-c div-red-background align-text-center menu-icons-margin">
                     <img class="main-menu-icon" src="img/menu_icons/promotions.png"/>
                     <p>Promotions</p>
                 </div>
             </a>
 
-
-
             <a data-transition="flip" href="#pgShopsList">
-                <div class="custom-ui-block-b div-red-background div-rounded-corners align-text-center menu-icons-margin">
+                <div class="custom-ui-block-a div-red-background align-text-center menu-icons-margin">
                     <img class="main-menu-icon" src="img/menu_icons/locations.png"/>
                     <p>Store locator</p>
                 </div>
             </a>
 
             <a data-transition="flip" href="#pgContactUs">
-                <div class="custom-ui-block-c div-red-background div-rounded-corners align-text-center menu-icons-margin">
+                <div class="custom-ui-block-b div-red-background align-text-center menu-icons-margin">
                     <img class="main-menu-icon" src="img/menu_icons/contacts.png"/>
                     <p>Contact us</p>
                 </div>
             </a>
 
-
-            <a data-transition="flip" href="#pgUSSDShortcodes">
-                <div class="custom-ui-block-b div-red-background div-rounded-corners align-text-center menu-icons-margin">
+            <a data-transition="flip" href="#pgServiceShortcodes">
+                <div class="custom-ui-block-c div-red-background align-text-center menu-icons-margin">
                     <img class="main-menu-icon" src="img/menu_icons/USSD.png"/>
-                    <p>USSD Shortcodes</p>
+                    <p>Shortcodes</p>
                 </div>
             </a>
 
             <a data-transition="flip" href="#pgHelp">
-                <div class="custom-ui-block-a div-red-background div-rounded-corners align-text-center menu-icons-margin">
+                <div class="custom-ui-block-a div-red-background align-text-center menu-icons-margin">
                     <img class="main-menu-icon" src="img/menu_icons/help.png"/>
                     <p>Help</p>
                 </div>
             </a>
 
             <a data-transition="flip" href="#pgAbout">
-                <div class="custom-ui-block-b div-red-background div-rounded-corners align-text-center menu-icons-margin">
+                <div id="divLinkToAbout"
+                     class="custom-ui-block-b div-red-background align-text-center menu-icons-margin">
                     <img class="main-menu-icon" src="img/menu_icons/about.png"/>
                     <p>About</p>
                 </div>
@@ -125,7 +136,9 @@
         </div>
 
     </div>
+
 </section>
+
 
 
 <!---------------------------------------------- Initial Login ---------------------------------------------------->
@@ -233,6 +246,7 @@
                 </a>
             </li>
         </ul>
+
 
     </div>
 </section>
@@ -430,12 +444,12 @@
                                                                                         aria-hidden="true"></i></a>
         </div>
     </header>
-    <div data-role="popup" id="ppOptionsBundles" data-theme="b">
-        <ul data-role="listview" data-inset="true" style="min-width:210px;">
-            <li data-icon="false"><a href="#pgMain">Back to Main Page</a></li>
-            <li data-icon="false"><a href="#pgForgotPassword">Recover Pin</a></li>
-            <li data-icon="false"><a href="#pgChangePIN">Change PIN</a></li>
-            <li data-icon="false"><a href="#">Logout</a></li>
+    <div data-role="popup" id="ppOptionsBundles" data-theme="b" >
+        <ul data-role="listview" data-inset="true" style="min-width:210px; background-color: transparent;">
+            <li style="background-color: transparent;" data-icon="false"><a style="background-color: transparent;" href="#pgMain">Back to Main Page</a></li>
+            <li style="background-color: transparent;" data-icon="false"><a style="background-color: transparent;" href="#pgForgotPassword">Recover Pin</a></li>
+            <li style="background-color: transparent;" data-icon="false"><a style="background-color: transparent;" href="#pgChangePIN">Change PIN</a></li>
+            <li style="background-color: transparent;" data-icon="false"><a style="background-color: transparent;" href="#">Logout</a></li>
         </ul>
     </div>
     <!-- End of Header -->
@@ -464,7 +478,7 @@
                     <option value="M">Mega Boost Bundles</option>
                     <option value="N">Night Bundles</option>
                     <option value="D">Data Bundles</option>
-                    <option value="T">Wifi Bundles</option>
+                    <!--<option value="T">Wifi Bundles</option>-->
                 </select>
             </div>
 
@@ -472,13 +486,13 @@
                 <select data-theme="b" onchange="populateBundles('cboBuyVoiceProduct')" id="cboBuyVoiceProduct">
                     <option disabled selected>Select a voice bundle product</option>
                     <option value="I">International Voice Bundles</option>
-                    <option value="O">On-Net Voice Bundles</option>
+                    <!--<option value="O">On-Net Voice Bundles</option>-->
                     <option value="CN">Cross-Net Bundles</option>
                 </select>
             </div>
 
             <div id="divSMSBundles">
-                <select data-theme="b" onchange="populateBundles('cboBuyVoiceProduct')" id="cboBuySMSProduct">
+                <select data-theme="b" onchange="populateBundles('cboBuySMSProduct')" id="cboBuySMSProduct">
                     <option disabled selected>Select a SMS bundle product</option>
                     <option value="S">SMS Bundles</option>
                 </select>
@@ -486,12 +500,7 @@
         </div>
 
         <span id="lblBundleDescription" class="initcap hidden"></span>
-        <div id="divListOfValidCountries" class="hidden">
-            <a href="http://telecel.co.zw/products-services/telecelgo/go" data-rel="popup" data-position-to="window"
-               data-transition="pop"
-               class="no-underline initcap">See list of valid countries
-            </a>
-        </div>
+
 
 
         <div id="divBundleOptions">
@@ -504,10 +513,10 @@
              data-type="vertical">
             <label id="lblOptionForSelf" for="rdrOptionSelf">Buy for self
             </label>
-            <input data-theme="b" type="radio" name="rgBundleFor" id="rdrOptionSelf" value="circle" checked>
+            <input data-theme="b" type="radio" name="rgBundleFor" id="rdrOptionSelf" value="self" checked>
             <label id="lblOptionForOther" for="rdrOptionOther">Buy for other
             </label>
-            <input data-theme="b" type="radio" name="rgBundleFor" id="rdrOptionOther" value="square">
+            <input data-theme="b" type="radio" name="rgBundleFor" id="rdrOptionOther" value="other">
         </div>
 
         <div id="divBundleForNumber" style="margin-top: 20px;" class="input-with-icon half-width-custom">
@@ -520,14 +529,18 @@
 
         <div id="divPurchaseFromChoice" style="clear: both;">
             <p class="align-text-center" style="margin-bottom: 0px">Purchase from</p>
-            <button style="width: 49%; display: inline-block; float: left;"
+            <button style="width: 49%; display: inline-block; float: left;" id="btnPurchaseBundleFromCore"
                     class="ui-button ui-widget ui-corner-all uppercase"><i class="fa fa-arrow-circle-down"
                                                                            aria-hidden="true"></i>&nbsp;&nbsp;Core
             </button>
-            <button style="width: 49%; display: inline-block; float: right;"
+            <button style="width: 49%; display: inline-block; float: right;" id="btnPurchaseBundleFromTelecash"
                     class="ui-button ui-widget ui-corner-all uppercase"><i class="fa fa-arrow-circle-down"
                                                                            aria-hidden="true"></i>&nbsp;&nbsp;TeleCash
             </button>
+        </div>
+
+        <div class="spinner" style=" background-color: transparent; display: none">
+
         </div>
 
     </div>
@@ -1684,23 +1697,22 @@ We know that teamwork allows us to serve our customers better and faster as we r
     </div>
 </section>
 
-<!-------------------------------------    USSD Shortcodes    ------------------------------------------------>
-<section data-role="page" id="pgUSSDShortcodes" class="ui-page-theme-a">
+<!-------------------------------------    Service Shortcodes    ------------------------------------------------>
+<!-------------------------------------    Service Shortcodes    ------------------------------------------------>
+<section data-role="page" id="pgServiceShortcodes" class="ui-page-theme-a">
     <!-- Header -->
     <header data-role="header" class="ui-bar" data-position="fixed">
         <div class="align-text-center header-text-with-logo-padding">
             <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
                     class="fa  fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
             <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
-            <h1 class="header-text-with-logo">&nbsp;USSD Shortcodes</h1>
+            <h1 class="header-text-with-logo">&nbsp;Service Shortcodes</h1>
             <a class="header-options-link" href="#ppOptionsUSSD" data-rel="popup"><i class="fa fa-ellipsis-v"
-                                                                                     aria-hidden="true"></i></a>
-        </div>
+                                                                                     aria-hidden="true"></i></a></div>
     </header>
     <div data-role="popup" id="ppOptionsUSSD" data-theme="b">
         <ul data-role="listview" data-inset="true" style="min-width:210px;">
             <li data-icon="false"><a href="#pgMain">Back to Main Page</a></li>
-            <li data-icon="false"><a href="#pgForgotPassword">Recover Pin</a></li>
             <li data-icon="false"><a href="#pgChangePIN">Change PIN</a></li>
             <li data-icon="false"><a href="#">Logout</a></li>
         </ul>
@@ -1709,37 +1721,40 @@ We know that teamwork allows us to serve our customers better and faster as we r
 
     <div data-role="main" class="ui-content">
 
-        <form class="ui-filterable">
-            <input id="txtSearchUSSD" placeholder="Find USSD..."
-                   data-type="search">
-        </form>
+        <div data-role="tabs" id="divServiceShortcodes">
 
-        <ul class="initcap" data-icon="false" data-role="listview" data-filter="true" data-count-theme="b"
-            data-inset="true"
-            data-input="#txtSearchUSSD">
-            <li><a href="#">Balance Enquiry <span class="ui-li-count">*122#</span></a></li>
-            <li><a href="#">Airtime topup <span class="ui-li-count">*123*..#</span></a></li>
-            <li><a href="#">Call me back <span class="ui-li-count">*140#</span></a></li>
-            <li><a href="#">Notify me when reachable <span class="ui-li-count">*141#</span></a></li>
-            <li><a href="#">Missed call alert <span class="ui-li-count">*142#</span></a></li>
-            <li><a href="#">Emergency credit <span class="ui-li-count">*143#</span></a></li>
-            <li><a href="#">Broadband plus data bundles <span class="ui-li-count">*1442#</span></a></li>
-            <li><a href="#">Main menu <span class="ui-li-count">*145#</span></a></li>
-            <li><a href="#">Cross-net voice bundles <span class="ui-li-count">*146#</span></a></li>
-            <li><a href="#">Teletunes <span class="ui-li-count">*147#</span></a></li>
-            <li><a href="#">News on demand, Music on demand, Religious Pack, Prayer alert Service <span
-                    class="ui-li-count">*151#</span></a></li>
-            <li><a href="#">International voice bundles <span class="ui-li-count">*155#</span></a></li>
-            <li><a href="#">Red & Business balance enquiry <span class="ui-li-count">*170#</span></a></li>
-            <li><a href="#">Khuluma baance enquiry <span class="ui-li-count">*175#</span></a></li>
-            <li><a href="#">SMS Bundles <span class="ui-li-count">*404#</span></a></li>
-            <li><a href="#">Daily Data Bundles, All night long bundles <span class="ui-li-count">*470#</span></a></li>
-            <li><a href="#">Whatsapp,Facebook, Wi-Fi Bundles and MegaBoost <span class="ui-li-count">*480#</span></a>
-            </li>
-            <li><a href="#">Telecare <span class="ui-li-count">*808#</span></a></li>
-            <li><a href="#">Telecash <span class="ui-li-count">*888#</span></a></li>
-            <li><a href="#">Prepaid International roaming <span class="ui-li-count">*33156#</span></a></li>
-        </ul>
+            <p class="align-text-center" style="margin-bottom: 0px; margin-top: 0px;">Tap to show shortcodes for</p>
+
+            <div style="margin-bottom: 20px;" data-role="navbar" data-grid="b">
+                <ul class="tabs-corners">
+                    <li><a id="ancGoToUSSD" href="#divUSSDShortcodes" class="ui-btn-b tabs-corners-first-child">USSD</a>
+                    </li>
+                    <li><a href="#divCallShortcodes" class="ui-btn-b">Call</a></li>
+                    <li><a class="tabs-corners-last-child ui-btn-b" href="#divSMSShortcodes">SMS</a></li>
+                </ul>
+            </div>
+
+            <div id="divUSSDShortcodes">
+
+                <div id="divShortCodePopups">
+
+                </div>
+
+            </div>
+
+            <div id="divCallShortcodes">
+            </div>
+
+            <div id="divSMSShortcodes">
+
+                <div id="divSMSPopups">
+
+                </div>
+
+            </div>
+
+        </div>
+
     </div>
 </section>
 
@@ -2276,39 +2291,7 @@ We know that teamwork allows us to serve our customers better and faster as we r
 </section>
 
 
-<!--------------------------------------- Test Tabs  ---------------------------------------------->
-<section data-role="page" id="tbPage">
-    <header data-role="header" class="ui-bar" data-position="fixed">
-        <div class="align-text-center header-text-with-logo-padding">
-            <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
-                    class="fa fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
-            <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
-            <h1 class="header-text-with-logo">&nbsp;Telecash</h1>
-        </div>
-    </header>
-    <div data-role="main" class="ui-content">
-        <div data-role="tabs">
-            <div data-role="navbar">
-                <ul>
-                    <li><a href="#tab1">Tab 1</a></li>
-                    <li><a href="#tab2">Tab 2</a></li>
-                    <li><a href="#tab3">Tab 3</a></li>
-                </ul>
-            </div>
-            <div id="tab1" class="ui-content">
-                <h1>tab 1</h1>
-            </div>
-            <div id="tab2" class="ui-content">
-                <h1>tab 2</h1>
-            </div>
-            <div id="tab3" class="ui-content">
-                <h1>tab 3</h1>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!--<script type="text/javascript" src="cordova.js"></script>-->
+<script type="text/javascript" src="cordova.js"></script>
 
 <!--Custom javascript by page-->
 <script type="text/javascript" src="js/index.js"></script>
@@ -2317,7 +2300,7 @@ We know that teamwork allows us to serve our customers better and faster as we r
 <script type="text/javascript" src="js/register.js"></script>
 <script type="text/javascript" src="js/balance.js"></script>
 <script type="text/javascript" src="js/RestTest.js"></script>
-<script type="text/javascript" src="js/bundlespurchase.js"></script>
+<script type="text/javascript" src="js/bundles/bundleoptions.js"></script>
 <script type="text/javascript" src="js/shops.js"></script>
 <script type="text/javascript" src="js/shops/shopMap.js"></script>
 <script type="text/javascript" src="js/contacts_test.js"></script>
@@ -2326,6 +2309,9 @@ We know that teamwork allows us to serve our customers better and faster as we r
 <script type="text/javascript" src="js/faq.js"></script>
 <script type="text/javascript" src="js/promotions.js"></script>
 <script type="text/javascript" src="js/sms_test.js"></script>
+<script type="text/javascript" src="js/bundles/buybundle.js"></script>
+<script type="text/javascript" src="js/shortcodes.js"></script>
+
 
 </body>
 </html>

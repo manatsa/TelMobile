@@ -125,3 +125,30 @@ form{
     padding:0px;
     text-align: match-parent;
 }
+
+#floating-panel {
+    position: absolute;
+    top: 10vh;
+    left: 70%;
+    z-index: 5;
+    color: red;
+    width:30%;
+    background-color: transparent;
+    padding: 0px;
+    text-align: center;
+    font-family: 'Roboto','sans-serif';
+    text-transform: none;
+}
+
+
+.spinner {
+    position: absolute;
+    top: 40vh;
+    left: 45%;
+    z-index: 6;
+    background-color: transparent;
+    background: url("images/ajax-loader.gif");
+    width: 100px;
+    height: 100px;
+
+}

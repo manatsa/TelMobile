@@ -1,0 +1,148 @@
+{
+  "USSD": [
+    {
+      "title": "Balance Enquiry",
+      "dialCode": "*122#",
+      "params": ""
+    },
+    {
+      "title": "Airtime topup",
+      "dialCode": "*123*...#",
+      "params": "Voucher code"
+    },
+    {
+      "title": "Call me back",
+      "dialCode": "*140*...#",
+      "params": "Mobile number"
+    },
+    {
+      "title": "Notify me when reachable",
+      "dialCode": "*141*...#",
+      "params": "Mobile number"
+    },
+    {
+      "title": "Missed call alert",
+      "dialCode": "*142#",
+      "params": ""
+    },
+    {
+      "title": "Emergency credit",
+      "dialCode": "*143#",
+      "params": ""
+    },
+    {
+      "title": "Broadband plus data bundles",
+      "dialCode": "*1442#",
+      "params": ""
+    },
+    {
+      "title": "Main menu",
+      "dialCode": "*145#",
+      "params": ""
+    },
+    {
+      "title": "Cross-net voice bundles",
+      "dialCode": "*146#",
+      "params": ""
+    },
+    {
+      "title": "Teletunes",
+      "dialCode": "*147#",
+      "params": ""
+    },
+    {
+      "title": "News on demand, Music on demand, Religious Pack, Prayer alert Service",
+      "dialCode": "*151#",
+      "params": ""
+    },
+    {
+      "title": "International voice bundles",
+      "dialCode": "*155#",
+      "params": ""
+    },
+    {
+      "title": "Red & Business balance enquiry",
+      "dialCode": "*170#",
+      "params": ""
+    },
+    {
+      "title": "Khuluma baance enquiry",
+      "dialCode": "*175#",
+      "params": ""
+    },
+    {
+      "title": "SMS Bundles",
+      "dialCode": "*404#",
+      "params": ""
+    },
+    {
+      "title": "Daily Data Bundles, All night long bundles",
+      "dialCode": "*470#",
+      "params": ""
+    },
+    {
+      "title": "Whatsapp,Facebook, Wi-Fi Bundles and MegaBoost",
+      "dialCode": "*480#",
+      "params": ""
+    },
+    {
+      "title": "Telecare",
+      "dialCode": "*808#",
+      "params": ""
+    },
+    {
+      "title": "TeleCash",
+      "dialCode": "*888#",
+      "params": ""
+    },
+    {
+      "title": "Prepaid International roaming",
+      "dialCode": "*33156#",
+      "params": ""
+    }
+  ],
+  "Call": [
+    {
+      "title": "Customer services call center",
+      "dialCode": "150"
+    },
+    {
+      "title": "Internet and data help line",
+      "dialCode": "150"
+    },
+    {
+      "title": "Remote Recharge",
+      "dialCode": "152"
+    },
+    {
+      "title": "Telecash call center",
+      "dialCode": "157"
+    },
+    {
+      "title": "Teletunes",
+      "dialCode": "335"
+    },
+    {
+      "title": "Music on demand",
+      "dialCode": "350"
+    }
+  ],
+  "SMS": [
+    {
+      "title": "Cross-net voice bundles",
+      "dialCode": "14600"
+    },
+    {
+      "title": "Whatsapp and Facebook Bundles",
+      "dialCode": "33480"
+    },
+    {
+      "title": "Teletunes",
+      "dialCode": "33533"
+    },
+    {
+      "title": "Universal short codes",
+      "dialCode": "33555"
+    }
+  ]
+}
