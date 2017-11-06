@@ -105,7 +105,12 @@ Additional classes added
 }
 
 .main-menu-icon {
+    object-fit: cover !important;
     height: 32px;
+}
+
+#telecash-icon {
+    width: 80%;
 }
 
 #divMainMenu .custom-ui-block-a, #divMainMenu .custom-ui-block-b, #divMainMenu .custom-ui-block-c {
@@ -124,7 +129,13 @@ Additional classes added
     }
 
     .main-menu-icon {
-        height: 64px;
+        height: 64px !important;
+    }
+
+    #divTelecashImageWrapper {
+        height: 68px !important;
+        margin: 0 !important;
+        padding: 0 !important;
     }
 
     #divMainMenu .custom-ui-block-a:nth-child(odd), #divMainMenu .custom-ui-block-b:nth-child(odd), #divMainMenu .custom-ui-block-c:nth-child(odd) {
@@ -143,10 +154,6 @@ Additional classes added
         float: right;
         width: 49.999%;
         margin: 0;
-    }
-
-    #divLinkToAbout {
-        width: 100% !important;
     }
 
 }
@@ -177,7 +184,6 @@ Additional classes added
     }
 
     .main-menu-icon {
-        background-size: cover !important;
         height: 128px !important;
     }
 
@@ -243,11 +249,6 @@ footer {
     width: 95px;
     padding-bottom: 15px !important;
     padding-top: 15px !important;
-}
-
-footer .ui-grid-c {
-    margin-right: 3%;
-    margin-left: 3%;
 }
 
 .add-btn-dlg-panel {
@@ -408,4 +409,38 @@ a.ui-mini.ui-btn {
     animation-duration: 4s;
     animation-iteration-count: infinite;
     animation-direction: alternate;
+}
+
+#ppUnsubscribeFromBundle-popup {
+    width: 80%;
+    left: 10%;
+    right: 10%
+}
+
+footer .ui-grid-c {
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+/*//this works for large screens when items in menu are exactly 12!!!*/
+@media (min-height: 800px) and (min-width: 36em)  {
+
+    #divMainMenu .custom-ui-block-a {
+        float: left !important;
+        height: 23vh !important;
+        margin: 0;
+    }
+
+    #divMainMenu .custom-ui-block-b {
+        float: left !important;
+        height: 23vh !important;
+        margin: 0;
+    }
+
+    #divMainMenu .custom-ui-block-c {
+        float: left !important;
+        height: 23vh !important;
+        margin: 0;
+    }
+
 }

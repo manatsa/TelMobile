@@ -132,7 +132,7 @@ function doAjax(regmobile,product,selfother,othernumber) {
                 //console.log(fail.responseText)
             },
             error:function (error) {
-                var err=Json.parse(JSON.stringify(error))
+                var err=JSON.parse(JSON.stringify(error))
                 alert(err.statusText)
                 console.log(err.statusText)
             }
