@@ -140,47 +140,52 @@ $(".btnShare").click(function () {
 
 
 function selectContact(id) {
-    navigator.contacts.pickContact(function(contact){
-        var contact=JSON.parse(JSON.stringify(contact));
+    navigator.contacts.pickContact(function (contact) {
+        var contact = JSON.parse(JSON.stringify(contact));
         console.log(JSON.stringify(contact.phoneNumbers[0].value));
-        $("#"+id).val(contact.phoneNumbers[0].value)
-    },function(err){
+        var msisdn = contact.phoneNumbers[0].value;
+        msisdn = msisdn.replace(/ /g, "");
+        $("#" + id).val(msisdn)
+    }, function (err) {
         console.log('Error: ' + err);
-        navigator.notification.alert("Error picking contact",function () {},"Contact Picking Failure","OK")
+        navigator.notification.alert("Error picking contact", function () {
+        }, "Contact Picking Failure", "OK")
     });
 }
 
 function validateMSISDN(msisdn) {
-    var validMsisdn="";
+    var validMsisdn = "";
+    validMsisdn = validMsisdn.replace(/ /g, "");
 
-    if(msisdn)
-    {
-        switch(msisdn)
-        {
-            case msisdn.startWith("26373"):
-                validMsisdn=msisdn.substring(3);
+    if (msisdn) {
+        switch (true) {
+            case msisdn.startsWith("26373"):
+                validMsisdn = msisdn.substring(3);
                 break;
-            case msisdn.startWith("+26373"):
-                validMsisdn=msisdn.substring(4);
-                break
-            case msisdn.startWith("0026373"):
-                validMsisdn=msisdn.substring(5);
-                break
-            case msisdn.startWith("073"):
-                validMsisdn=msisdn.substring(1);
-                break
-            case msisdn.startWith("73"):
-                validMsisdn=msisdn
-                break
+            case msisdn.startsWith("+26373"):
+                validMsisdn = msisdn.substring(4);
+                break;
+            case msisdn.startsWith("0026373"):
+                validMsisdn = msisdn.substring(5);
+                break;
+            case msisdn.startsWith("073"):
+                validMsisdn = msisdn.substring(1);
+                break;
+            case msisdn.startsWith("73"):
+                validMsisdn = msisdn;
+                break;
             default:
-                navigator.notification.alert("You need to check the mobile number!",function () {},"Invalid Mobile Number","OK")
+                navigator.notification.alert("You need to check the mobile number!", function () {
+                }, "Invalid Mobile Number", "OK")
         }
-    }else{
-        navigator.notification.alert("You need to check the mobile number!",function () {},"Invalid Mobile Number","OK")
+    } else {
+        navigator.notification.alert("You need to check the mobile number!", function () {
+        }, "Invalid Mobile Number", "OK")
     }
 
     return validMsisdn
 }
+
 
 
 function showDirections() {

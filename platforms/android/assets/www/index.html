@@ -74,7 +74,7 @@
             <a data-transition="flip" href="#pgAirtimePurchase">
                 <div class="custom-ui-block-c div-red-background align-text-center menu-icons-margin">
                     <img class="main-menu-icon" src="img/menu_icons/buyairtime.png"/>
-                    <p>Buy airtime</p>
+                    <p>Buy/Send airtime</p>
                 </div>
             </a>
 
@@ -621,71 +621,6 @@
         </div>
     </div>
 
-</section>
-
-<!-------------------------------------    Unsubscribe bundle   ------------------------------------------------>
-<!-------------------------------------    Unsubscribe bundle   ------------------------------------------------>
-<section data-role="page" id="pgUnsubscribe" class="with-footer ui-page-theme-a">
-    <!-- Header -->
-    <header data-role="header" class="ui-bar" data-position="fixed">
-        <div class="align-text-center header-text-with-logo-padding">
-            <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
-                    class="fa  fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
-            <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
-            <h1 class="header-text-with-logo">&nbsp;Unsubscribe</h1>
-            <a class="header-options-link" href="#ppOptionsUnsubscribeBundle" data-rel="popup"><i
-                    class="fa fa-ellipsis-v"
-                    aria-hidden="true"></i></a>
-        </div>
-    </header>
-    <div data-role="popup" id="ppOptionsUnsubscribeBundle" data-theme="b">
-        <ul data-role="listview" data-inset="true" style="min-width:210px;">
-            <li data-icon="false"><a href="#pgMain">Back to Main Page</a></li>
-            <li data-icon="false"><a href="#pgForgotPassword">Recover Pin</a></li>
-            <li data-icon="false"><a href="#pgChangePIN">Change PIN</a></li>
-            <li data-icon="false"><a href="#">Logout</a></li>
-        </ul>
-    </div>
-    <!-- End of Header -->
-
-    <div data-role="main" class="ui-content">
-
-        <form>
-
-            <select data-theme="b" id="cboUnsubscribeProduct">
-                <option disabled selected>Select a product</option>
-                <option value="W">WhatsApp Bundles</option>
-                <option value="F">Facebook Bundles</option>
-                <option value="M">Mega Boost Bundles</option>
-                <option value="N">Night Bundles</option>
-                <option value="D">Data Bundles</option>
-                <option value="T">Wifi Bundles</option>
-            </select>
-
-            <div class="wrap-input-for-margins-15px">
-                <a href="#popupDialog" data-rel="popup" data-position-to="window" data-transition="pop"
-                   class="ui-btn ui-corner-all"><i
-                        class="fa fa-ban" aria-hidden="true"></i>&nbsp;&nbsp;Unsubscribe
-                </a>
-            </div>
-
-            <div data-role="popup" id="popupDialog" data-overlay-theme="b" data-theme="b" data-dismissible="false"
-                 style="max-width:400px;">
-                <div data-role="header" data-theme="a"><h1>Unsubscribe?</h1></div>
-                <div role="main" class="ui-content"><h3 class="ui-title">Are you sure you want to unsubscribe from this
-                    bundle?</h3>
-                    <p>This action cannot be undone.</p> <a href="#"
-                                                            class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b"
-                                                            data-rel="back">Unsubscribe</a> <a href="#"
-                                                                                               class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b"
-                                                                                               data-rel="back"
-                                                                                               data-transition="flow">Cancel</a>
-                </div>
-            </div>
-
-        </form>
-
-    </div>
 </section>
 
 <!------------------------------------- Banking Services  ------------------------------------------------>
@@ -2068,7 +2003,7 @@ We know that teamwork allows us to serve our customers better and faster as we r
 
 <!-------------------------------------     Services    ------------------------------------------------>
 <!-------------------------------------     Services    ------------------------------------------------>
-<section data-role="page" class="ui-page-theme-a" id="pgServices">
+<section data-role="page" class="ui-page-theme-a with-footer" id="pgServices">
     <!-- Header -->
     <header data-role="header" class="ui-bar" data-position="fixed">
         <div class="align-text-center header-text-with-logo-padding">
@@ -2089,7 +2024,8 @@ We know that teamwork allows us to serve our customers better and faster as we r
     </div>
     <!-- End of Header -->
     <div data-role="popup" id="ppRoamingDefinitions">
-        <p>Activate roaming to be able use your mobile outside of the range of its home network and connects to
+        <p class="initcap">Activate roaming to be able use your mobile outside of the range of its home network and
+            connects to
             another available cell
             network. Additional charges may apply.</p>
     </div>
@@ -2112,7 +2048,9 @@ We know that teamwork allows us to serve our customers better and faster as we r
                 <td>Roaming&nbsp;<a href="#ppRoamingDefinitions" data-rel="popup"><i
                         class="fa fa-info-circle icon-font-size-small" aria-hidden="true"></i></a>
                 </td>
-                <td class="align-text-right"><input type="checkbox" data-role="flipswitch" name="flip-checkbox-1"></td>
+                <td class="align-text-right">
+                    <input title="Roaming" type="checkbox" data-role="flipswitch" id="chkToggleRoaming">
+                </td>
             </tr>
             </tbody>
         </table>

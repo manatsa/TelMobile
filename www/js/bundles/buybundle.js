@@ -130,6 +130,7 @@ function doAjax(regmobile,product,selfother,othernumber) {
             dataType:"json",
 
             success:function (result) {
+                console.log(result.responseText)
                 var err=JSON.parse(JSON.stringify(result))
                 var resp=JSON.parse(JSON.stringify(err.responseJSON)).commercialDescription;
                 console.log(resp)
