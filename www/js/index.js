@@ -17,17 +17,6 @@ $(document).on( "deviceready", function() {
             console.log("ERROR:"+error)
         });
 
-        var permissions = cordova.plugins.permissions;
-        permissions.hasPermission(permissions.SEND_SMS, function (status) {
-            if (!(status.hasPermission)) {
-                permissions.requestPermission(permissions.SEND_SMS, function (result) {
-                    console.log(result)
-                }, function (error) {
-                    console.log(error)
-                });
-            }
-        });
-
     }catch(e)
     {
         console.log(e)
@@ -247,4 +236,16 @@ function computeTotalDistance(result) {
     }
     total = total / 1000;
    $('#timetotravel').val(total + ' km');
+}
+
+
+
+function sendEMail(senderName, senderEmail, subject, message) {
+    alert("Email not sent. To implement code for sending email!");
+    //this function to send an email
+}
+
+function isValidEmail(email) {
+    var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    return regex.test(email);
 }

@@ -11,6 +11,11 @@
       "params": "Voucher code"
     },
     {
+      "title": "BONUS AIRTIME BALANCE",
+      "dialCode": "*123#",
+      "params": ""
+    },
+    {
       "title": "Call me back",
       "dialCode": "*140*...#",
       "params": "Mobile number"

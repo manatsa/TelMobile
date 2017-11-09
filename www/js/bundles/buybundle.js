@@ -95,22 +95,28 @@ function doAjax(regmobile,product,selfother,othernumber) {
             $.ajax({
                 url:bun,
                 type:"GET",
+                timeout: 3000,
                 dataType:"json",
 
                 success:function (result) {
-                    var data=JSON.parse(JSON.stringify(result));
-                    var msg=data.commercialDescription
-                    navigator.notification.alert(msg,null,"Bundle Purchase","OK")
-                    console.log(data)
+                    var err=JSON.parse(JSON.stringify(result))
+                    var resp=JSON.parse(JSON.stringify(err.responseJSON)).commercialDescription;
+                    console.log(resp)
+                    navigator.notification.alert(resp,null,"\nBundle Purchase","OK")
                 },
                 failure: function (fail) {
-                    navigator.notification.alert(JSON.parse(JSON.stringify(fail)).commercialDiscription,null,"Bundle Purchase","OK")
+                    var err=JSON.parse(JSON.stringify(fail))
+                    var resp=JSON.parse(JSON.stringify(err.responseJSON)).commercialDescription;
+                    console.log(resp)
+                    navigator.notification.alert(resp,null,"\nBundle Purchase","OK")
                     console.log(JSON.stringify(fail))
                 },
                 error:function (error) {
+
                     var err=JSON.parse(JSON.stringify(error))
-                    navigator.notification.alert(JSON.stringify(error),null,"Bundle Purchase","OK")
-                    console.log(JSON.stringify(error))
+                    var resp=JSON.parse(JSON.stringify(err.responseJSON)).commercialDescription;
+                    console.log(resp)
+                    navigator.notification.alert(resp,null,"\nBundle Purchase","OK")
                 }
             });
         }
@@ -120,11 +126,13 @@ function doAjax(regmobile,product,selfother,othernumber) {
         $.ajax({
             url:bun,
             type:"GET",
+            timeout: 3000,
             dataType:"json",
 
             success:function (result) {
                 var data=JSON.parse(JSON.stringify(result));
-                alert(result)
+                var msg=data.commercialDescription
+                navigator.notification.alert(msg,null,"Bundle Purchase","OK")
                 console.log(result)
             },
             failure: function (fail) {
@@ -134,7 +142,7 @@ function doAjax(regmobile,product,selfother,othernumber) {
             error:function (error) {
                 var err=JSON.parse(JSON.stringify(error))
                 alert(err.statusText)
-                console.log(err.statusText)
+                console.log(err)
             }
         });
     }

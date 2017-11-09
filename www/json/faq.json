@@ -2,32 +2,32 @@
   "Network": [
     {
       "question": "My phone is saying “network busy”",
-      "htmlAnswer": "<br> It means that there is congestion on the network and you should keep trying the number. Switch off and on your phone and retry",
+      "htmlAnswer": "<br>It means that there is congestion on the network and you should keep trying the number. Switch off and on your phone and retry",
       "searchKeywords": ""
     },
     {
       "question": "My phone says “error in connection”",
-      "htmlAnswer": "<br> It means that the person you are phoning is in an area where there is no coverage or their phone is switched off or there is too much congestion on the network.",
+      "htmlAnswer": "<br>It means that the person you are phoning is in an area where there is no coverage or their phone is switched off or there is too much congestion on the network.",
       "searchKeywords": ""
     },
     {
       "question": "My phone is suspended",
-      "htmlAnswer": "<br> It means that your talk<br>• time has expired and you are now required to juice up your phone.",
+      "htmlAnswer": "<br>It means that your talk-time has expired and you are now required to juice up your phone.",
       "searchKeywords": ""
     },
     {
       "question": "How do I inquire my balance?",
-      "htmlAnswer": "<br>• Press *, enter 122 <br>• press the # key <br>• press call/send You can also find these instructions on your recharge card.",
+      "htmlAnswer": "<br>• Press *, enter 122 <br>• Press the # key <br>• Press call/send You can also find these instructions on your recharge card.",
       "searchKeywords": ""
     },
     {
       "question": "How do I recharge my phone?",
-      "htmlAnswer": "<br>• Press *, enter 123, and press * again <br>• enter the recharge code on your scratch panel. <br>• press the # key. <br>• press call/send You can also find these instructions on your recharge card.",
+      "htmlAnswer": "<br>• Press *, enter 123, and press * again <br>• Enter the recharge code on your scratch panel. <br>• Press the # key. <br>• Press call/send You can also find these instructions on your recharge card.",
       "searchKeywords": ""
     },
     {
       "question": "My phone keeps cutting",
-      "htmlAnswer": "<br>• check your signal strength <br>• assess the terrain of the area; buildings and enclosed areas can affect signal strengths. <br>• ensure your battery is fully charged",
+      "htmlAnswer": "<br>• Check your signal strength <br>• Assess the terrain of the area; buildings and enclosed areas can affect signal strengths. <br>• Ensure your battery is fully charged",
       "searchKeywords": ""
     },
     {
@@ -37,195 +37,195 @@
     },
     {
       "question": "I cannot receive or make calls",
-      "htmlAnswer": "<br> Either the line  has not been registered or it has been disconnected for some reason. This is mainly experienced with stolen phones /lines or contract accounts switched off for unpaid bills",
+      "htmlAnswer": "<br>Either the line  has not been registered or it has been disconnected for some reason. This is mainly experienced with stolen phones /lines or contract accounts switched off for unpaid bills",
       "searchKeywords": ""
     },
     {
       "question": "My phone is saying enter PUK",
-      "htmlAnswer": "<br> This means you have entered a wrong pin number more than 3 times and it has locked. The PUK is supplied together with your sim card. However if you have lost the detail, please go to the nearest Telecel with your ID, damaged line and your certificate.",
+      "htmlAnswer": "<br>This means you have entered a wrong pin number more than 3 times and it has locked. The PUK is supplied together with your sim card. However if you have lost the detail, please go to the nearest Telecel with your ID, damaged line and your certificate.",
       "searchKeywords": ""
     },
     {
       "question": "How do I get started?",
-      "htmlAnswer": "<br> Insert your sim card into the phone. Switch it on and enter a pin number (if prompted). Your phone will display Telecel or ZW 648 03, or CC648 NC03 on your screen and you are ready to make a call.",
+      "htmlAnswer": "<br>Insert your sim card into the phone. Switch it on and enter a pin number (if prompted). Your phone will display Telecel or ZW 648 03, or CC648 NC03 on your screen and you are ready to make a call.",
       "searchKeywords": ""
     }
   ],
   "Juice cards": [
     {
       "question": "My juice card will not juice up. I am getting the message card invalid or has not been found",
-      "htmlAnswer": "<br>• this means the card has been used or has been be deactivated in the case of stolen cards <br>• usually you will have recharged your account with that juice card but you will not have confirmed your balance. <br>• otherwise you will have bought a card that has been used on another phone <br>• call Customer Care to confirm whether the card has been used to juice up a different number and then take the card back to where you bought it.",
+      "htmlAnswer": "<br>• This means the card has been used or has been be deactivated in the case of stolen cards <br>• Usually you will have recharged your account with that juice card but you will not have confirmed your balance. <br>• Otherwise you will have bought a card that has been used on another phone <br>• Call Customer Care to confirm whether the card has been used to juice up a different number and then take the card back to where you bought it.",
       "searchKeywords": ""
     },
     {
       "question": "My account is locked",
-      "htmlAnswer": "<br> It means you have tried to juice your phone with a wrong pin number more than three times. Call Customer Care to get your account unlocked and to get advice on your juice card.",
+      "htmlAnswer": "<br>It means you have tried to juice your phone with a wrong pin number more than three times. Call Customer Care to get your account unlocked and to get advice on your juice card.",
       "searchKeywords": ""
     }
   ],
   "Handset": [
     {
       "question": "I try to make a call but my phone says check operator services",
-      "htmlAnswer": "<br>• this means you have hidden your caller I.D. From your phone select call settings and make sure the option to hide your ID is ON or is as set by network. <br>• OR your contract line has been suspended for outgoing calls and is therefore only able to receive incoming calls. Please check your account status with credit control.",
+      "htmlAnswer": "<br>• This means you have hidden your caller I.D. From your phone select call settings and make sure the option to hide your ID is ON or is as set by network. <br>• Or your contract line has been suspended for outgoing calls and is therefore only able to receive incoming calls. Please check your account status with credit control.",
       "searchKeywords": ""
     },
     {
       "question": "My phone says “enter network code”",
-      "htmlAnswer": "<br>• your phone is network locked and it needs to be unlocked by the relevant network.",
+      "htmlAnswer": "<br>• Your phone is network locked and it needs to be unlocked by the relevant network.",
       "searchKeywords": ""
     },
     {
       "question": "What does an envelope on the screen mean?",
-      "htmlAnswer": "<br>• this means you have unread messages in your Inbox NOTE: Since your GSM mobile phone only stores a limited number of text notification messages, it is advisable to clear your text notification messages after you have read them. When the text message signal (the envelope) starts flashing continuously, it means your text notification message box is full and new notification messages will only be sent to you once you have cleared the previous ones. Please refer to your handset user manual should you require assistance in clearing the messages.",
+      "htmlAnswer": "<br>• This means you have unread messages in your Inbox NOTE: Since your GSM mobile phone only stores a limited number of text notification messages, it is advisable to clear your text notification messages after you have read them. When the text message signal (the envelope) starts flashing continuously, it means your text notification message box is full and new notification messages will only be sent to you once you have cleared the previous ones. Please refer to your handset user manual should you require assistance in clearing the messages.",
       "searchKeywords": ""
     },
     {
       "question": "How do I make an international call?",
-      "htmlAnswer": "<br>• if you are calling someone on a fixed landline, dial 00 (to get international access), the country code, the town code and then your number e.g. 00 263 4 748321 <br>• if you are calling someone on a mobile /cellular line , dial 00 (to get international access),the country code, then the mobile number omitting the first zero on the mobile number. e.g. 00 263 733404404",
+      "htmlAnswer": "<br>• If you are calling someone on a fixed landline, dial 00 (to get international access), the country code, the town code and then your number e.g. 00 263 4 748321 <br>• If you are calling someone on a mobile or cellular line , dial 00 (to get international access),the country code, then the mobile number omitting the first zero on the mobile number. e.g. 00 263 733404404",
       "searchKeywords": ""
     },
     {
       "question": "How do I make a call?",
-      "htmlAnswer": "<br>• for local or national calls, dial the area code or network code followed by the rest of the subscriber’s number and then press call.",
+      "htmlAnswer": "<br>For local or national calls, dial the area code or network code followed by the rest of the subscriber’s number and then press call.",
       "searchKeywords": ""
     },
     {
       "question": "My phone is saying disabled, sim error or blocked",
-      "htmlAnswer": "<br>• this means you have exhausted all the chances for a correct PUK code. <br>• the SIM card is now permanently destroyed and a replacement sim card is now required. <br>• contact Customer Care for more details.",
+      "htmlAnswer": "<br>• This means you have exhausted all the chances for a correct PUK code. <br>• The SIM card is now permanently destroyed and a replacement sim card is now required. <br>• Contact Customer Care for more details.",
       "searchKeywords": ""
     },
     {
       "question": "How can I change my pin number?",
-      "htmlAnswer": "<br> Refer to your handset user manual. Please note that you can also change your pin number through the following simple procedure; <br>• enter **04* <br>• enter old pin* <br>• enter new pin* <br>• enter new pin again and then press# The maximum number of digits you can enter as your pin is 8, but most people prefer 4 digits.",
+      "htmlAnswer": "<br>Refer to your handset user manual. Please note that you can also change your pin number through the following simple procedure; <br>• Enter **04* <br>• Enter old pin* <br>• Enter new pin* <br>• Enter new pin again and then press# The maximum number of digits you can enter as your pin is 8, but most people prefer 4 digits.",
       "searchKeywords": ""
     },
     {
       "question": "What is a pin number?",
-      "htmlAnswer": "<br> This is your Personal Identity Number. It allows only you to have access to the network and it protects unauthorised use",
+      "htmlAnswer": "<br>This is your Personal Identity Number. It allows only you to have access to the network and it protects unauthorised use",
       "searchKeywords": ""
     }
   ],
   "SMS": [
     {
       "question": "I am failing to send a message",
-      "htmlAnswer": "<br>• ensure that your phone has enough credit to send SMS and has not been suspended for non<br>• recharging. <br>• also ensure that your message centre number is properly set up. The Telecel message centre number is 00263730100007.",
+      "htmlAnswer": "<br>• Ensure that your phone has enough credit to send SMS and has not been suspended for non<br>• Recharging. <br>• Also ensure that your message centre number is properly set up. The Telecel message centre number is 00263730100007.",
       "searchKeywords": ""
     },
     {
       "question": "How long should my message be?",
-      "htmlAnswer": "<br>• your message can be as long as you want it to be. <br>• however the system can only carry a maximum of 160 characters at a given time, so your message will be broken down into pages of 160 characters each and will be sent one at a time, each page carrying a separate charge.",
+      "htmlAnswer": "<br>• Your message can be as long as you want it to be. <br>• However the system can only carry a maximum of 160 characters at a given time, so your message will be broken down into pages of 160 characters each and will be sent one at a time, each page carrying a separate charge.",
       "searchKeywords": ""
     },
     {
       "question": "How do I set up my message centre number?",
-      "htmlAnswer": "<br>• from your phone’s menu select messages <br>• go to MESSAGE SETTINGS <br>• select MESSAGE CENTRE NUMBER <br>• punch in the number 00263730100007 and save it.",
+      "htmlAnswer": "<br>• From your phone’s menu select messages <br>• Go to MESSAGE SETTINGS <br>• Select MESSAGE CENTRE NUMBER <br>• Punch in the number 00263730100007 and save it.",
       "searchKeywords": ""
     }
   ],
   "Mobile Internet": [
     {
       "question": "How do I configure the data card?",
-      "htmlAnswer": "<br> After running the installation <br>• open the mobile partner icon <br>• go to tools and click options <br>• under options, go to profile management <br>• click new and rename your profile to any name you wish to use <br>• on APN click static and type internet in small cap ie in the APN window <br>• click save <br>• click connect and you will be done.",
+      "htmlAnswer": "<br>After running the installation <br>• Open the mobile partner icon <br>• Go to tools and click options <br>• Under options, go to profile management <br>• Click new and rename your profile to any name you wish to use <br>• On APN click static and type internet in small cap ie in the APN window <br>• Click save <br>• Click connect and you will be done.",
       "searchKeywords": ""
     },
     {
       "question": "What do I need to be on 3G?",
-      "htmlAnswer": "<br>• data enabled line <br>• 3g compatible phone <br>• dongle <br>• correct 3G settings which will be provided at Telecel offices.",
+      "htmlAnswer": "<br>• Data enabled line <br>• 3g compatible phone <br>• Dongle <br>• Correct 3G settings which will be provided at Telecel offices.",
       "searchKeywords": ""
     }
   ],
   "Other services": [
     {
       "question": "Which numbers do I dial if I require customer service?",
-      "htmlAnswer": "<br> 150 is a toll free line for both prepaid and contract subscribers 0733150150 from any other number Dial these numbers if you require any of the following; <br>• assistance on the Telecel services <br>• reporting on any problems you are experiencing on any aspect of the Telecel services <br>• inquiries on Telecel coverage <br>• inquiries relating to airtime sale points",
+      "htmlAnswer": "<br>150 is a toll free line for both prepaid and contract subscribers 0733150150 from any other number Dial these numbers if you require any of the following; <br>• Assistance on the Telecel services <br>• Reporting on any problems you are experiencing on any aspect of the Telecel services <br>• Inquiries on Telecel coverage <br>• Inquiries relating to airtime sale points",
       "searchKeywords": ""
     },
     {
       "question": "In case of emergency which number do I dial?",
-      "htmlAnswer": "<br> In the event of an emergency please call the emergency number 112 and the call will be routed direct to emergency services nearest to you in accordance with our national regulations.",
+      "htmlAnswer": "<br>In the event of an emergency please call the emergency number 112 and the call will be routed direct to emergency services nearest to you in accordance with our national regulations.",
       "searchKeywords": ""
     }
   ],
   "Remote recharging": [
     {
       "question": "How do I juice someone’s phone using my own handset?",
-      "htmlAnswer": "<br>• buy a juice card <br>• from your prepaid or contract line, dial 152 and listen to the instructions <br>• the system will ask you to enter the account number (which is the mobile) you want to juice up. <br>• enter the number starting with 733 and the last six digits (i.e. omitting the first zero) followed by the # key. E.g. if the number you want to juice up is 0733 123456 you will enter it as 733 123456#. If it is a valid prepaid line, the system will immediately tell you “ACCOUNT NUMBER ACCEPTED”. <br>• the system then prompts you to put in the recharge code (i.e. the recharge pin) and #. <br>• if the code is valid, you will be informed ‘code accepted’ and the amount credited to the account. <br>• you will also be told the resulting account balance.",
+      "htmlAnswer": "<br>• Buy a juice card <br>• From your prepaid or contract line, dial 152 and listen to the instructions <br>• The system will ask you to enter the account number (which is the mobile) you want to juice up. <br>• Enter the number starting with 733 and the last six digits (i.e. omitting the first zero) followed by the # key. E.g. if the number you want to juice up is 0733 123456 you will enter it as 733 123456#. If it is a valid prepaid line, the system will immediately tell you “ACCOUNT NUMBER ACCEPTED”. <br>• The system then prompts you to put in the recharge code (i.e. the recharge pin) and #. <br>• If the code is valid, you will be informed ‘code accepted’ and the amount credited to the account. <br>• You will also be told the resulting account balance.",
       "searchKeywords": ""
     },
     {
       "question": "How can I transfer air time from my phone to another phone?",
-      "htmlAnswer": "<br>• select messages <br>• enter the amount you want to transfer without decimal places and the dollar signs, eg if you want to transfer two dollars just enter 2 <br>• press the hash key <br>• enter the cell phone number to which you want to transfer air time. <br>• send these instructions to 23350. Please note that this service is only available to pre<br>• paid subscribers and you can not transfer airtime to other networks.",
+      "htmlAnswer": "<br>• Select messages <br>• Enter the amount you want to transfer without decimal places and the dollar signs, eg if you want to transfer two dollars just enter 2 <br>• Press the hash key <br>• Enter the cell phone number to which you want to transfer air time. <br>• Send these instructions to 23350. Please note that this service is only available to pre-paid subscribers and you can not transfer airtime to other networks.",
       "searchKeywords": ""
     }
   ],
   "Call me back": [
     {
       "question": "Telecel requires the following documents for the replacement of your sim card",
-      "htmlAnswer": "<br>• SIM certificate (easy instructions booklet) <br>• national ID, driver’s licence or passport. <br>• a replacement fee",
+      "htmlAnswer": "<br>• SIM certificate (easy instructions booklet) <br>• National ID, driver’s licence or passport. <br>• A replacement fee",
       "searchKeywords": ""
     },
     {
       "question": "Which areas does Telecel cover?",
-      "htmlAnswer": "<br>• please refer to the coverage map <br>• the map is constantly changing as new areas are added <br>• please call our Customer Care for the most current information",
+      "htmlAnswer": "<br>• Please refer to the coverage map <br>• The map is constantly changing as new areas are added <br>• Please call our Customer Care for the most current information",
       "searchKeywords": ""
     },
     {
       "question": "How can I send a “call me back”?",
-      "htmlAnswer": "<br>• press star <br>• enter 140 <br>• press star again <br>• enter the mobile number, then harsh (#) and then dial. E.g. *140*0733150150#dial",
+      "htmlAnswer": "<br>• Press star <br>• Enter 140 <br>• Press star again <br>• Enter the mobile number, then harsh (#) and then dial. E.g. *140*0733150150#dial",
       "searchKeywords": ""
     },
     {
       "question": "What is Call Me Back?",
-      "htmlAnswer": "<br>• this is a facility that a Telecel subscriber can send to another Telecel number to call them back if they do not have enough airtime to call <br>• the facility is free of charge",
+      "htmlAnswer": "<br>• This is a facility that a Telecel subscriber can send to another Telecel number to call them back if they do not have enough airtime to call <br>• The facility is free of charge",
       "searchKeywords": ""
     }
   ],
   "Subscriber Registration": [
     {
       "question": "What is subscriber registration?",
-      "htmlAnswer": "<br>• all subscribers are required at law to register their lines, both prepaid and post<br>• paid. <br>• lines without any details against them will be disconnected from the network. <br>• essential details required include the following outlined below, presented together with ID particulars and proof of residence like a utility bill.",
+      "htmlAnswer": "<br>• All subscribers are required at law to register their lines, both prepaid and post-paid. <br>• Lines without any details against them will be disconnected from the network. <br>• Essential details required include the following outlined below, presented together with ID particulars and proof of residence like a utility bill.",
       "searchKeywords": ""
     }
   ],
   "Telecash": [
     {
       "question": "What is Telecash?",
-      "htmlAnswer": "<br> Telecash is a service offered by telecel Zimbabwe whereby mobile phone users deposit money (physical cash) through an agent, bank, or telecel shop into a TeleCash account. This money then becomes electronic money (e-money), which customers can then transfer electronically to other mobile phone users without visiting any bank. Services enjoyed by TeleCash customers include person to person money transfer, buying prepaid airtime for yourself and other telecel subscribers, paying for groceries, payment of your DStv subscriptions, paying your ZESA and City Council bills among other services.",
+      "htmlAnswer": "<br>Telecash is a service offered by telecel Zimbabwe whereby mobile phone users deposit money (physical cash) through an agent, bank, or telecel shop into a TeleCash account. This money then becomes electronic money (e-money), which customers can then transfer electronically to other mobile phone users without visiting any bank. Services enjoyed by TeleCash customers include person to person money transfer, buying prepaid airtime for yourself and other telecel subscribers, paying for groceries, payment of your DStv subscriptions, paying your ZESA and City Council bills among other services.",
       "searchKeywords": ""
     },
     {
       "question": "Can I transact on TeleCash without a bank account?",
-      "htmlAnswer": "<br> Telecash allows you to conduct financial transactions without the need to have a bank account.",
+      "htmlAnswer": "<br>Telecash allows you to conduct financial transactions without the need to have a bank account.",
       "searchKeywords": ""
     },
     {
       "question": "Do I need to maintain a minimum amount in my TeleCash account?",
-      "htmlAnswer": "<br> No. Your TeleCash account does not require you to maintain any minimum balance. You can fund your account according to the transactions you want to perform.",
+      "htmlAnswer": "<br>No. Your TeleCash account does not require you to maintain any minimum balance. You can fund your account according to the transactions you want to perform.",
       "searchKeywords": ""
     },
     {
       "question": "Are there any monthly charges on my TeleCash account?",
-      "htmlAnswer": "<br> No, you are only charged for the transactions you have initiated.",
+      "htmlAnswer": "<br>No, you are only charged for the transactions you have initiated.",
       "searchKeywords": ""
     },
     {
       "question": "If I already have a bank account, can I access it using TeleCash?",
-      "htmlAnswer": "<br> Yes, if your bank is linked to ZimSwitch, you can only access your bank account through TeleCash when you want to transfer money from your TeleCash account to your bank account. Transferring money from your bank account to your TeleCash account is done through your bank’s mobile banking.",
+      "htmlAnswer": "<br>Yes, if your bank is linked to ZimSwitch, you can only access your bank account through TeleCash when you want to transfer money from your TeleCash account to your bank account. Transferring money from your bank account to your TeleCash account is done through your bank’s mobile banking.",
       "searchKeywords": ""
     },
     {
       "question": "What is a PIN?",
-      "htmlAnswer": "<br> The PIN (Personal Identification Number) is the key to your TeleCash account and it will be necessary every time you want to perform a transaction on TeleCash. We recommend that you memorize it so that you keep it secret. Never share it with anyone.   You should never give up your PIN to an agent, telecel personnel or anyone else. Your PIN is yours and yours alone.",
+      "htmlAnswer": "<br>The PIN (Personal Identification Number) is the key to your TeleCash account and it will be necessary every time you want to perform a transaction on TeleCash. We recommend that you memorize it so that you keep it secret. Never share it with anyone.   You should never give up your PIN to an agent, telecel personnel or anyone else. Your PIN is yours and yours alone.",
       "searchKeywords": ""
     },
     {
       "question": "Can I convert my telecel airtime and use it to top up my TeleCash account",
-      "htmlAnswer": "<br> No. Your TeleCash account is completely separate from your telecel airtime. You cannot buy TeleCash value using airtime. However, you can use your TeleCash value to buy telecel prepaid airtime for your own or another telecel subscriber’s phone. telecel subscribers do not need to be registered for TeleCash to receive airtime from you.",
+      "htmlAnswer": "<br>No. Your TeleCash account is completely separate from your telecel airtime. You cannot buy TeleCash value using airtime. However, you can use your TeleCash value to buy telecel prepaid airtime for your own or another telecel subscriber’s phone. telecel subscribers do not need to be registered for TeleCash to receive airtime from you.",
       "searchKeywords": ""
     },
     {
       "question": "Can I use TeleCash to top up a NetOne/Econet number?",
-      "htmlAnswer": "<br> No. At present, you can only buy prepaid airtime for telecel numbers. However, you can send money to an Econet/NetOne subscriber.",
+      "htmlAnswer": "<br>No. At present, you can only buy prepaid airtime for telecel numbers. However, you can send money to an Econet/NetOne subscriber.",
       "searchKeywords": ""
     },
     {
@@ -257,24 +257,17 @@
     },
     {
       "question": "Does TeleCash work across networks?",
-      "htmlAnswer": "<br> YES, a registered telecash customer can send money to any mobile number across all networks. The person you are sending money to does not need to have a telecash account or be a telecel subscriber. However, only telecel customers can register for telecash. The telecash service is cheaper if you send money to a registered telecash customer.",
+      "htmlAnswer": "<br>YES, a registered telecash customer can send money to any mobile number across all networks. The person you are sending money to does not need to have a telecash account or be a telecel subscriber. However, only telecel customers can register for telecash. The telecash service is cheaper if you send money to a registered telecash customer.",
       "searchKeywords": ""
     },
     {
       "question": "Is the process of sending money different when the receiver is not registered for TeleCash?",
-      "htmlAnswer": "<br> No. The process of sending money is the same when sending to both registered and unregistered subscribers. However, when you send money to an unregistered subscriber you are supposed to also send them the secret code for the transaction that you will receive through SMS. They will need it when they cash out the money at an agent.",
+      "htmlAnswer": "<br>No. The process of sending money is the same when sending to both registered and unregistered subscribers. However, when you send money to an unregistered subscriber you are supposed to also send them the secret code for the transaction that you will receive through SMS. They will need it when they cash out the money at an agent.",
       "searchKeywords": ""
     },
     {
       "question": "What are the advantages of being a TeleCash customer?",
-      "htmlAnswer": "<br> A customer who has registered for telecash at an authorized telecash agent is able to carry out all the services described above. An unregistered customer can only get the cash sent to him/her but cannot carry out other telecash transactions.",
-      "searchKeywords": ""
-    }
-  ],
-  "Subscriber registration": [
-    {
-      "htmlAnswer": "<br>• all subscribers are required at law to register their lines, both prepaid and post<br>• paid. <br>• lines without any details against them will be disconnected from the network. <br>• essential details required include the following outlined below, presented together with ID particulars and proof of residence like a utility bill.",
-      "question": "How do i reduce data usage on Windows",
+      "htmlAnswer": "<br>A customer who has registered for telecash at an authorized telecash agent is able to carry out all the services described above. An unregistered customer can only get the cash sent to him/her but cannot carry out other telecash transactions.",
       "searchKeywords": ""
     }
   ],

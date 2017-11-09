@@ -1,15 +1,6 @@
-document.addEventListener("deviceready", function () {
-    var permissions = cordova.plugins.permissions;
-    permissions.hasPermission(permissions.SEND_SMS, function (status) {
-        if (!(status.hasPermission)) {
-            permissions.requestPermission(permissions.SEND_SMS, function () {
-
-            }, function () {
-                alert("Could not get permission to send SMS.");
-            });
-        }
-    });
-}, false);
+$(document).on("pageshow", "#pgServiceShortcodes", function (event) {
+    $("#ancGoToUSSD").trigger("click");
+});
 
 //global variables
 var uri = "../www/json/shortcodes.json";
@@ -87,6 +78,7 @@ function getShortcodesList() {
 }
 
 function smsNumber(textAreaWithMsg, sendTo) {
+
     var txtMsg = $("#" + textAreaWithMsg).val().trim();
     if (sendTo.indexOf(";") >= 0) {
         sendTo = sendTo.split(";");
@@ -94,14 +86,38 @@ function smsNumber(textAreaWithMsg, sendTo) {
             sendTo[i] = sendTo[i].trim();
         }
     }
-    if (SMS) SMS.sendSMS(sendTo, txtMsg,
-        function alertMessageSent() {
-            alert("Your message has been sent! Please await your response.");
-            $('.ui-popup').popup('close');
-        }, function (str) {
-            alert("Your message could not be sent. Please try again later.");
+
+    var permissions = cordova.plugins.permissions;
+    permissions.hasPermission(permissions.SEND_SMS, function (status) {
+        if (!(status.hasPermission)) {
+            permissions.requestPermission(permissions.SEND_SMS, function () {
+                //send actual sms NOW
+                if (SMS) SMS.sendSMS(sendTo, txtMsg,
+                    function alertMessageSent() {
+                        $('.ui-popup').popup('close');
+                        alert("Your message has been sent! Please await your response.");
+                    }, function (str) {
+                        alert("Your message could not be sent. Please try again later.");
+                    }
+                );
+
+            }, function () {
+                alert("Could not get permission to send SMS.");
+            });
+        } else {
+            //send actual sms
+            if (SMS) SMS.sendSMS(sendTo, txtMsg,
+                function alertMessageSent() {
+                    $('.ui-popup').popup('close');
+                    alert("Your message has been sent! Please await your response.");
+                }, function (str) {
+                    alert("Your message could not be sent. Please try again later.");
+                }
+            );
+
         }
-    );
+    });
+
 }
 
 function addSMSDiv(popupDivId, title, dialCode) {
@@ -138,11 +154,12 @@ function getEnteredParamsAndDial(strInputsEntered, dialCode) {
     for (var i = 0; i < dialParts.length; i++) {
         numberToCallWithParams += dialParts[i];
         if (i !== (dialParts.length - 1)) {
-            if ($("#" + strInputsEnteredArray[i].toString()).trim().val() === "") {
+            if ($("#" + (strInputsEnteredArray[i].toString())).val().trim() === "") {
                 alert("Please enter all values!");
                 return;
             } else {
-                numberToCallWithParams += $("#" + strInputsEnteredArray[i].toString()).trim().val();
+                $('.ui-popup').popup('close');
+                numberToCallWithParams += $("#" + strInputsEnteredArray[i].toString()).val().trim();
             }
         }
     }
