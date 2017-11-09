@@ -130,19 +130,22 @@ function doAjax(regmobile,product,selfother,othernumber) {
             dataType:"json",
 
             success:function (result) {
-                var data=JSON.parse(JSON.stringify(result));
-                var msg=data.commercialDescription
-                navigator.notification.alert(msg,null,"Bundle Purchase","OK")
-                console.log(result)
+                var err=JSON.parse(JSON.stringify(result))
+                var resp=JSON.parse(JSON.stringify(err.responseJSON)).commercialDescription;
+                console.log(resp)
+                navigator.notification.alert(resp,null,"\nBundle Purchase","OK")
             },
             failure: function (fail) {
-                alert("FAILURE :"+fail)
-                //console.log(fail.responseText)
+                var err=JSON.parse(JSON.stringify(fail))
+                var resp=JSON.parse(JSON.stringify(err.responseJSON)).commercialDescription;
+                console.log(resp)
+                navigator.notification.alert(resp,null,"\nBundle Purchase","OK")
             },
             error:function (error) {
                 var err=JSON.parse(JSON.stringify(error))
-                alert(err.statusText)
-                console.log(err)
+                var resp=JSON.parse(JSON.stringify(err.responseJSON)).commercialDescription;
+                console.log(resp)
+                navigator.notification.alert(resp,null,"\nBundle Purchase","OK")
             }
         });
     }
