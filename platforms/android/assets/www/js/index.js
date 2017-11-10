@@ -7,11 +7,12 @@ var shop;
 var latlon;
 var directionsDisplay;
 var directionsService;
+var user;
 
 
 $(document).on( "deviceready", function() {
     try{
-        NativeStorage.getItem("user",function (data) {},
+        NativeStorage.getItem("user",function (data) {user=data},
             function (error) {
             $.mobile.changePage("#pgInitialLogin");
             console.log("ERROR:"+error)
@@ -45,16 +46,16 @@ function confirmCallback(choice) {
 
 $(document).on({
     ajaxSend: function () {
-        $(".spinner").css("display","block");
+        $("#custom-spinner").css("display","block");
     },
     ajaxStart: function () {
-        $(".spinner").css("display","block");
+       $("#custom-spinner").css("display","block");
     },
     ajaxStop: function () {
-        $(".spinner").css("display","none");
+       $("#custom-spinner").css("display","none");
     },
     ajaxError: function () {
-        $(".spinner").css("display","none");
+        $("#custom-spinner").css("display","none");
     }
 });
 

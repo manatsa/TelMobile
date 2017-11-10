@@ -23,7 +23,7 @@
         <allow-intent href="itms-apps:*" />
     </platform>
     <preference name="StatusBarBackgroundColor" value="#9e191d" />
-    <engine name="android" spec="^6.3.0" />
+    <engine name="android" spec="^6.4.0" />
     <engine name="ios" spec="^4.5.3" />
     <engine name="windows" spec="^5.0.0" />
     <plugin name="cordova-plugin-android-permissions" spec="^1.0.0" />

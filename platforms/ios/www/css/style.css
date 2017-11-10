@@ -56,18 +56,18 @@ Additional classes added
 .back-arrow {
     float: left;
     vertical-align: middle;
-    padding: 3px 15px 5px 15px;
+    padding: 8px 15px 5px 15px;
 }
 
 .header-options-link {
     float: right;
     font-size: 18px !important;
     vertical-align: middle;
-    padding: 3px 20px 5px 15px;
+    padding: 8px 20px 5px 15px;
 }
 
 /*for true center in header*/
-.align-text-center, .align-text-center td, align-text-center th {
+.align-text-center, .align-text-center td, .align-text-center th {
     text-align: center !important;
 }
 
@@ -105,13 +105,19 @@ Additional classes added
 }
 
 .main-menu-icon {
+    object-fit: cover !important;
     height: 32px;
+}
+
+#telecash-icon {
+    width: 80%;
 }
 
 #divMainMenu .custom-ui-block-a, #divMainMenu .custom-ui-block-b, #divMainMenu .custom-ui-block-c {
     float: none;
-    margin-right: 1.5%;
-    margin-left: 1.5%;
+    margin: 0 !important;
+    border: 1px solid #dfdfdf;
+    box-sizing: border-box;
 }
 
 /*For responsive main menu*/
@@ -123,29 +129,33 @@ Additional classes added
     }
 
     .main-menu-icon {
-        height: 64px;
+        height: 64px !important;
+    }
+
+    #divTelecashImageWrapper {
+        height: 68px !important;
+        margin: 0 !important;
+        padding: 0 !important;
     }
 
     #divMainMenu .custom-ui-block-a:nth-child(odd), #divMainMenu .custom-ui-block-b:nth-child(odd), #divMainMenu .custom-ui-block-c:nth-child(odd) {
         float: left;
-        width: 45.50%;
-        margin-right: 1.5%;
-        margin-left: 1.5%;
+        width: 49.999%;
+        margin: 0;
     }
 
     #divMainMenu .custom-ui-block-a:nth-child(even), #divMainMenu .custom-ui-block-b:nth-child(even), #divMainMenu .custom-ui-block-c:nth-child(even) {
         float: right;
-        width: 45.50%;
-        margin-right: 1.5%;
-        margin-left: 1.5%;
+        width: 49.999%;
+        margin: 0;
     }
 
     #divMainMenu .custom-ui-block-a:nth-child(even), #divMainMenu .custom-ui-block-b:nth-child(even), #divMainMenu .custom-ui-block-c:nth-child(even) {
         float: right;
-        width: 45.50%;
-        margin-right: 1.5%;
-        margin-left: 1.5%;
+        width: 49.999%;
+        margin: 0;
     }
+
 }
 
 @media all and (min-width: 36em) {
@@ -157,33 +167,34 @@ Additional classes added
 
     #divMainMenu .custom-ui-block-a {
         float: left !important;
-        width: 30% !important;
-        margin-right: 1.5% !important;
-        margin-left: 1.5% !important;
+        width: 33.333% !important;
+        margin: 0;
     }
 
     #divMainMenu .custom-ui-block-b {
         float: left !important;
-        width: 30% !important;
-        margin-right: 1.5% !important;
-        margin-left: 1.5% !important;
+        width: 33.333% !important;
+        margin: 0;
     }
 
     #divMainMenu .custom-ui-block-c {
         float: left !important;
-        width: 30% !important;
-        margin-right: 1.5% !important;
-        margin-left: 1.5% !important;
+        width: 33.333% !important;
+        margin: 0;
     }
 
     .main-menu-icon {
-        height: 128px;
+        height: 128px !important;
     }
 
 }
 
 .red-text {
     color: #C1272D !important;
+}
+
+.blue-text {
+    color: #8896ff !important;
 }
 
 .white-text {
@@ -195,11 +206,11 @@ Additional classes added
 }
 
 .div-red-background {
-    background-color: #C1272D;
+    background-color: #C1272D !important;
     /*border: 1px solid #6A1518;*/
-    color: #FFF;
-    text-shadow: 0px 1px 0px #444;
-    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+    color: #FFF !important;
+    text-shadow: 0px 1px 0px #444 !important;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2) !important;
 }
 
 .div-grey-background {
@@ -238,11 +249,6 @@ footer {
     width: 95px;
     padding-bottom: 15px !important;
     padding-top: 15px !important;
-}
-
-footer .ui-grid-c {
-    margin-right: 3%;
-    margin-left: 3%;
 }
 
 .add-btn-dlg-panel {
@@ -362,6 +368,7 @@ a.ui-mini.ui-btn {
 
 }
 
+/*FAQ Collapse start*/
 .ui-li-static.ui-collapsible > .ui-collapsible-heading {
     margin: 0;
 }
@@ -378,41 +385,10 @@ a.ui-mini.ui-btn {
     border-bottom-width: 0;
 }
 
-/*Background image*/
-.back_img {
-
-}
+/*FAQ Collapse end*/
 
 .mapLoading {
     background: url('images/ajax-loader.gif') center center no-repeat;
-    background-size: 5em 5em;
-}
-
-#floating-panel {
-    position: absolute;
-    top: 10vh;
-    left: 70%;
-    z-index: 5;
-    color: red;
-    width:30%;
-    background-color: transparent;
-    padding: 0px;
-    text-align: center;
-    font-family: 'Roboto','sans-serif';
-    text-transform: none;
-}
-
-
-.spinner {
-    position: absolute;
-    top: 40vh;
-    left: 45%;
-    z-index: 6;
-    background-color: transparent;
-    background: url("images/ajax-loader.gif");
-    width: 100px;
-    height: 100px;
-    
 }
 
 .hideBorderFirstListview li:last-of-type {
@@ -424,7 +400,7 @@ a.ui-mini.ui-btn {
         font-size: 9px;
     }
     100% {
-        font-size: 30px;
+        font-size: 16px;
     }
 }
 
@@ -435,3 +411,43 @@ a.ui-mini.ui-btn {
     animation-direction: alternate;
 }
 
+#ppUnsubscribeFromBundle-popup {
+    width: 80%;
+    left: 10%;
+    right: 10%
+}
+
+footer .ui-grid-c {
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+/*//this works for large screens when items in menu are exactly 12!!!*/
+@media (min-height: 800px) and (min-width: 36em) {
+
+    #divMainMenu .custom-ui-block-a {
+        float: left !important;
+        height: 23vh !important;
+        margin: 0;
+    }
+
+    #divMainMenu .custom-ui-block-b {
+        float: left !important;
+        height: 23vh !important;
+        margin: 0;
+    }
+
+    #divMainMenu .custom-ui-block-c {
+        float: left !important;
+        height: 23vh !important;
+        margin: 0;
+    }
+
+}
+
+.ui-faq-active {
+    background-color: #eaeaea !important /*{b-bdown-background-color}*/;
+    border-color: #808080 !important /*{b-bdown-border}*/;
+    color: #000000 !important /*{b-bdown-color}*/;
+    text-shadow: 0 /*{b-bdown-shadow-x}*/ 1px /*{b-bdown-shadow-y}*/ 0 /*{b-bdown-shadow-radius}*/ #eeeeee /*{b-bdown-shadow-color}*/ !important;
+}

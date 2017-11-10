@@ -10,7 +10,8 @@
     "author": "Telecel VAS Team",
     "license": "Apache-2.0",
     "dependencies": {
-        "cordova-android": "^6.3.0",
+        "android-versions": "^1.2.1",
+        "cordova-android": "^6.4.0",
         "cordova-ios": "^4.5.3",
         "cordova-plugin-android-permissions": "^1.0.0",
         "cordova-plugin-call-number": "^1.0.1",

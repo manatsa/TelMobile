@@ -213,7 +213,8 @@ html .ui-alt-icon .ui-radio-off:after {
 /* Loader */
 .ui-icon-loading {
 	background: url("images/ajax-loader.gif");
-	background-size: 10em 10em;
+	/*background-size: 2.875em 2.875em;*/
+	background-size: 4.875em 4.875em;
 }
 /* Swatches */
 /* A
@@ -319,8 +320,8 @@ html .ui-bar-a .ui-btn:active,
 html .ui-body-a .ui-btn:active,
 html body .ui-group-theme-a .ui-btn:active,
 html head + body .ui-btn.ui-btn-a:active {
-	background-color: #8a170f /*{a-bdown-background-color}*/;
-	border-color: #4c0a05 /*{a-bdown-border}*/;
+	background-color: #c1272d /*{a-bdown-background-color}*/;
+	border-color: #6a1518 /*{a-bdown-border}*/;
 	color: #ffffff /*{a-bdown-color}*/;
 	text-shadow: 0 /*{a-bdown-shadow-x}*/ 1px /*{a-bdown-shadow-y}*/ 0 /*{a-bdown-shadow-radius}*/ #444444 /*{a-bdown-shadow-color}*/;
 }
@@ -516,10 +517,10 @@ html .ui-bar-b .ui-slider-track .ui-btn-active,
 html .ui-body-b .ui-slider-track .ui-btn-active,
 html body .ui-group-theme-b .ui-slider-track .ui-btn-active,
 html body div.ui-slider-track.ui-body-b .ui-btn-active {
-	background-color: #c1272d /*{b-active-background-color}*/;
-	border-color: #6a1518 /*{b-active-border}*/;
-	color: #ffffff /*{b-active-color}*/;
-	text-shadow: 0 /*{b-active-shadow-x}*/ 1px /*{b-active-shadow-y}*/ 0 /*{b-active-shadow-radius}*/ #444444 /*{b-active-shadow-color}*/;
+	background-color: #c1272d /*{a-bhover-background-color}*/;
+	border-color: #6a1518 /*{a-bhover-border}*/;
+	color: #ffffff /*{a-bhover-color}*/;
+	text-shadow: 0 /*{a-bhover-shadow-x}*/ 1px /*{a-bhover-shadow-y}*/ 0 /*{a-bhover-shadow-radius}*/ #444444 /*{a-bhover-shadow-color}*/;
 }
 /* Active radio button icon */
 .ui-page-theme-b .ui-radio-on:after,
