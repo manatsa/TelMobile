@@ -76,6 +76,11 @@
       "params": ""
     },
     {
+      "title": "Mobile banking",
+      "dialCode": "*199#",
+      "params": ""
+    },
+    {
       "title": "SMS Bundles",
       "dialCode": "*404#",
       "params": ""

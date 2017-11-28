@@ -20,33 +20,35 @@
     <link rel="stylesheet" href="css/style.css">
 
     <!--JQuery javascript-->
+    <!--<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>-->
     <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <script src="js/tabs-fix.js"></script>
-    <script type="text/javascript" src="js/moments.js"></script>
+    <script src="js/libraries/moments.js"></script>
+    <script src="js/libraries/jquery.blockUI.js"></script>
+
 </head>
 <body>
 
 <!-- TODO: DISABLE IF IMPORTANT UPDATE PRESENT, OTTHERWISE SHOW MESSAGE -->
+<!-- TODO: MAX PIN TRIES-->
 
 <!----------------------------------------   Main Page/Start Page ---------------------------------------------------->
 <!----------------------------------------   Main Page/Start Page ---------------------------------------------------->
-<!----------------------------------------   Main Page/Start Page ---------------------------------------------------->
-<!----------------------------------------   Main Page/Start Page ---------------------------------------------------->
-<section data-role="page" class="ui-page-theme-a" id="pgMain">
+<section data-role="page" class="ui-page-theme-a with-footer" id="pgMain">
 
     <!-- Header -->
     <header data-role="header" class="ui-bar" data-position="fixed">
         <div class="align-text-center header-text-with-logo-padding">
             <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
             <h1 class="header-text-with-logo">&nbsp;Telecel</h1>
-            <a class="header-options-link" href="#ppOptionsMain" data-rel="popup"><i class="fa fa-ellipsis-v"
-                                                                                     aria-hidden="true"></i></a>
+            <a class="header-options-link" href="#ppOptionsMain" data-transition="slide" data-rel="popup"><i
+                    class="fa fa-ellipsis-v"
+                    aria-hidden="true"></i></a>
         </div>
     </header>
     <div data-role="popup" id="ppOptionsMain" data-theme="b">
         <ul data-role="listview" data-inset="true" style="min-width:210px;">
-            <li data-icon="false"><a href="#pgChangePIN">Change PIN</a></li>
             <li data-icon="false"><a href="#">Logout</a></li>
         </ul>
     </div>
@@ -55,45 +57,24 @@
     <div data-role="main">
         <div id="divMainMenu">
 
-            <a data-transition="flip" href="#pgBundlesPurchase">
-                <div class="custom-ui-block-a div-red-background align-text-center menu-icons-margin">
+            <a onclick="checkInternetAndGoToPage('#pgBundlesPurchase');">
+                <div class="custom-ui-block-b div-red-background align-text-center menu-icons-margin">
                     <img class="main-menu-icon" src="img/menu_icons/buyproduct.png"/>
                     <p>Buy Product</p>
                 </div>
             </a>
 
-            <a data-transition="flip" href="#pgTelecash">
-                <div class="custom-ui-block-b div-red-background align-text-center menu-icons-margin">
-                    <img class="main-menu-icon" id="telecash-icon" src="img/menu_icons/telecash.png"/>
-                    <p>Mobile Money</p>
-                </div>
-            </a>
-
-            <a data-transition="flip" href="#pgAirtimePurchase">
+            <a onclick="checkInternetAndGoToPage('#pgAirtimePurchase');">
                 <div class="custom-ui-block-c div-red-background align-text-center menu-icons-margin">
                     <img class="main-menu-icon" src="img/menu_icons/buyairtime.png"/>
-                    <p>Buy/Send airtime</p>
+                    <p>Buy/send airtime</p>
                 </div>
             </a>
 
-            <a data-transition="flip" href="#pgBalances">
+            <a onclick="checkInternetAndGoToPage('#pgBalances');">
                 <div class="custom-ui-block-a div-red-background align-text-center menu-icons-margin">
                     <img class="main-menu-icon" src="img/menu_icons/balance.png"/>
                     <p>Balance check</p>
-                </div>
-            </a>
-
-            <a data-transition="flip" href="#pgSelfService">
-                <div class="custom-ui-block-b div-red-background align-text-center menu-icons-margin">
-                    <img class="main-menu-icon" src="img/menu_icons/SelfService.png"/>
-                    <p>Self service</p>
-                </div>
-            </a>
-
-            <a data-transition="flip" href="#pgPromotions">
-                <div class="custom-ui-block-c div-red-background align-text-center menu-icons-margin">
-                    <img class="main-menu-icon" src="img/menu_icons/promotions.png"/>
-                    <p>Promotions</p>
                 </div>
             </a>
 
@@ -104,6 +85,13 @@
                 </div>
             </a>
 
+            <a onclick="checkInternetAndGoToPage('#pgPromotions');">
+                <div class="custom-ui-block-c div-red-background align-text-center menu-icons-margin">
+                    <img class="main-menu-icon" src="img/menu_icons/promotions.png"/>
+                    <p>Promotions</p>
+                </div>
+            </a>
+
             <a data-transition="flip" href="#pgShopsList">
                 <div class="custom-ui-block-b div-red-background align-text-center menu-icons-margin">
                     <img class="main-menu-icon" src="img/menu_icons/locations.png"/>
@@ -111,11 +99,24 @@
                 </div>
             </a>
 
-
             <a data-transition="flip" href="#pgServices">
                 <div class="custom-ui-block-c div-red-background align-text-center menu-icons-margin">
                     <img class="main-menu-icon" src="img/menu_icons/services.png"/>
                     <p>Services</p>
+                </div>
+            </a>
+
+            <a data-transition="flip" href="#pgAppSettings">
+                <div class="custom-ui-block-b div-red-background align-text-center menu-icons-margin">
+                    <img class="main-menu-icon" src="img/menu_icons/settings.png"/>
+                    <p>App Settings</p>
+                </div>
+            </a>
+
+            <a data-transition="flip" href="#pgSelfService">
+                <div class="custom-ui-block-b div-red-background align-text-center menu-icons-margin">
+                    <img class="main-menu-icon" src="img/menu_icons/self-service.png"/>
+                    <p>Self service</p>
                 </div>
             </a>
 
@@ -147,38 +148,100 @@
 
 </section>
 
+<!---------------------------------------------- Welcome ---------------------------------------------------->
+<!---------------------------------------------- Welcome ---------------------------------------------------->
+<section data-role="page" class="div-welcome-section align-text-center ui-page-theme-c" id="pgWelcome1">
+    <div data-role="main" class="ui-content">
+        <img style="width: 40%; margin-right: auto; margin-left: auto; "
+             src="img/icons/telecel_logo_big_white_border.png"/>
+        <h1 style="margin-top: 10px;">Telecel Mobile App</h1>
+        <p style="margin-top: 30px; margin-bottom: 0;" class="initcap">Welcome to the Telecel Mobile
+            Application.</p>
+        <p style="margin-top: 15px; margin-bottom: 0;" class="initcap">Scroll through to see some of the
+            convenient features this app offers. When you're ready, just tap the 'Begin' button.</p>
+    </div>
+</section>
+<section data-role="page" class="div-welcome-section align-text-center ui-page-theme-c" id="pgWelcome2">
+    <div data-role="main" class="ui-content">
+        <img style="max-height: 120px; margin-right: auto; margin-left: auto; "
+             src="img/icons/zero-rating.png"/>
+        <h1 style="margin-top: 10px;" class="initcap">Zero-rated</h1>
+        <p style="margin-top: 15px; margin-bottom: 0;" class="initcap">
+            The Telecel App Mobile is free to access for all regiustered Telecel subscribers.
+        </p>
+    </div>
+</section>
+<section data-role="page" class="div-welcome-section align-text-center ui-page-theme-c" id="pgWelcome3">
+    <div data-role="main" class="ui-content">
+        <img style="max-height: 120px; margin-right: auto; margin-left: auto; "
+             src="img/menu_icons/buyairtime.png"/>
+        <h1 style="margin-top: 10px;" class="initcap">Convenience</h1>
+        <p style="margin-top: 15px; margin-bottom: 0;" class="initcap">
+            Buy airtime or products in a reliable, convenient way. You can also send airtime to friends and
+            relatives.
+        </p>
+    </div>
+</section>
+<section data-role="page" class="div-welcome-section align-text-center ui-page-theme-c" id="pgWelcome4">
+    <div data-role="main" class="ui-content">
+        <img style="max-height: 120px; margin-right: auto; margin-left: auto; "
+             src="img/icons/SelfService.png"/>
+        <h1 style="margin-top: 10px;" class="initcap">Self service</h1>
+        <p style="margin-top: 15px; margin-bottom: 0;" class="initcap">
+            Manage your subscriber account easily by tapping a single button. Subscribe to a service, check your
+            balance, find an answer to frequently
+            asked questions, and more.
+        </p>
+    </div>
+</section>
+<section data-role="page" class="div-welcome-section align-text-center ui-page-theme-c" id="pgWelcome5">
+    <div data-role="main" class="ui-content">
+        <img style="max-height: 120px; margin-right: auto; margin-left: auto; "
+             src="img/icons/promotions.png"/>
+        <h1 style="margin-top: 10px;" class="initcap">Promotions</h1>
+        <p style="margin-top: 15px; margin-bottom: 0;" class="initcap">
+            Stay tuned with the latest promotions to get best value for your money.
+        </p>
+    </div>
+</section>
 
 <!---------------------------------------------- Initial Login ---------------------------------------------------->
 <!---------------------------------------------- Initial Login ---------------------------------------------------->
-<section data-role="page" class="ui-page-theme-c" id="pgInitialLogin">
+<section data-role="page" class="ui-page-theme-a" id="pgInitialLogin">
 
-    <div data-role="main" class="ui-panel-page-container-e ui-content align-text-center">
+    <div data-role="main" style="height: 90vh !important;"
+         class="ui-panel-page-container-e ui-content align-text-center">
 
-        <img style="width: 40%; margin-top: 80px;" src="img/icons/telecel_logo_big_white_border.png"/>
+        <img style="width: 40%; margin-right: auto; margin-left: auto;"
+             src="img/icons/telecel_logo_big.png"/>
+        <h1>Telecel Mobile App</h1>
 
-        <h1>
-            Telecel Mobile App
-        </h1>
-
-        <p style="margin-top: 30px;" class="initcap">To begin using the app, enter your mobile number.</p>
+        <p style="margin-top: 30px; margin-bottom: 0;" class="initcap">Enter your mobile number.</p>
 
         <input type="tel" id="txtInitialLoginMSISDN" required="required" inputmode="numeric"
-               placeholder="Enter mobile number e.g. 0732123123" class="ui-full-width"/>
+               placeholder="e.g. 0732123123" class="ui-full-width"/>
 
-        <p class="initcap wrap-input-for-margins-15px">Enter your email which shall be used to recover PIN.</p>
+        <p class="initcap wrap-input-for-margins-15px" style="margin-bottom: 0;">Enter your e-mail which shall
+            be used
+            to
+            recover your PIN.</p>
         <input type="email" id="txtInitialLoginEmail"
-               placeholder="Enter your email" class="ui-full-width"/>
+               placeholder="e.g. you@telecel.co.zw" class="ui-full-width"/>
 
-        <p class="initcap wrap-input-for-margins-15px">Enter a PIN to use for this app to secure</p>
-        <input type="tel" id="txtInitialLoginPIN" required="required" inputmode="numeric"
-               placeholder="Enter 4 digit PIN e.g. 1234" class="ui-full-width"/>
+        <p class="initcap wrap-input-for-margins-15px" style="margin-bottom: 0;">Enter a 4 digit PIN to use for
+            this
+            app</p>
+        <input id="txtInitialLoginPIN" maxlength="4"
+               type="tel" style="-webkit-text-security: disc;" pattern="[0-9]*" inputmode="numeric"
+               placeholder="e.g. 1234" class="ui-full-width"/>
 
-        <p class="initcap wrap-input-for-margins-15px">Enter a PIN to use for this app</p>
-        <input type="tel" id="txtInitialLoginPINReEnter" required="required" inputmode="numeric"
-               placeholder="Repeat 4 digit PIN" class="ui-full-width"/>
+        <p class="initcap wrap-input-for-margins-15px" style="margin-bottom: 0;">Repeat your PIN</p>
+        <input id="txtInitialLoginPINReEnter" maxlength="4"
+               type="tel" style="-webkit-text-security: disc;" pattern="[0-9]*" inputmode="numeric"
+               placeholder="Repeat 4 digit PIN entered" class="ui-full-width"/>
 
-        <div class="wrap-input-for-margins-15px">
-            <a data-transition="flip" href="#" id="btnRegister" style="margin-top: 10px;"
+        <div id="divBtnRegisterContainer">
+            <a data-transition="flip" id="btnRegister" style="margin-top: 10px;"
                class="ui-btn ui-btn-c ui-corner-all">Register</a>
         </div>
 
@@ -186,10 +249,9 @@
 
 </section>
 
-
 <!-----------------------------------------------------  Forgot Password  ----------------------------------------------------->
 <!-----------------------------------------------------  Forgot Password  ----------------------------------------------------->
-<section data-role="page" id="pgForgotPassword" class="ui-page-theme-a with-footer">
+<section data-role="page" id="pgForgotPassword" class="ui-page-theme-a">
     <!-- Header -->
     <header data-role="header" class="ui-bar" data-position="fixed">
         <div class="align-text-center header-text-with-logo-padding">
@@ -208,56 +270,107 @@
     </div>
 </section>
 
-<!-------------------------------------    Products Page   ------------------------------------------------>
-<!-------------------------------------    Products Page   ------------------------------------------------>
-<section data-role="page" id="products_services_main" class="with-footer ui-page-theme-a back_img">
+<!-------------------------------------    Settings   ------------------------------------------------>
+<!-------------------------------------    Settings   ------------------------------------------------>
+<section data-role="page" id="pgAppSettings" class="ui-page-theme-a with-footer">
     <!-- Header -->
     <header data-role="header" class="ui-bar" data-position="fixed">
         <div class="align-text-center header-text-with-logo-padding">
             <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
-                    class="fa  fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
+                    class="fa fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
             <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
-            <h1 class="header-text-with-logo">&nbsp;Products</h1>
+            <h1 class="header-text-with-logo">&nbsp;Settings</h1>
+            <a class="header-options-link" href="#ppOptionsSettings" data-transition="slide" data-rel="popup"><i
+                    class="fa fa-ellipsis-v"
+                    aria-hidden="true"></i></a>
         </div>
     </header>
-    <div data-role="popup" id="ppProducts" data-theme="b">
+    <div data-role="popup" id="ppOptionsSettings" data-theme="b">
         <ul data-role="listview" data-inset="true" style="min-width:210px;">
-            <li data-icon="false"><a href="#pgMain">Back to Main Page</a></li>
-            <li data-icon="false"><a href="#pgForgotPassword">Recover Pin</a></li>
-            <li data-icon="false"><a href="#pgChangePIN">Change PIN</a></li>
+            <li data-icon="false"><a data-transition="flip" href="#pgMain">Back to Main Page</a></li>
             <li data-icon="false"><a href="#">Logout</a></li>
         </ul>
     </div>
     <!-- End of Header -->
+
     <div data-role="main" class="ui-content">
 
-        <ul data-role="listview" data-inset="true">
+        <ul data-inset="true" data-role="listview">
             <li>
-                <a data-transition="flip" href="#pgBundlesPurchase">Buy product
-                    <p class="initcap">Tap to purchase a product or service</p>
-                </a>
-            </li>
-            <li>
-                <a data-transition="flip" href="#pgAirtimePurchase">Buy airtime
-                    <p class="initcap">Tap to purchase airtime</p>
-                </a>
-            </li>
-            <li>
-                <a data-transition="flip" href="#pgBalances">Balance check
-                    <p class="initcap">Tap to select which balance to check</p>
-                </a>
-            </li>
-            <li>
-                <a data-transition="flip" href="#pgUnsubscribe">Unsubscribe from product
-                    <p class="initcap">Tap to unsubscribe from a product</p>
+                <a data-transition="flip" href="#pgChangePIN">Change App PIN
+                    <p class="initcap">Change the PIN used for this App</p>
                 </a>
             </li>
         </ul>
 
-
     </div>
+
 </section>
 
+
+<!-------------------------------------    Self service   ------------------------------------------------>
+<!-------------------------------------    Self service   ------------------------------------------------>
+<section data-role="page" id="pgSelfService" class="ui-page-theme-a with-footer">
+    <!-- Header -->
+    <header data-role="header" class="ui-bar" data-position="fixed">
+        <div class="align-text-center header-text-with-logo-padding">
+            <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
+                    class="fa fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
+            <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
+            <h1 class="header-text-with-logo">&nbsp;Self service</h1>
+            <a class="header-options-link" href="#ppOptionsSelfService" data-transition="slide" data-rel="popup"><i
+                    class="fa fa-ellipsis-v"
+                    aria-hidden="true"></i></a>
+        </div>
+    </header>
+    <div data-role="popup" id="ppOptionsSelfService" data-theme="b">
+        <ul data-role="listview" data-inset="true" style="min-width:210px;">
+            <li data-icon="false"><a data-transition="flip" href="#pgMain">Back to Main Page</a></li>
+            <li data-icon="false"><a href="#">Logout</a></li>
+        </ul>
+    </div>
+    <!-- End of Header -->
+
+    <div data-role="main" class="ui-content">
+
+        <ul data-inset="true" data-role="listview">
+            <li>
+                <a data-rel="popup" data-position-to="window"
+                   data-transition="pop" href="#ppUnsubscribeFromBundle">Unsubscribe bundle
+                    <p class="initcap">Unsubscribe from a bundle to remove it</p>
+                </a>
+            </li>
+        </ul>
+
+    </div>
+
+    <div data-role="popup" id="ppUnsubscribeFromBundle" data-overlay-theme="b" data-theme="b">
+        <a href="#" data-rel="back"
+           class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-left">Close</a>
+        <div data-role="header" data-theme="a"><h1>Unsubscribe?</h1></div>
+        <div class="ui-content">
+
+            <select data-theme="b" style="width: 80% !important;" id="cboUnsubscribeProduct">
+                <option disabled selected>Select a product</option>
+                <option value="W">WhatsApp Bundles</option>
+                <option value="F">Facebook Bundles</option>
+                <option value="M">Mega Boost Bundles</option>
+                <option value="N">Night Bundles</option>
+                <option value="D">Data Bundles</option>
+                <option value="T">Wifi Bundles</option>
+            </select>
+
+            <div class="wrap-input-for-margins-15px">
+                <a id="ancUnsubscribe" class="ui-btn ui-btn-a ui-corner-all"><i
+                        class="fa fa-ban" aria-hidden="true"></i>&nbsp;&nbsp;Unsubscribe
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
 
 <!-------------------------------------    Balances check   ------------------------------------------------>
 <!-------------------------------------    Balances check   ------------------------------------------------>
@@ -269,14 +382,15 @@
                     class="fa  fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
             <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
             <h1 class="header-text-with-logo">&nbsp;Balance</h1>
-            <a class="header-options-link" href="#ppOptionsBalances" data-rel="popup"><i class="fa fa-ellipsis-v"
-                                                                                         aria-hidden="true"></i></a>
+            <a class="header-options-link" href="#ppOptionsBalances" data-transition="slide" data-rel="popup"><i
+                    class="fa fa-ellipsis-v"
+                    aria-hidden="true"></i></a>
         </div>
     </header>
     <div data-role="popup" id="ppOptionsBalances" data-theme="b">
         <ul data-role="listview" data-inset="true" style="min-width:210px;">
-            <li data-icon="false"><a href="#pgMain">Back to Main Page</a></li>
-            <li data-icon="false"><a href="#pgChangePIN">Change PIN</a></li>
+            <li data-icon="false"><a data-transition="flip" href="#pgMain">Back to Main Page</a></li>
+
             <li data-icon="false"><a href="#">Logout</a></li>
         </ul>
     </div>
@@ -339,7 +453,7 @@
     <div data-role="main" class="ui-content">
 
         <div id="divBalancesCollapsibleSet" class='initcap' data-role="collapsibleset">
-
+            <div class='with-spinner'></div>
         </div>
 
     </div>
@@ -347,8 +461,7 @@
 </section>
 
 <!-------------------------------------    Help   ------------------------------------------------>
-<!-------------------------------------    Help   ------------------------------------------------>
-<section data-role="page" id="pgHelp" class="with-footer ui-page-theme-a">
+<section data-role="page" id="pgHelp" class="ui-page-theme-a with-footer">
     <!-- Header -->
     <header data-role="header" class="ui-bar" data-position="fixed">
         <div class="align-text-center header-text-with-logo-padding">
@@ -356,21 +469,20 @@
                     class="fa  fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
             <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
             <h1 class="header-text-with-logo">&nbsp;FAQ</h1>
-            <a class="header-options-link" href="#ppOptionsHelp" data-rel="popup"><i class="fa fa-ellipsis-v"
-                                                                                     aria-hidden="true"></i></a>
+            <a class="header-options-link" href="#ppOptionsHelp" data-transition="slide" data-rel="popup"><i
+                    class="fa fa-ellipsis-v"
+                    aria-hidden="true"></i></a>
         </div>
     </header>
     <div data-role="popup" id="ppOptionsHelp" data-theme="b">
         <ul data-role="listview" data-inset="true" style="min-width:210px;">
-            <li data-icon="false"><a href="#pgMain">Back to Main Page</a></li>
-            <li data-icon="false"><a href="#pgChangePIN">Change PIN</a></li>
+            <li data-icon="false"><a data-transition="flip" href="#pgMain">Back to Main Page</a></li>
             <li data-icon="false"><a href="#">Logout</a></li>
         </ul>
     </div>
     <!-- End of Header -->
 
-    <div data-role="main" class="ui-content">
-
+    <div id="divFAQ" data-role="main" class="ui-content">
 
         <form class="ui-filterable">
             <input id="txtSearchFAQ" placeholder="e.g. Airtime" data-type="search"/>
@@ -385,7 +497,7 @@
     </div>
 
     <div id="faqPopupDivs">
-        <div data-role="popup" id="ppFAQ" data-overlay-theme="b" data-theme="b" data-dismissible="true"
+        <div data-role="popup" id="ppFAQ" data-overlay-theme="b" data-theme="b"
              style="max-width:400px;">
             <a href="#" data-rel="back"
                class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-left">Close</a>
@@ -399,6 +511,7 @@
 
 </section>
 
+
 <!-------------------------------------    Bundles purchases   ------------------------------------------------>
 <!-------------------------------------    Bundles purchases   ------------------------------------------------>
 <section data-role="page" id="pgBundlesPurchase" class="with-footer ui-page-theme-a">
@@ -409,16 +522,24 @@
                     class="fa  fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
             <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
             <h1 class="header-text-with-logo">&nbsp;Products</h1>
-            <a class="header-options-link" href="#ppOptionsBundles" data-rel="popup"><i class="fa fa-ellipsis-v"
-                                                                                        aria-hidden="true"></i></a>
+            <a class="header-options-link" href="#ppOptionsBundles" data-transition="slide" data-rel="popup"><i
+                    class="fa fa-ellipsis-v"
+                    aria-hidden="true"></i></a>
         </div>
     </header>
-    <div data-role="popup" id="ppOptionsBundles" data-theme="b" >
+    <div data-role="popup" id="ppOptionsBundles" data-theme="b">
         <ul data-role="listview" data-inset="true" style="min-width:210px; background-color: transparent;">
-            <li style="background-color: transparent;" data-icon="false"><a style="background-color: transparent;" href="#pgMain">Back to Main Page</a></li>
-            <li style="background-color: transparent;" data-icon="false"><a style="background-color: transparent;" href="#pgForgotPassword">Recover Pin</a></li>
-            <li style="background-color: transparent;" data-icon="false"><a style="background-color: transparent;" href="#pgChangePIN">Change PIN</a></li>
-            <li style="background-color: transparent;" data-icon="false"><a style="background-color: transparent;" href="#">Logout</a></li>
+            <li style="background-color: transparent;" data-icon="false"><a style="background-color: transparent;"
+                                                                            data-transition="flip" href="#pgMain">Back
+                to Main Page</a></li>
+            <li style="background-color: transparent;" data-icon="false"><a style="background-color: transparent;"
+                                                                            href="#pgForgotPassword">Recover Pin</a>
+            </li>
+            <li style="background-color: transparent;" data-icon="false"><a style="background-color: transparent;"
+                                                                            data-transition="flip" href="#pgChangePIN">Change
+                PIN</a></li>
+            <li style="background-color: transparent;" data-icon="false"><a style="background-color: transparent;"
+                                                                            href="#">Logout</a></li>
         </ul>
     </div>
     <!-- End of Header -->
@@ -428,11 +549,12 @@
 
         <div data-role="tabs" id="divProductBundlePurchaseTabs">
 
-            <p class="align-text-center" style="margin-bottom: 0px; margin-top: 0px;">Select product type</p>
+            <p class="align-text-center" style="margin-bottom: 0; margin-top: 0;">Select product type</p>
 
             <div style="margin-bottom: 20px;" data-role="navbar" data-grid="b">
-                <ul class="tabs-corners">
-                    <li><a id="first-tab" href="#divVoiceBundles" class="ui-btn-b tabs-corners-first-child">Voice</a></li>
+                <ul id="ulBundlePurchaseProductTypes">
+                    <li><a id="first-tab" href="#divVoiceBundles" class="ui-btn-b tabs-corners-first-child">Voice</a>
+                    </li>
                     <li><a href="#divDataBundles" class="ui-btn-b">Data</a></li>
                     <li><a class="tabs-corners-last-child ui-btn-b" href="#divSMSBundles">SMS</a></li>
                 </ul>
@@ -440,44 +562,40 @@
 
 
             <div id="divDataBundles">
-                <select data-theme="b" onchange="populateBundles('cboBuyDataProduct')" id="cboBuyDataProduct">
-                    <option disabled selected>Select a data bundle product</option>
-                    <option value="W">WhatsApp Bundles</option>
-                    <option value="F">Facebook Bundles</option>
-                    <option value="M">Mega Boost Bundles</option>
-                    <option value="N">Night Bundles</option>
-                    <option value="D">Data Bundles</option>
-                    <!--<option value="T">Wifi Bundles</option>-->
+                <select data-theme="b" class="cboBundleType" onchange="populateBundles('cboBuyDataProduct')"
+                        id="cboBuyDataProduct">
                 </select>
             </div>
 
             <div id="divVoiceBundles">
-                <select data-theme="b" onchange="populateBundles('cboBuyVoiceProduct')" id="cboBuyVoiceProduct">
-                    <option disabled selected>Select a voice bundle product</option>
-                    <option value="I">International Voice Bundles</option>
-                    <!--<option value="O">On-Net Voice Bundles</option>-->
-                    <option value="CN">Cross-Net Bundles</option>
+                <select data-theme="b" class="cboBundleType" onchange="populateBundles('cboBuyVoiceProduct')"
+                        id="cboBuyVoiceProduct">
                 </select>
             </div>
 
             <div id="divSMSBundles">
-                <select data-theme="b" onchange="populateBundles('cboBuySMSProduct')" id="cboBuySMSProduct">
-                    <option disabled selected>Select a SMS bundle product</option>
-                    <option value="S">SMS Bundles</option>
+                <select data-theme="b" class="cboBundleType" onchange="populateBundles('cboBuySMSProduct')"
+                        id="cboBuySMSProduct">
                 </select>
             </div>
+
         </div>
 
-        <span id="lblBundleDescription" class="initcap hidden"></span>
 
-
+        <span id="lblProductDescription" class="initcap"></span>
 
         <div id="divBundleOptions">
-            <select onchange="showBuyForOther()" data-theme="b" id="cboBundleOptions">
+            <select onchange="showBuyForSectionAndBundleInfo()" data-theme="b" id="cboBundleOptions">
             </select>
         </div>
 
-        <div id="divBuyForOtherControlGroup" style="margin-top: 20px;" class="divBuyForOptions ui-grid-a"
+        <div id="divBundleHelp">
+            <span class="initcap"><span id="lblBundleDescription"></span>. </span>
+            <span class="initcap">Bundle is valid for <span class="bold-text" id="lblBundleValidity"></span>. </span>
+            <span class="initcap">Price is <b>(USD)$</b><span class="bold-text" id="lblBundlePrice"></span>. </span>
+        </div>
+
+        <div id="divBuyForOtherControlGroup" class="divBuyForOptions ui-grid-a"
              data-role="controlgroup"
              data-type="vertical">
             <label id="lblOptionForSelf" for="rdrOptionSelf">Buy for self
@@ -489,18 +607,20 @@
         </div>
 
         <div id="divBundleForNumber" style="margin-top: 20px;" class="input-with-icon half-width-custom">
-            <input type="tel" id="txtBundleForNumber" placeholder="e.g. 0732855785" inputmode="numeric"/>
+            <input type="tel" id="txtBundleForNumber" placeholder="e.g. 0732123123" inputmode="numeric"/>
             <i class="fa fa-mobile input-icon" aria-hidden="true"></i>
-            <button type="button" onclick="selectContact('txtBundleForNumber')" class="ui-btn-b ui-btn ui-shadow ui-corner-all"
-                    style="display: inline-block; width: 12%; margin: 0px;"><i class="fa fa-address-book" aria-hidden="true"></i>
+            <button onclick="selectContact('txtBundleForNumber')" type="button"
+                    class="ui-btn-b ui-btn ui-mini ui-shadow ui-corner-all"
+                    style="display: inline-block; width: 18%; margin: 0;">
+                <i class="fa fa-address-book" aria-hidden="true"></i>
             </button>
         </div>
 
         <div id="divPurchaseFromChoice" style="clear: both;">
-            <p class="align-text-center" style="margin-bottom: 0px">Purchase from</p>
+            <p class="align-text-center" style="margin-bottom: 0">Purchase from</p>
             <button style="width: 49%; display: inline-block; float: left;" id="btnPurchaseBundleFromCore"
                     class="ui-button ui-widget ui-corner-all uppercase"><i class="fa fa-arrow-circle-down"
-                                                                           aria-hidden="true"></i>&nbsp;&nbsp;Core
+                                                                           aria-hidden="true"></i>&nbsp;&nbsp;Wallet
             </button>
             <button style="width: 49%; display: inline-block; float: right;" id="btnPurchaseBundleFromTelecash"
                     class="ui-button ui-widget ui-corner-all uppercase"><i class="fa fa-arrow-circle-down"
@@ -508,11 +628,8 @@
             </button>
         </div>
 
-        <div class="spinner" style=" background-color: transparent; display: none">
-
-        </div>
-
     </div>
+
 </section>
 
 <!-------------------------------------    Airtime purchase   ------------------------------------------------>
@@ -525,14 +642,14 @@
                     class="fa  fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
             <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
             <h1 class="header-text-with-logo">&nbsp;Airtime</h1>
-            <a class="header-options-link" href="#ppOptionsAirtime" data-rel="popup"><i class="fa fa-ellipsis-v"
-                                                                                        aria-hidden="true"></i></a>
+            <a class="header-options-link" href="#ppOptionsAirtime" data-transition="slide" data-rel="popup"><i
+                    class="fa fa-ellipsis-v"
+                    aria-hidden="true"></i></a>
         </div>
     </header>
     <div data-role="popup" id="ppOptionsAirtime" data-theme="b">
         <ul data-role="listview" data-inset="true" style="min-width:210px;">
-            <li data-icon="false"><a href="#pgMain">Back to Main Page</a></li>
-            <li data-icon="false"><a href="#pgChangePIN">Change PIN</a></li>
+            <li data-icon="false"><a data-transition="flip" href="#pgMain">Back to Main Page</a></li>
             <li data-icon="false"><a href="#">Logout</a></li>
         </ul>
     </div>
@@ -552,7 +669,7 @@
         </div>
 
         <div id="divAirtimeForNumber" style="margin-top: 20px;" class="input-with-icon half-width-custom">
-            <input type="tel" id="txtAirtimeForNumber" placeholder="e.g. 0732855785" inputmode="numeric"/>
+            <input type="tel" id="txtAirtimeForNumber" placeholder="e.g. 0732123123" inputmode="numeric"/>
             <i class="fa fa-mobile input-icon" aria-hidden="true"></i>
             <button type="button" onclick="selectContact('txtAirtimeForNumber')"
                     class="ui-btn-b ui-btn ui-mini ui-shadow ui-corner-all align-text-center"
@@ -570,7 +687,7 @@
         </div>
 
         <div id="divAirtimePurchaseFromChoice" style="clear: both;">
-            <p class="align-text-center" style="margin-bottom: 0px">Purchase from</p>
+            <p class="align-text-center" style="margin-bottom: 0">Purchase from</p>
             <button id="btnAirtimeFromCore" type="button"
                     class="ui-button ui-widget ui-corner-all uppercase hidden"><i class="fa fa-arrow-circle-down"
                                                                                   aria-hidden="true"></i>&nbsp;&nbsp;Core
@@ -584,646 +701,9 @@
 
 </section>
 
-<!------------------------------------- Banking Services  ------------------------------------------------>
-<section data-role="page" id="pgBankingServices" class="with-footer ui-page-theme-a">
-    <!-- Header -->
-    <header data-role="header" class="ui-bar" data-position="fixed">
-        <div class="align-text-center header-text-with-logo-padding">
-            <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
-                    class="fa  fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
-            <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
-            <h1 class="header-text-with-logo">&nbsp;Banking Services</h1>
-            <a class="header-options-link" href="#ppOptionsBankingServices" data-rel="popup"><i class="fa fa-ellipsis-v"
-                                                                                                aria-hidden="true"></i></a>
-        </div>
-    </header>
-    <div data-role="popup" id="ppOptionsBankingServices" data-theme="b">
-        <ul data-role="listview" data-inset="true" style="min-width:210px;">
-            <li data-icon="false"><a href="#pgMain">Back to Main Page</a></li>
-            <li data-icon="false"><a href="#pgForgotPassword">Recover Pin</a></li>
-            <li data-icon="false"><a href="#pgChangePIN">Change PIN</a></li>
-            <li data-icon="false"><a href="#">Logout</a></li>
-        </ul>
-    </div>
-    <!-- End of Header -->
-
-
-    <div data-role="main" class="ui-content">
-
-        <form>
-
-            <select data-theme="b">
-                <option disabled selected>Select the recepient bank</option>
-                <option value="Agribank">Agribank</option>
-                <option value="BancABC">BancABC Zimbabwe</option>
-                <option value="Barclays">Barclays Zimbabwe</option>
-                <option value="CBZ">CBZ Bank Limited</option>
-                <option value="Ecobank">Ecobank Zimbabwe</option>
-                <option value="FBC">FBC Bank Limited</option>
-                <option value="MBCA">MBCA Bank Limited</option>
-                <option value="Metbank">Metbank</option>
-                <option value="Stanbic">Stanbic Bank Zimbabwe</option>
-                <option value="StanChart">Standard Chartered Zimbabwe</option>
-                <option value="NMB">NMB Bank Limited</option>
-                <option value="Steward">Steward Bank</option>
-                <option value="ZB">ZB Bank Limited</option>
-            </select>
-
-            <label style="margin-top: 20px;" for="txtReceiverBankAccNumber">Receiver account number</label>
-            <div class="input-with-icon">
-                <input type="tel" id="txtReceiverBankAccNumber"
-                       placeholder="Enter receiver acc number code e.g. 0200123012391" inputmode="numeric"
-                >
-                <i class="fa fa-mobile input-icon" aria-hidden="true"></i>
-            </div>
-
-            <label for="txtZipitMoneyAmount">Amount</label>
-            <div class="input-with-icon">
-                <input placeholder="Enter amount e.g. 0.56 or 2" type="tel" id="txtZipitMoneyAmount"
-                       inputmode="numeric"/>
-                <i class="fa fa-dollar dollar-icon" aria-hidden="true"></i>
-            </div>
-
-            <a href="#ppZipitMoney" style="margin-top: 20px;" data-rel="popup" data-position-to="window"
-               data-transition="pop"
-               class="ui-btn ui-corner-all"><i
-                    class="fa fa-arrow-circle-down" aria-hidden="true"></i>&nbsp;&nbsp;Send money
-            </a>
-            <div data-role="popup" id="ppZipitMoney" data-overlay-theme="b" data-theme="b" data-dismissible="false"
-                 style="max-width:400px;">
-                <div data-role="header" data-theme="a"><h1>Confirm</h1></div>
-                <div role="main" class="ui-content">
-                    <p>You are proceeding to send <b>$3</b> to <b>CBZ</b> Account Number <b>0123910921201</b>.<br/><br/>You
-                        will be charged <b>USD 0.40</b><br/><br/>Proceed?</p>
-                    <a href="#"
-                       class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b"
-                       data-rel="back">Proceed</a> <a href="#"
-                                                      class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b"
-                                                      data-rel="back"
-                                                      data-transition="flow">Cancel</a>
-                </div>
-            </div>
-
-
-        </form>
-    </div>
-
-</section>
-
-<!-------------------------------------    Gold Card   ------------------------------------------------>
-<section data-role="page" id="pgGoldCard" class="with-footer ui-page-theme-a">
-    <!-- Header -->
-    <header data-role="header" class="ui-bar" data-position="fixed">
-        <div class="align-text-center header-text-with-logo-padding">
-            <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
-                    class="fa  fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
-            <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
-            <h1 class="header-text-with-logo">&nbsp;Gold Card</h1>
-            <a class="header-options-link" href="#ppOptionsGoldCard" data-rel="popup"><i class="fa fa-ellipsis-v"
-                                                                                         aria-hidden="true"></i></a>
-        </div>
-    </header>
-    <div data-role="popup" id="ppOptionsGoldCard" data-theme="b">
-        <ul data-role="listview" data-inset="true" style="min-width:210px;">
-            <li data-icon="false"><a href="#pgMain">Back to Main Page</a></li>
-            <li data-icon="false"><a href="#pgForgotPassword">Recover Pin</a></li>
-            <li data-icon="false"><a href="#pgChangePIN">Change PIN</a></li>
-            <li data-icon="false"><a href="#">Logout</a></li>
-        </ul>
-    </div>
-    <!-- End of Header -->
-
-    <div class="ui-body-d ui-content div-red-background align-text-center"
-         style="padding-bottom: 10px; padding-top: 20px; ">
-        <h1 style="font-size: 15pt  !important;">Active card&nbsp;<a style="color: #fff;"
-                                                                     href="#ppGoldCardStatus"
-                                                                     data-rel="popup"><i
-                class="fa fa-info-circle icon-font-size-small" aria-hidden="true"></i></a></h1>
-        <span class="initcap balance-desc-font-size">Your card is ready to swipe</span>
-    </div>
-    <div data-role="popup" id="ppGoldCardStatus">
-        <p>Your card status is active.</p>
-    </div>
-
-    <div data-role="main" class="ui-content">
-
-        <div data-role="tabs" style="margin-top: 20px;">
-            <div data-role="navbar" data-grid="a">
-                <ul class="tabs-corners">
-                    <li><a href="#divCardStatus" class="ui-btn-b ui-btn-active tabs-corners-first-child">Card
-                        Status</a>
-                    </li>
-                    <li><a href="#divChangeGoldCardPIN" class="ui-btn-b">Reset PIN</a>
-                    </li>
-                </ul>
-            </div>
-
-            <div id="divCardStatus" class="wrap-input-for-margins-15px">
-                <button type="button"
-                        class="ui-btn ui-corner-all ui-shadow ui-btn-b">
-                    <i class="fa  fa-ban" aria-hidden="true"></i>&nbsp;Block Card
-                </button>
-            </div>
-
-            <div id="divChangeGoldCardPIN" class="wrap-input-for-margins-15px">
-                <input type="text" id="txtOldGoldCardPIN" value="" placeholder="Old Password" data-theme="a">
-                <div class="wrap-input-for-margins-15px">
-                    <input type="password" inputmode="numeric" id="txtNewGoldCardPIN"
-                           value="" placeholder="New PIN"
-                           data-theme="a">
-                </div>
-                <div class="wrap-input-for-margins-15px">
-                    <input type="password" inputmode="numeric"
-                           id="txtNewGoldCardPINConfirm" value=""
-                           placeholder="New PIN again"
-                           data-theme="a">
-                </div>
-                <button class="wrap-input-for-margins-15px" type="button"
-                        class="ui-btn ui-corner-all ui-shadow ui-btn-b">
-                    <i class="fa  fa-arrow-circle-down" aria-hidden="true"></i>&nbsp;Save
-                </button>
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!------------------------------------- Make payment ------------------------------------------------>
-<section data-role="page" id="pgMakePayment" class="with-footer ui-page-theme-a">
-    <!-- Header -->
-    <header data-role="header" class="ui-bar" data-position="fixed">
-        <div class="align-text-center header-text-with-logo-padding">
-            <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
-                    class="fa  fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
-            <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
-            <h1 class="header-text-with-logo">&nbsp;Make Payment</h1>
-            <a class="header-options-link" href="#ppOptionsMakePayment" data-rel="popup"><i class="fa fa-ellipsis-v"
-                                                                                            aria-hidden="true"></i></a>
-        </div>
-    </header>
-    <div data-role="popup" id="ppOptionsMakePayment" data-theme="b">
-        <ul data-role="listview" data-inset="true" style="min-width:210px;">
-            <li data-icon="false"><a href="#pgMain">Back to Main Page</a></li>
-            <li data-icon="false"><a href="#pgForgotPassword">Recover Pin</a></li>
-            <li data-icon="false"><a href="#pgChangePIN">Change PIN</a></li>
-            <li data-icon="false"><a href="#">Logout</a></li>
-        </ul>
-    </div>
-    <!-- End of Header -->
-
-
-    <div data-role="main" class="ui-content">
-
-        <p class="align-text-center" style="margin-bottom: 0px">Pay</p>
-        <div data-role="tabs">
-            <div data-role="navbar" data-grid="b">
-                <ul class="tabs-corners">
-                    <li><a href="#divBillerForm" class="ui-btn-b ui-btn-active tabs-corners-first-child">Biller</a>
-                    </li>
-                    <li><a href="#divMerchantForm" class="ui-btn-b">Merchant</a>
-                    </li>
-                    <li><a href="#divPayOnlineForm" class="tabs-corners-last-child ui-btn-b">Online</a>
-                    </li>
-                </ul>
-            </div>
-
-            <form>
-
-
-                <div id="divBillerForm">
-                    <label for="txtBillerCode">Biller Code</label>
-                    <input type="text" name="txtBillerCode" id="txtBillerCode"
-                           placeholder="Enter biller code e.g. 12345"
-                           value="">
-
-
-                    <label for="txtBillAmount">Amount</label>
-                    <div class="input-with-icon">
-                        <input placeholder="Enter amount e.g. 0.56 or 2" type="tel" id="txtBillAmount"
-                               inputmode="numeric"/>
-                        <i class="fa fa-dollar dollar-icon" aria-hidden="true"></i>
-                    </div>
-
-                    <a href="#ppPayBill" style="margin-top: 20px;" data-rel="popup" data-position-to="window"
-                       data-transition="pop"
-                       class="ui-btn ui-corner-all"><i
-                            class="fa fa-arrow-circle-down" aria-hidden="true"></i>&nbsp;&nbsp;Make payment
-                    </a>
-                    <div data-role="popup" id="ppPayBill" data-overlay-theme="b" data-theme="b" data-dismissible="false"
-                         style="max-width:400px;">
-                        <div data-role="header" data-theme="a"><h1>Confirm</h1></div>
-                        <div role="main" class="ui-content">
-                            <p>You are proceeding to pay amount <b>$3</b> to biller <b>Tatenda
-                                Zifudzi</b>.<br/><br/>Proceed?</p> <a href="#"
-                                                                      class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b"
-                                                                      data-rel="back">Proceed</a> <a href="#"
-                                                                                                     class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b"
-                                                                                                     data-rel="back"
-                                                                                                     data-transition="flow">Cancel</a>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div id="divMerchantForm">
-                    <label for="txtMerchantCode">Merchant Code</label>
-                    <input type="text" name="txtBillerCode" id="txtMerchantCode"
-                           placeholder="Enter merchant code e.g. 12345"
-                           value="">
-
-
-                    <label for="txtMerchantAmount">Amount</label>
-                    <div class="input-with-icon">
-                        <input placeholder="Enter amount e.g. 0.56 or 2" type="tel" id="txtMerchantAmount"
-                               inputmode="numeric"/>
-                        <i class="fa fa-dollar dollar-icon" aria-hidden="true"></i>
-                    </div>
-
-                    <a href="#ppPayMerchantConfirm" style="margin-top: 20px;" data-rel="popup" data-position-to="window"
-                       data-transition="pop"
-                       class="ui-btn ui-corner-all"><i
-                            class="fa fa-arrow-circle-down" aria-hidden="true"></i>&nbsp;&nbsp;Make payment
-                    </a>
-                    <div data-role="popup" id="ppPayMerchantConfirm" data-overlay-theme="b" data-theme="b"
-                         data-dismissible="false"
-                         style="max-width:400px;">
-                        <div data-role="header" data-theme="a"><h1>Confirm</h1></div>
-                        <div role="main" class="ui-content">
-                            <p>You are proceeding to pay amount <b>$3</b> to merchant <b>Pick 'n' Pay</b>.<br/><br/>Proceed?
-                            </p> <a href="#"
-                                    class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b"
-                                    data-rel="back">Proceed</a> <a href="#"
-                                                                   class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b"
-                                                                   data-rel="back"
-                                                                   data-transition="flow">Cancel</a>
-                        </div>
-                    </div>
-
-
-                </div>
-
-                <div id="divPayOnlineForm">
-
-                    <p>A one time password (OTP) <a
-                            href="#ppOTPDefinition"
-                            data-rel="popup"><i
-                            class="fa fa-info-circle icon-font-size-small initcap" aria-hidden="true"></i></a> will be
-                        generated
-                        to initiate your online payment. The OTP will be
-                        usable in the next 30 minutes only and will be valid for one transaction.</p>
-
-                    <div data-role="popup" id="ppOTPDefinition">
-                        <p>An OTP is a password that is valid for only one
-                            login session or transaction.</p>
-                    </div>
-
-                    <a href="#ppInitiateOnlinePayment" style="margin-top: 20px;" data-rel="popup"
-                       data-position-to="window"
-                       data-transition="pop"
-                       class="ui-btn ui-corner-all"><i
-                            class="fa fa-arrow-circle-down" aria-hidden="true"></i>&nbsp;&nbsp;Generate OTP
-                    </a>
-                    <div data-role="popup" id="ppInitiateOnlinePayment" data-overlay-theme="b" data-theme="b"
-                         data-dismissible="false"
-                         style="max-width:400px;">
-                        <div data-role="header" data-theme="a"><h1>Confirm</h1></div>
-                        <div role="main" class="ui-content">
-                            <p>You are proceeding to initiate an online payment. <br/><br/>Proceed?
-                            </p> <a href="#"
-                                    class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b"
-                                    data-rel="back">Proceed</a> <a href="#"
-                                                                   class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b"
-                                                                   data-rel="back"
-                                                                   data-transition="flow">Cancel</a>
-                        </div>
-                    </div>
-
-
-                </div>
-
-            </form>
-        </div>
-
-    </div>
-
-</section>
-
-<!-------------------------------------   ZESA   ------------------------------------------------>
-<section data-role="page" id="pgZESA" class="with-footer ui-page-theme-a">
-    <!-- Header -->
-    <header data-role="header" class="ui-bar" data-position="fixed">
-        <div class="align-text-center header-text-with-logo-padding">
-            <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
-                    class="fa  fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
-            <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
-            <h1 class="header-text-with-logo">&nbsp;ZESA Prepaid</h1>
-            <a class="header-options-link" href="#ppZESA" data-rel="popup"><i class="fa fa-ellipsis-v"
-                                                                              aria-hidden="true"></i></a>
-        </div>
-    </header>
-    <div data-role="popup" id="ppZESA" data-theme="b">
-        <ul data-role="listview" data-inset="true" style="min-width:210px;">
-            <li data-icon="false"><a href="#pgMain">Back to Main Page</a></li>
-            <li data-icon="false"><a href="#pgForgotPassword">Recover Pin</a></li>
-            <li data-icon="false"><a href="#pgChangePIN">Change PIN</a></li>
-            <li data-icon="false"><a href="#">Logout</a></li>
-        </ul>
-    </div>
-    <!-- End of Header -->
-
-    <div data-role="main" class="ui-content">
-
-        <div data-role="tabs">
-            <div data-role="navbar" data-grid="b">
-                <ul class="tabs-corners">
-                    <li><a href="#divFavourites" class="ui-btn-b ui-btn-active tabs-corners-first-child">Favourites</a>
-                    </li>
-                    <li><a href="#divBuyToken" class="ui-btn-b">Buy</a>
-                    </li>
-                    <li><a href="#divRetreiveToken" class="tabs-corners-last-child ui-btn-b">Retrieve</a>
-                    </li>
-                </ul>
-            </div>
-
-            <div data-role="popup" id="btnDeleteZESAFavConfirm" data-overlay-theme="b" data-theme="b"
-                 data-dismissible="false"
-                 style="max-width:400px;">
-                <div data-role="header" data-theme="a"><h1>Delete?</h1></div>
-                <div role="main" class="ui-content"><h3 class="ui-title">Are you sure you want to delete this
-                    favourite?</h3>
-                    <p>This action cannot be undone.</p>
-                    <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back">Delete</a>
-                    <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back" data-transition="flow">Cancel</a>
-                </div>
-            </div>
-
-            <div id="divFavourites" class="wrap-input-for-margins-15px">
-                <a href="#ppAddFavourite" class="ui-btn ui-corner-all ui-btn-b" data-rel="popup"><i
-                        class="fa fa-plus-circle" aria-hidden="true"></i>
-                    &nbsp;&nbsp;Add Favourite
-                </a>
-                <div data-role="popup" id="ppAddFavourite" data-theme="a" class="ui-corner-all">
-                    <div style="padding:10px 20px;"><h3>Add Favourite</h3>
-                        <input type="text" id="txtZESAFavNickname" value="" placeholder="Nickname" data-theme="a">
-                        <input type="text" id="txtZESAFavAccountNumber" value="" placeholder="Account Number"
-                               data-theme="a">
-                        <button type="button"
-                                class="ui-btn ui-corner-all ui-shadow ui-btn-b">
-                            <i class="fa  fa-arrow-circle-down" aria-hidden="true"></i>&nbsp;Save
-                        </button>
-                        <a data-rel="back" type="button"
-                           class="ui-btn ui-corner-all ui-shadow ui-btn-b">
-                            <i class="fa fa-times-circle" aria-hidden="true"></i>&nbsp;Cancel
-                        </a>
-                    </div>
-                </div>
-
-                <table data-role="table" id="table-custom-2" class="ui-body-d ui-shadow table-stripe ui-responsive">
-                    <thead>
-                    <tr class="ui-bar-d">
-                        <th data-priority="2">Account Number</th>
-                        <th data-priority="2">Nickname</th>
-                        <th data-priority="2"></th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>1231241</td>
-                        <td>Work</td>
-                        <td><a href="#btnDeleteZESAFavConfirm" data-rel="popup" data-position-to="window"
-                               data-transition="pop" class="ui-btn ui-corner-all">Delete</a></td>
-                    </tr>
-                    <tr>
-                        <td>12412421</td>
-                        <td>Home</td>
-                        <td><a href="#btnDeleteZESAFavConfirm" data-rel="popup" data-position-to="window"
-                               data-transition="pop" class="ui-btn ui-corner-all">Delete</a></td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div id="divBuyToken" class="wrap-input-for-margins-15px">
-                <div class="half-width-custom">
-                    <label for="txtZESABuyAccountNumber">ZESA Account Number</label>
-                    <input type="text" id="txtZESABuyAccountNumber"
-                           placeholder="Account number e.g. 1312345145"
-                           value="">
-                    <a href="#ppZESABuySelectFav" data-rel="popup" data-transition="slideup"
-                       class="ui-btn-b ui-btn ui-mini ui-shadow ui-corner-all"
-                       style="display: inline-block; width: 17%; margin: 0px;">...
-                    </a>
-                </div>
-
-                <div data-role="popup" id="ppZESABuySelectFav" data-theme="b">
-                    <ul data-icon="false" data-role="listview" data-inset="true" style="min-width:210px;">
-                        <li data-role="list-divider">Select Favourite</li>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Work</a></li>
-                    </ul>
-                </div>
-
-                <label class="wrap-input-for-margins-15px" for="txtZESABuyAmountNumber">Amount</label>
-                <div class="input-with-icon">
-                    <input placeholder="Enter amount e.g. 0.56 or 2" type="tel" id="txtZESABuyAmountNumber"
-                           inputmode="numeric"/>
-                    <i class="fa fa-dollar dollar-icon" aria-hidden="true"></i>
-                </div>
-
-                <div class="wrap-input-for-margins-20px">
-                    <a href="#btnDeleteZESAFavConfirm" data-rel="popup" data-position-to="window"
-                       data-transition="pop" class="ui-btn ui-corner-all">Buy ZESA Token</a>
-                </div>
-
-            </div>
-
-
-            <div id="divRetreiveToken" class="wrap-input-for-margins-15px">
-                <p>These are your ZESA tokens purchased in the last 30 days</p>
-                <table data-role="table" data-mode="reflow" class="ui-body-d ui-shadow table-stripe ui-responsive">
-                    <thead>
-                    <tr class="ui-bar-d">
-                        <th data-priority="2">Account Number</th>
-                        <th data-priority="2">Nickname</th>
-                        <th data-priority="2">Amount Paid</th>
-                        <th data-priority="2">Eletricity redeemed (kW)</th>
-                        <th data-priority="2">Token</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>12412421</td>
-                        <td>Home</td>
-                        <td>$12.90</td>
-                        <td>22kW</td>
-                        <td>9182 3719 2863 4916 2341</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-------------------------------------  Cash out  ------------------------------------------------>
-<section data-role="page" id="pgCashOut" class="with-footer ui-page-theme-a">
-    <!-- Header -->
-    <header data-role="header" class="ui-bar" data-position="fixed">
-        <div class="align-text-center header-text-with-logo-padding">
-            <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
-                    class="fa  fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
-            <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
-            <h1 class="header-text-with-logo">&nbsp;Cash Out</h1>
-            <a class="header-options-link" href="#ppOptionsCashOut" data-rel="popup"><i class="fa fa-ellipsis-v"
-                                                                                        aria-hidden="true"></i></a>
-        </div>
-    </header>
-    <div data-role="popup" id="ppOptionsCashOut" data-theme="b">
-        <ul data-role="listview" data-inset="true" style="min-width:210px;">
-            <li data-icon="false"><a href="#pgMain">Back to Main Page</a></li>
-            <li data-icon="false"><a href="#pgForgotPassword">Recover Pin</a></li>
-            <li data-icon="false"><a href="#pgChangePIN">Change PIN</a></li>
-            <li data-icon="false"><a href="#">Logout</a></li>
-        </ul>
-    </div>
-    <!-- End of Header -->
-
-
-    <div data-role="main" class="ui-content">
-
-        <form>
-
-
-            <label for="txtAgentCode">Agent Code</label>
-            <input type="text" name="txtBillerCode" id="txtAgentCode"
-                   placeholder="Enter agent code e.g. 12345"
-                   value="">
-
-
-            <label for="txtCashoutAmount">Amount</label>
-            <div class="input-with-icon">
-                <input placeholder="Enter amount e.g. 0.56 or 2" type="tel" id="txtCashoutAmount"
-                       inputmode="numeric"/>
-                <i class="fa fa-dollar dollar-icon" aria-hidden="true"></i>
-            </div>
-
-            <a href="#ppCashout" style="margin-top: 20px;" data-rel="popup" data-position-to="window"
-               data-transition="pop"
-               class="ui-btn ui-corner-all"><i
-                    class="fa fa-arrow-circle-down" aria-hidden="true"></i>&nbsp;&nbsp;Cash out
-            </a>
-            <div data-role="popup" id="ppCashout" data-overlay-theme="b" data-theme="b" data-dismissible="false"
-                 style="max-width:400px;">
-                <div data-role="header" data-theme="a"><h1>Confirm</h1></div>
-                <div role="main" class="ui-content">
-                    <p>You are proceeding to cash out <b>$3</b> from agent <b>APOLLOS PLAZA</b>.<br/><br/>Proceed?</p>
-                    <a href="#"
-                       class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b"
-                       data-rel="back">Proceed</a> <a href="#"
-                                                      class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b"
-                                                      data-rel="back"
-                                                      data-transition="flow">Cancel</a>
-                </div>
-            </div>
-
-
-        </form>
-    </div>
-
-</section>
-
-
-<!-------------------------------------  Send money ------------------------------------------------>
-<section data-role="page" id="pgSendMoney" class="with-footer ui-page-theme-a">
-    <!-- Header -->
-    <header data-role="header" class="ui-bar" data-position="fixed">
-        <div class="align-text-center header-text-with-logo-padding">
-            <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
-                    class="fa  fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
-            <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
-            <h1 class="header-text-with-logo">&nbsp;Send money</h1>
-            <a class="header-options-link" href="#ppOptionsSendMoney" data-rel="popup"><i class="fa fa-ellipsis-v"
-                                                                                          aria-hidden="true"></i></a>
-        </div>
-    </header>
-    <div data-role="popup" id="ppOptionsSendMoney" data-theme="b">
-        <ul data-role="listview" data-inset="true" style="min-width:210px;">
-            <li data-icon="false"><a href="#pgMain">Back to Main Page</a></li>
-            <li data-icon="false"><a href="#pgForgotPassword">Recover Pin</a></li>
-            <li data-icon="false"><a href="#pgChangePIN">Change PIN</a></li>
-            <li data-icon="false"><a href="#">Logout</a></li>
-        </ul>
-    </div>
-    <!-- End of Header -->
-
-
-    <div data-role="main" class="ui-content">
-
-        <form>
-            <fieldset data-role="controlgroup">
-                <input type="radio" data-theme="b" name="rdrSendTelecashTo" id="rdrSendToRegistered" value="on"
-                       checked="checked">
-                <label
-                        for="rdrSendToRegistered">Send to registered</label>
-                <input type="radio" name="rdrSendTelecashTo"
-                       data-theme="b" id="rdrSendToUnregistered" value="off">
-                <label
-                        for="rdrSendToUnregistered">Send to unregistered</label>
-            </fieldset>
-
-            <label style="margin-top: 20px;" for="txtReceiverNumber">Receiver number</label>
-            <div class="input-with-icon half-width-custom">
-                <input type="tel" name="txtReceiverNumber"
-                       id="txtReceiverNumber"
-                       placeholder="e.g. 732855785" inputmode="numeric"
-                >
-                <i class="fa fa-mobile input-icon" aria-hidden="true"></i>
-                <button type="button" onclick="selectContact('txtReceiverNumber')" class="ui-btn-b ui-btn ui-shadow ui-corner-all"
-                        style="display: inline-block; width: 12%; margin: 0px;"><i class="fa fa-address-book" aria-hidden="true"></i>
-                </button>
-            </div>
-
-
-            <label style="margin-top: 20px;" for="txtSendMoneyAmount">Amount</label>
-            <div class="input-with-icon">
-                <input placeholder="Enter amount e.g. 0.56 or 2" type="tel" id="txtSendMoneyAmount"
-                       inputmode="numeric"/>
-                <i class="fa fa-dollar dollar-icon" aria-hidden="true"></i>
-            </div>
-
-            <a href="#ppSendMoney" style="margin-top: 20px;" data-rel="popup" data-position-to="window"
-               data-transition="pop"
-               class="ui-btn ui-corner-all"><i
-                    class="fa fa-arrow-circle-down" aria-hidden="true"></i>&nbsp;&nbsp;Send money
-            </a>
-            <a href="http://www.telecel.co.zw/tariffs" class="no-underline initcap">View tariffs</a>
-            <div data-role="popup" id="ppSendMoney" data-overlay-theme="b" data-theme="b" data-dismissible="false"
-                 style="max-width:400px;">
-                <div data-role="header" data-theme="a"><h1>Confirm</h1></div>
-                <div role="main" class="ui-content">
-                    <p>You are proceeding to send <b>$3</b> to <b>Manatsa Chinyeruse</b>.<br/><br/>Proceed?</p>
-                    <a href="#"
-                       class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b"
-                       data-rel="back">Proceed</a> <a href="#"
-                                                      class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b"
-                                                      data-rel="back"
-                                                      data-transition="flow">Cancel</a>
-                </div>
-            </div>
-
-
-        </form>
-    </div>
-
-</section>
-
 <!-------------------------------------    Contact US  ------------------------------------------------>
-<section data-role="page" id="pgContactUs" class="with-footer ui-page-theme-a">
+<!-------------------------------------    Contact US  ------------------------------------------------>
+<section data-role="page" id="pgContactUs" class="ui-page-theme-a with-footer">
     <!-- Header -->
     <header data-role="header" class="ui-bar" data-position="fixed">
         <div class="align-text-center header-text-with-logo-padding">
@@ -1231,15 +711,14 @@
                     class="fa  fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
             <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
             <h1 class="header-text-with-logo">&nbsp;Contact us</h1>
-            <a class="header-options-link" href="#ppOptionsContactUs" data-rel="popup"><i class="fa fa-ellipsis-v"
-                                                                                          aria-hidden="true"></i></a>
+            <a class="header-options-link" href="#ppOptionsContactUs" data-transition="slide" data-rel="popup"><i
+                    class="fa fa-ellipsis-v"
+                    aria-hidden="true"></i></a>
         </div>
     </header>
     <div data-role="popup" id="ppOptionsContactUs" data-theme="b">
         <ul data-role="listview" data-inset="true" style="min-width:210px;">
-            <li data-icon="false"><a href="#pgMain">Back to Main Page</a></li>
-            <li data-icon="false"><a href="#pgForgotPassword">Recover Pin</a></li>
-            <li data-icon="false"><a href="#pgChangePIN">Change PIN</a></li>
+            <li data-icon="false"><a data-transition="flip" href="#pgMain">Back to Main Page</a></li>
             <li data-icon="false"><a href="#">Logout</a></li>
         </ul>
     </div>
@@ -1247,19 +726,42 @@
 
     <div data-role="main" class="ui-content">
 
-        <p class="red-text" style="margin: 0px;">Call Us</p>
+        <p class="red-text" style="margin: 0;">Call Us</p>
         <ul class="initcap">
-            <li style="line-height: 20px;">Customer Care (free of charge): 150</li>
-            <li style="line-height: 20px;">Telecash Customer Care (free of charge): 153</li>
-            <li style="line-height: 20px;">Calling from a different network: 0733 150 150</li>
-            <li>Telecel Head Office:+263 4 748 321-7</li>
+            <li style="line-height: 20px;">Customer Care (free of charge): <br><a onclick="callTelecel()">150</a></li>
+            <li style="line-height: 20px;">Telecash Customer Care (free of charge): <br><a onclick="callNumber('153')">153</a>
+            </li>
+            <li style="line-height: 20px;">Calling from a different network: <br><a
+                    onclick="callNumber('+263733150150')">0733 150 150</a></li>
+            <li>Telecel Head Office:
+                <a href="#ppTelecelHeadOfficeNumbers" data-rel="popup">+263 4 748 321-7</a>
+            </li>
         </ul>
 
-        <p class="wrap-input-for-margins-20px red-text" style="margin: 0px;">Visit us</p>
+        <div data-role="popup" id="ppTelecelHeadOfficeNumbers">
+            <ul data-role="listview" data-inset="true" data-theme="b">
+                <li data-icon="false"><a onclick="callNumber('+2634748321')">+263 4 748 321</a></li>
+                <li data-icon="false"><a onclick="callNumber('+2634748322')">+263 4 748 322</a></li>
+                <li data-icon="false"><a onclick="callNumber('+2634748323')">+263 4 748 323</a></li>
+                <li data-icon="false"><a onclick="callNumber('+2634748324')">+263 4 748 324</a></li>
+                <li data-icon="false"><a onclick="callNumber('+2634748325')">+263 4 748 325</a></li>
+                <li data-icon="false"><a onclick="callNumber('+2634748326')">+263 4 748 326</a></li>
+                <li data-icon="false"><a onclick="callNumber('+2634748327')">+263 4 748 327</a></li>
+            </ul>
+        </div>
+
+        <p class="wrap-input-for-margins-20px red-text" style="margin: 0;">Visit us</p>
         <div class="initcap">
-            <p style="padding-left: 30px;">Telecel Head Office</p>
-            <p style="padding-left: 30px;">148 Seke Road,</p>
-            <p style="padding-left: 30px;">Graniteside, Harare</p>
+            <p style="padding-left: 30px; margin: 0;">Telecel Head Office</p>
+            <p style="padding-left: 30px; margin: 0;">148 Seke Road,</p>
+            <p style="padding-left: 30px; margin: 0;">Graniteside, Harare</p>
+            <p style="padding-left: 30px; margin: 0;"><a
+                    onclick="storeShop('{`isActive`:true,`latitude`:`-17.8500886`,`longitude`:`31.050311`,`name`:`Harare Head Office Shop`,`tel`:`(263 4) 748321 – 7, (263 4) 780999 or 781624`,`address`:`148 Seke Road Graniteside, Harare`,`type`:`SHOP`}')">See
+                on map</a>
+            </p>
+
+            <p style="padding-left: 30px;"><a class="no-underline" href="#pgShopsList">See other branches</a></p>
+
             <p class="wrap-input-for-margins-20px">Email us at <a href="mailto:info@telecelzim.co.zw">info@telecelzim.co.zw</a>
                 or fill the form below.
             </p>
@@ -1270,46 +772,43 @@
         <div class="wrap-input-for-margins-25px">
             <fieldset>
                 <div class="control-group">
-                    <div class="control-label"><label id="jform_contact_name-lbl" for="jform_contact_name"
-                                                      title="Name"
-                                                      data-content="Your name.">
+                    <div><label for="txtContactUsName" title="Name">
                         Name<span class="red-text">&#160;*</span></label>
                     </div>
-                    <div class="controls"><input type="text" name="jform[contact_name]" id="jform_contact_name" value=""
-                                                 class="required" size="30" required aria-required="true"/></div>
+                    <div><input type="text" id="txtContactUsName" placeholder="Your name"
+                                size="30" required
+                    /></div>
                 </div>
                 <div class="control-group">
-                    <div class="control-label"><label id="jform_contact_email-lbl" for="jform_contact_email"
-                                                      title="Email"
-                                                      data-content="Email Address for contact.">
+                    <div><label for="txtContactUsEmail" title="Email">
                         Email<span class="red-text">&#160;*</span></label>
                     </div>
-                    <div class="controls"><input type="email" name="jform[contact_email]"
-                                                 class="validate-email required" id="jform_contact_email" value=""
-                                                 size="30" autocomplete="email" required aria-required="true"/></div>
+                    <div><input type="email" id="txtContactUsEmail" placeholder="Your e-mail address"
+                                size="30" autocomplete="email" required
+                    /></div>
                 </div>
                 <div class="control-group">
-                    <div class="control-label"><label id="jform_contact_emailmsg-lbl" for="jform_contact_emailmsg"
-                                                      title="Subject"
-                                                      data-content="Enter the subject of your message here.">
+                    <div><label for="txtContactUsSubject" title="Subject">
                         Subject<span class="red-text">&#160;*</span></label>
                     </div>
-                    <div class="controls"><input type="text" name="jform[contact_subject]" id="jform_contact_emailmsg"
-                                                 value="" class="required" size="60" required aria-required="true"/>
+                    <div><input type="text" id="txtContactUsSubject"
+                                placeholder="Enter the subject of your message here" size="60" required
+                    />
                     </div>
                 </div>
                 <div class="control-group">
-                    <div class="control-label"><label id="jform_contact_message-lbl" for="jform_contact_message"
-                                                      title="Message"
-                                                      data-content="Enter your message here.">
+                    <div><label for="txtContactUsMessage"
+                                title="Message">
                         Message<span class="red-text">&#160;*</span></label>
                     </div>
-                    <div class="controls"><textarea name="jform[contact_message]" id="jform_contact_message" cols="50"
-                                                    rows="10" class="required" required aria-required="true"></textarea>
+                    <div><textarea id="txtContactUsMessage" cols="50"
+                                   placeholder="Enter your message here." rows="10"
+                                   required></textarea>
                     </div>
                 </div>
-                <a href="#" style="margin-top: 20px;" class="ui-btn ui-corner-all"><i class="fa fa-arrow-circle-down"
-                                                                                      aria-hidden="true"></i>&nbsp;&nbsp;Send
+                <a id="btnContactUsSend" style="margin-top: 20px;" class="ui-btn ui-corner-all">
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                    &nbsp;&nbsp;Send
                 </a>
             </fieldset>
         </div>
@@ -1320,22 +819,21 @@
 
 
 <!-------------------------------------    About Page  ------------------------------------------------>
-<section data-role="page" id="pgAbout" class="with-footer ui-page-theme-a">
+<section data-role="page" id="pgAbout" class="ui-page-theme-a with-footer">
     <!-- Header -->
     <header data-role="header" class="ui-bar" data-position="fixed">
         <div class="align-text-center header-text-with-logo-padding">
             <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
                     class="fa  fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
             <h1 class="header-text-without-logo">&nbsp;About us</h1>
-            <a class="header-options-link" href="#ppOptionsAbout" data-rel="popup"><i class="fa fa-ellipsis-v"
-                                                                                      aria-hidden="true"></i></a>
+            <a class="header-options-link" href="#ppOptionsAbout" data-transition="slide" data-rel="popup"><i
+                    class="fa fa-ellipsis-v"
+                    aria-hidden="true"></i></a>
         </div>
     </header>
     <div data-role="popup" id="ppOptionsAbout" data-theme="b">
         <ul data-role="listview" data-inset="true" style="min-width:210px;">
-            <li data-icon="false"><a href="#pgMain">Back to Main Page</a></li>
-            <li data-icon="false"><a href="#pgForgotPassword">Recover Pin</a></li>
-            <li data-icon="false"><a href="#pgChangePIN">Change PIN</a></li>
+            <li data-icon="false"><a data-transition="flip" href="#pgMain">Back to Main Page</a></li>
             <li data-icon="false"><a href="#">Logout</a></li>
         </ul>
     </div>
@@ -1350,12 +848,12 @@
             Version 1.0.0
         </h4>
 
-        <p style="margin: 0px;">Copyright &copy;
+        <p style="margin: 0;"> A Telecel VAS product</p>
+        <p style="margin: 0;">Copyright &copy;
             <script type="text/javascript">document.write(new Date().getYear() + 1900);</script>
             All rights reserved.
         </p>
 
-        <p><a data-role="button" id="btnSendSMS">Send SMS</a> </p>
         <p class="initcap">Telecel Zimbabwe is a large mobile phone network in Zimbabwe, with more than 2 000 000 active
             subscribers. Telecel Zimbabwe is committed to providing its customers with high-tech mobile phone products
             and services
@@ -1367,13 +865,13 @@
             places where previously there was no network coverage, particularly in the rural areas or where it was
             unsatisfactory.</p>
 
-        <p class="red-text" style="margin: 0px;">Our Vision</p>
+        <p class="red-text" style="margin: 0;">Our Vision</p>
         <p class="initcap">Our goal is to become the most innovative and pioneering communications company of choice in
             Zimbabwe and the
             region that can inspire us to impact positive change and shape the way people live and connect with the
             acknowledgement that customer experience makes the difference</p>
 
-        <p class="red-text" style="margin: 0px;">Our Mission</p>
+        <p class="red-text" style="margin: 0;">Our Mission</p>
         <p class="initcap">We aim to establish the most profitable and customer centric communications business in the
             region with
             unmatched and superior quality. To achieve this we will:<br>
@@ -1389,7 +887,7 @@
             </span>
         </p>
 
-        <p class="red-text" style="margin: 0px;">Our Credo</p>
+        <p class="red-text" style="margin: 0;">Our Credo</p>
         <p class="initcap">The overarching guiding philosophy for our business is Our Credo, a deeply held set of values
             that serves and
             shapes the strategic and moral compass for the Telecel leadership, management and staff. Our Credo, first
@@ -1398,7 +896,7 @@
 We are in business because our customers value our high quality communication services.
             </span>
             <span class="aboutPageNewLine">2.
-We must listen, understand, anticipate, respond to and satisfy our customers’ needs.
+We must listen, understand, anticipate, respond to and satisfy our customers' needs.
             </span>
             <span class="aboutPageNewLine">3.
 Integrity is at the center of everything we do since it establishes the trust and our moral fibre that
@@ -1408,8 +906,8 @@ Integrity is at the center of everything we do since it establishes the trust an
 We know that we are not the BIGGEST but we are the BEST at what we do.
             </span>
             <span class="aboutPageNewLine">5.
-We are strong advocates of diversity and personal development not only because it’s the right thing to
-                do but also because it’s a smart thing to do.
+We are strong advocates of diversity and personal development not only because it's the right thing to
+                do but also because it's a smart thing to do.
             </span>
             <span class="aboutPageNewLine">6.
 We know that teamwork allows us to serve our customers better and faster as we recognize and acknowledge
@@ -1424,7 +922,7 @@ We know that teamwork allows us to serve our customers better and faster as we r
             </span>
         </p>
 
-        <p class="red-text" style="margin: 0px;">We are TELECEL and we value</p>
+        <p class="red-text" style="margin: 0;">We are TELECEL and we value</p>
         <p class="initcap">
             <span class="aboutPageNewLine">1. Innovation</span>
             <span class="aboutPageNewLine">2. Performance</span>
@@ -1460,7 +958,7 @@ We know that teamwork allows us to serve our customers better and faster as we r
 </section>
 
 <!------------------------------------- Change Login PIN ------------------------------------------------>
-<section data-role="page" id="pgChangePIN" class="with-footer ui-page-theme-a">
+<section data-role="page" id="pgChangePIN" class="ui-page-theme-a with-footer">
     <!-- Header -->
     <header data-role="header" class="ui-bar" data-position="fixed">
         <div class="align-text-center header-text-with-logo-padding">
@@ -1468,14 +966,14 @@ We know that teamwork allows us to serve our customers better and faster as we r
                     class="fa  fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
             <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
             <h1 class="header-text-with-logo">&nbsp;Change PIN</h1>
-            <a class="header-options-link" href="#ppOptionsChangePIN" data-rel="popup"><i class="fa fa-ellipsis-v"
-                                                                                          aria-hidden="true"></i></a>
+            <a class="header-options-link" href="#ppOptionsChangePIN" data-transition="slide" data-rel="popup"><i
+                    class="fa fa-ellipsis-v"
+                    aria-hidden="true"></i></a>
         </div>
     </header>
     <div data-role="popup" id="ppOptionsChangePIN" data-theme="b">
         <ul data-role="listview" data-inset="true" style="min-width:210px;">
-            <li data-icon="false"><a href="#pgMain">Back to Main Page</a></li>
-            <li data-icon="false"><a href="#pgForgotPassword">Recover Pin</a></li>
+            <li data-icon="false"><a data-transition="flip" href="#pgMain">Back to Main Page</a></li>
             <li data-icon="false"><a href="#">Logout</a></li>
         </ul>
     </div>
@@ -1483,33 +981,35 @@ We know that teamwork allows us to serve our customers better and faster as we r
 
     <div data-role="main" class="ui-content">
 
-        <form>
-
+        <div>
             <label for="txtOldPIN">Old PIN</label>
-            <input type="text" id="txtOldPIN" placeholder="Enter old PIN" value="">
+            <input id="txtOldPIN" placeholder="Enter old PIN" value="" maxlength="4"
+                   type="tel" style="-webkit-text-security: disc;" pattern="[0-9]*" inputmode="numeric">
+        </div>
 
+        <div class="wrap-input-for-margins-15px">
             <label for="txtNewPIN">New PIN</label>
-            <input placeholder="Enter new 4 Digit PIN" type="password" id="txtNewPIN"
-                   inputmode="numeric"/>
+            <input placeholder="Enter new 4 Digit PIN" id="txtNewPIN" maxlength="4"
+                   type="tel" style="-webkit-text-security: disc;" pattern="[0-9]*" inputmode="numeric"/>
+        </div>
 
+        <div class="wrap-input-for-margins-15px">
             <label for="txtConfirmNewPIN">Confirm PIN</label>
-            <input placeholder="Re-enter your new 4 Digit PIN" type="password" id="txtConfirmNewPIN"
-                   inputmode="numeric"/>
-
-            <a href="#" style="margin-top: 20px;" id="btnCangePin" data-rel="popup" data-position-to="window"
-               data-transition="pop"
-               class="ui-btn ui-corner-all"><i
-                    class="fa fa-arrow-circle-down" aria-hidden="true"></i>&nbsp;&nbsp;Change PIN
-            </a>
-
-        </form>
+            <input placeholder="Re-enter your new 4 Digit PIN" type="tel" style="-webkit-text-security: disc;"
+                   pattern="[0-9]*" inputmode="numeric" id="txtConfirmNewPIN" maxlength="4"
+            />
+        </div>
+        `
+        <a id="btnChangePIN" onclick="changePin()" class="ui-btn ui-corner-all"><i
+                class="fa fa-arrow-circle-down"></i>&nbsp;&nbsp;Change PIN
+        </a>
 
     </div>
 </section>
 
 <!--
 <!-------------------------------------  Promotions  ------------------------------------------------>
-<section id="pgPromotions" data-role="page" class="with-footer ui-page-theme-a">
+<section id="pgPromotions" data-role="page" class="ui-page-theme-a with-footer">
     <!-- Header -->
     <header data-role="header" class="ui-bar" data-position="fixed">
         <div class="align-text-center header-text-with-logo-padding">
@@ -1517,24 +1017,24 @@ We know that teamwork allows us to serve our customers better and faster as we r
                     class="fa  fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
             <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
             <h1 class="header-text-with-logo">&nbsp;Promotions</h1>
-            <a class="header-options-link" href="#ppPromotions" data-rel="popup"><i class="fa fa-ellipsis-v"
-                                                                                    aria-hidden="true"></i></a>
+            <a class="header-options-link" href="#ppPromotions" data-transition="slide" data-rel="popup"><i
+                    class="fa fa-ellipsis-v"
+                    aria-hidden="true"></i></a>
         </div>
     </header>
     <div data-role="popup" id="ppPromotions" data-theme="b">
         <ul data-role="listview" data-inset="true" style="min-width:210px;">
-            <li data-icon="false"><a href="#pgMain">Back to Main Page</a></li>
-            <li data-icon="false"><a href="#pgChangePIN">Change PIN</a></li>
+            <li data-icon="false"><a data-transition="flip" href="#pgMain">Back to Main Page</a></li>
             <li data-icon="false"><a href="#">Logout</a></li>
         </ul>
     </div>
     <!-- End of Header -->
 
-    <div id="divPromotionsCount"
-         style="margin-bottom: 2em !important; margin-top: 2em !important; margin-left: 1em; margin-right: 1em; "
-         class="ui-btn ui-corner-all align-text-center"></div>
+    <div id="divPromotions" data-role="main" class="ui-content">
 
-    <div data-role="main" class="ui-content">
+        <div id="divPromotionsCount"
+             style="margin-bottom: 2em !important; margin-top: 1em !important;"
+             class="ui-btn ui-corner-all align-text-center"></div>
 
         <ul id="ulPromotions" data-role="listview" class="listview-big-thumbs black-text hideBorderFirstListview">
 
@@ -1544,12 +1044,9 @@ We know that teamwork allows us to serve our customers better and faster as we r
 
 </section>
 
-
-
-
 <!-------------------------------------    Shops List ------------------------------------------------>
 <!-------------------------------------    Shops List ------------------------------------------------>
-<section data-role="page" class="with-footer ui-page-theme-a" id="pgShopsList">
+<section data-role="page" class="ui-page-theme-a with-footer" id="pgShopsList">
     <!-- Header -->
     <header data-role="header" class="ui-bar" data-position="fixed">
         <div class="align-text-center header-text-with-logo-padding">
@@ -1557,15 +1054,14 @@ We know that teamwork allows us to serve our customers better and faster as we r
                     class="fa fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
             <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
             <h1 class="header-text-with-logo">&nbsp;Store Locator</h1>
-            <a class="header-options-link" href="#ppOptionsShopsList" data-rel="popup"><i class="fa fa-ellipsis-v"
-                                                                                          aria-hidden="true"></i></a>
+            <a class="header-options-link" href="#ppOptionsShopsList" data-transition="slide" data-rel="popup"><i
+                    class="fa fa-ellipsis-v"
+                    aria-hidden="true"></i></a>
         </div>
     </header>
     <div data-role="popup" id="ppOptionsShopsList" data-theme="b">
         <ul data-role="listview" data-inset="true" style="min-width:210px;">
-            <li data-icon="false"><a href="#pgMain">Back to Main Page</a></li>
-            <li data-icon="false"><a href="#pgForgotPassword">Recover Pin</a></li>
-            <li data-icon="false"><a href="#pgChangePIN">Change PIN</a></li>
+            <li data-icon="false"><a data-transition="flip" href="#pgMain">Back to Main Page</a></li>
             <li data-icon="false"><a href="#">Logout</a></li>
         </ul>
     </div>
@@ -1585,26 +1081,75 @@ We know that teamwork allows us to serve our customers better and faster as we r
 
 </section>
 
-<!-------------------------------------    Contact Test  ------------------------------------------------>
-<section data-role="page" id="pgContacts" class="with-footer ui-page-theme-a">
+<!-------------------------------------     Services    ------------------------------------------------>
+<section data-role="page" class="ui-page-theme-a with-footer" id="pgServices">
+    <!-- Header -->
     <header data-role="header" class="ui-bar" data-position="fixed">
         <div class="align-text-center header-text-with-logo-padding">
             <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
                     class="fa  fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
             <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
-            <h1 class="header-text-with-logo">&nbsp;Title</h1>
+            <h1 class="header-text-with-logo">&nbsp;Services</h1>
+            <a class="header-options-link" href="#ppOptionsTemplate" data-transition="slide" data-rel="popup"><i
+                    class="fa fa-ellipsis-v"
+                    aria-hidden="true"></i></a>
         </div>
     </header>
+    <div data-role="popup" id="ppOptionsTemplate" data-theme="b">
+        <ul data-role="listview" data-inset="true" style="min-width:210px;">
+            <li data-icon="false"><a data-transition="flip" href="#pgMain">Back to Main Page</a></li>
+            <li data-icon="false"><a href="#">Logout</a></li>
+        </ul>
+    </div>
+    <!-- End of Header -->
+    <div data-role="popup" id="ppRoamingDefinitions">
+        <p class="initcap">Activate roaming to be able use your mobile outside of the range of its home network and
+            connects to
+            another available cell
+            network. Additional charges may apply.</p>
+    </div>
+
     <div data-role="main" class="ui-content">
 
-        <button id="findContact">FIND CONTACT</button>
+        <p class="initcap">Use this menu to activate or de-active services you are eligible for.</p>
+
+        <table class="ui-full-width ui-shadow table-stripe custom-table">
+            <thead style="display: none;">
+            <tr>
+                <th>
+                </th>
+                <th>
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Roaming&nbsp;<a href="#ppRoamingDefinitions" data-rel="popup"><i
+                        class="fa fa-info-circle icon-font-size-small" aria-hidden="true"></i></a>
+                </td>
+                <td class="align-text-right">
+                    <button style="display: inline-block; width: inherit;" id="btnRoamingOff" type="button"
+                            class="ui-btn ui-btn-corner-all">
+                        <i class="fa fa-toggle-off" aria-hidden="true"></i>
+                        Turn off
+                    </button>
+                    <button id="btnRoamingOn" style="display: inline-block; width: inherit; margin-left: 10px;"
+                            type="button"
+                            class="ui-btn ui-btn-corner-all">
+                        <i class="fa fa-toggle-on" aria-hidden="true"></i>
+                        Turn on
+                    </button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
 
     </div>
+
 </section>
 
 <!-------------------------------------    Service Shortcodes    ------------------------------------------------>
-<!-------------------------------------    Service Shortcodes    ------------------------------------------------>
-<section data-role="page" id="pgServiceShortcodes" class="with-footer ui-page-theme-a">
+<section data-role="page" id="pgServiceShortcodes" class="ui-page-theme-a with-footer">
     <!-- Header -->
     <header data-role="header" class="ui-bar" data-position="fixed">
         <div class="align-text-center header-text-with-logo-padding">
@@ -1612,23 +1157,23 @@ We know that teamwork allows us to serve our customers better and faster as we r
                     class="fa  fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
             <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
             <h1 class="header-text-with-logo">&nbsp;Service Shortcodes</h1>
-            <a class="header-options-link" href="#ppOptionsUSSD" data-rel="popup"><i class="fa fa-ellipsis-v"
-                                                                                     aria-hidden="true"></i></a></div>
+            <a class="header-options-link" href="#ppOptionsUSSD" data-transition="slide" data-rel="popup"><i
+                    class="fa fa-ellipsis-v"
+                    aria-hidden="true"></i></a></div>
     </header>
     <div data-role="popup" id="ppOptionsUSSD" data-theme="b">
         <ul data-role="listview" data-inset="true" style="min-width:210px;">
-            <li data-icon="false"><a href="#pgMain">Back to Main Page</a></li>
-            <li data-icon="false"><a href="#pgChangePIN">Change PIN</a></li>
+            <li data-icon="false"><a data-transition="flip" href="#pgMain">Back to Main Page</a></li>
             <li data-icon="false"><a href="#">Logout</a></li>
         </ul>
     </div>
     <!-- End of Header -->
 
-    <div data-role="main" class="ui-content">
+    <div id="divShortcodes" data-role="main" class="ui-content">
 
         <div data-role="tabs" id="divServiceShortcodes">
 
-            <p class="align-text-center" style="margin-bottom: 0px; margin-top: 0px;">Tap to show shortcodes for</p>
+            <p class="align-text-center" style="margin-bottom: 0; margin-top: 0;">Tap to show shortcodes for</p>
 
             <div style="margin-bottom: 20px;" data-role="navbar" data-grid="b">
                 <ul class="tabs-corners">
@@ -1662,384 +1207,6 @@ We know that teamwork allows us to serve our customers better and faster as we r
 
     </div>
 </section>
-
-<!-------------------------------------    Telecash   ------------------------------------------------>
-<section data-role="page" id="pgTelecash" class="ui-page-theme-a">
-    <!-- Header -->
-    <header data-role="header" class="ui-bar" data-position="fixed">
-        <div class="align-text-center header-text-with-logo-padding">
-            <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
-                    class="fa fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
-            <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
-            <h1 class="header-text-with-logo">&nbsp;Telecash</h1>
-            <a class="header-options-link" href="#ppOptionsTelecash" data-rel="popup"><i class="fa fa-ellipsis-v"
-                                                                                         aria-hidden="true"></i></a>
-        </div>
-    </header>
-    <div data-role="popup" id="ppOptionsTelecash" data-theme="b">
-        <ul data-role="listview" data-inset="true" style="min-width:210px;">
-            <li data-icon="false"><a href="#pgMain">Back to Main Page</a></li>
-            <li data-icon="false"><a href="#pgChangePIN">Change PIN</a></li>
-            <li data-icon="false"><a href="#">Logout</a></li>
-        </ul>
-    </div>
-    <!-- End of Header -->
-
-
-    <div data-role="main" class="ui-content">
-
-        <ul data-inset="true" data-role="listview">
-            <li>
-                <a data-rel="popup" data-position-to="window"
-                   data-transition="pop" href="#ppBuyAirtimeFromTelecash">Buy airtime or bundles
-                    <p class="initcap">Purchase airtime or bundles</p>
-                </a>
-            </li>
-            <li>
-                <a href="#pgZESA" data-transition="flip">ZESA Prepaid
-                    <p class="initcap">Buy or retreive ZESA tokens</p>
-                </a>
-            </li>
-            <li>
-                <a href="#pgMyWallet"
-                   data-transition="flip">My Wallet
-                    <p class="initcap">Access your TeleCash wallet services</p>
-                </a>
-            </li>
-            <li>
-                <a data-transition="flip" href="#pgMakePayment">Make Payment
-                    <p class="initcap">Make a payment to a merchant, biller or online</p>
-                </a>
-            </li>
-            <li>
-                <a data-transition="flip" href="#pgCashOut">Cash Out
-                    <p class="initcap">Withdraw cash from an agent</p>
-                </a>
-            </li>
-            <li>
-                <a data-transition="flip" href="#pgSendMoney">Send money
-                    <p class="initcap">Send money to another user</p>
-                </a>
-            </li>
-            <li>
-                <a data-transition="flip" href="#pgBankingServices">Banking services
-                    <p class="initcap">Transfer money to another bank account</p>
-                </a>
-            </li>
-            <li>
-                <a data-transition="flip" href="#pgGoldCard">Gold Card
-                    <p class="initcap">Manage your card details and settings</p>
-                </a>
-            </li>
-        </ul>
-
-        <div data-role="popup" id="ppBuyAirtimeFromTelecash" data-overlay-theme="b" data-theme="b"
-             style="max-width:400px;">
-            <div data-role="header" data-theme="a"><h1>Buying airtime</h1></div>
-            <div role="main" class="ui-content">
-                <p>To buy airtime or bundles using TeleCash, please go to the 'Buy Product', or 'Buy airtime' menu.</p>
-                <a href="#pgBundlesPurchase" data-transition="flip"
-                   class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b"><i class="fa fa-external-link-square"
-                                                                                    aria-hidden="true"></i>
-                    Buy bundles</a>
-                <a href="#pgAirtimePurchase" data-transition="flip"
-                   class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b"><i class="fa fa-external-link-square"
-                                                                                    aria-hidden="true"></i>
-                    Buy airtime</a>
-            </div>
-        </div>
-
-
-    </div>
-</section>
-
-
-
-
-
-<!-------------------------------------    My Wallet ------------------------------------------------>
-<section data-role="page" id="pgMyWallet" class="with-footerui-page-theme-a">
-    <!-- Header -->
-    <header data-role="header" class="ui-bar" data-position="fixed">
-        <div class="align-text-center header-text-with-logo-padding">
-            <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
-                    class="fa  fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
-            <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
-            <h1 class="header-text-with-logo">&nbsp;My Wallet</h1>
-            <a class="header-options-link" href="#ppOptionsMyWallet" data-rel="popup"><i class="fa fa-ellipsis-v"
-                                                                                         aria-hidden="true"></i></a>
-        </div>
-    </header>
-    <div data-role="popup" id="ppOptionsMyWallet" data-theme="b">
-        <ul data-role="listview" data-inset="true" style="min-width:210px;">
-            <li data-icon="false"><a href="#pgMain">Back to Main Page</a></li>
-            <li data-icon="false"><a href="#pgForgotPassword">Recover Pin</a></li>
-            <li data-icon="false"><a href="#pgChangePIN">Change PIN</a></li>
-            <li data-icon="false"><a href="#">Logout</a></li>
-        </ul>
-    </div>
-    <!-- End of Header -->
-
-
-    <div class="ui-body-d ui-content div-red-background align-text-center">
-        <h1 class="balance-font-size">$6.32&nbsp;<a style="color: #fff;" href="#ppTelecashBalanceHelp"
-                                                    data-rel="popup"><i
-                class="fa fa-info-circle icon-font-size-small" aria-hidden="true"></i></a></h1>
-        <span class="initcap balance-desc-font-size">Available balance</span>
-    </div>
-    <div data-role="popup" id="ppTelecashBalanceHelp">
-        <p>This is your Telecash balance.</p>
-    </div>
-
-    <div data-role="main" class="ui-content">
-
-        <a href="#ppChangeTelecashPIN" class="ui-btn ui-corner-all ui-btn-b" data-rel="popup"><i class="fa fa-lock"
-                                                                                                 aria-hidden="true"></i>
-            &nbsp;&nbsp;Change PIN
-        </a>
-        <div data-role="popup" id="ppChangeTelecashPIN" data-theme="a" class="ui-corner-all">
-            <div style="padding:10px 20px;"><h3>PIN Change</h3>
-                <input type="text" id="txtOldTelecashPIN" value="" placeholder="Old Password" data-theme="a">
-                <input type="password" inputmode="numeric" id="txtNewTelecashPIN" value="" placeholder="New PIN"
-                       data-theme="a">
-                <input type="password" inputmode="numeric" id="txtNewTelecashPINConfirm" value=""
-                       placeholder="New PIN again"
-                       data-theme="a">
-                <button type="button"
-                        class="ui-btn ui-corner-all ui-shadow ui-btn-b">
-                    <i class="fa  fa-arrow-circle-down" aria-hidden="true"></i>&nbsp;Save
-                </button>
-                <a data-rel="back" type="button"
-                   class="ui-btn ui-corner-all ui-shadow ui-btn-b">
-                    <i class="fa fa-times-circle" aria-hidden="true"></i>&nbsp;Cancel
-                </a>
-            </div>
-        </div>
-
-        <div data-role="tabs" style="margin-top: 20px;">
-            <div data-role="navbar" data-grid="a">
-                <ul class="tabs-corners">
-                    <li><a href="#divTelecashDetails" class="ui-btn-b ui-btn-active tabs-corners-first-child">Account
-                        Details</a>
-                    </li>
-                    <li><a href="#divTransactionHistory" class="ui-btn-b">Account History</a>
-                    </li>
-                </ul>
-            </div>
-
-            <div id="divTransactionHistory">
-                <p>Account History for last 30 days</p>
-                <table data-role="table" class="ui-body-d ui-shadow table-stripe ui-responsive">
-                    <thead>
-                    <tr class="ui-bar-d">
-                        <th data-priority="2">Payment to</th>
-                        <th data-priority="2">Acc No.</th>
-                        <th data-priority="3">Amount</th>
-                        <th data-priority="5">Date</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>CBZ</td>
-                        <td>001923012931</td>
-                        <td>$45.32</td>
-                        <td>10/12/2017 16:32:16</td>
-                    </tr>
-                    </tbody>
-                </table>
-                <p>For more history on your accounts activities, contact customer care at toll-free number 150 or tap
-                    'Call Us'
-                    below.</p>
-            </div>
-
-            <div id="divTelecashDetails">
-                <table data-role="table" class="ui-body-d ui-shadow table-stripe ui-responsive">
-                    <thead>
-                    <tr class="ui-bar-d">
-                        <th data-priority="2">Current balance</th>
-                        <th data-priority="3">Transaction Limit</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>$123</td>
-                        <td>$123</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-<!-------------------------------------    Self service   ------------------------------------------------>
-<!-------------------------------------    Self service   ------------------------------------------------>
-<section data-role="page" id="pgSelfService" class="ui-page-theme-a">
-    <!-- Header -->
-    <header data-role="header" class="ui-bar" data-position="fixed">
-        <div class="align-text-center header-text-with-logo-padding">
-            <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
-                    class="fa fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
-            <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
-            <h1 class="header-text-with-logo">&nbsp;Self service</h1>
-            <a class="header-options-link" href="#ppOptionsSelfService" data-rel="popup"><i class="fa fa-ellipsis-v"
-                                                                                            aria-hidden="true"></i></a>
-        </div>
-    </header>
-    <div data-role="popup" id="ppOptionsSelfService" data-theme="b">
-        <ul data-role="listview" data-inset="true" style="min-width:210px;">
-            <li data-icon="false"><a href="#pgMain">Back to Main Page</a></li>
-            <li data-icon="false"><a href="#pgChangePIN">Change PIN</a></li>
-            <li data-icon="false"><a href="#">Logout</a></li>
-        </ul>
-    </div>
-    <!-- End of Header -->
-
-    <div data-role="main" class="ui-content">
-
-        <ul data-inset="true" data-role="listview">
-            <li>
-                <a data-rel="popup" data-position-to="window"
-                   data-transition="pop" href="#ppUnsubscribeFromBundle">Unsubscribe bundle
-                    <p class="initcap">Unsubscribe from a bundle to remove it</p>
-                </a>
-            </li>
-            <li>
-                <a data-rel="popup" data-position-to="window"
-                   data-transition="pop" href="#ppActivateDeactivateService">Services
-                    <p class="initcap">Activate or deactivate a service</p>
-                </a>
-            </li>
-        </ul>
-
-    </div>
-
-    <div data-role="popup" id="ppActivateDeactivateService" data-overlay-theme="b" data-theme="b"
-         style="max-width:400px;">
-        <a href="#" data-rel="back"
-           class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-left">Close</a>
-        <div data-role="header" data-theme="a"><h1>Buying airtime</h1></div>
-        <div role="main" class="ui-content">
-            <p>To activate or de-activate a service, go to the services page.</p>
-            <a href="#pgBundlesPurchase" data-transition="flip"
-               class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b"><i class="fa fa-external-link-square"
-                                                                                aria-hidden="true"></i>
-                Go to services page</a>
-        </div>
-    </div>
-
-    <div data-role="popup" id="ppUnsubscribeFromBundle" data-overlay-theme="b" data-theme="b">
-        <a href="#" data-rel="back"
-           class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-left">Close</a>
-        <div data-role="header" data-theme="a"><h1>Unsubscribe?</h1></div>
-        <div class="ui-content">
-
-            <select data-theme="b" style="width: 80% !important;" id="cboUnsubscribeProduct">
-                <option disabled selected>Select a product</option>
-                <option value="W">WhatsApp Bundles</option>
-                <option value="F">Facebook Bundles</option>
-                <option value="M">Mega Boost Bundles</option>
-                <option value="N">Night Bundles</option>
-                <option value="D">Data Bundles</option>
-                <option value="T">Wifi Bundles</option>
-            </select>
-
-            <div class="wrap-input-for-margins-15px">
-                <a id="ancUnsubscribe" class="ui-btn ui-btn-a ui-corner-all"><i
-                        class="fa fa-ban" aria-hidden="true"></i>&nbsp;&nbsp;Unsubscribe
-                </a>
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-------------------------------------     Services    ------------------------------------------------>
-<!-------------------------------------     Services    ------------------------------------------------>
-<section data-role="page" class="ui-page-theme-a with-footer" id="pgServices">
-    <!-- Header -->
-    <header data-role="header" class="ui-bar" data-position="fixed">
-        <div class="align-text-center header-text-with-logo-padding">
-            <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
-                    class="fa  fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
-            <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
-            <h1 class="header-text-with-logo">&nbsp;Services</h1>
-            <a class="header-options-link" href="#ppOptionsTemplate" data-rel="popup"><i class="fa fa-ellipsis-v"
-                                                                                         aria-hidden="true"></i></a>
-        </div>
-    </header>
-    <div data-role="popup" id="ppOptionsTemplate" data-theme="b">
-        <ul data-role="listview" data-inset="true" style="min-width:210px;">
-            <li data-icon="false"><a href="#pgMain">Back to Main Page</a></li>
-            <li data-icon="false"><a href="#pgChangePIN">Change PIN</a></li>
-            <li data-icon="false"><a href="#">Logout</a></li>
-        </ul>
-    </div>
-    <!-- End of Header -->
-    <div data-role="popup" id="ppRoamingDefinitions">
-        <p class="initcap">Activate roaming to be able use your mobile outside of the range of its home network and
-            connects to
-            another available cell
-            network. Additional charges may apply.</p>
-    </div>
-
-    <div data-role="main" class="ui-content">
-
-        <p class="initcap">Use this menu to activate or de-active services you are eligible for.</p>
-
-        <table class="ui-full-width ui-shadow table-stripe custom-table">
-            <thead style="display: none;">
-            <tr>
-                <th>
-                </th>
-                <th>
-                </th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>Roaming&nbsp;<a href="#ppRoamingDefinitions" data-rel="popup"><i
-                        class="fa fa-info-circle icon-font-size-small" aria-hidden="true"></i></a>
-                </td>
-                <td class="align-text-right">
-                    <input title="Roaming" type="checkbox" data-role="flipswitch" id="chkToggleRoaming">
-                </td>
-            </tr>
-            </tbody>
-        </table>
-
-    </div>
-
-</section>
-
-
-
-<!-------------------------------------    Template ------------------------------------------------>
-<!--<section data-role="page" class="ui-page-theme-a">
-    <header data-role="header" class="ui-bar" data-position="fixed">
-        <div class="align-text-center header-text-with-logo-padding">
-            <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
-                    class="fa  fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
-            <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
-            <h1 class="header-text-with-logo">&nbsp;Title</h1>
-        </div>
-    </header>
-    <div data-role="main" class="ui-content">
-
-
-    </div>
-</section>-->
-
-
-<!-- END -->
 
 <!-- T&Cs Dialog  -->
 <section data-role="page" data-rel="dialog" id="tcsDialog">
@@ -2341,30 +1508,56 @@ We know that teamwork allows us to serve our customers better and faster as we r
 </section>
 
 
-<script type="text/javascript" src="cordova.js"></script>
+<!--------------------------------------- Test Tabs  ---------------------------------------------->
+<section data-role="page" id="tbPage">
+    <header data-role="header" class="ui-bar" data-position="fixed">
+        <div class="align-text-center header-text-with-logo-padding">
+            <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
+                    class="fa fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
+            <img class="header-logo" width="30" src="img/icons/Package%20Logo-11.png"/>
+            <h1 class="header-text-with-logo">&nbsp;Telecash</h1>
+        </div>
+    </header>
+    <div data-role="main" class="ui-content">
+        <div data-role="tabs">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#tab1">Tab 1</a></li>
+                    <li><a href="#tab2">Tab 2</a></li>
+                    <li><a href="#tab3">Tab 3</a></li>
+                </ul>
+            </div>
+            <div id="tab1" class="ui-content">
+                <h1>tab 1</h1>
+            </div>
+            <div id="tab2" class="ui-content">
+                <h1>tab 2</h1>
+            </div>
+            <div id="tab3" class="ui-content">
+                <h1>tab 3</h1>
+            </div>
+        </div>
+    </div>
+</section>
 
+<script type="text/javascript" src="cordova.js"></script>
 <!--Custom javascript by page-->
 <script type="text/javascript" src="js/index.js"></script>
 <script type="text/javascript" src="js/forgotPassword.js"></script>
 <script type="text/javascript" src="js/login.js"></script>
 <script type="text/javascript" src="js/register.js"></script>
+<script type="text/javascript" src="js/contact.js"></script>
+<script type="text/javascript" src="js/services.js"></script>
 <script type="text/javascript" src="js/balance.js"></script>
-<script type="text/javascript" src="js/RestTest.js"></script>
-<script type="text/javascript" src="js/bundles/bundleoptions.js"></script>
 <script type="text/javascript" src="js/shops.js"></script>
-<script type="text/javascript" src="js/shops/shopMap.js"></script>
-<script type="text/javascript" src="js/contacts_test.js"></script>
 <script type="text/javascript" src="js/airtimepurchase.js"></script>
 <script type="text/javascript" src="js/changepin.js"></script>
 <script type="text/javascript" src="js/faq.js"></script>
 <script type="text/javascript" src="js/promotions.js"></script>
-<script type="text/javascript" src="js/sms_test.js"></script>
+<script type="text/javascript" src="js/bundles/bundleoptions.js"></script>
 <script type="text/javascript" src="js/bundles/buybundle.js"></script>
 <script type="text/javascript" src="js/shortcodes.js"></script>
-<script type="text/javascript" src="js/contact.js"></script>
-<script type="text/javascript" src="js/services.js"></script>
-<script type="text/javascript" src="js/balance.js"></script>
-
+<script type="text/javascript" src="js/welcome.js"></script>
 
 </body>
 </html>

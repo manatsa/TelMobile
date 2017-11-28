@@ -12,7 +12,7 @@
     "dependencies": {
         "android-versions": "^1.2.1",
         "cordova-android": "^6.4.0",
-        "cordova-ios": "^4.5.3",
+        "cordova-ios": "^4.5.4",
         "cordova-plugin-android-permissions": "^1.0.0",
         "cordova-plugin-call-number": "^1.0.1",
         "cordova-plugin-compat": "^1.2.0",

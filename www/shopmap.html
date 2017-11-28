@@ -6,8 +6,8 @@
 
 <div data-role="page" id="googlePage">
     <!-- Header -->
-    <header data-role="header" class="ui-bar" data-position="fixed"
-            style="width: 100% !important; height: 8vh !important;">
+    <header id="hdrShopMap" data-role="header" class="ui-bar" data-position="fixed"
+            style="width: 100% !important;">
         <div class="align-text-center header-text-with-logo-padding">
             <a data-transition="flip" data-rel="back" class="no-underline back-arrow"><i
                     class="fa  fa-arrow-left icon-font-size-med" aria-hidden="true"></i></a>
@@ -26,131 +26,126 @@
     <!-- End of Header -->
 
     <div>
-        <div data-role="main">
+        <div id="divGoogleMap" data-role="main">
 
+            <div id="googleMap"
+                 style="width: 100% !important;overflow: hidden;bottom: 0; top: 4em; position: absolute !important;"
+                 class="mapLoading">
+                <script>
+                    var timeoutInSeconds = 20;
+                    setTimeout(function () {
+                        if ($("#googleMap").hasClass("mapLoading")) {
+                            navigator.notification.alert("Map is taking too long to load. Please make sure you have a good internet connection and try again. \n\nIf you are sure you are connected to the internet, you may keep waiting for the map to load.", function () {
+                            }, "Map loading failed");
+                        }
+                    }, timeoutInSeconds * 1000);
 
-            <div id="floating-panel">
-                <b>Mode of Travel: </b>
-                <select id="mode" data-inset="true" onchange="showDirections()" >
-                    <option value="DRIVING">Driving</option>
-                    <option value="WALKING">Walking</option>
-                    <option value="BICYCLING">Bicycling</option>
-                    <option value="TRANSIT">Transit</option>
-                </select>
-                <span id="timetotravel"></span>
-            </div>
-            <div id="googleMap" class="mapLoading" style="width: 100% !important; height: 91vh !important;">
-            <script>
+                    function myMap() {
+                        directionsDisplay = new google.maps.DirectionsRenderer;
+                        directionsService = new google.maps.DirectionsService;
 
+                        NativeStorage.getItem("shop", function (data) {
+                            shop = JSON.parse(data.replace(/`/g, '"'));
+                            $("#h1Shop").html("&nbsp;&nbsp;" + shop.name);
+                            latlon = new google.maps.LatLng(shop.latitude, shop.longitude);
+                            //centerlatlon is used to shift the center up to cater for interface at bottom
+                            var centerlatlon = new google.maps.LatLng(shop.latitude - 0.03, shop.longitude);//this should  be changed if scaled is changed
 
-                function myMap() {
-                     directionsDisplay = new google.maps.DirectionsRenderer;
-                    directionsService = new google.maps.DirectionsService;
+                            var mapProp = {
+                                center: centerlatlon,
+                                zoom: 12,//if this is changed also change var 'centerlatlon'
+                                fullscreenControl: false
+                            };
 
-                    NativeStorage.getItem("shop", function (data) {
-                        shop = JSON.parse(data.replace(/`/g, '"'));
-                        $("#h1Shop").html("&nbsp;&nbsp;" + shop.name);
-                        latlon = new google.maps.LatLng(shop.latitude, shop.longitude);
+                            map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
 
-                        var mapProp = {
-                            center: latlon,
-                            zoom: 12,
-                            fullscreenControl: false
-                        };
-                         map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
-                        var customIcon = {
-                            url: "../www/img/icons/marker.png", // url
-                            scaledSize: new google.maps.Size(24, 32), // scaled size
-                            origin: new google.maps.Point(0, 0), // origin
-                            anchor: new google.maps.Point(12, 32) // anchor
-                        };
-                        $.ajax({
-                            url: "../www/json/shops.json",
-                            type: "GET",
-                            dataType: "json",
+                            var customIcon = {
+                                url: "../www/img/icons/marker.png", // url
+                                scaledSize: new google.maps.Size(24, 32), // scaled size
+                                origin: new google.maps.Point(0, 0), // origin
+                                anchor: new google.maps.Point(12, 32) // anchor
+                            };
 
-                            success: function (result) {
-                                $.each(result, function (index, shopAreas) {
-                                    $.each(shopAreas, function (i, shopItem) {
-                                        //latlon=new google.maps.LatLng(shopItem.latitude, shopItem.longitude);
-                                        var marker = new google.maps.Marker({
-                                            position: new google.maps.LatLng(shopItem.latitude, shopItem.longitude),
-                                            icon: customIcon,
-                                            map: map,
-                                            title: shopItem.name,
-                                            timeout:200,
-                                            animation: google.maps.Animation.DROP
+                            $.ajax({
+                                url: "../www/json/shops.json",
+                                type: "GET",
+                                dataType: "json",
+
+                                success: function (result) {
+                                    $.each(result, function (index, shopAreas) {
+                                        $.each(shopAreas, function (i, shopItem) {
+                                            var marker = new google.maps.Marker({
+                                                position: new google.maps.LatLng(shopItem.latitude, shopItem.longitude),
+                                                icon: customIcon,
+                                                map: map,
+                                                title: shopItem.name,
+                                                timeout: 200,
+                                                animation: google.maps.Animation.DROP
+                                            });
+                                            markers.push(marker);
+
+                                            var contentHTML = "" +
+                                                "<div class='marker-info' > " +
+                                                "<div style='margin: 20px;' > " +
+                                                "<i onclick='removeMapMarkerInfoWindow()' class='fa fa-times-circle-o' style='float: right; font-size: 32px; margin-top: -6px;'></i>" +
+                                                "<p class='align-text-left' style='margin: 0; padding-right: 30px; font-size: 20px; font-weight: bold;'>" + shopItem.name + "</p> <hr>" +
+                                                "<p>" + shopItem.address + "</p>" +
+                                                "<p>Call " + echoShopNumbers(shopItem.tel) + "</p>";
+                                            contentHTML += "</tr> </tbody> </table>";
+                                            contentHTML += "<select data-theme='b' id='cboShopDirectionsTravelMode'> <option value='' selected disabled>Select mode of travel</option> <option value='DRIVING'>Driving</option> <option value='WALKING'>Walking</option> <option value='BICYCLING'>Bicycling</option> <option value='TRANSIT'>Transit</option> </select> <span id='timetotravel'></span>";
+                                            contentHTML += "<button style='margin-top: 15px;' class='ui-btn ui-btn-b ui-corner-all' type='button' onclick='showDirections()'>SHOW DIRECTIONS</button>";
+                                            contentHTML += "</div>";
+                                            contentHTML += "</div>";
+
+                                            marker.addListener('click', function () {
+                                                latlon = marker.getPosition();
+                                                $(".marker-info").remove();
+                                                $("#divGoogleMap").append(contentHTML);
+                                                $("#cboShopDirectionsTravelMode").selectmenu();
+                                                $("#cboShopDirectionsTravelMode").selectmenu('refresh');
+                                            });
+
+                                            if (shopItem.name.trim() === shop.name.trim()) {
+                                                marker.setAnimation(google.maps.Animation.BOUNCE);
+                                                $(".marker-info").remove();
+                                                $("#divGoogleMap").append(contentHTML);
+                                                $("#cboShopDirectionsTravelMode").selectmenu();
+                                                $("#cboShopDirectionsTravelMode").selectmenu('refresh');
+                                            }
+
                                         });
-                                        markers.push(marker)
-
-                                        if (shopItem.name.trim() === shop.name.trim()) {
-                                            marker.setAnimation(google.maps.Animation.BOUNCE);
-                                        }
-                                        marker.addListener('click', function () {
-                                            //alert(markers.length)
-                                            infowindow.open(map, marker);
-                                            latlon=marker.getPosition();
-                                        });
-
-                                        var contentHTML = "" +
-                                            "<div class='red-text' > " +
-                                                "<u><a onclick='showDirections()' >Show Directions</a></u>"+
-                                                "<h4  class='align-text-center'>" + shopItem.name + "</h4> <hr> " +
-                                                "<table data-role='table' class='ui-body-d ui-shadow ui-responsive'> " +
-                                                    "<thead> " +
-                                                        "<tr class='ui-bar-d'> " +
-                                                            "<th class='align-text-left'>Address</th> " +
-                                                            "<th class='align-text-left'>Tel</th> " +
-                                                        "</tr> " +
-                                                    "</thead> " +
-                                                    "<tbody> " +
-                                                        "<tr> " +
-                                                            "<td class='initcap align-text-left'>" + shopItem.address + "</td>";
-                                        contentHTML += echoShopNumbers(shopItem.tel);
-                                        contentHTML += "</tr> </tbody> </table> </div>";
-                                        var infowindow = new google.maps.InfoWindow({
-                                            content: contentHTML
-                                        });
-                                        marker.addListener('click', function () {
-                                            infowindow.open(map, marker);
-                                            infoBubble=infowindow;
-                                            latlon=marker.getPosition();
-                                        });
-
                                     });
-                                });
-                                $("#googleMap").removeClass("mapLoading");
-                            },
-                            failure: function (fail) {
-                                console.log(fail.responseText);
-                                navigator.notification.alert("FAILURE :" + fail, function () {
-                                }, "Error loading map. Please make sure you are connected to the internet and try again.")
-                                $("#googleMap").removeClass("mapLoading");
-                            },
-                            error: function (error) {
-                                console.log(error.responseText)
-                                navigator.notification.alert("FAILURE :" + fail, function () {
-                                }, "Error loading map. Please make sure you are connected to the internet and try again.")
-                                $("#googleMap").removeClass("mapLoading");
-                            }
+                                    $("#googleMap").removeClass("mapLoading");
+                                },
+                                failure: function (fail) {
+                                    console.log(fail.responseText);
+                                    navigator.notification.alert("Error loading map. Please make sure you are connected to the internet and try again." + fail, function () {
+                                    }, "Failure");
+                                    $("#googleMap").removeClass("mapLoading");
+                                },
+                                error: function (error) {
+                                    console.log(error.responseText);
+                                    navigator.notification.alert("Error loading map. Please make sure you are connected to the internet and try again." + fail, function () {
+                                    }, "Error");
+                                    $("#googleMap").removeClass("mapLoading");
+                                }
+                            });
+                            google.maps.event.trigger(map, 'resize');
+                        }, function (error) {
+                            navigator.notification.alert("Error :" + error, function () {
+                            }, "Can't Show Map right now!", "OK");
+                            $("#googleMap").removeClass("mapLoading");
                         });
-                        google.maps.event.trigger(map, 'resize');
-                    }, function (error) {
-                        navigator.notification.alert("Error :" + error, function () {
-                        }, "Can't Show Map right now!", "OK");
-                        $("#googleMap").removeClass("mapLoading");
-                    });
 
 
-
-                }
-
+                    }
 
 
-            </script>
+                </script>
 
-            <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDH7SGQ_oRhAYAgcAedTbdZrkh1jprT1VU&callback=myMap"></script>
-        </div>
+                <script async defer
+                        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDH7SGQ_oRhAYAgcAedTbdZrkh1jprT1VU&callback=myMap"></script>
+            </div>
 
             <div class="spinner" style=" background-color: transparent; display: none">
 

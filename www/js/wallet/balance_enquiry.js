@@ -13,11 +13,11 @@ function testRest() {
             console.log(data)
         },
         failure: function (fail) {
-            alert("FAILURE :"+fail)
+            alert("Failure :"+fail)
             console.log(fail.responseText)
         },
         error:function (error) {
-            alert("ERROR :\n"+error.responseText)
+            alert("Error :\n"+error.responseText)
             console.log(error.responseText)
         }
     });

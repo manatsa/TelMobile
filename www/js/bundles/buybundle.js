@@ -1,153 +1,266 @@
-var buybundleuri="http://telecelmobileapp.telecel.co.zw/TelecelBundleRestService/rest/purchase/mobileapp";
+var buyBundleURI = "http://telecelmobileapp.telecel.co.zw/TelecelBundleRestService/rest/purchase/mobileapp";
+var buyBundleFromTelecashURI = "http://telecelmobileapp.telecel.co.zw/TelecelBundleRestService/rest/telecash/cashOut/mobileapp";
 
-$("#btnPurchaseBundleFromCore").on("click",function () {
-    try{
-        //get user registration info if exists
-        NativeStorage.getItem("user",
-            //success function
-            function (user) {
-            var regmobile=user.msisdn;
-            var regpin=user.pin;
-            var product=$("#divBundleOptions :selected").val();
-            var selfother=$("#divBuyForOtherControlGroup :checked").val();
-            var othermobile=$("#txtBundleForNumber").val()
+$("#btnPurchaseBundleFromTelecash").on("click", function () {
 
-            //verify user info successfully retrieved
-            if(regmobile && regpin)
-            {
-                //ensure product is selected
-                if(product){
+        if (!internetConnectionYN()) {//first check if user has internet
+            showInternetError();
+        } else {
+            var product = $("#divBundleOptions :selected").val();
+            var selfOrOther = $("#divBuyForOtherControlGroup :checked").val();
+            var othermobile = $("#txtBundleForNumber").val();
+            var amount = getProductAmount(product);
+            var amountWithoutCharge = getAmountWithoutCharge(amount);
 
-                    // prompt user for pin
-                    navigator.notification.prompt("Please Enter Your Pin",function (result) {
-                        if(result.buttonIndex==1){//0  is cancelled, 1 is 1st button, 2 is second button e.t.c.
-                            if(result.input1==regpin) //check first input prompted to the user is the valid registered PIN
-                            {
-                                try{
-                                    //execute ajax method
-                                    doAjax(regmobile,product,selfother,othermobile)
-                                }catch(e){
-                                    console.log(JSON.stringify(e))
-                                    navigator.notification.alert("Error :"+e.toString(),null,"ERROR DOING TRANSACTION","OK");
+            navigator.notification.prompt("Please enter your 4 digit TeleCash PIN", function (result) {
+                if (result.buttonIndex === 1) {//0  is cancelled, 1 is proceed, 2 is second button if it was there e.t.c.
+                    try {
+                        if (isValidPINFromDialog(result.input1)) {
+                            deductMoneyFromFromTelecash(amountWithoutCharge, Number(result.input1));
+                            if (selfOrOther === 'other') {
+                                var validDestinationMSISDN = validateMSISDN(othermobile);
+                                if (validDestinationMSISDN !== "") {
+                                    //buyBundleForOtherFromTelecash(validDestinationMSISDN, product, Number(result.input1));
                                 }
-                            }else{
-                                navigator.notification.alert("You entered an invalid pin",null,"Authentication Error","OK")
+                            } else {
+                                //buyBundleForSelfFromTelecash(product, );
                             }
                         }
-                    },"Authenticate Transaction",["Proceed","Cancel"]) //title, [array of buttons]
-
-
-                }else{
-                    navigator.notification.alert("Please select a valid product",null,"Invalid Product","OK")
+                    } catch (e) {
+                        console.log(JSON.stringify(e));
+                        navigator.notification.alert("Could not get TeleCash PIN. Please re-enter." + e.toString(), null, "Error", "OK");
+                    }
                 }
+            }, "Telecash PIN", ["Proceed", "Cancel"]) //title, [array of buttons]
+        }
+    }
+);
 
-            }else{
-                navigator.notification.alert("You need to would have registered!",null,"Invalid phone number and pin","OK")
+$("#btnPurchaseBundleFromCore").on("click", function () {
+    if (!internetConnectionYN()) {//first check if user has internet
+        showInternetError();
+    } else {
+
+        var regmobile = user.msisdn;
+        var regpin = user.pin;
+        var product = $("#divBundleOptions :selected").val();
+        var selfOrOther = $("#divBuyForOtherControlGroup :checked").val();
+        var othermobile = $("#txtBundleForNumber").val();
+
+        //verify user info successfully retrieved
+        if (regmobile && regpin) {
+            //ensure product is selected
+            if (product) {
+
+                // prompt user for pin
+                navigator.notification.prompt("Please enter your 4 digit PIN", function (result) {
+                    if (result.buttonIndex === 1) {//0  is cancelled, 1 is proceed, 2 is second button if it was there e.t.c.
+                        if (Number(result.input1) === Number(regpin)) //check first input prompted to the user is the valid registered PIN
+                        {
+                            try {
+                                //execute ajax method
+                                purchaseFromCoreAJAX(regmobile, product, selfOrOther, othermobile);
+                            } catch (e) {
+                                console.log(JSON.stringify(e));
+                                navigator.notification.alert("Could not complete transaction. " + e.toString(), null, "Error", "OK");
+                            }
+                        } else {
+                            navigator.notification.alert("You entered an incorrect pin.", null, "Authentication Error", "OK")
+                        }
+                    }
+                }, "Authenticate Transaction", ["Proceed", "Cancel"]) //title, [array of buttons]
+
+            } else {
+                navigator.notification.alert("Please select a valid product", null, "Invalid Product", "OK")
             }
 
-        },function (error) {
-            console.log(error)
-            alert(error+error.responseText)
-        });
-    }catch(e){
-        console.log(e)
-        alert(e.responseText)
+        } else {
+            navigator.notification.alert("Only registered users can use this feature. Your number is not registered to use the mobile app!", null, "Fatal error", "OK")
+        }
     }
-
 });
 
-function validMobile(msisdn) {
-    var validMsisdn="";
-    if(msisdn)
-        {
-            if(msisdn.substring(0,5)=="26373"){
-                validMsisdn=msisdn.substring(3);
-            }else if(msisdn.substring(0,6)=="+26373"){
-                validMsisdn=msisdn.substring(4);
-            }else if(msisdn.substring(0,7)=="0026373"){
-                validMsisdn=msisdn.substring(5);
-            }else if(msisdn.substring(0,3)==="073"){
-                validMsisdn=msisdn.substring(1);
-            }else if(msisdn.substring(0,5)=="73"){
-                validMsisdn=msisdn
-            }else{
-                navigator.notification.alert("You need to input a valid mobile number!",function () {},"Invalid Mobile Number","OK")
-            }
-    }else{
-        navigator.notification.alert("You need to check the mobile number!",function () {},"Invalid Mobile Number","OK")
-    }
-    return validMsisdn
-}
-
-
-function doAjax(regmobile,product,selfother,othernumber) {
-
+function purchaseFromCoreAJAX(regmobile, product, selfOrOther, othernumber) {
     //check if buying for self or other
-    if(selfother=='other')
-    {
-        var validMSISDN=validMobile(othernumber).toString().trim(); //return validated other number
-        if(validMSISDN.length>8){ //check if valid lenght
-
+    if (selfOrOther === 'other') {
+        var validDestinationMSISDN = validateMSISDN(othernumber); //return validated other number
+        console.log(validDestinationMSISDN);
+        if (validDestinationMSISDN === "") {
+            console.log("Invalid MSISDN");
+        } else {
+            console.log("Valid MSISDN");
             //format uri with base url and arguments
-          var bun=  buybundleuri+"/"+regmobile+"/"+othernumber+"/"+product
+            var buyForOtherURI = buyBundleURI + "/" + regmobile + "/" + validDestinationMSISDN + "/" + product;
 
             //access service
+            showProgressBar();
             $.ajax({
-                url:bun,
-                type:"GET",
-                timeout: 3000,
-                dataType:"json",
+                url: buyForOtherURI,
+                type: "GET",
+                timeout: 10000,
+                dataType: "json",
 
-                success:function (result) {
-                    var err=JSON.parse(JSON.stringify(result))
-                    var resp=JSON.parse(JSON.stringify(err.responseJSON)).commercialDescription;
-                    console.log(resp)
-                    navigator.notification.alert(resp,null,"\nBundle Purchase","OK")
+                success: function (result) {
+                    hideProgressBar();
+
+                    var str = JSON.stringify(result);
+                    var msg = JSON.parse(str);
+                    console.log(msg.responseJSON);
+                    console.log(buyForOtherURI);
+                    if (msg.responseJSON !== undefined) {
+                        navigator.notification.alert(msg.responseJSON.commercialDescription, null, "Success", "OK");
+                    } else if (msg.commercialDescription !== undefined) {
+                        navigator.notification.alert(msg.commercialDescription, null, "Success", "OK");
+                    } else {
+                        navigator.notification.alert("Could not tell if transaction was successful. Please contact Telecel call centre at 150 to verify if transaction was successful. Reason unknown." + errorHelpTextToAppend, null, "Result unknown", "OK");
+                    }
                 },
                 failure: function (fail) {
-                    var err=JSON.parse(JSON.stringify(fail))
-                    var resp=JSON.parse(JSON.stringify(err.responseJSON)).commercialDescription;
-                    console.log(resp)
-                    navigator.notification.alert(resp,null,"\nBundle Purchase","OK")
-                    console.log(JSON.stringify(fail))
-                },
-                error:function (error) {
+                    hideProgressBar();
 
-                    var err=JSON.parse(JSON.stringify(error))
-                    var resp=JSON.parse(JSON.stringify(err.responseJSON)).commercialDescription;
-                    console.log(resp)
-                    navigator.notification.alert(resp,null,"\nBundle Purchase","OK")
+                    var str = JSON.stringify(fail);
+                    var msg = JSON.parse(str);
+                    console.log(msg.responseJSON);
+                    if (msg.responseJSON !== undefined) {
+                        navigator.notification.alert(msg.responseJSON.commercialDescription + errorHelpTextToAppend, null, "Fail", "OK");
+                    } else if (msg.commercialDescription !== undefined) {
+                        navigator.notification.alert(msg.commercialDescription + errorHelpTextToAppend, null, "Fail", "OK");
+                    } else if (fail.statusText !== undefined) {
+                        navigator.notification.alert("Failed to execute operation. " + fail.statusText + " " + errorHelpTextToAppend, null, "Fail", "OK");
+                    } else {
+                        navigator.notification.alert("Failed to execute operation. Reason unknown." + errorHelpTextToAppend, null, "Fail", "OK");
+                    }
+                },
+                error: function (error) {
+                    hideProgressBar();
+
+                    var str = JSON.stringify(error);
+                    var msg = JSON.parse(str);
+                    console.log(msg.responseJSON);
+                    if (msg.responseJSON !== undefined) {
+                        navigator.notification.alert(msg.responseJSON.commercialDescription + errorHelpTextToAppend, null, "Error", "OK");
+                    } else if (msg.commercialDescription !== undefined) {
+                        navigator.notification.alert(msg.commercialDescription + errorHelpTextToAppend, null, "Error", "OK");
+                    } else if (error.statusText !== undefined) {
+                        navigator.notification.alert("Failed to execute operation. " + error.statusText + " " + errorHelpTextToAppend, null, "Error", "OK");
+                    } else {
+                        navigator.notification.alert("Failed to execute operation. Reason unknown." + errorHelpTextToAppend, null, "Error", "OK");
+                    }
                 }
             });
         }
-    }else{         //buy for self
-        var bun=buybundleuri+"/"+regmobile+"/"+product
+    }
+    else {         //buy for self
+        var buyForSelfURI = buyBundleURI + "/" + regmobile + "/" + product;
 
         $.ajax({
-            url:bun,
-            type:"GET",
-            timeout: 3000,
-            dataType:"json",
+            url: buyForSelfURI,
+            type: "GET",
+            timeout: 10000,
+            dataType: "json",
 
-            success:function (result) {
-                console.log(result.responseText)
-                var err=JSON.parse(JSON.stringify(result))
-                var resp=JSON.parse(JSON.stringify(err.responseJSON)).commercialDescription;
-                console.log(resp)
-                navigator.notification.alert(resp,null,"\nBundle Purchase","OK")
+            success: function (result) {
+                hideProgressBar();
+
+                var str = JSON.stringify(result);
+                var msg = JSON.parse(str);
+                console.log(buyForOtherURI);
+                console.log(msg.responseJSON);
+                if (msg.responseJSON !== undefined) {
+                    navigator.notification.alert(msg.responseJSON.commercialDescription, null, "Success", "OK");
+                } else if (msg.commercialDescription !== undefined) {
+                    navigator.notification.alert(msg.commercialDescription, null, "Success", "OK");
+                } else {
+                    navigator.notification.alert("Could not tell if transaction was successful. Please contact Telecel call centre at 150 to verify if transaction was successful. Reason unknown." + errorHelpTextToAppend, null, "Result unknown", "OK");
+                }
             },
             failure: function (fail) {
-                var err=JSON.parse(JSON.stringify(fail))
-                var resp=JSON.parse(JSON.stringify(err.responseJSON)).commercialDescription;
-                console.log(resp)
-                navigator.notification.alert(resp,null,"\nBundle Purchase","OK")
+                hideProgressBar();
+
+                var str = JSON.stringify(fail);
+                var msg = JSON.parse(str);
+                console.log(msg.responseJSON);
+                if (msg.responseJSON !== undefined) {
+                    navigator.notification.alert(msg.responseJSON.commercialDescription + errorHelpTextToAppend, null, "Fail", "OK");
+                } else if (msg.commercialDescription !== undefined) {
+                    navigator.notification.alert(msg.commercialDescription + errorHelpTextToAppend, null, "Fail", "OK");
+                } else if (fail.statusText !== undefined) {
+                    navigator.notification.alert("Failed to execute operation. " + fail.statusText + " " + errorHelpTextToAppend, null, "Fail", "OK");
+                } else {
+                    navigator.notification.alert("Failed to execute operation. Reason unknown." + errorHelpTextToAppend, null, "Fail", "OK");
+                }
             },
-            error:function (error) {
-                var err=JSON.parse(JSON.stringify(error))
-                var resp=JSON.parse(JSON.stringify(err.responseJSON)).commercialDescription;
-                console.log(resp)
-                navigator.notification.alert(resp,null,"\nBundle Purchase","OK")
+            error: function (error) {
+                hideProgressBar();
+
+                var str = JSON.stringify(error);
+                var msg = JSON.parse(str);
+                console.log(msg.responseJSON);
+                if (msg.responseJSON !== undefined) {
+                    navigator.notification.alert(msg.responseJSON.commercialDescription + errorHelpTextToAppend, null, "Error", "OK");
+                } else if (msg.commercialDescription !== undefined) {
+                    navigator.notification.alert(msg.commercialDescription + errorHelpTextToAppend, null, "Error", "OK");
+                } else if (error.statusText !== undefined) {
+                    navigator.notification.alert("Failed to execute operation. " + error.statusText + " " + errorHelpTextToAppend, null, "Error", "OK");
+                } else {
+                    navigator.notification.alert("Failed to execute operation. Reason unknown." + errorHelpTextToAppend, null, "Error", "OK");
+                }
             }
         });
     }
+}
+
+//function to buy for self from TeleCash
+function deductMoneyFromFromTelecash(amount, TelecashPIN) {
+    var URI = buyBundleFromTelecashURI + "/" + user.msisdn + "/" + amount + "/" + TelecashPIN + "/" + TelecelAgentCode;
+    showProgressBar();
+    $.ajax({
+            url: URI,
+            type: "GET",
+            dataType: "json",
+            success: function (result) {
+                hideProgressBar();
+                var msg = JSON.parse(JSON.stringify(result));
+                console.log(msg);
+                if (msg !== undefined && msg.Remark !== undefined && msg.Remark !== null) {
+                    navigator.notification.alert(msg.Remark, null, "Result", "OK");
+                } else if (msg.OpsTransactionId !== undefined) {
+                    navigator.notification.alert("Transaction being processed. Please await an SMS notification message that will arrive shortly. Contact call center at 150 if no message is received.", null, "Processing", "OK");
+                } else {
+                    navigator.notification.alert("Could not tell if operation was successful. Reason unknown. Please contact Telecel call centre at 150 to verify if operation was successful. " + errorHelpTextToAppend, null, "Result unknown", "OK");
+                }
+            },
+            failure: function (fail) {
+                hideProgressBar();
+                if (fail !== undefined && fail.responseText !== undefined) {
+                    navigator.notification.alert(fail.responseText + errorHelpTextToAppend, null, "Fail", "OK");
+                } else {
+                    navigator.notification.alert("Failed to execute operation. Reason unknown." + errorHelpTextToAppend, null, "Fail", "OK");
+                }
+                console.log(fail.responseText);
+            },
+            error: function (error) {
+                console.log(error);
+                hideProgressBar();
+                if (error !== undefined && error.responseText !== undefined) {
+                    navigator.notification.alert(fail.responseText + errorHelpTextToAppend, null, "Error", "OK");
+                } else {
+                    navigator.notification.alert("Failed to execute operation. Reason unknown." + errorHelpTextToAppend, null, "Error", "OK");
+                }
+            }
+        }
+    );
+
+}
+
+function getProductAmount(productName, array) {
+    for (var i = 0; i < array.length; i++) {
+        if (array[i].name === productName) {
+            return array[i].amount;
+        }
+    }
+}
+
+function getAmountWithoutCharge(amount) {
+    
 }

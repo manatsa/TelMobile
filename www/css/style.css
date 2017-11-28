@@ -189,6 +189,10 @@ Additional classes added
 
 }
 
+.bold-text {
+    font-weight: bold;
+}
+
 .red-text {
     color: #C1272D !important;
 }
@@ -243,6 +247,10 @@ Additional classes added
 
 .initcap {
     text-transform: none !important;
+}
+
+.capitalize {
+    text-transform: capitalize !important;
 }
 
 footer {
@@ -466,4 +474,123 @@ footer .ui-grid-c {
 
 .halve-image-size {
     transform: scale(0.5);
+}
+
+.with-spinner {
+    background: transparent url("images/ajax-loader.gif");
+    margin-left: auto;
+    margin-right: auto;
+    width: 100px;
+    height: 100px;
+}
+
+.glow {
+    animation: glow 1s infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        -webkit-box-shadow: 0 0 12px -12px #c1272d /*{b-active-background-color}*/;
+        -moz-box-shadow: 0 0 12px -12px #c1272d /*{b-active-background-color}*/;
+        box-shadow: 0 0 12px -12px #c1272d /*{b-active-background-color}*/;
+    }
+    to {
+        -webkit-box-shadow: 0 0 12px #c1272d /*{b-active-background-color}*/;
+        -moz-box-shadow: 0 0 12px #c1272d /*{b-active-background-color}*/;
+        box-shadow: 0 0 12px #c1272d /*{b-active-background-color}*/;
+    }
+}
+
+#divCircles {
+    width: 142px;
+    z-index: 2 !important;
+    position: fixed !important;
+    right: 0 !important;
+    bottom: 6em !important;
+    margin-left: auto;
+    margin-right: auto;
+    height: 10px;
+    left: 0 !important;
+}
+
+.circle {
+    border-radius: 50%;
+    display: inline-block;
+    width: 10px;
+    margin-right: 15px;
+    height: 10px;
+    opacity: 0.5;
+    background: #fff;
+}
+
+.circle.active {
+    opacity: 1 !important;
+}
+
+#divBtnRegisterContainer {
+    padding-top: 0.8em;
+    z-index: 1 !important;
+    background: #fafafa;
+}
+
+#divBtnBeginContainer {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding-top: 2.5em;
+    z-index: 1 !important;
+    background: #9e191d;
+}
+
+.div-welcome-section {
+    height: 90vh !important;
+}
+
+.alert-box {
+    color: #555;
+    border-radius: 10px;
+    font-family: Tahoma, Geneva, Arial, sans-serif;
+    font-size: 11px;
+    padding: 10px 10px 10px 36px;
+}
+
+.alert-box span {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.alert-dismissible {
+    background: #ffecec url('../img/notification/error.png') no-repeat 10px 50%;
+    border: 1px solid #f5aca6;
+}
+
+.error {
+    background: #ffecec url('../img/notification/error.png') no-repeat 10px 50%;
+    border: 1px solid #f5aca6;
+}
+
+.success {
+    background: #e9ffd9 url('../img/notification/success.png') no-repeat 10px 50%;
+    border: 1px solid #a6ca8a;
+}
+
+.warning {
+    background: #fff8c4 url('../img/notification/warning.png') no-repeat 10px 50%;
+    border: 1px solid #f2c779;
+}
+
+.notice {
+    background: #e3f7fc url('../img/notification/notice.png') no-repeat 10px 50%;
+    border: 1px solid #8ed9f6;
+}
+
+.marker-info {
+    width: 100%;
+    position: absolute;
+    z-index: 5;
+    background: rgba(193, 39, 45, 0.8);
+    bottom: 0;
+    color: #fff;
+    text-shadow: none;
 }

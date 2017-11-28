@@ -451,3 +451,19 @@ footer .ui-grid-c {
     color: #000000 !important /*{b-bdown-color}*/;
     text-shadow: 0 /*{b-bdown-shadow-x}*/ 1px /*{b-bdown-shadow-y}*/ 0 /*{b-bdown-shadow-radius}*/ #eeeeee /*{b-bdown-shadow-color}*/ !important;
 }
+
+.btn-airtime-purchase-left {
+    width: 49% !important;
+    display: inline-block !important;
+    float: left !important;
+}
+
+.btn-airtime-purchase-right {
+    width: 49% !important;
+    display: inline-block !important;
+    float: right !important;
+}
+
+.halve-image-size {
+    transform: scale(0.5);
+}

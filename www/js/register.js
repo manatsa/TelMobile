@@ -7,16 +7,16 @@ $("#btnRegister").on("click", function () {
 
     if (phone === "") {
         navigator.notification.alert("Please enter your mobile number for validation.", function () {
-        }, "Empty field", "OK")
+        }, "Fill all fields", "OK")
     } else if (email === "") {
         navigator.notification.alert("Please your email.", function () {
-        }, "Empty field", "OKs")
+        }, "Fill all fields", "OK")
     } else if (pin1 === "") {
         navigator.notification.alert("Please a PIN for use with this app.", function () {
-        }, "Empty field", "OK")
+        }, "Fill all fields", "OK")
     } else if (pin2 === "") {
         navigator.notification.alert("Please confirm your PIN.", function () {
-        }, "Empty field", "OK")
+        }, "Fill all fields", "OK")
     } else if (!isPhoneValidNumber(phone)) {
         navigator.notification.alert("Please enter a valid Telecel mobile number.", function () {
         }, "Invalid mobile number", "OK")
@@ -33,11 +33,12 @@ $("#btnRegister").on("click", function () {
         var pin = parseInt(pin1);//no need for try catch because validated
         // do more here --------------------------------------------------------------- now persisting login details
         try {
-            var user = {msisdn: phone, pin: pin, email: email};
-            NativeStorage.setItem("user", user, function () {
+            var newUser = {msisdn: phone, pin: pin, email: email};
+            NativeStorage.setItem("user", newUser, function () {
                 navigator.notification.alert("Details saved successfully!", function () {
                 }, "Registration success", "OK");
-                $.mobile.changePage("#pgMain")
+                user = newUser;
+                $.mobile.changePage("#pgMain");
             }, function (error) {
                 navigator.notification.alert("Error :" + error, function () {
                 }, "Error Saving Details", "OK")
@@ -54,9 +55,4 @@ function isPhoneValidNumber(phone) {
         return true;
     }
     return false;
-}
-
-function isValidEmail(email) {
-    var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-    return regex.test(email);
 }

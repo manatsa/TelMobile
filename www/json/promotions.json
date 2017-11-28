@@ -3,36 +3,48 @@
     "title": "Telecel Red Refer a Friend Promotion",
     "description": "Telecel's Red Refer A Friend Promotion is rewarding customers who refer a friend to sign up for any of our Telecel Red packages with a month's subscription for free.",
     "imageUrl": "http://telecel.co.zw/images/broadband/referbanner.jpg",
-    "readMoreWebsiteLink": "http://telecel.co.zw/products-services/promotions/293-telecel-red-refer-a-friend-promotion"
+    "readMoreWebsiteLink": "http://telecel.co.zw/products-services/promotions/293-telecel-red-refer-a-friend-promotion",
+    "goToPageInMobileOrURL": "",
+    "goToPageText": ""
   },
   {
     "title": "All Night Long Bundles",
     "description": "You can now enjoy unlimited browsing between 11pm and 5am at ridiculuosly low prices with telecel's All night long bundles that start from as low as $1 for 2 nights of access",
     "imageUrl": "http://telecel.co.zw/images/broadband/allnightweb.jpg",
-    "readMoreWebsiteLink": "http://telecel.co.zw/products-services/promotions/290-unlimited-night-data-bundles"
+    "readMoreWebsiteLink": "http://telecel.co.zw/products-services/promotions/290-unlimited-night-data-bundles",
+    "goToPageInMobileOrURL": "#pgBundlesPurchase",
+    "goToPageText": "Buy Night Bundles"
   },
   {
     "title": "Telecel Lucky Number Promotion",
     "description": "Stand a chance to win awesome prizes. The promotion is open to all Telecel Go prepaid subscribers who are above 18 years of age and are holders of a valid ID or passport.",
     "imageUrl": "",
-    "readMoreWebsiteLink": "http://telecel.co.zw/products-services/promotions/285-telecel-lucky-number-promotion"
+    "readMoreWebsiteLink": "http://telecel.co.zw/products-services/promotions/285-telecel-lucky-number-promotion",
+    "goToPageInMobileOrURL": "",
+    "goToPageText": ""
   },
   {
     "title": "MegaBoost",
     "description": "The MegaBoost combo package gives you an affordable and convenient way to connect",
     "imageUrl": "http://telecel.co.zw/images/promotions/megaboostweb1.jpg",
-    "readMoreWebsiteLink": "http://telecel.co.zw/products-services/promotions/280-megaboost"
+    "readMoreWebsiteLink": "http://telecel.co.zw/products-services/promotions/280-megaboost",
+    "goToPageInMobileOrURL": "#pgBundlesPurchase",
+    "goToPageText": "Buy MegaBoost Bundles"
   },
   {
     "title": "Mega Bonus",
     "description": "Get 100% instant bonus with Mega Bonus every time you recharge",
     "imageUrl": "http://telecel.co.zw/images/fpslideshow/megaweb2017.jpg",
-    "readMoreWebsiteLink": "http://telecel.co.zw/products-services/promotions/252-mega-bonus"
+    "readMoreWebsiteLink": "http://telecel.co.zw/products-services/promotions/252-mega-bonus",
+    "goToPageInMobileOrURL": "#pgAirtimePurchase",
+    "goToPageText": "Recharge Now"
   },
   {
     "title": "Switch Over Campaign",
     "description": "Switch over to Telecel and keep the last 6 digits of your number",
     "imageUrl": "http://telecel.co.zw/images/promotions/number%20matching%20web1.jpg",
-    "readMoreWebsiteLink": "http://telecel.co.zw/products-services/promotions/242-switchover"
+    "readMoreWebsiteLink": "http://telecel.co.zw/products-services/promotions/242-switchover",
+    "goToPageInMobileOrURL": "http://specialnums.telecel.co.zw/",
+    "goToPageText": "Reserve your last 6 digits"
   }
 ]

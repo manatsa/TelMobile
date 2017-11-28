@@ -1,16 +1,19 @@
+//global variables
+var shortcodesWebURI = "http://kasjdakjlsda";
+var shortcodesLocalURI = "../www/json/shortcodes.json";
+var alreadyTriedShortcodesWebYN = false;
+
+var inputUniqueIndex = 0;
+
 $(document).on("pageshow", "#pgServiceShortcodes", function (event) {
     $("#ancGoToUSSD").trigger("click");
 });
 
-//global variables
-var uri = "../www/json/shortcodes.json";
-var inputUniqueIndex = 0;
-
 //get shortcodeQuestions from JSON
-function getShortcodesList() {
+function getShortcodesList(URI) {
 
     $.ajax({
-        url: uri,
+        url: URI,
         type: "GET",
         dataType: "json",
 
@@ -68,11 +71,17 @@ function getShortcodesList() {
         },
         failure: function (fail) {
             console.log(fail.responseText);
-            alert("FAILURE :" + fail)
+            alert("Failure :" + fail)
         },
         error: function (error) {
-            console.log(error.responseText)
-            alert("ERROR :\n" + error.responseText)
+            console.log(error.responseText);
+            if (alreadyTriedShortcodesWebYN === false) {
+                $("#divShortcodes").prepend("<div class='alert-box warning' style='margin-bottom: 10px;'><span>Note: </span>The latest service shortcodes could not be obtained.</div>");
+                getShortcodesList(shortcodesLocalURI);
+                alreadyTriedShortcodesWebYN = true;
+                return;
+            }
+            alert("Error : Failed to load service shortcodes.\n" + error.responseText)
         }
     });
 }
@@ -100,7 +109,6 @@ function smsNumber(textAreaWithMsg, sendTo) {
                         alert("Your message could not be sent. Please try again later.");
                     }
                 );
-
             }, function () {
                 alert("Could not get permission to send SMS.");
             });
@@ -170,4 +178,4 @@ function getEnteredParamsAndDial(strInputsEntered, dialCode) {
     callNumber(numberToCallWithParams);
 }
 
-$("#pgServiceShortcodes").on("pageshow", getShortcodesList());
+$("#pgServiceShortcodes").on("pageshow", getShortcodesList(shortcodesWebURI));

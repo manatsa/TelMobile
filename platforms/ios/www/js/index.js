@@ -46,23 +46,19 @@ function confirmCallback(choice) {
 
 $(document).on({
     ajaxSend: function () {
-        $(".spinner").css("display","block");
+        $("#custom-spinner").css("display","block");
     },
     ajaxStart: function () {
-        $(".spinner").css("display","block");
+       $("#custom-spinner").css("display","block");
     },
     ajaxStop: function () {
-        $(".spinner").css("display","none");
+       $("#custom-spinner").css("display","none");
     },
     ajaxError: function () {
-        $(".spinner").css("display","none");
+        $("#custom-spinner").css("display","none");
     }
 });
 
-
-$(document).on("deviceready",function () {
-    //$.mobile.changePage("#tbPage")
-})
 
 
 

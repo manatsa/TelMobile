@@ -32,4 +32,4 @@ $("#email_confirm_btn").on("click",function () {
         "Confirm Sending Email",
         ["Yes","No"]
     )
-})
+});
