@@ -156,9 +156,37 @@ $(".btnShare").click(function () {
     window.plugins.socialsharing.share(shareMessage);
 });
 
-function sendEMail(senderName, senderEmail, subject, message) {
-    alert("Email not sent. To implement code for sending email!");//TODO: Send email code
-    //this function to send an email
+function sendEMail(senderEmail, subject, message, response) {
+    var URI="http://telecelmobileapp.telecel.co.zw/TelecelBundleRestService/rest/sendMail/mobileapp/"+subject+"/"+message+"/"+senderEmail;
+    //showProgressBar();
+    $.ajax({
+            url: URI,
+            type: "GET",
+            dataType: "json",
+            success: function (result) {
+                //hideProgressBar();
+                var msg = JSON.parse(JSON.stringify(result));
+                console.log(msg);
+                if(response){
+                    navigator.notification.alert(msg.description[0].toUpperCase()+msg.description.substr(1), null, "Emailer Response", "OK");
+                }
+
+            },
+            failure: function (fail) {
+                //hideProgressBar();
+                console.log(fail);
+                navigator.notification.alert(fail.responseText + errorHelpTextToAppend, null, "Fail", "OK");
+
+            },
+            error: function (error) {
+                console.log(error);
+                //hideProgressBar();
+                navigator.notification.alert(fail.responseText + errorHelpTextToAppend, null, "Error", "OK");
+
+            }
+        }
+    );
+
 }
 
 function isValidEmail(email) {

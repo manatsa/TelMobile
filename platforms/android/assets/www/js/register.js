@@ -24,7 +24,7 @@ $("#btnRegister").on("click", function () {
         navigator.notification.alert("Your e-mail is not valid.", function () {
         }, "Invalid e-mail", "OK")
     } else if (pin2 !== pin1) {
-        navigator.notification.alert("Your new PIN does not match your old PIN.", function () {
+        navigator.notification.alert("Your confirmation PIN does not match the new PIN.", function () {
         }, "PINs don't match", "OK")
     } else if (pin1.length !== 4) {
         navigator.notification.alert("Please enter a 4 digit PIN.", function () {
@@ -34,18 +34,39 @@ $("#btnRegister").on("click", function () {
         // do more here --------------------------------------------------------------- now persisting login details
         try {
             var newUser = {msisdn: phone, pin: pin, email: email};
+
+            var pp=user.pin;
+            if(pp) {
+                navigator.notification.prompt("Enter Current Pin", function (result) {
+                    if (Number(result.input1) == Number(user.pin)) {
+                        NativeStorage.setItem("user", newUser, function () {
+                            navigator.notification.alert("Details saved successfully!", function () {
+                            }, "Registration success", "OK");
+                            user = newUser;
+                            $.mobile.back();
+
+                        }, function (error) {
+                            navigator.notification.alert("Error :" + error, function () {
+                            }, "Error Saving Details", "OK")
+                        });
+                    } else {
+                        navigator.notification.alert("Sorry, your pin was not correct!", null, "Authorization Failure", "OK");
+                    }
+                }, "Authorize Action", ["OK", "Cancel"])
+            }
+
+        } catch (e) {
+            console.log(e)
             NativeStorage.setItem("user", newUser, function () {
                 navigator.notification.alert("Details saved successfully!", function () {
                 }, "Registration success", "OK");
                 user = newUser;
                 $.mobile.changePage("#pgMain");
+
             }, function (error) {
                 navigator.notification.alert("Error :" + error, function () {
                 }, "Error Saving Details", "OK")
-            })
-        } catch (e) {
-            navigator.notification.alert(e, function () {
-            }, "Error Saving Details", "OK")
+            });
         }
     }
 });

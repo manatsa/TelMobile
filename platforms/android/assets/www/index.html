@@ -167,7 +167,7 @@
              src="img/icons/zero-rating.png"/>
         <h1 style="margin-top: 10px;" class="initcap">Zero-rated</h1>
         <p style="margin-top: 15px; margin-bottom: 0;" class="initcap">
-            The Telecel App Mobile is free to access for all regiustered Telecel subscribers.
+            The Telecel App Mobile is free to access for all registered Telecel subscribers.
         </p>
     </div>
 </section>
@@ -301,6 +301,16 @@
                     <p class="initcap">Change the PIN used for this App</p>
                 </a>
             </li>
+            <li>
+                <a data-transition="flip" onclick="recoverAppPin()">Recover App PIN
+                    <p class="initcap">Send email with PIN used for this App</p>
+                </a>
+            </li>
+            <li>
+                <a data-transition="flip" href="#pgInitialLogin">Re-register
+                    <p class="initcap">Go over registration again. Note:You need your old App PIN and new details are going to replace the old ones.</p>
+                </a>
+            </li>
         </ul>
 
     </div>
@@ -326,7 +336,7 @@
     <div data-role="popup" id="ppOptionsSelfService" data-theme="b">
         <ul data-role="listview" data-inset="true" style="min-width:210px;">
             <li data-icon="false"><a data-transition="flip" href="#pgMain">Back to Main Page</a></li>
-            <li data-icon="false"><a href="#">Logout</a></li>
+            
         </ul>
     </div>
     <!-- End of Header -->
@@ -1007,6 +1017,8 @@ We know that teamwork allows us to serve our customers better and faster as we r
     </div>
 </section>
 
+
+
 <!--
 <!-------------------------------------  Promotions  ------------------------------------------------>
 <section id="pgPromotions" data-role="page" class="ui-page-theme-a with-footer">
@@ -1558,6 +1570,7 @@ We know that teamwork allows us to serve our customers better and faster as we r
 <script type="text/javascript" src="js/bundles/buybundle.js"></script>
 <script type="text/javascript" src="js/shortcodes.js"></script>
 <script type="text/javascript" src="js/welcome.js"></script>
+<script type="text/javascript" src="js/recoverAppPin.js"></script>
 
 </body>
 </html>

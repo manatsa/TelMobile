@@ -20,10 +20,11 @@ $("#btnContactUsSend").on("click",
             navigator.notification.alert("Your e-mail is not valid.", function () {
             }, "Invalid e-mail", "OK")
         } else {
+            sendEMail(email, subject, message);
             $("#txtContactUsName").val("");
             $("#txtContactUsEmail").val("");
             $("#txtContactUsSubject").val("");
             $("#txtContactUsMessage").val("");
-            sendEMail();
+
         }
     });

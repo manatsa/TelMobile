@@ -210,6 +210,7 @@ function purchaseFromCoreAJAX(regmobile, product, selfOrOther, othernumber) {
     }
 }
 
+
 //function to buy for self from TeleCash
 function deductMoneyFromFromTelecash(amount, TelecashPIN) {
     var URI = buyBundleFromTelecashURI + "/" + user.msisdn + "/" + amount + "/" + TelecashPIN + "/" + TelecelAgentCode;
