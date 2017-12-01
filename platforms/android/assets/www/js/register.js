@@ -1,8 +1,6 @@
 $("#btnRegister").on("click", function () {
 
     var phone = $("#txtInitialLoginMSISDN").val();
-    var pin1 = $("#txtInitialLoginPIN").val();
-    var pin2 = $("#txtInitialLoginPINReEnter").val();
     var email = $("#txtInitialLoginEmail").val();
 
     if (phone === "") {
@@ -11,32 +9,18 @@ $("#btnRegister").on("click", function () {
     } else if (email === "") {
         navigator.notification.alert("Please your email.", function () {
         }, "Fill all fields", "OK")
-    } else if (pin1 === "") {
-        navigator.notification.alert("Please a PIN for use with this app.", function () {
-        }, "Fill all fields", "OK")
-    } else if (pin2 === "") {
-        navigator.notification.alert("Please confirm your PIN.", function () {
-        }, "Fill all fields", "OK")
     } else if (!isPhoneValidNumber(phone)) {
         navigator.notification.alert("Please enter a valid Telecel mobile number.", function () {
         }, "Invalid mobile number", "OK")
     } else if (!isValidEmail(email)) {
         navigator.notification.alert("Your e-mail is not valid.", function () {
         }, "Invalid e-mail", "OK")
-    } else if (pin2 !== pin1) {
-        navigator.notification.alert("Your confirmation PIN does not match the new PIN.", function () {
-        }, "PINs don't match", "OK")
-    } else if (pin1.length !== 4) {
-        navigator.notification.alert("Please enter a 4 digit PIN.", function () {
-        }, "Invalid Pin", "OK")
     } else {
-        var pin = parseInt(pin1);//no need for try catch because validated
+        //no need for try catch because validated
         // do more here --------------------------------------------------------------- now persisting login details
         try {
-            var newUser = {msisdn: phone, pin: pin, email: email};
+            var newUser = {msisdn: phone, email: email};
 
-            var pp=user.pin;
-            if(pp) {
                 navigator.notification.prompt("Enter Current Pin", function (result) {
                     if (Number(result.input1) == Number(user.pin)) {
                         NativeStorage.setItem("user", newUser, function () {
@@ -53,20 +37,11 @@ $("#btnRegister").on("click", function () {
                         navigator.notification.alert("Sorry, your pin was not correct!", null, "Authorization Failure", "OK");
                     }
                 }, "Authorize Action", ["OK", "Cancel"])
-            }
+
 
         } catch (e) {
             console.log(e)
-            NativeStorage.setItem("user", newUser, function () {
-                navigator.notification.alert("Details saved successfully!", function () {
-                }, "Registration success", "OK");
-                user = newUser;
-                $.mobile.changePage("#pgMain");
-
-            }, function (error) {
-                navigator.notification.alert("Error :" + error, function () {
-                }, "Error Saving Details", "OK")
-            });
+            navigator.notification.alert("Error saving details!", null, "Profille Creation Failure", "OK");
         }
     }
 });
