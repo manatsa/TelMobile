@@ -225,11 +225,11 @@
         <input type="email" id="txtInitialLoginEmail"
                placeholder="e.g. you@telecel.co.zw" class="ui-full-width"/>
 
-        <div id="tcCheckDiv">
-            <div class="initcap"><a href="#tcsDialog" data-rel="dialog" data-transition="flip"><u>Terms And Conditions</u></a></div>
-            <div class="initcap">
-                <p>I  <b><u>agree</u></b> to Terms and Conditions</p>
-                <input type="checkbox" id="chkAgreeTCs" value="agree" />
+        <div id="tcCheckDiv" align="center">
+            <div class="initcap" style="margin: 10px 10px;"><a href="#tcsDialog" data-rel="dialog" data-transition="flip"><u>Terms And Conditions</u></a></div>
+            <div class="initcap" id="divAgreeToTCs">
+                <label  for="chkAgreeTCs" style="background-color: transparent; color: red;">I  <b><u>agree</u></b> to Terms and Conditions</label>
+                <input type="checkbox" id="chkAgreeTCs" value="agree"  style="display: inline;"/>
             </div>
         </div>
         <div id="divBtnRegisterContainer">

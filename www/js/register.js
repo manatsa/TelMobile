@@ -2,8 +2,15 @@ $("#btnRegister").on("click", function () {
 
     var phone = $("#txtInitialLoginMSISDN").val();
     var email = $("#txtInitialLoginEmail").val();
+    var agree=$("#divAgreeToTCs :checked").val();
 
-    if (phone === "") {
+    alert(agree)
+
+    if(!agree)
+    {
+        navigator.notification.alert("You cannot register without agreeing to Terms and Conditions.", function () {
+        }, "Terms And Conditions", "OK")
+    }else if (phone === "") {
         navigator.notification.alert("Please enter your mobile number for validation.", function () {
         }, "Fill all fields", "OK")
     } else if (email === "") {
