@@ -283,18 +283,8 @@
 
         <ul data-inset="true" data-role="listview">
             <li>
-                <a data-transition="flip" href="#pgChangePIN">Change App PIN
-                    <p class="initcap">Change the PIN used for this App</p>
-                </a>
-            </li>
-            <li>
-                <a data-transition="flip" onclick="recoverAppPin()">Recover App PIN
-                    <p class="initcap">Send email with PIN used for this App</p>
-                </a>
-            </li>
-            <li>
                 <a data-transition="flip" href="#pgInitialLogin">Re-register
-                    <p class="initcap">Go over registration again. Note:You need your old App PIN and new details are going to replace the old ones.</p>
+                    <p class="initcap">Go over registration again. New details are going to replace the old ones.</p>
                 </a>
             </li>
         </ul>
@@ -393,14 +383,14 @@
     <!-- End of Header -->
 
     <div class="ui-body-d ui-content div-red-background align-text-center">
-        <h1 style=" font-size: 48pt !important;">$<span id="spnBalanceMain"><img src="img/loading_gifs/horizontal.gif"></span>&nbsp;<a
+        <h1 style=" font-size: 48pt !important;">$<span id="spnBalanceMain">&nbsp;<img src="img/loading_gifs/horizontal.gif"></span>&nbsp;<a
                 style="color: #fff;" href="#ppAirtimeDefinition"
                 data-rel="popup"><i
                 class="fa fa-info-circle icon-font-size-small" aria-hidden="true"></i></a></h1>
         <span style="font-size: 9pt;" class="initcap">Available airtime</span>
 
-        <h1 style="margin-top: 20px; font-size: 15pt  !important;"><span id="spnBalanceNumberOfProducts"><img
-                src="img/loading_gifs/horizontal.gif"></span>
+        <h1 style="margin-top: 20px; font-size: 15pt  !important;"><span id="spnBalanceNumberOfProducts"><img class="halve-image-size"
+                                                                                                              src="img/loading_gifs/horizontal.gif"></span>
             Products&nbsp;<a style="color: #fff;"
                              href="#pgProductsDefinition"
                              data-rel="popup"><i
@@ -411,39 +401,7 @@
         <p>This is your core airtime balance.</p>
     </div>
     <div data-role="popup" id="pgProductsDefinition">
-        <p>This is your core airtime balance.</p>
-    </div>
-
-    <div style="padding-top: 3px; padding-bottom: 3px;" class="div-grey-background align-text-center">
-        <p style="margin: 0 !important; display: inline-block; text-align: center; text-transform: capitalize; font-weight: bold;">
-            Re-activation benefits</p>
-        <table class="initcap ui-body-d ui-full-width" style="margin-top: -1px;">
-            <thead>
-            <tr class="ui-bar-d">
-                <th style="width: 33.3%">SMS</th>
-                <th style="width: 33.3%">Voice</th>
-                <th style="width: 33.3%">Data</th>
-            </tr>
-            </thead>
-            <tr>
-                <td><span id="spnBalanceReactivationSMS">
-                    <img class="halve-image-size" src="img/loading_gifs/horizontal.gif">
-                </span> SMSs
-                </td>
-                <td><span id="spnBalanceReactivationVoice">
-                    <img class="halve-image-size" src="img/loading_gifs/horizontal.gif">
-                </span> minutes
-                </td>
-                <td><span id="spnBalanceReactivationData">
-                    <img class="halve-image-size" src="img/loading_gifs/horizontal.gif">
-                </span>MB
-                </td>
-            </tr>
-        </table>
-    </div>
-
-    <div data-role="popup" id="pgBonusDefinition">
-        <p>This is your core airtime balance.</p>
+        <p>These are the number of active products you are currently using.</p>
     </div>
 
     <div data-role="main" class="ui-content">
@@ -456,7 +414,7 @@
 
 </section>
 
-<!-------------------------------------    Help   ------------------------------------------------>
+<!-------------------------------------    FAQs   ------------------------------------------------>
 <section data-role="page" id="pgHelp" class="ui-page-theme-a with-footer">
     <!-- Header -->
     <header data-role="header" class="ui-bar" data-position="fixed">

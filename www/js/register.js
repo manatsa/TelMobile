@@ -21,22 +21,16 @@ $("#btnRegister").on("click", function () {
         try {
             var newUser = {msisdn: phone, email: email};
 
-                navigator.notification.prompt("Enter Current Pin", function (result) {
-                    if (Number(result.input1) == Number(user.pin)) {
                         NativeStorage.setItem("user", newUser, function () {
                             navigator.notification.alert("Details saved successfully!", function () {
                             }, "Registration success", "OK");
                             user = newUser;
-                            $.mobile.back();
+                            $.mobile.changePage("#pgMain",{transition:"none"})
 
                         }, function (error) {
                             navigator.notification.alert("Error :" + error, function () {
                             }, "Error Saving Details", "OK")
                         });
-                    } else {
-                        navigator.notification.alert("Sorry, your pin was not correct!", null, "Authorization Failure", "OK");
-                    }
-                }, "Authorize Action", ["OK", "Cancel"])
 
 
         } catch (e) {
