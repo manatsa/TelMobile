@@ -78,6 +78,11 @@ $(document).on("deviceready", function () {
 
         getBalances(balancesURI);
 
+        function normalizeDate(epoch){
+            var d=new Date(epoch);
+            return d;
+        }
+
         function epochToHumanDate(epoch) {
             var timestamp = new Date(epoch);
             var humanDate = moment(timestamp).format("D MMMM YYYY");
@@ -117,8 +122,13 @@ $(document).on("deviceready", function () {
                                     console.log(ocsProduct);
                                     console.log(product.walletName);
                                     if (ocsProduct !== null && product.walletName !== "Core") {
-                                        productsCount++;
-                                        balanceDivToAdd = "<div data-role='collapsible' data-collapsed-icon='carat-d' data-expanded-icon='carat-u'> <h4>" + ocsProduct.commercialDescription + "</h4> <table data-role='table' class='ui-responsive'> <thead> <tr class='ui-bar-d'> <th class='align-text-left'>Balance</th> <th class='align-text-left'>Expiry Date</th><th class='align-text-left'>Expiry Time</th> </tr> </head> <tbody> <tr> <td>" + getBalanceInUnits(ocsProduct, product.walletBalance) + "</td> <td>" + epochToHumanDate(product.walletBalanceExpiryDate) + "</td> <td>" + epochToHumanTime(product.walletBalanceExpiryDate) + "</td></tr> </tbody> </tbody> </table> </div>";
+                                        var hd=normalizeDate(product.walletBalanceExpiryDate);
+                                        if(hd>new Date())
+                                        {
+                                            productsCount++;
+                                            balanceDivToAdd = "<div data-role='collapsible' data-collapsed-icon='carat-d' data-expanded-icon='carat-u'> <h4>" + ocsProduct.commercialDescription + "</h4> <table data-role='table' class='ui-responsive'> <thead> <tr class='ui-bar-d'> <th class='align-text-left'>Balance</th> <th class='align-text-left'>Expiry Date</th><th class='align-text-left'>Expiry Time</th> </tr> </head> <tbody> <tr> <td>" + getBalanceInUnits(ocsProduct, product.walletBalance) + "</td> <td>" + epochToHumanDate(product.walletBalanceExpiryDate) + "</td> <td>" + epochToHumanTime(product.walletBalanceExpiryDate) + "</td></tr> </tbody> </tbody> </table> </div>";
+                                        }
+
                                     } else if (product.walletName === "Core") {
                                         var walletBalance = parseFloat(product.walletBalance);
                                         walletBalance = walletBalance.toFixed(2);
