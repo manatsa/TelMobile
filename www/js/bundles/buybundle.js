@@ -53,7 +53,7 @@ $("#btnPurchaseBundleFromCore").on("click", function () {
             if (product) {
 
                 // prompt user for pin
-                navigator.notification.prompt("Please enter your 4 digit PIN", function (result) {
+
                     if (result.buttonIndex === 1) {//0  is cancelled, 1 is proceed, 2 is second button if it was there e.t.c.
                         if (Number(result.input1) === Number(regpin)) //check first input prompted to the user is the valid registered PIN
                         {
@@ -68,7 +68,6 @@ $("#btnPurchaseBundleFromCore").on("click", function () {
                             navigator.notification.alert("You entered an incorrect pin.", null, "Authentication Error", "OK")
                         }
                     }
-                }, "Authenticate Transaction", ["Proceed", "Cancel"]) //title, [array of buttons]
 
             } else {
                 navigator.notification.alert("Please select a valid product", null, "Invalid Product", "OK")
