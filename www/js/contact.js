@@ -1,5 +1,4 @@
-$("#btnContactUsSend").on("click",
-    function sendContactUsEmail() {
+$("#btnContactUsSend").on("click", function(){
         var name = $("#txtContactUsName").val();
         var email = $("#txtContactUsEmail").val();
         var subject = $("#txtContactUsSubject").val();
@@ -20,11 +19,11 @@ $("#btnContactUsSend").on("click",
             navigator.notification.alert("Your e-mail is not valid.", function () {
             }, "Invalid e-mail", "OK")
         } else {
-            sendEMail(email, subject, message);
-            $("#txtContactUsName").val("");
+            sendEMail("vasforwards@telecelzim.co.zw",name+" : "+subject, message);
+            /*$("#txtContactUsName").val("");
             $("#txtContactUsEmail").val("");
             $("#txtContactUsSubject").val("");
-            $("#txtContactUsMessage").val("");
+            $("#txtContactUsMessage").val("");*/
 
         }
     });

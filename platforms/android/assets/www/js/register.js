@@ -4,13 +4,7 @@ $("#btnRegister").on("click", function () {
     var email = $("#txtInitialLoginEmail").val();
     var agree=$("#divAgreeToTCs :checked").val();
 
-    alert(agree)
-
-    if(!agree)
-    {
-        navigator.notification.alert("You cannot register without agreeing to Terms and Conditions.", function () {
-        }, "Terms And Conditions", "OK")
-    }else if (phone === "") {
+    if (phone === "") {
         navigator.notification.alert("Please enter your mobile number for validation.", function () {
         }, "Fill all fields", "OK")
     } else if (email === "") {
@@ -22,7 +16,12 @@ $("#btnRegister").on("click", function () {
     } else if (!isValidEmail(email)) {
         navigator.notification.alert("Your e-mail is not valid.", function () {
         }, "Invalid e-mail", "OK")
-    } else {
+    }else if(!agree)
+    {
+        navigator.notification.alert("You cannot register without agreeing to Terms and Conditions.", function () {
+        }, "Terms And Conditions", "OK")
+    }
+    else {
         //no need for try catch because validated
         // do more here --------------------------------------------------------------- now persisting login details
         try {

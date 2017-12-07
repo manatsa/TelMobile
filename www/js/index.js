@@ -10,10 +10,22 @@ var user;
 
 var TelecelAgentCode = '12345';
 
+$("#pgPromotions").on('pagebeforecreate', function(){
+    console.log("showing....");
+    showProgressBar()
+    //More stuff to do
+});
+
+$("#pgPromotions").on('pageshow', function(){
+    //More stuff to do
+    console.log("hiding....");
+    hideProgressBar()
+});
+
 //error text appended to error messages
 var errorHelpTextToAppend = ".\n\nIf this response is not as expected, and the problem persists, please contact our call center at 150 for assistance.";
 
-$(document).on("deviceready", function () {
+$("#pgMain").on("pagebeforeshow", function () {
     try {
         NativeStorage.getItem("user", function (data) {
                 user = data;
@@ -181,7 +193,7 @@ function sendEMail(senderEmail, subject, message, response) {
             error: function (error) {
                 console.log(error);
                 //hideProgressBar();
-                navigator.notification.alert(fail.responseText + errorHelpTextToAppend, null, "Error", "OK");
+                navigator.notification.alert(error.responseText + errorHelpTextToAppend, null, "Error", "OK");
 
             }
         }

@@ -1,6 +1,11 @@
 var promotionsWebURI = "http://kasjdakjlsda";
 var promotionsLocalURI = "../www/json/promotions.json";
 var alreadyTriedPromotionsWebYN = false;
+var promoProduct;
+
+function initialise(item){
+    promoProduct=item;
+}
 
 function getPromotionsList(uri) {
     $.ajax({
@@ -12,13 +17,14 @@ function getPromotionsList(uri) {
             var promotionsCount = 0;
             $.each(result, function (i, promotionItem) {
                 var html = "";
+
                 html += "<li> <fieldset> <a href='" + promotionItem.readMoreWebsiteLink + "' class='no-underline'>";
                 if (promotionItem.imageUrl !== "") {
                     html += "<img class='listview-big-thumbs-img' src='" + promotionItem.imageUrl + "'>";
                 }
                 html += "<h2>" + promotionItem.title + "</h2> <p class='initcap'>" + promotionItem.description + "<br/><i>Tap to read more</i> </p> </a>";
                 if (promotionItem.goToPageInMobileOrURL !== "" && promotionItem.goToPageText !== "") {
-                    html += "<a class='ui-btn ui-btn-corner-all ui-btn-b' data-transition='flip' href='" + promotionItem.goToPageInMobileOrURL + "'><i class=\"fa fa-external-link-square\"\n" +
+                    html += "<a  onclick='initialise(&quot;"+promotionItem.title+"&quot;)' class='ui-btn ui-btn-corner-all ui-btn-b' data-transition='flip' href='" + promotionItem.goToPageInMobileOrURL + "'><i class=\"fa fa-external-link-square\"\n" +
                         "                                                                                    aria-hidden=\"true\"></i>&nbsp;" + promotionItem.goToPageText + "</a>";
                 }
                 html += "</fieldset> </li>";

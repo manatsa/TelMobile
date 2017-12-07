@@ -523,6 +523,28 @@ $("#pgBundlesPurchase").on("pageinit", function () {
     hideBundlePurchaseDivs();
 });
 
+$("#pgBundlesPurchase").on("pageshow", function (evt) {
+
+    if(promoProduct && promoProduct!==''){
+
+        if(promoProduct.toLocaleLowerCase().indexOf("bundle")>=0)
+        {
+            alert(promoProduct)
+            $('#bundles-tab').trigger('click')
+            $('#bundles-tab').click();
+            $("#divProductBundlePurchaseTabs").tabs( "option", "active", 2 );
+        }else if(promoProduct.indexOf("Voice")>=0){
+            $('#first-tab').click();
+        }else if(promoProduct.indexOf("SMS")>=0){
+            $('#SMS-tab').click();
+        }else{
+
+        }
+        promoProduct='';
+    }
+})
+
+
 function resetBundleOptionVars() {
     //responsible for populating bundle options
     desc = "";
@@ -556,6 +578,8 @@ function resetBundleOptionVars() {
     selectedBundleName = "";
     selectedBundleTypeName = "";
 }
+
+
 
 function refreshResetedComponents() {
     $("#cboBuyVoiceProduct").selectmenu("refresh", true);
